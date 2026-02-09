@@ -1,0 +1,977 @@
+{
+  "FY 24": {
+    "programs": [
+      {
+        "name": "National Highway Performance Program",
+        "base_apportionment": 1039894827.0,
+        "set_asides": null,
+        "planning_research": 20797896.54,
+        "after_set_asides": 1019096930.46,
+        "source_url": "https://www.fhwa.dot.gov/legsregs/directives/notices/n4510887/n4510887_t8.cfm",
+        "sub_allocations": []
+      },
+      {
+        "name": "Surface Transportation Grant Block Program",
+        "base_apportionment": 505894781.0,
+        "set_asides": null,
+        "planning_research": 10117895.620000001,
+        "after_set_asides": 445335799.3725316,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "STBG Available for Any Area (IDOT)",
+            "amount": 171211658.0001743
+          },
+          {
+            "name": "Areas > 200K",
+            "amount": 179970289.00003785
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 14530328.999939457
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 17333047.92978696
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 33101022.00001073
+          }
+        ]
+      },
+      {
+        "name": "STBG set-aside for off-system bridges",
+        "base_apportionment": null,
+        "set_asides": 29189451.999754183,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives / Rec Trails Program set-aside  (flat 10% of STBG)",
+        "base_apportionment": null,
+        "set_asides": 50441086.007468395,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives Program set-aside",
+        "base_apportionment": null,
+        "set_asides": 48885283.01697422,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Recreational Trails Set-Aside",
+        "base_apportionment": null,
+        "set_asides": 1525297.0,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 20055473.0,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Suballocation (- 59% of TAP set-aside)",
+        "base_apportionment": null,
+        "set_asides": 28860316.0,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 21205650.0
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 1712089.0
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2042329.0
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 3900248.0
+          }
+        ]
+      },
+      {
+        "name": "Highway Safety Improvement Program",
+        "base_apportionment": 106722536.0,
+        "set_asides": null,
+        "planning_research": 2134450.72,
+        "after_set_asides": 104588085.28,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Railway-Highway Crossings Program",
+        "base_apportionment": 11196571.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 11196571.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Congestion Mitigation & Air Quality Improvement Program",
+        "base_apportionment": 124803873.0,
+        "set_asides": null,
+        "planning_research": 2496077.46,
+        "after_set_asides": 122307795.54,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Metropolitan Planning",
+        "base_apportionment": 23419112.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 23419112.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "National Highway Freight Program",
+        "base_apportionment": 51298717.0,
+        "set_asides": null,
+        "planning_research": 1025974.34,
+        "after_set_asides": 50272742.66,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Reduction Program",
+        "base_apportionment": 45108951.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 45108951.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 15788132.85,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Suballocation (65% based on population)",
+        "base_apportionment": null,
+        "set_asides": 29320818.150000002,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 21544012.999999013
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 1739407.0011909448
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2074916.999998346
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 3962485.2971977354
+          }
+        ]
+      },
+      {
+        "name": "PROTECT Formula",
+        "base_apportionment": 51292110.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 51292110.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Bridge Formula",
+        "base_apportionment": 297268565.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 252678280.25,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Off-System Bridge Set-aside (15% of Main Bridge)",
+        "base_apportionment": null,
+        "set_asides": 44590284.75,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "NEVI (Electric Vehicle) Formula",
+        "base_apportionment": 31655845.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 31655626.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Ferry Boats and Facilities (released in June)",
+        "base_apportionment": 2607410.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Totals",
+        "base_apportionment": 2291163298.0,
+        "set_asides": 742983627.0025321,
+        "planning_research": 36572294.68,
+        "after_set_asides": 2156952003.5625315,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "HSIP",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "106722536",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "3110182769",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.034313911408593495",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "RCE",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "11196571",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "245000000",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.045700289795918364",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.4041226629525914",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.032627803631838724",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.03892130172090656",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      }
+    ],
+    "total_base_apportionment": 4582326596.0,
+    "total_after_setasides": 4313904007.125063
+  },
+  "FY 25": {
+    "programs": [
+      {
+        "name": "National Highway Performance Program",
+        "base_apportionment": 1060692724.0,
+        "set_asides": null,
+        "planning_research": 21213854.48,
+        "after_set_asides": 1039478869.52,
+        "source_url": "https://www.fhwa.dot.gov/legsregs/directives/notices/n4510887/n4510887_t8.cfm",
+        "sub_allocations": []
+      },
+      {
+        "name": "Surface Transportation Grant Block Program",
+        "base_apportionment": 516012677.0,
+        "set_asides": null,
+        "planning_research": 10320253.540000001,
+        "after_set_asides": 454242515.6944937,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "STBG Available for Any Area (IDOT)",
+            "amount": 174635987.26094824
+          },
+          {
+            "name": "Areas > 200K",
+            "amount": 183569694.91522226
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 14846821.893385263
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 17679708.90140232
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 33763042.46487459
+          }
+        ]
+      },
+      {
+        "name": "STBG set-aside for off-system bridges",
+        "base_apportionment": null,
+        "set_asides": 29773241.06167476,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives / Rec Trails Program set-aside  (flat 10% of STBG)",
+        "base_apportionment": null,
+        "set_asides": 51449907.7655063,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives Program set-aside",
+        "base_apportionment": null,
+        "set_asides": 49862988.7140336,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Recreational Trails Set-Aside",
+        "base_apportionment": null,
+        "set_asides": 1586919.0514726937,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 20443825.37275378,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Suballocation (- 59% of TAP set-aside)",
+        "base_apportionment": null,
+        "set_asides": 29419163.341279823,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 21443876.104167502
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 2082661.2986102998
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2002769.0005867367
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 3889856.937915283
+          }
+        ]
+      },
+      {
+        "name": "Highway Safety Improvement Program",
+        "base_apportionment": 109009408.0,
+        "set_asides": null,
+        "planning_research": 2180188.16,
+        "after_set_asides": 106829219.84,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Railway-Highway Crossings Program",
+        "base_apportionment": 11270541.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 11270541.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Congestion Mitigation & Air Quality Improvement Program",
+        "base_apportionment": 127299951.0,
+        "set_asides": null,
+        "planning_research": 2545999.02,
+        "after_set_asides": 124753951.98,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Metropolitan Planning",
+        "base_apportionment": 23887494.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 23887494.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "National Highway Freight Program",
+        "base_apportionment": 52324691.0,
+        "set_asides": null,
+        "planning_research": 1046493.8200000001,
+        "after_set_asides": 51278197.18,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Reduction Program",
+        "base_apportionment": 46011130.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 46011130.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 16103895.499999998,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Suballocation (65% based on population)",
+        "base_apportionment": null,
+        "set_asides": 29907234.5,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 21974893.250447
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 1774195.1404435611
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2116415.339078355
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 4041735.001384839
+          }
+        ]
+      },
+      {
+        "name": "PROTECT Formula",
+        "base_apportionment": 52317952.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 52317952.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Bridge Formula",
+        "base_apportionment": 297268565.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 252678280.25,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Off-System Bridge Set-aside (15% of Main Bridge)",
+        "base_apportionment": null,
+        "set_asides": 44590284.75,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "NEVI (Electric Vehicle) Formula",
+        "base_apportionment": 31655872.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 31655626.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Ferry Boats and Facilities (released in June)",
+        "base_apportionment": 2589570.66666666,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Totals",
+        "base_apportionment": 2330340575.6666665,
+        "set_asides": 756959117.5651872,
+        "planning_research": 37306789.02000001,
+        "after_set_asides": 2194403777.4644938,
+        "source_url": null,
+        "sub_allocations": []
+      }
+    ],
+    "total_base_apportionment": 4660681151.333333,
+    "total_after_setasides": 4388807554.9289875
+  },
+  "FY 26": {
+    "programs": [
+      {
+        "name": "National Highway Performance Program",
+        "base_apportionment": 1081906576.0,
+        "set_asides": null,
+        "planning_research": 21638131.52,
+        "after_set_asides": 1060268444.48,
+        "source_url": "https://www.fhwa.dot.gov/legsregs/directives/notices/n4510887/n4510887_t8.cfm",
+        "sub_allocations": []
+      },
+      {
+        "name": "Surface Transportation Grant Block Program",
+        "base_apportionment": 526332929.0,
+        "set_asides": null,
+        "planning_research": 10526658.58,
+        "after_set_asides": 463327364.65273184,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "STBG Available for Any Area (IDOT)",
+            "amount": 178128706.48497957
+          },
+          {
+            "name": "Areas > 200K",
+            "amount": 187241088.26567712
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 15143758.286943775
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 18033303.02666664
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 34438303.21340889
+          }
+        ]
+      },
+      {
+        "name": "STBG set-aside for off-system bridges",
+        "base_apportionment": null,
+        "set_asides": 30368705.794052314,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives / Rec Trails Program set-aside  (flat 10% of STBG)",
+        "base_apportionment": null,
+        "set_asides": 52478905.76726814,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Transportation Alternatives Program set-aside",
+        "base_apportionment": null,
+        "set_asides": 50860248.33950204,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Recreational Trails Set-Aside",
+        "base_apportionment": null,
+        "set_asides": 1618657.427766107,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 20852701.819195837,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "TAP Available for Suballocation (- 59% of TAP set-aside)",
+        "base_apportionment": null,
+        "set_asides": 30007546.5203062,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 21872753.562253263
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 2124314.518366964
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2042824.3746213622
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 3967654.065064611
+          }
+        ]
+      },
+      {
+        "name": "Highway Safety Improvement Program",
+        "base_apportionment": 111381154.0,
+        "set_asides": null,
+        "planning_research": 2227623.08,
+        "after_set_asides": 109153530.92,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Railway-Highway Crossings Program",
+        "base_apportionment": 11306853.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 11306853.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Congestion Mitigation & Air Quality Improvement Program",
+        "base_apportionment": 129845950.0,
+        "set_asides": null,
+        "planning_research": 2596919.0,
+        "after_set_asides": 127249031.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Metropolitan Planning",
+        "base_apportionment": 24365244.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 24365244.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "National Highway Freight Program",
+        "base_apportionment": 53371185.0,
+        "set_asides": null,
+        "planning_research": 1067423.7,
+        "after_set_asides": 52303761.3,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Reduction Program",
+        "base_apportionment": 46931353.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 46931353.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Available for Any Area (IDOT)",
+        "base_apportionment": null,
+        "set_asides": 16425973.549999999,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Carbon Suballocation (65% based on population)",
+        "base_apportionment": null,
+        "set_asides": 30505379.45,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": [
+          {
+            "name": "Areas > 200K",
+            "amount": 22414391.306495745
+          },
+          {
+            "name": "Areas \u2265 50000 to  \u2264 200K",
+            "amount": 1809679.058676484
+          },
+          {
+            "name": "Areas \u2265 5000 to  \u2264 50000K",
+            "amount": 2158743.6642590817
+          },
+          {
+            "name": "Areas \u2264 5K",
+            "amount": 4122569.736549556
+          }
+        ]
+      },
+      {
+        "name": "PROTECT Formula",
+        "base_apportionment": 53364311.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 53364311.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Bridge Formula",
+        "base_apportionment": 297268565.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 252678280.25,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Off-System Bridge Set-aside (15% of Main Bridge)",
+        "base_apportionment": null,
+        "set_asides": 44590284.75,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "NEVI (Electric Vehicle) Formula",
+        "base_apportionment": 31655938.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": 31655626.0,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Ferry Boats and Facilities (released in June)",
+        "base_apportionment": 2568573.666666664,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "Totals",
+        "base_apportionment": 2492986638.6666665,
+        "set_asides": 771206492.9820538,
+        "planning_research": 38056755.88,
+        "after_set_asides": 2232603799.6027317,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "HSIP",
+        "base_apportionment": 14121671.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "106722536",
+        "base_apportionment": 20764004.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "3110182769",
+        "base_apportionment": 23591471.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.034313911408593495",
+        "base_apportionment": 28962182.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "RCE",
+        "base_apportionment": null,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "11196571",
+        "base_apportionment": 174404290.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "245000000",
+        "base_apportionment": 263790802.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.045700289795918364",
+        "base_apportionment": 350919939.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.4041226629525914",
+        "base_apportionment": 2637880.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.032627803631838724",
+        "base_apportionment": 2607410.0,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      },
+      {
+        "name": "0.03892130172090656",
+        "base_apportionment": 2589570.666666664,
+        "set_asides": null,
+        "planning_research": null,
+        "after_set_asides": null,
+        "source_url": null,
+        "sub_allocations": []
+      }
+    ],
+    "total_base_apportionment": 5747674490.0,
+    "total_after_setasides": 4465207599.205463
+  }
+}

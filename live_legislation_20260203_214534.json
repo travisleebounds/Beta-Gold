@@ -1,0 +1,135 @@
+{
+  "IL-01": {
+    "member": "Jonathan Jackson",
+    "bioguide": "J000308",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-02": {
+    "member": "Robin Kelly",
+    "bioguide": "K000385",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-03": {
+    "member": "Delia Ramirez",
+    "bioguide": "R000617",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-04": {
+    "member": "Jes\u00fas Garc\u00eda",
+    "bioguide": "G000586",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-05": {
+    "member": "Mike Quigley",
+    "bioguide": "Q000023",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-06": {
+    "member": "Sean Casten",
+    "bioguide": "C001117",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-07": {
+    "member": "Danny Davis",
+    "bioguide": "D000096",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-08": {
+    "member": "Raja Krishnamoorthi",
+    "bioguide": "K000391",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-09": {
+    "member": "Jan Schakowsky",
+    "bioguide": "S001145",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-10": {
+    "member": "Brad Schneider",
+    "bioguide": "S001190",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-11": {
+    "member": "Bill Foster",
+    "bioguide": "F000454",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-12": {
+    "member": "Mike Bost",
+    "bioguide": "B001295",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-13": {
+    "member": "Nikki Budzinski",
+    "bioguide": "B001316",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-14": {
+    "member": "Lauren Underwood",
+    "bioguide": "U000040",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-15": {
+    "member": "Mary Miller",
+    "bioguide": "M001211",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-16": {
+    "member": "Darin LaHood",
+    "bioguide": "L000585",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-17": {
+    "member": "Eric Sorensen",
+    "bioguide": "S001224",
+    "chamber": "house",
+    "bills": [],
+    "count": 0
+  },
+  "IL-SEN1": {
+    "member": "Dick Durbin",
+    "bioguide": "D000563",
+    "chamber": "senate",
+    "bills": [],
+    "count": 0
+  },
+  "IL-SEN2": {
+    "member": "Tammy Duckworth",
+    "bioguide": "D000622",
+    "chamber": "senate",
+    "bills": [],
+    "count": 0
+  }
+}

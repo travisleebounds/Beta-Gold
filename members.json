@@ -1,0 +1,1072 @@
+{
+  "generated_from": {
+    "house": "https://www.ilga.gov/House/Members/rptMemberList",
+    "senate": "https://www.ilga.gov/Senate/Members/rptMemberList"
+  },
+  "il_house": {
+    "IL-H-103": {
+      "name": "Carol Ammons",
+      "party": "D",
+      "district": 103,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-040": {
+      "name": "Jaime M. Andrade, Jr.",
+      "party": "D",
+      "district": 40,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-085": {
+      "name": "Dagmara Avelar",
+      "party": "D",
+      "district": 85,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-097": {
+      "name": "Harry Benton",
+      "party": "D",
+      "district": 97,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-046": {
+      "name": "Diane Blair-Sherlock",
+      "party": "D",
+      "district": 46,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-076": {
+      "name": "Amy Briel",
+      "party": "D",
+      "district": 76,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-026": {
+      "name": "Kam Buckner",
+      "party": "D",
+      "district": 26,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-106": {
+      "name": "Jason R. Bunting",
+      "party": "R",
+      "district": 106,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-090": {
+      "name": "John M. Cabello",
+      "party": "R",
+      "district": 90,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-054": {
+      "name": "Mary Beth Canty",
+      "party": "D",
+      "district": 54,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-014": {
+      "name": "Kelly M. Cassidy",
+      "party": "D",
+      "district": 14,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-091": {
+      "name": "Sharon Chung",
+      "party": "D",
+      "district": 91,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-055": {
+      "name": "Justin Cochran",
+      "party": "D",
+      "district": 55,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-095": {
+      "name": "Michael J. Coffey, Jr.",
+      "party": "R",
+      "district": 95,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-031": {
+      "name": "Michael Crawford",
+      "party": "D",
+      "district": 31,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-044": {
+      "name": "Fred Crespo",
+      "party": "D",
+      "district": 44,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-012": {
+      "name": "Margaret Croke",
+      "party": "D",
+      "district": 12,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-100": {
+      "name": "Christopher \"C.D.\" Davidsmeyer",
+      "party": "R",
+      "district": 100,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-075": {
+      "name": "Jed Davis",
+      "party": "R",
+      "district": 75,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-032": {
+      "name": "Lisa Davis",
+      "party": "D",
+      "district": 32,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-030": {
+      "name": "William \"Will\" Davis",
+      "party": "D",
+      "district": 30,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-088": {
+      "name": "Regan Deering",
+      "party": "R",
+      "district": 88,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-042": {
+      "name": "Margaret A. DeLaRosa",
+      "party": "D",
+      "district": 42,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-003": {
+      "name": "Eva-Dina Delgado",
+      "party": "D",
+      "district": 3,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-080": {
+      "name": "Anthony DeLuca",
+      "party": "D",
+      "district": 80,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-045": {
+      "name": "Martha Deuter",
+      "party": "D",
+      "district": 45,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-059": {
+      "name": "Daniel Didech",
+      "party": "D",
+      "district": 59,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-005": {
+      "name": "Kimberly Du Buclet",
+      "party": "D",
+      "district": 5,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-111": {
+      "name": "Amy Elik",
+      "party": "R",
+      "district": 111,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-033": {
+      "name": "Marcus C. Evans, Jr.",
+      "party": "D",
+      "district": 33,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-062": {
+      "name": "Laura Faver Dias",
+      "party": "D",
+      "district": 62,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-008": {
+      "name": "La Shawn K. Ford",
+      "party": "D",
+      "district": 8,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-115": {
+      "name": "David Friess",
+      "party": "R",
+      "district": 115,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-074": {
+      "name": "Bradley Fritts",
+      "party": "R",
+      "district": 74,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-018": {
+      "name": "Robyn Gabel",
+      "party": "D",
+      "district": 18,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-035": {
+      "name": "Mary Gill",
+      "party": "D",
+      "district": 35,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-017": {
+      "name": "Jennifer Gong-Gershowitz",
+      "party": "D",
+      "district": 17,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-023": {
+      "name": "Edgar González, Jr.",
+      "party": "D",
+      "district": 23,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-092": {
+      "name": "Jehan Gordon-Booth",
+      "party": "D",
+      "district": 92,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-047": {
+      "name": "Amy L. Grant",
+      "party": "R",
+      "district": 47,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-053": {
+      "name": "Nicolle Grasse",
+      "party": "D",
+      "district": 53,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-022": {
+      "name": "Angelica Guerrero-Cuellar",
+      "party": "D",
+      "district": 22,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-039": {
+      "name": "Will Guzzardi",
+      "party": "D",
+      "district": 39,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-079": {
+      "name": "Jackie Haas",
+      "party": "R",
+      "district": 79,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-107": {
+      "name": "Brad Halbrook",
+      "party": "R",
+      "district": 107,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-094": {
+      "name": "Norine K. Hammond",
+      "party": "R",
+      "district": 94,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-083": {
+      "name": "Matt Hanson",
+      "party": "D",
+      "district": 83,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-006": {
+      "name": "Sonya M. Harper",
+      "party": "D",
+      "district": 6,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-087": {
+      "name": "William E Hauter",
+      "party": "R",
+      "district": 87,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-050": {
+      "name": "Barbara Hernandez",
+      "party": "D",
+      "district": 50,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-002": {
+      "name": "Elizabeth \"Lisa\" Hernandez",
+      "party": "D",
+      "district": 2,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-077": {
+      "name": "Norma Hernandez",
+      "party": "D",
+      "district": 77,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-049": {
+      "name": "Maura Hirschauer",
+      "party": "D",
+      "district": 49,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-113": {
+      "name": "Jay Hoffman",
+      "party": "D",
+      "district": 113,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-013": {
+      "name": "Hoan Huynh",
+      "party": "D",
+      "district": 13,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-118": {
+      "name": "Paul Jacobs",
+      "party": "R",
+      "district": 118,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-004": {
+      "name": "Lilian Jiménez",
+      "party": "D",
+      "district": 4,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-072": {
+      "name": "Gregg Johnson",
+      "party": "D",
+      "district": 72,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-029": {
+      "name": "Thaddeus Jones",
+      "party": "D",
+      "district": 29,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-057": {
+      "name": "Tracy Katz Muhl",
+      "party": "D",
+      "district": 57,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-070": {
+      "name": "Jeff Keicher",
+      "party": "R",
+      "district": 70,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-015": {
+      "name": "Michael J. Kelly",
+      "party": "D",
+      "district": 15,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-084": {
+      "name": "Stephanie A. Kifowit",
+      "party": "D",
+      "district": 84,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-082": {
+      "name": "Nicole La Ha",
+      "party": "R",
+      "district": 82,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-019": {
+      "name": "Lindsey LaPointe",
+      "party": "D",
+      "district": 19,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-078": {
+      "name": "Camille Y. Lilly",
+      "party": "D",
+      "district": 78,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-024": {
+      "name": "Theresa Mah",
+      "party": "D",
+      "district": 24,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-098": {
+      "name": "Natalie A. Manley",
+      "party": "D",
+      "district": 98,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-061": {
+      "name": "Joyce Mason",
+      "party": "D",
+      "district": 61,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-060": {
+      "name": "Rita Mayfield",
+      "party": "D",
+      "district": 60,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-089": {
+      "name": "Tony M. McCombie",
+      "party": "R",
+      "district": 89,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-052": {
+      "name": "Martin McLaughlin",
+      "party": "R",
+      "district": 52,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-109": {
+      "name": "Charles Meier",
+      "party": "R",
+      "district": 109,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-038": {
+      "name": "Debbie Meyers-Martin",
+      "party": "D",
+      "district": 38,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-101": {
+      "name": "Chris Miller",
+      "party": "R",
+      "district": 101,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-043": {
+      "name": "Anna Moeller",
+      "party": "D",
+      "district": 43,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-099": {
+      "name": "Kyle Moore",
+      "party": "R",
+      "district": 99,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-058": {
+      "name": "Bob Morgan",
+      "party": "D",
+      "district": 58,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-009": {
+      "name": "Yolonda Morris",
+      "party": "D",
+      "district": 9,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-056": {
+      "name": "Michelle Mussman",
+      "party": "D",
+      "district": 56,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-066": {
+      "name": "Suzanne M. Ness",
+      "party": "D",
+      "district": 66,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-102": {
+      "name": "Adam M. Niemerg",
+      "party": "R",
+      "district": 102,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-016": {
+      "name": "Kevin John Olickal",
+      "party": "D",
+      "district": 16,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-001": {
+      "name": "Aarón M. Ortíz",
+      "party": "D",
+      "district": 1,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-021": {
+      "name": "Abdelnasser Rashid",
+      "party": "D",
+      "district": 21,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-063": {
+      "name": "Steven Reick",
+      "party": "R",
+      "district": 63,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-028": {
+      "name": "Robert \"Bob\" Rita",
+      "party": "D",
+      "district": 28,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-108": {
+      "name": "Wayne A. Rosenthal",
+      "party": "R",
+      "district": 108,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-036": {
+      "name": "Rick Ryan",
+      "party": "D",
+      "district": 36,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-048": {
+      "name": "Jennifer Sanalitro",
+      "party": "R",
+      "district": 48,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-096": {
+      "name": "Sue Scherer",
+      "party": "D",
+      "district": 96,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-114": {
+      "name": "Kevin Schmidt",
+      "party": "R",
+      "district": 114,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-104": {
+      "name": "Brandun Schweizer",
+      "party": "R",
+      "district": 104,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-116": {
+      "name": "Dave Severin",
+      "party": "R",
+      "district": 116,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-037": {
+      "name": "Patrick Sheehan",
+      "party": "R",
+      "district": 37,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-027": {
+      "name": "Justin Slaughter",
+      "party": "D",
+      "district": 27,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-034": {
+      "name": "Nicholas K. Smith",
+      "party": "D",
+      "district": 34,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-069": {
+      "name": "Joe C. Sosnowski",
+      "party": "R",
+      "district": 69,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-073": {
+      "name": "Ryan Spain",
+      "party": "R",
+      "district": 73,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-081": {
+      "name": "Anne Stava",
+      "party": "D",
+      "district": 81,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-020": {
+      "name": "Brad Stephens",
+      "party": "R",
+      "district": 20,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-112": {
+      "name": "Katie Stuart",
+      "party": "D",
+      "district": 112,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-071": {
+      "name": "Dan Swanson",
+      "party": "R",
+      "district": 71,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-051": {
+      "name": "Nabeela Syed",
+      "party": "D",
+      "district": 51,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-025": {
+      "name": "Curtis J. Tarver, II",
+      "party": "D",
+      "district": 25,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-105": {
+      "name": "Dennis Tipsword",
+      "party": "R",
+      "district": 105,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-065": {
+      "name": "Dan Ugaste",
+      "party": "R",
+      "district": 65,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-068": {
+      "name": "Dave Vella",
+      "party": "D",
+      "district": 68,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-086": {
+      "name": "Lawrence \"Larry\" Walsh, Jr.",
+      "party": "D",
+      "district": 86,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-093": {
+      "name": "Travis Weaver",
+      "party": "R",
+      "district": 93,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-064": {
+      "name": "Tom Weber",
+      "party": "R",
+      "district": 64,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-007": {
+      "name": "Emanuel \"Chris\" Welch",
+      "party": "D",
+      "district": 7,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-067": {
+      "name": "Maurice A. West, II",
+      "party": "D",
+      "district": 67,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-110": {
+      "name": "Blaine Wilhour",
+      "party": "R",
+      "district": 110,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-011": {
+      "name": "Ann M. Williams",
+      "party": "D",
+      "district": 11,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-010": {
+      "name": "Jawaharial Williams",
+      "party": "D",
+      "district": 10,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-117": {
+      "name": "Patrick Windhorst",
+      "party": "R",
+      "district": 117,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    },
+    "IL-H-041": {
+      "name": "Janet Yang Rohr",
+      "party": "D",
+      "district": 41,
+      "source": "https://www.ilga.gov/House/Members/rptMemberList"
+    }
+  },
+  "il_senate": {
+    "IL-S-047": {
+      "name": "Neil Anderson",
+      "party": "R",
+      "district": 47,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-002": {
+      "name": "Omar Aquino",
+      "party": "D",
+      "district": 2,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-037": {
+      "name": "Li Arellano, Jr.",
+      "party": "R",
+      "district": 37,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-053": {
+      "name": "Chris Balkema",
+      "party": "R",
+      "district": 53,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-057": {
+      "name": "Christopher Belt",
+      "party": "D",
+      "district": 57,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-058": {
+      "name": "Terri Bryant",
+      "party": "R",
+      "district": 58,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-022": {
+      "name": "Cristina Castro",
+      "party": "D",
+      "district": 22,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-001": {
+      "name": "Javier L. Cervantes",
+      "party": "D",
+      "district": 1,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-045": {
+      "name": "Andrew S. Chesney",
+      "party": "R",
+      "district": 45,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-005": {
+      "name": "Lakesia Collins",
+      "party": "D",
+      "district": 5,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-018": {
+      "name": "Bill Cunningham",
+      "party": "D",
+      "district": 18,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-041": {
+      "name": "John F. Curran",
+      "party": "R",
+      "district": 41,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-033": {
+      "name": "Donald P. DeWitte",
+      "party": "R",
+      "district": 33,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-031": {
+      "name": "Mary Edly-Allen",
+      "party": "D",
+      "district": 31,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-021": {
+      "name": "Laura Ellman",
+      "party": "D",
+      "district": 21,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-052": {
+      "name": "Paul Faraci",
+      "party": "D",
+      "district": 52,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-006": {
+      "name": "Sara Feigenholtz",
+      "party": "D",
+      "district": 6,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-009": {
+      "name": "Laura Fine",
+      "party": "D",
+      "district": 9,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-059": {
+      "name": "Dale Fowler",
+      "party": "R",
+      "district": 59,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-023": {
+      "name": "Suzy Glowiak Hilton",
+      "party": "D",
+      "district": 23,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-020": {
+      "name": "Graciela Guzmán",
+      "party": "D",
+      "district": 20,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-036": {
+      "name": "Michael W. Halpin",
+      "party": "D",
+      "district": 36,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-039": {
+      "name": "Don Harmon",
+      "party": "D",
+      "district": 39,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-015": {
+      "name": "Napoleon Harris, III",
+      "party": "D",
+      "district": 15,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-056": {
+      "name": "Erica Harriss",
+      "party": "R",
+      "district": 56,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-019": {
+      "name": "Michael E. Hastings",
+      "party": "D",
+      "district": 19,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-026": {
+      "name": "Darby A. Hills",
+      "party": "R",
+      "district": 26,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-042": {
+      "name": "Linda Holmes",
+      "party": "D",
+      "district": 42,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-003": {
+      "name": "Mattie Hunter",
+      "party": "D",
+      "district": 3,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-030": {
+      "name": "Adriane Johnson",
+      "party": "D",
+      "district": 30,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-014": {
+      "name": "Emil Jones, III",
+      "party": "D",
+      "district": 14,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-040": {
+      "name": "Patrick J. Joyce",
+      "party": "D",
+      "district": 40,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-046": {
+      "name": "David Koehler",
+      "party": "D",
+      "district": 46,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-024": {
+      "name": "Seth Lewis",
+      "party": "R",
+      "district": 24,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-004": {
+      "name": "Kimberly A. Lightford",
+      "party": "D",
+      "district": 4,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-049": {
+      "name": "Meg Loughran Cappel",
+      "party": "D",
+      "district": 49,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-010": {
+      "name": "Robert F. Martwick",
+      "party": "D",
+      "district": 10,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-054": {
+      "name": "Steve McClure",
+      "party": "R",
+      "district": 54,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-029": {
+      "name": "Julie A. Morrison",
+      "party": "D",
+      "district": 29,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-028": {
+      "name": "Laura M. Murphy",
+      "party": "D",
+      "district": 28,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-013": {
+      "name": "Robert Peters",
+      "party": "D",
+      "district": 13,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-055": {
+      "name": "Jason Plummer",
+      "party": "R",
+      "district": 55,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-011": {
+      "name": "Mike Porfirio",
+      "party": "D",
+      "district": 11,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-016": {
+      "name": "Willie Preston",
+      "party": "D",
+      "district": 16,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-038": {
+      "name": "Sue Rezin",
+      "party": "R",
+      "district": 38,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-051": {
+      "name": "Chapin Rose",
+      "party": "R",
+      "district": 51,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-007": {
+      "name": "Mike Simmons",
+      "party": "D",
+      "district": 7,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-017": {
+      "name": "Elgie R. Sims, Jr.",
+      "party": "D",
+      "district": 17,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-034": {
+      "name": "Steve Stadelman",
+      "party": "D",
+      "district": 34,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-035": {
+      "name": "Dave Syverson",
+      "party": "R",
+      "district": 35,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-050": {
+      "name": "Jil Tracy",
+      "party": "R",
+      "district": 50,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-048": {
+      "name": "Doris Turner",
+      "party": "D",
+      "district": 48,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-044": {
+      "name": "Sally J. Turner",
+      "party": "R",
+      "district": 44,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-043": {
+      "name": "Rachel Ventura",
+      "party": "D",
+      "district": 43,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-025": {
+      "name": "Karina Villa",
+      "party": "D",
+      "district": 25,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-012": {
+      "name": "Celina Villanueva",
+      "party": "D",
+      "district": 12,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-008": {
+      "name": "Ram Villivalam",
+      "party": "D",
+      "district": 8,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-027": {
+      "name": "Mark L. Walker",
+      "party": "D",
+      "district": 27,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    },
+    "IL-S-032": {
+      "name": "Craig Wilcox",
+      "party": "R",
+      "district": 32,
+      "source": "https://www.ilga.gov/Senate/Members/rptMemberList"
+    }
+  }
+}

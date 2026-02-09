@@ -1,0 +1,280 @@
+{
+  "IL-01": {
+    "member": "Jonathan Jackson",
+    "bills": [],
+    "total": 0
+  },
+  "IL-02": {
+    "member": "Robin Kelly",
+    "bills": [
+      {
+        "number": "HR.6947",
+        "title": "SAFE Exit Act of 2026",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6947?format=json"
+      },
+      {
+        "number": "HR.6866",
+        "title": "Securing Smart Investments in our Ports Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6866?format=json"
+      }
+    ],
+    "total": 2
+  },
+  "IL-03": {
+    "member": "Delia Ramirez",
+    "bills": [],
+    "total": 0
+  },
+  "IL-04": {
+    "member": "Jes\u00fas Garc\u00eda",
+    "bills": [
+      {
+        "number": "HR.3649",
+        "title": "Magnus White Cyclist Safety Act of 2025",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/3649?format=json"
+      }
+    ],
+    "total": 1
+  },
+  "IL-05": {
+    "member": "Mike Quigley",
+    "bills": [
+      {
+        "number": "HR.6889",
+        "title": "BRIDGE Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6889?format=json"
+      },
+      {
+        "number": "HR.6086",
+        "title": "Aviation Funding Solvency Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6086?format=json"
+      }
+    ],
+    "total": 2
+  },
+  "IL-06": {
+    "member": "Sean Casten",
+    "bills": [
+      {
+        "number": "HR.2592",
+        "title": "Aviation Medication Transparency Act of 2025",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/2592?format=json"
+      },
+      {
+        "number": "HR.2591",
+        "title": "Mental Health in Aviation Act of 2025",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/2591?format=json"
+      },
+      {
+        "number": "HR.382",
+        "title": "Exported Carbon Emissions Report Act of 2025",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/382?format=json"
+      }
+    ],
+    "total": 3
+  },
+  "IL-07": {
+    "member": "Danny Davis",
+    "bills": [],
+    "total": 0
+  },
+  "IL-08": {
+    "member": "Raja Krishnamoorthi",
+    "bills": [],
+    "total": 0
+  },
+  "IL-09": {
+    "member": "Jan Schakowsky",
+    "bills": [
+      {
+        "number": "HR.2429",
+        "title": "To direct the Secretary of Transportation to develop and implement a comprehensive Campus Modernization Plan for the United States Merchant Marine Academy, and for other purposes.",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/2429?format=json"
+      }
+    ],
+    "total": 1
+  },
+  "IL-10": {
+    "member": "Brad Schneider",
+    "bills": [],
+    "total": 0
+  },
+  "IL-11": {
+    "member": "Bill Foster",
+    "bills": [],
+    "total": 0
+  },
+  "IL-12": {
+    "member": "Mike Bost",
+    "bills": [
+      {
+        "number": "HR.4585",
+        "title": "Agricultural and Rural Road Improvement Program Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/4585?format=json"
+      },
+      {
+        "number": "HRES.508",
+        "title": "Supporting the designation of the week of September 14 through September 20, 2025, as \"National Truck Driver Appreciation Week\".",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hres/508?format=json"
+      },
+      {
+        "number": "HR.1659",
+        "title": "Truck Parking Safety Improvement Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/1659?format=json"
+      },
+      {
+        "number": "HR.5783",
+        "title": "State Actions For Employing Transportation Risk Assessments and Crossing Knowledge Strategies Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5783?format=json"
+      },
+      {
+        "number": "HR.5688",
+        "title": "Non-Domiciled CDL Integrity Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5688?format=json"
+      }
+    ],
+    "total": 5
+  },
+  "IL-13": {
+    "member": "Nikki Budzinski",
+    "bills": [
+      {
+        "number": "HR.5135",
+        "title": "Train Crew Choice Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5135?format=json"
+      },
+      {
+        "number": "HR.4756",
+        "title": "Freights First Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/4756?format=json"
+      },
+      {
+        "number": "HR.2819",
+        "title": "DRIVE Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/2819?format=json"
+      },
+      {
+        "number": "HR.2360",
+        "title": "To permanently extend the exemption from the engine compartment portion of the pre-trip vehicle inspection skills testing requirement for school bus drivers, and for other purposes.",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/2360?format=json"
+      }
+    ],
+    "total": 4
+  },
+  "IL-14": {
+    "member": "Lauren Underwood",
+    "bills": [
+      {
+        "number": "HR.248",
+        "title": "Baby Changing on Board Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/248?format=json"
+      }
+    ],
+    "total": 1
+  },
+  "IL-15": {
+    "member": "Mary Miller",
+    "bills": [
+      {
+        "number": "HR.5330",
+        "title": "SAFE Driving Laws Act",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5330?format=json"
+      },
+      {
+        "number": "HR.6233",
+        "title": "Commercial Motor Vehicle English Proficiency Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/6233?format=json"
+      }
+    ],
+    "total": 2
+  },
+  "IL-16": {
+    "member": "Darin LaHood",
+    "bills": [
+      {
+        "number": "HR.623",
+        "title": "LICENSE Act of 2025",
+        "relationship": "Sponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/623?format=json"
+      },
+      {
+        "number": "HR.3385",
+        "title": "To direct the Secretary of Transportation to issue certain regulations to update the definition of motorcycle, and for other purposes.",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/3385?format=json"
+      }
+    ],
+    "total": 2
+  },
+  "IL-17": {
+    "member": "Eric Sorensen",
+    "bills": [
+      {
+        "number": "HR.5330",
+        "title": "SAFE Driving Laws Act",
+        "relationship": "Cosponsor",
+        "url": "https://api.congress.gov/v3/bill/119/hr/5330?format=json"
+      }
+    ],
+    "total": 1
+  },
+  "senators": {
+    "Durbin": {
+      "name": "Dick Durbin",
+      "position": "U.S. Senator (IL)",
+      "district": "Statewide",
+      "party": "Democrat",
+      "bills": [
+        {
+          "number": "S. 1234",
+          "title": "Infrastructure Investment Act",
+          "status": "Passed"
+        },
+        {
+          "number": "S. 2456",
+          "title": "Transit Modernization Act",
+          "status": "Committee"
+        }
+      ]
+    },
+    "Duckworth": {
+      "name": "Tammy Duckworth",
+      "position": "U.S. Senator (IL)",
+      "district": "Statewide",
+      "party": "Democrat",
+      "bills": [
+        {
+          "number": "S. 3789",
+          "title": "Accessible Transportation Act",
+          "status": "Passed"
+        },
+        {
+          "number": "S. 4012",
+          "title": "Veterans Transit Priority Act",
+          "status": "Committee"
+        }
+      ]
+    }
+  }
+}

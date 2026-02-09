@@ -1,0 +1,221 @@
+{
+  "metadata": {
+    "created": "2026-02-05",
+    "source": "MYP FY26 + Formula Calculations",
+    "note": "District-level formula allocation estimates"
+  },
+  "fy26_totals": {
+    "stbg_total": 526332929.0,
+    "stbg_over_200k": 187241088.26567712,
+    "stbg_idot_flex": 178128706.48497957,
+    "nhpp_total": 1081906576.0,
+    "hsip_total": 111381154.0,
+    "bridge_total": 297268565.0
+  },
+  "district_allocations": {
+    "IL-01": {
+      "representative": "Jonathan Jackson",
+      "population": 710043,
+      "type": "urban_core",
+      "area_sq_mi": 58,
+      "stbg_formula": 37558490.520849474,
+      "nhpp_est": 95462344.94117647,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 157059054.2267318,
+      "per_capita": 221.19653912049242
+    },
+    "IL-02": {
+      "representative": "Robin Kelly",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 312,
+      "stbg_formula": 12590719.160681838,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 87542188.56068183,
+      "per_capita": 123.29139018437169
+    },
+    "IL-03": {
+      "representative": "Delia Ramirez",
+      "population": 710043,
+      "type": "urban_core",
+      "area_sq_mi": 102,
+      "stbg_formula": 37642145.799804956,
+      "nhpp_est": 95462344.94117647,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 157142709.5056873,
+      "per_capita": 221.3143563216415
+    },
+    "IL-04": {
+      "representative": "Jes\u00fas Garc\u00eda",
+      "population": 710043,
+      "type": "urban_core",
+      "area_sq_mi": 65,
+      "stbg_formula": 37571799.31522875,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 112523268.71522875,
+      "per_capita": 158.47387934988268
+    },
+    "IL-05": {
+      "representative": "Mike Quigley",
+      "population": 710043,
+      "type": "urban_core",
+      "area_sq_mi": 78,
+      "stbg_formula": 37596515.64764742,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 112547985.04764742,
+      "per_capita": 158.5086889774949
+    },
+    "IL-06": {
+      "representative": "Sean Casten",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 298,
+      "stbg_formula": 12564101.571923275,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 87515570.97192328,
+      "per_capita": 123.253902893097
+    },
+    "IL-07": {
+      "representative": "Danny Davis",
+      "population": 710043,
+      "type": "urban_core",
+      "area_sq_mi": 71,
+      "stbg_formula": 37583206.85326814,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 112534676.25326814,
+      "per_capita": 158.48994533185757
+    },
+    "IL-08": {
+      "representative": "Raja Krishnamoorthi",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 267,
+      "stbg_formula": 12505162.625386458,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 87456632.02538645,
+      "per_capita": 123.17089531956016
+    },
+    "IL-09": {
+      "representative": "Jan Schakowsky",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 156,
+      "stbg_formula": 12294123.171657857,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 87245592.57165785,
+      "per_capita": 122.87367465302503
+    },
+    "IL-10": {
+      "representative": "Brad Schneider",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 387,
+      "stbg_formula": 12733313.386174137,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 87684782.78617413,
+      "per_capita": 123.49221495905759
+    },
+    "IL-11": {
+      "representative": "Bill Foster",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 1245,
+      "stbg_formula": 14364591.325806033,
+      "nhpp_est": 95462344.94117647,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 133865155.03168839,
+      "per_capita": 188.5310537977114
+    },
+    "IL-12": {
+      "representative": "Mike Bost",
+      "population": 710043,
+      "type": "rural",
+      "area_sq_mi": 7812,
+      "stbg_formula": 41088417.6473156,
+      "nhpp_est": 95462344.94117647,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 160588981.35319793,
+      "per_capita": 226.16796638118808
+    },
+    "IL-13": {
+      "representative": "Nikki Budzinski",
+      "population": 710043,
+      "type": "mixed",
+      "area_sq_mi": 9845,
+      "stbg_formula": 24343697.04321491,
+      "nhpp_est": 95462344.94117647,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 143844260.74909726,
+      "per_capita": 202.5852811014224
+    },
+    "IL-14": {
+      "representative": "Lauren Underwood",
+      "population": 710043,
+      "type": "suburban",
+      "area_sq_mi": 1567,
+      "stbg_formula": 14976795.86725297,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 89928265.26725297,
+      "per_capita": 126.65185808078239
+    },
+    "IL-15": {
+      "representative": "Mary Miller",
+      "population": 710043,
+      "type": "rural",
+      "area_sq_mi": 10234,
+      "stbg_formula": 45693260.5025469,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 120644729.9025469,
+      "per_capita": 169.91186435546425
+    },
+    "IL-16": {
+      "representative": "Darin LaHood",
+      "population": 710043,
+      "type": "mixed",
+      "area_sq_mi": 7456,
+      "stbg_formula": 19801595.647200223,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 94753065.04720022,
+      "per_capita": 133.4469391955138
+    },
+    "IL-17": {
+      "representative": "Eric Sorensen",
+      "population": 710043,
+      "type": "mixed",
+      "area_sq_mi": 6892,
+      "stbg_formula": 18729287.071498133,
+      "nhpp_est": 50913250.63529412,
+      "hsip_est": 6551832.588235294,
+      "bridge_est": 17486386.17647059,
+      "total_formula_est": 93680756.47149813,
+      "per_capita": 131.93673688987587
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "metadata": {
+    "scraped_date": "2026-02-05T17:20:34.689245",
+    "source": "IDOT ArcGIS REST Services",
+    "note": "Real-time construction and closure data"
+  },
+  "by_district": {
+    "IL-01": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-02": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-03": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-04": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-05": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-06": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-07": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-08": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-09": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-10": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-11": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-12": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-13": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-14": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-15": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-16": {
+      "construction": [],
+      "closures": []
+    },
+    "IL-17": {
+      "construction": [],
+      "closures": []
+    }
+  }
+}

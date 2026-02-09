@@ -1,0 +1,749 @@
+{
+  "metadata": {
+    "source": "U.S. Department of Transportation Grant Awards",
+    "compiled_date": "2026-02-05T18:11:10.085464",
+    "programs_tracked": [
+      "RAISE (formerly BUILD/TIGER)",
+      "INFRA",
+      "MEGA (National Infrastructure Project Assistance)",
+      "CRISI (Rail)",
+      "Port Infrastructure",
+      "PROTECT (Resilience)",
+      "Bridge Investment Program"
+    ],
+    "total_years": "2021-2026"
+  },
+  "grants": [
+    {
+      "year": 2024,
+      "program": "RAISE",
+      "amount": 25000000,
+      "recipient": "City of Chicago",
+      "project": "Red Line Extension Transit Project",
+      "district": "IL-01",
+      "description": "Red Line extension providing critical transit access to South Side communities",
+      "status": "Awarded",
+      "type": "Transit"
+    },
+    {
+      "year": 2024,
+      "program": "RAISE",
+      "amount": 20000000,
+      "recipient": "Will County",
+      "project": "Arsenal Road Improvement Project",
+      "district": "IL-11",
+      "description": "Widening and improvement of Arsenal Road to support industrial development",
+      "status": "Awarded",
+      "type": "Highway"
+    },
+    {
+      "year": 2023,
+      "program": "RAISE",
+      "amount": 15750000,
+      "recipient": "City of Elgin",
+      "project": "Downtown Elgin Multimodal Transportation Hub",
+      "district": "IL-08",
+      "description": "Integrated transportation hub connecting Metra, bus, and active transportation",
+      "status": "Completed",
+      "type": "Multimodal"
+    },
+    {
+      "year": 2023,
+      "program": "RAISE",
+      "amount": 25000000,
+      "recipient": "City of Rockford",
+      "project": "East Riverside Boulevard Complete Streets",
+      "district": "IL-16",
+      "description": "Complete streets reconstruction with transit priority and bike/ped facilities",
+      "status": "In Progress",
+      "type": "Complete Streets"
+    },
+    {
+      "year": 2022,
+      "program": "RAISE",
+      "amount": 12500000,
+      "recipient": "Madison County Transit",
+      "project": "MetroLink Emerson Park Extension",
+      "district": "IL-12",
+      "description": "Light rail extension into Emerson Park area",
+      "status": "In Progress",
+      "type": "Transit"
+    },
+    {
+      "year": 2024,
+      "program": "INFRA",
+      "amount": 45000000,
+      "recipient": "Illinois Department of Transportation",
+      "project": "I-55 Managed Lanes Project",
+      "district": "IL-03",
+      "description": "Managed lanes on I-55 from I-355 to I-90/94",
+      "status": "Design Phase",
+      "type": "Highway"
+    },
+    {
+      "year": 2023,
+      "program": "INFRA",
+      "amount": 60000000,
+      "recipient": "Illinois Department of Transportation",
+      "project": "CREATE Program - 75th Street Corridor Improvement",
+      "district": "IL-02",
+      "description": "Grade separations and freight rail improvements on 75th Street corridor",
+      "status": "In Progress",
+      "type": "Rail-Highway Grade Separation"
+    },
+    {
+      "year": 2022,
+      "program": "INFRA",
+      "amount": 35000000,
+      "recipient": "CenterPoint Intermodal Center",
+      "project": "CenterPoint Intermodal Access Improvements",
+      "district": "IL-11",
+      "description": "Highway access improvements to CenterPoint intermodal facility",
+      "status": "In Progress",
+      "type": "Freight"
+    },
+    {
+      "year": 2024,
+      "program": "MEGA",
+      "amount": 292000000,
+      "recipient": "Bi-State Development Agency",
+      "project": "MetroLink Blue Line Extension",
+      "district": "IL-12",
+      "description": "Major light rail extension into Illinois from St. Louis",
+      "status": "Planning",
+      "type": "Transit"
+    },
+    {
+      "year": 2024,
+      "program": "CRISI",
+      "amount": 18500000,
+      "recipient": "Metra",
+      "project": "Positive Train Control Implementation",
+      "district": "Multiple",
+      "description": "Safety system implementation across Metra network",
+      "status": "In Progress",
+      "type": "Rail Safety"
+    },
+    {
+      "year": 2023,
+      "program": "CRISI",
+      "amount": 25000000,
+      "recipient": "Illinois Department of Transportation",
+      "project": "Chicago-St. Louis High-Speed Rail Upgrades",
+      "district": "Multiple",
+      "description": "Track and signal improvements for higher-speed rail service",
+      "status": "In Progress",
+      "type": "Intercity Rail"
+    },
+    {
+      "year": 2022,
+      "program": "CRISI",
+      "amount": 15000000,
+      "recipient": "Canadian National Railway",
+      "project": "Joliet Intermodal Terminal Expansion",
+      "district": "IL-11",
+      "description": "Expansion of intermodal rail capacity",
+      "status": "Completed",
+      "type": "Freight Rail"
+    },
+    {
+      "year": 2024,
+      "program": "Bridge Investment",
+      "amount": 75000000,
+      "recipient": "Illinois Department of Transportation",
+      "project": "I-80 Bridge Replacement Program",
+      "district": "IL-11",
+      "description": "Major bridge replacements along I-80 corridor",
+      "status": "Design Phase",
+      "type": "Bridge"
+    },
+    {
+      "year": 2023,
+      "program": "Bridge Investment",
+      "amount": 50000000,
+      "recipient": "Illinois Department of Transportation",
+      "project": "Illinois River Bridge Replacement",
+      "district": "IL-16",
+      "description": "Replacement of aging Illinois River bridges",
+      "status": "In Progress",
+      "type": "Bridge"
+    },
+    {
+      "year": 2024,
+      "program": "PROTECT",
+      "amount": 12000000,
+      "recipient": "City of Chicago",
+      "project": "Lake Shore Drive Climate Resilience",
+      "district": "IL-05",
+      "description": "Flooding and climate resilience improvements to Lake Shore Drive",
+      "status": "Planning",
+      "type": "Resilience"
+    },
+    {
+      "year": 2023,
+      "program": "PROTECT",
+      "amount": 8500000,
+      "recipient": "Southern Illinois Regional Planning",
+      "project": "Flood Resilient Transportation Network",
+      "district": "IL-12",
+      "description": "Flood mitigation for critical transportation corridors",
+      "status": "In Progress",
+      "type": "Resilience"
+    },
+    {
+      "year": 2023,
+      "program": "Port Infrastructure",
+      "amount": 20000000,
+      "recipient": "Illinois International Port District",
+      "project": "Port of Chicago Modernization",
+      "district": "IL-07",
+      "description": "Port facility upgrades and capacity expansion",
+      "status": "In Progress",
+      "type": "Port"
+    }
+  ],
+  "analysis": {
+    "by_district": {
+      "IL-01": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "RAISE",
+            "amount": 25000000,
+            "recipient": "City of Chicago",
+            "project": "Red Line Extension Transit Project",
+            "district": "IL-01",
+            "description": "Red Line extension providing critical transit access to South Side communities",
+            "status": "Awarded",
+            "type": "Transit"
+          }
+        ],
+        "total_amount": 27558823.529411763,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-11": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "RAISE",
+            "amount": 20000000,
+            "recipient": "Will County",
+            "project": "Arsenal Road Improvement Project",
+            "district": "IL-11",
+            "description": "Widening and improvement of Arsenal Road to support industrial development",
+            "status": "Awarded",
+            "type": "Highway"
+          },
+          {
+            "year": 2022,
+            "program": "INFRA",
+            "amount": 35000000,
+            "recipient": "CenterPoint Intermodal Center",
+            "project": "CenterPoint Intermodal Access Improvements",
+            "district": "IL-11",
+            "description": "Highway access improvements to CenterPoint intermodal facility",
+            "status": "In Progress",
+            "type": "Freight"
+          },
+          {
+            "year": 2022,
+            "program": "CRISI",
+            "amount": 15000000,
+            "recipient": "Canadian National Railway",
+            "project": "Joliet Intermodal Terminal Expansion",
+            "district": "IL-11",
+            "description": "Expansion of intermodal rail capacity",
+            "status": "Completed",
+            "type": "Freight Rail"
+          },
+          {
+            "year": 2024,
+            "program": "Bridge Investment",
+            "amount": 75000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "I-80 Bridge Replacement Program",
+            "district": "IL-11",
+            "description": "Major bridge replacements along I-80 corridor",
+            "status": "Design Phase",
+            "type": "Bridge"
+          }
+        ],
+        "total_amount": 147558823.52941176,
+        "grant_count": 4,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-08": {
+        "grants": [
+          {
+            "year": 2023,
+            "program": "RAISE",
+            "amount": 15750000,
+            "recipient": "City of Elgin",
+            "project": "Downtown Elgin Multimodal Transportation Hub",
+            "district": "IL-08",
+            "description": "Integrated transportation hub connecting Metra, bus, and active transportation",
+            "status": "Completed",
+            "type": "Multimodal"
+          }
+        ],
+        "total_amount": 18308823.529411763,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-16": {
+        "grants": [
+          {
+            "year": 2023,
+            "program": "RAISE",
+            "amount": 25000000,
+            "recipient": "City of Rockford",
+            "project": "East Riverside Boulevard Complete Streets",
+            "district": "IL-16",
+            "description": "Complete streets reconstruction with transit priority and bike/ped facilities",
+            "status": "In Progress",
+            "type": "Complete Streets"
+          },
+          {
+            "year": 2023,
+            "program": "Bridge Investment",
+            "amount": 50000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "Illinois River Bridge Replacement",
+            "district": "IL-16",
+            "description": "Replacement of aging Illinois River bridges",
+            "status": "In Progress",
+            "type": "Bridge"
+          }
+        ],
+        "total_amount": 77558823.52941176,
+        "grant_count": 2,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-12": {
+        "grants": [
+          {
+            "year": 2022,
+            "program": "RAISE",
+            "amount": 12500000,
+            "recipient": "Madison County Transit",
+            "project": "MetroLink Emerson Park Extension",
+            "district": "IL-12",
+            "description": "Light rail extension into Emerson Park area",
+            "status": "In Progress",
+            "type": "Transit"
+          },
+          {
+            "year": 2024,
+            "program": "MEGA",
+            "amount": 292000000,
+            "recipient": "Bi-State Development Agency",
+            "project": "MetroLink Blue Line Extension",
+            "district": "IL-12",
+            "description": "Major light rail extension into Illinois from St. Louis",
+            "status": "Planning",
+            "type": "Transit"
+          },
+          {
+            "year": 2023,
+            "program": "PROTECT",
+            "amount": 8500000,
+            "recipient": "Southern Illinois Regional Planning",
+            "project": "Flood Resilient Transportation Network",
+            "district": "IL-12",
+            "description": "Flood mitigation for critical transportation corridors",
+            "status": "In Progress",
+            "type": "Resilience"
+          }
+        ],
+        "total_amount": 315558823.5294118,
+        "grant_count": 3,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-03": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "INFRA",
+            "amount": 45000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "I-55 Managed Lanes Project",
+            "district": "IL-03",
+            "description": "Managed lanes on I-55 from I-355 to I-90/94",
+            "status": "Design Phase",
+            "type": "Highway"
+          }
+        ],
+        "total_amount": 47558823.52941176,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-02": {
+        "grants": [
+          {
+            "year": 2023,
+            "program": "INFRA",
+            "amount": 60000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "CREATE Program - 75th Street Corridor Improvement",
+            "district": "IL-02",
+            "description": "Grade separations and freight rail improvements on 75th Street corridor",
+            "status": "In Progress",
+            "type": "Rail-Highway Grade Separation"
+          }
+        ],
+        "total_amount": 62558823.52941176,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "Multiple": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "CRISI",
+            "amount": 18500000,
+            "recipient": "Metra",
+            "project": "Positive Train Control Implementation",
+            "district": "Multiple",
+            "description": "Safety system implementation across Metra network",
+            "status": "In Progress",
+            "type": "Rail Safety"
+          },
+          {
+            "year": 2023,
+            "program": "CRISI",
+            "amount": 25000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "Chicago-St. Louis High-Speed Rail Upgrades",
+            "district": "Multiple",
+            "description": "Track and signal improvements for higher-speed rail service",
+            "status": "In Progress",
+            "type": "Intercity Rail"
+          }
+        ],
+        "total_amount": 43500000,
+        "grant_count": 2
+      },
+      "IL-05": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "PROTECT",
+            "amount": 12000000,
+            "recipient": "City of Chicago",
+            "project": "Lake Shore Drive Climate Resilience",
+            "district": "IL-05",
+            "description": "Flooding and climate resilience improvements to Lake Shore Drive",
+            "status": "Planning",
+            "type": "Resilience"
+          }
+        ],
+        "total_amount": 14558823.529411765,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-07": {
+        "grants": [
+          {
+            "year": 2023,
+            "program": "Port Infrastructure",
+            "amount": 20000000,
+            "recipient": "Illinois International Port District",
+            "project": "Port of Chicago Modernization",
+            "district": "IL-07",
+            "description": "Port facility upgrades and capacity expansion",
+            "status": "In Progress",
+            "type": "Port"
+          }
+        ],
+        "total_amount": 22558823.529411763,
+        "grant_count": 1,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-04": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-06": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-09": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-10": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-13": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-14": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-15": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      },
+      "IL-17": {
+        "grants": [],
+        "total_amount": 2558823.529411765,
+        "grant_count": 0,
+        "multiple_share": 2558823.529411765
+      }
+    },
+    "by_program": {
+      "RAISE": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "RAISE",
+            "amount": 25000000,
+            "recipient": "City of Chicago",
+            "project": "Red Line Extension Transit Project",
+            "district": "IL-01",
+            "description": "Red Line extension providing critical transit access to South Side communities",
+            "status": "Awarded",
+            "type": "Transit"
+          },
+          {
+            "year": 2024,
+            "program": "RAISE",
+            "amount": 20000000,
+            "recipient": "Will County",
+            "project": "Arsenal Road Improvement Project",
+            "district": "IL-11",
+            "description": "Widening and improvement of Arsenal Road to support industrial development",
+            "status": "Awarded",
+            "type": "Highway"
+          },
+          {
+            "year": 2023,
+            "program": "RAISE",
+            "amount": 15750000,
+            "recipient": "City of Elgin",
+            "project": "Downtown Elgin Multimodal Transportation Hub",
+            "district": "IL-08",
+            "description": "Integrated transportation hub connecting Metra, bus, and active transportation",
+            "status": "Completed",
+            "type": "Multimodal"
+          },
+          {
+            "year": 2023,
+            "program": "RAISE",
+            "amount": 25000000,
+            "recipient": "City of Rockford",
+            "project": "East Riverside Boulevard Complete Streets",
+            "district": "IL-16",
+            "description": "Complete streets reconstruction with transit priority and bike/ped facilities",
+            "status": "In Progress",
+            "type": "Complete Streets"
+          },
+          {
+            "year": 2022,
+            "program": "RAISE",
+            "amount": 12500000,
+            "recipient": "Madison County Transit",
+            "project": "MetroLink Emerson Park Extension",
+            "district": "IL-12",
+            "description": "Light rail extension into Emerson Park area",
+            "status": "In Progress",
+            "type": "Transit"
+          }
+        ],
+        "total_amount": 98250000,
+        "count": 5
+      },
+      "INFRA": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "INFRA",
+            "amount": 45000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "I-55 Managed Lanes Project",
+            "district": "IL-03",
+            "description": "Managed lanes on I-55 from I-355 to I-90/94",
+            "status": "Design Phase",
+            "type": "Highway"
+          },
+          {
+            "year": 2023,
+            "program": "INFRA",
+            "amount": 60000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "CREATE Program - 75th Street Corridor Improvement",
+            "district": "IL-02",
+            "description": "Grade separations and freight rail improvements on 75th Street corridor",
+            "status": "In Progress",
+            "type": "Rail-Highway Grade Separation"
+          },
+          {
+            "year": 2022,
+            "program": "INFRA",
+            "amount": 35000000,
+            "recipient": "CenterPoint Intermodal Center",
+            "project": "CenterPoint Intermodal Access Improvements",
+            "district": "IL-11",
+            "description": "Highway access improvements to CenterPoint intermodal facility",
+            "status": "In Progress",
+            "type": "Freight"
+          }
+        ],
+        "total_amount": 140000000,
+        "count": 3
+      },
+      "MEGA": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "MEGA",
+            "amount": 292000000,
+            "recipient": "Bi-State Development Agency",
+            "project": "MetroLink Blue Line Extension",
+            "district": "IL-12",
+            "description": "Major light rail extension into Illinois from St. Louis",
+            "status": "Planning",
+            "type": "Transit"
+          }
+        ],
+        "total_amount": 292000000,
+        "count": 1
+      },
+      "CRISI": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "CRISI",
+            "amount": 18500000,
+            "recipient": "Metra",
+            "project": "Positive Train Control Implementation",
+            "district": "Multiple",
+            "description": "Safety system implementation across Metra network",
+            "status": "In Progress",
+            "type": "Rail Safety"
+          },
+          {
+            "year": 2023,
+            "program": "CRISI",
+            "amount": 25000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "Chicago-St. Louis High-Speed Rail Upgrades",
+            "district": "Multiple",
+            "description": "Track and signal improvements for higher-speed rail service",
+            "status": "In Progress",
+            "type": "Intercity Rail"
+          },
+          {
+            "year": 2022,
+            "program": "CRISI",
+            "amount": 15000000,
+            "recipient": "Canadian National Railway",
+            "project": "Joliet Intermodal Terminal Expansion",
+            "district": "IL-11",
+            "description": "Expansion of intermodal rail capacity",
+            "status": "Completed",
+            "type": "Freight Rail"
+          }
+        ],
+        "total_amount": 58500000,
+        "count": 3
+      },
+      "Bridge Investment": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "Bridge Investment",
+            "amount": 75000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "I-80 Bridge Replacement Program",
+            "district": "IL-11",
+            "description": "Major bridge replacements along I-80 corridor",
+            "status": "Design Phase",
+            "type": "Bridge"
+          },
+          {
+            "year": 2023,
+            "program": "Bridge Investment",
+            "amount": 50000000,
+            "recipient": "Illinois Department of Transportation",
+            "project": "Illinois River Bridge Replacement",
+            "district": "IL-16",
+            "description": "Replacement of aging Illinois River bridges",
+            "status": "In Progress",
+            "type": "Bridge"
+          }
+        ],
+        "total_amount": 125000000,
+        "count": 2
+      },
+      "PROTECT": {
+        "grants": [
+          {
+            "year": 2024,
+            "program": "PROTECT",
+            "amount": 12000000,
+            "recipient": "City of Chicago",
+            "project": "Lake Shore Drive Climate Resilience",
+            "district": "IL-05",
+            "description": "Flooding and climate resilience improvements to Lake Shore Drive",
+            "status": "Planning",
+            "type": "Resilience"
+          },
+          {
+            "year": 2023,
+            "program": "PROTECT",
+            "amount": 8500000,
+            "recipient": "Southern Illinois Regional Planning",
+            "project": "Flood Resilient Transportation Network",
+            "district": "IL-12",
+            "description": "Flood mitigation for critical transportation corridors",
+            "status": "In Progress",
+            "type": "Resilience"
+          }
+        ],
+        "total_amount": 20500000,
+        "count": 2
+      },
+      "Port Infrastructure": {
+        "grants": [
+          {
+            "year": 2023,
+            "program": "Port Infrastructure",
+            "amount": 20000000,
+            "recipient": "Illinois International Port District",
+            "project": "Port of Chicago Modernization",
+            "district": "IL-07",
+            "description": "Port facility upgrades and capacity expansion",
+            "status": "In Progress",
+            "type": "Port"
+          }
+        ],
+        "total_amount": 20000000,
+        "count": 1
+      }
+    },
+    "totals": {
+      "total_amount": 754250000,
+      "total_grants": 17,
+      "average_grant": 44367647.058823526
+    }
+  }
+}

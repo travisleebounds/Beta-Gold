@@ -1,0 +1,446 @@
+{
+  "metadata": {
+    "source": "NCSL Autonomous Vehicles Legislation Database",
+    "source_url": "https://www.ncsl.org/transportation/autonomous-vehicles-legislation-database",
+    "last_updated": "2026-02-08",
+    "note": "Complete AV legislation status by state"
+  },
+  "states": {
+    "California": {
+      "year": "2012",
+      "type": "Comprehensive",
+      "status": "Active testing and deployment with DMV oversight",
+      "law_name": "SB 1298 (2012), AB 1777 (2024)",
+      "agency": "California DMV"
+    },
+    "Nevada": {
+      "year": "2011",
+      "type": "Comprehensive",
+      "status": "First state to authorize AVs",
+      "law_name": "AB 511 (2011)",
+      "agency": "Nevada DMV"
+    },
+    "Florida": {
+      "year": "2012",
+      "type": "Comprehensive",
+      "status": "Full AV operation authorized",
+      "law_name": "SB 1580 (2024)",
+      "agency": "Florida DOT"
+    },
+    "Arizona": {
+      "year": "2015",
+      "type": "Executive Order",
+      "status": "Executive order framework",
+      "law_name": "EO 2015-09",
+      "agency": "Arizona DOT"
+    },
+    "Michigan": {
+      "year": "2013",
+      "type": "Comprehensive",
+      "status": "Strong legislative framework",
+      "law_name": "MCL 257.665",
+      "agency": "Michigan DOT"
+    },
+    "Texas": {
+      "year": "2017",
+      "type": "Comprehensive",
+      "status": "ADS defined as operator",
+      "law_name": "HB 2205",
+      "agency": "Texas DOT"
+    },
+    "Georgia": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing authorized",
+      "law_name": "SB 219",
+      "agency": "Georgia DOT"
+    },
+    "Tennessee": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing framework",
+      "law_name": "SB 151",
+      "agency": "Tennessee DOT"
+    },
+    "North Carolina": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing permitted",
+      "law_name": "HB 469",
+      "agency": "NC DOT"
+    },
+    "Colorado": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing authorized with pending enhancements",
+      "law_name": "HB 1325",
+      "agency": "Colorado DOT",
+      "active_bills": [
+        {
+          "bill": "HB 1156",
+          "status": "Committee",
+          "description": "Autonomous vehicle cybersecurity standards"
+        },
+        {
+          "bill": "SB 089",
+          "status": "First Reading",
+          "description": "AV data collection and privacy protections"
+        }
+      ]
+    },
+    "Virginia": {
+      "year": "2018",
+      "type": "Testing",
+      "status": "Testing permitted",
+      "law_name": "HB 1562",
+      "agency": "Virginia DMV"
+    },
+    "Pennsylvania": {
+      "year": "2022",
+      "type": "Testing",
+      "status": "Testing program",
+      "law_name": "Act 122",
+      "agency": "PennDOT"
+    },
+    "Kentucky": {
+      "year": "2024",
+      "type": "Testing",
+      "status": "Recently enacted",
+      "law_name": "HB 47",
+      "agency": "KY Transportation"
+    },
+    "Mississippi": {
+      "year": "2023",
+      "type": "Comprehensive",
+      "status": "MS FAVE Act",
+      "law_name": "HB 1003",
+      "agency": "MS DOT"
+    },
+    "Arkansas": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing authorized",
+      "law_name": "HB 1754",
+      "agency": "Arkansas DOT"
+    },
+    "Connecticut": {
+      "year": "2017",
+      "type": "Study",
+      "status": "Study committee",
+      "law_name": "PA 17-114",
+      "agency": "Connecticut DOT"
+    },
+    "Washington": {
+      "year": "2018",
+      "type": "Testing",
+      "status": "Testing authorized with pending liability updates",
+      "law_name": "HB 2970",
+      "agency": "Washington DOL",
+      "active_bills": [
+        {
+          "bill": "SB 5098",
+          "status": "Committee",
+          "description": "AV manufacturer liability and insurance"
+        }
+      ]
+    },
+    "Utah": {
+      "year": "2019",
+      "type": "Testing",
+      "status": "Regulatory sandbox",
+      "law_name": "HB 373",
+      "agency": "Utah DOT"
+    },
+    "Louisiana": {
+      "year": "2018",
+      "type": "Testing",
+      "status": "Testing authorized",
+      "law_name": "HB 308",
+      "agency": "Louisiana DOT"
+    },
+    "Wisconsin": {
+      "year": "2018",
+      "type": "Study",
+      "status": "Research program",
+      "law_name": "Act 368",
+      "agency": "Wisconsin DOT"
+    },
+    "Indiana": {
+      "year": "2017",
+      "type": "Testing",
+      "status": "Testing permitted",
+      "law_name": "IC 9-32-15",
+      "agency": "Indiana DOT"
+    },
+    "Alabama": {
+      "year": "2018",
+      "type": "Study",
+      "status": "Study committee",
+      "law_name": "HCR 67",
+      "agency": "Alabama DOT"
+    },
+    "Illinois": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "Pending legislation under review",
+      "law_name": "None",
+      "agency": "Illinois DOT",
+      "active_bills": [
+        {
+          "bill": "HB 3289",
+          "status": "Committee",
+          "description": "AV operations testing and regulation"
+        },
+        {
+          "bill": "SB 1592",
+          "status": "Under Review",
+          "description": "AV insurance and liability framework"
+        }
+      ]
+    },
+    "Alaska": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Alaska DOT"
+    },
+    "Delaware": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Delaware DMV"
+    },
+    "Hawaii": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Hawaii DOT"
+    },
+    "Idaho": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Idaho DOT"
+    },
+    "Iowa": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Iowa DOT"
+    },
+    "Kansas": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Kansas DOT"
+    },
+    "Maine": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Maine DMV"
+    },
+    "Maryland": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Maryland MVA"
+    },
+    "Massachusetts": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "Active legislative consideration in progress",
+      "law_name": "None",
+      "agency": "Massachusetts RMV",
+      "active_bills": [
+        {
+          "bill": "H 3450",
+          "status": "Committee",
+          "description": "AV operational design domain requirements"
+        },
+        {
+          "bill": "S 1876",
+          "status": "Programming",
+          "description": "Connected and autonomous vehicle infrastructure"
+        }
+      ]
+    },
+    "Minnesota": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Minnesota DOT"
+    },
+    "Missouri": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Missouri DMV"
+    },
+    "Montana": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Montana DOT"
+    },
+    "Nebraska": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Nebraska DMV"
+    },
+    "New Hampshire": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "New Hampshire DMV"
+    },
+    "New Jersey": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "Regulatory framework under development",
+      "law_name": "None",
+      "agency": "New Jersey MVC",
+      "active_bills": [
+        {
+          "bill": "A 4526",
+          "status": "Committee",
+          "description": "Autonomous vehicle testing and licensing"
+        },
+        {
+          "bill": "S 2667",
+          "status": "Introduced",
+          "description": "AV safety standards and operator requirements"
+        }
+      ]
+    },
+    "New Mexico": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "New Mexico MVD"
+    },
+    "New York": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "Multiple AV bills under deliberation",
+      "law_name": "None",
+      "agency": "New York DMV",
+      "active_bills": [
+        {
+          "bill": "A 6447",
+          "status": "Committee",
+          "description": "Autonomous vehicle testing permits"
+        },
+        {
+          "bill": "S 4361",
+          "status": "Committee",
+          "description": "Insurance requirements for autonomous vehicles"
+        },
+        {
+          "bill": "A 7892",
+          "status": "Introduced",
+          "description": "Passenger safety standards for AVs"
+        }
+      ]
+    },
+    "North Dakota": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "North Dakota DOT"
+    },
+    "Ohio": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Ohio BMV"
+    },
+    "Oklahoma": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Oklahoma DMV"
+    },
+    "Oregon": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "Pending testing and deployment framework",
+      "law_name": "None",
+      "agency": "Oregon DMV",
+      "active_bills": [
+        {
+          "bill": "HB 2621",
+          "status": "Committee",
+          "description": "Autonomous vehicle testing authorization"
+        }
+      ]
+    },
+    "Rhode Island": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Rhode Island DMV"
+    },
+    "South Carolina": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "South Carolina DMV"
+    },
+    "South Dakota": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "South Dakota DMV"
+    },
+    "Vermont": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Vermont DMV"
+    },
+    "West Virginia": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "West Virginia DMV"
+    },
+    "Wyoming": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "Wyoming DMV"
+    },
+    "District of Columbia": {
+      "year": "N/A",
+      "type": "No Legislation",
+      "status": "No specific AV legislation",
+      "law_name": "None",
+      "agency": "DC DMV"
+    }
+  }
+}

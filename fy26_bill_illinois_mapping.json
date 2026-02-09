@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "source": "FY26 THUD Bill Text + Illinois MYP Allocations",
+    "bill_url": "https://www.appropriations.senate.gov/imo/media/doc/fy26_thud_bill_text.pdf",
+    "note": "Maps federal authorization levels to Illinois formula allocations"
+  },
+  "national_authorization": {
+    "total_fhwa": 62657105821,
+    "source": "FY26 THUD Bill, Title I - FHWA"
+  },
+  "illinois_programs": [
+    {
+      "program": "Totals",
+      "illinois_amount": 2492986638.6666665,
+      "illinois_share_pct": 3.978777196937052,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "National Highway Performance Program",
+      "illinois_amount": 1081906576.0,
+      "illinois_share_pct": 1.726710102268067,
+      "mentioned_in_bill": "Yes",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Surface Transportation Grant Block Program",
+      "illinois_amount": 526332929.0,
+      "illinois_share_pct": 0.8400211310487878,
+      "mentioned_in_bill": "Yes",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "0.045700289795918364",
+      "illinois_amount": 350919939.0,
+      "illinois_share_pct": 0.5600640731835184,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Bridge Formula",
+      "illinois_amount": 297268565.0,
+      "illinois_share_pct": 0.47443711468136185,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "245000000",
+      "illinois_amount": 263790802.0,
+      "illinois_share_pct": 0.4210070007919014,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "11196571",
+      "illinois_amount": 174404290.0,
+      "illinois_share_pct": 0.2783471845926645,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Congestion Mitigation & Air Quality Improvement Program",
+      "illinois_amount": 129845950.0,
+      "illinois_share_pct": 0.2072326008337288,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Highway Safety Improvement Program",
+      "illinois_amount": 111381154.0,
+      "illinois_share_pct": 0.17776300475511234,
+      "mentioned_in_bill": "Yes",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "National Highway Freight Program",
+      "illinois_amount": 53371185.0,
+      "illinois_share_pct": 0.08517978017125752,
+      "mentioned_in_bill": "Yes",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "PROTECT Formula",
+      "illinois_amount": 53364311.0,
+      "illinois_share_pct": 0.08516880934853928,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Carbon Reduction Program",
+      "illinois_amount": 46931353.0,
+      "illinois_share_pct": 0.07490188444719163,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "NEVI (Electric Vehicle) Formula",
+      "illinois_amount": 31655938.0,
+      "illinois_share_pct": 0.05052250273166986,
+      "mentioned_in_bill": "Yes",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "0.034313911408593495",
+      "illinois_amount": 28962182.0,
+      "illinois_share_pct": 0.0462233000080465,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Metropolitan Planning",
+      "illinois_amount": 24365244.0,
+      "illinois_share_pct": 0.03888664131664026,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "3110182769",
+      "illinois_amount": 23591471.0,
+      "illinois_share_pct": 0.037651708758136004,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "106722536",
+      "illinois_amount": 20764004.0,
+      "illinois_share_pct": 0.033139104859581284,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "HSIP",
+      "illinois_amount": 14121671.0,
+      "illinois_share_pct": 0.02253801993399289,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Railway-Highway Crossings Program",
+      "illinois_amount": 11306853.0,
+      "illinois_share_pct": 0.018045603689869797,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "0.4041226629525914",
+      "illinois_amount": 2637880.0,
+      "illinois_share_pct": 0.004210025288330338,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "0.032627803631838724",
+      "illinois_amount": 2607410.0,
+      "illinois_share_pct": 0.004161395528623518,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "0.03892130172090656",
+      "illinois_amount": 2589570.666666664,
+      "illinois_share_pct": 0.0041329241635651,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    },
+    {
+      "program": "Ferry Boats and Facilities (released in June)",
+      "illinois_amount": 2568573.666666664,
+      "illinois_share_pct": 0.004099413199844585,
+      "mentioned_in_bill": "Maybe",
+      "authorization_source": "23 USC (IIJA formula)"
+    }
+  ],
+  "major_findings": {
+    "total_illinois_fy26": 5747674490.0,
+    "top_program": "Totals",
+    "top_program_amount": 2492986638.6666665,
+    "illinois_share_of_national": 9.173220522537482
+  }
+}

@@ -1,0 +1,8 @@
+streamlit
+pandas
+folium
+streamlit-folium
+altair
+pillow
+requests
+beautifulsoup4

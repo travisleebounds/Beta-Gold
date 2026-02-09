@@ -1,0 +1,278 @@
+{
+  "metadata": {
+    "title": "Illinois Congressional District Transportation Funding Analysis",
+    "subtitle": "Comprehensive Analysis of Federal Formula & Competitive Funding",
+    "generated": "2026-02-05T17:38:59.373894",
+    "data_sources": [
+      "myp",
+      "idot_projects",
+      "bills"
+    ],
+    "author": "AI-Powered Analysis System"
+  },
+  "executive_summary": {
+    "total_funding_fy26": "$5.75 billion",
+    "key_findings": [
+      "Illinois federal highway funding growing 25.4% from FY24 to FY26",
+      "NHPP vs STBG balance: 2.1:1 ratio",
+      "8 urban vs 2 rural districts",
+      "New IIJA programs create opportunities for transformative projects",
+      "$297M dedicated bridge funding"
+    ],
+    "districts_analyzed": 17,
+    "programs_analyzed": 5
+  },
+  "formula_analysis": {
+    "title": "FHWA Formula Fund Analysis for Illinois",
+    "formulas": {
+      "NHPP": {
+        "statute": "23 USC \u00a7 119",
+        "description": "National Highway Performance Program",
+        "allocation_method": "Formula based on lane-miles, vehicle-miles traveled on Interstate, and other factors",
+        "illinois_share": "Approximately 3.8% of national total",
+        "key_factors": [
+          "Interstate System lane-miles",
+          "Vehicle-miles traveled on Interstate",
+          "Diesel fuel used on highways",
+          "Freight tonnage"
+        ],
+        "flexibility": "Can be used on NHS, Interstate resurfacing, bridge replacement",
+        "illinois_advantage": "High freight volume through Chicago benefits Illinois",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section119"
+      },
+      "STBG": {
+        "statute": "23 USC \u00a7 133",
+        "description": "Surface Transportation Block Grant Program",
+        "allocation_method": "Formula based on population and other factors, with sub-allocations by area size",
+        "sub_allocations": {
+          "areas_over_200k": "Urbanized areas >200k population",
+          "areas_50k_to_200k": "Small urbanized areas",
+          "areas_under_50k": "Rural areas and small urban",
+          "state_flexible": "Available for any area (IDOT discretion)"
+        },
+        "illinois_distribution": {
+          "Chicago_metro": "Largest share - over 200k population",
+          "suburbs": "Mid-size urban areas",
+          "rural": "Southern and rural Illinois",
+          "state_control": "Portion for statewide projects"
+        },
+        "flexibility": "Most flexible federal program - roads, transit, bike/ped",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section133"
+      },
+      "HSIP": {
+        "statute": "23 USC \u00a7 148",
+        "description": "Highway Safety Improvement Program",
+        "allocation_method": "Formula based on fatalities and serious injuries",
+        "focus": "Data-driven safety improvements at high-crash locations",
+        "illinois_priority": "Urban intersections, rural highway segments with high crash rates",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section148"
+      },
+      "Bridge": {
+        "statute": "23 USC \u00a7 124",
+        "description": "Bridge Formula Program (IIJA)",
+        "allocation_method": "Formula based on bridge deck area in poor condition",
+        "illinois_situation": "Significant aging bridge inventory, especially in Chicago metro",
+        "priority": "Structurally deficient and functionally obsolete bridges",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section124"
+      },
+      "Carbon_Reduction": {
+        "statute": "23 USC \u00a7 175",
+        "description": "Carbon Reduction Program (IIJA new)",
+        "allocation_method": "Formula by state based on emissions",
+        "eligible_projects": [
+          "Electric vehicle charging infrastructure",
+          "Public transportation improvements",
+          "Active transportation (bike/ped)",
+          "Traffic flow improvements",
+          "Alternative fuel vehicles"
+        ],
+        "illinois_opportunity": "Chicago transit + EV infrastructure = strong fit",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title23-section175"
+      }
+    }
+  },
+  "district_allocations": {
+    "IL-01": {
+      "stbg_formula": 37448217.65313543,
+      "type": "Urban (>200K)",
+      "representative": "Jonathan Jackson"
+    },
+    "IL-03": {
+      "stbg_formula": 37448217.65313543,
+      "type": "Urban (>200K)",
+      "representative": "Delia Ramirez"
+    },
+    "IL-04": {
+      "stbg_formula": 37448217.65313543,
+      "type": "Urban (>200K)",
+      "representative": "Jes\u00fas Garc\u00eda"
+    },
+    "IL-05": {
+      "stbg_formula": 37448217.65313543,
+      "type": "Urban (>200K)",
+      "representative": "Mike Quigley"
+    },
+    "IL-07": {
+      "stbg_formula": 37448217.65313543,
+      "type": "Urban (>200K)",
+      "representative": "Danny Davis"
+    },
+    "IL-02": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Robin Kelly"
+    },
+    "IL-06": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Sean Casten"
+    },
+    "IL-08": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Raja Krishnamoorthi"
+    },
+    "IL-09": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Jan Schakowsky"
+    },
+    "IL-10": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Brad Schneider"
+    },
+    "IL-11": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Bill Foster"
+    },
+    "IL-14": {
+      "stbg_formula": 10188012.109520987,
+      "type": "Suburban",
+      "representative": "Lauren Underwood"
+    },
+    "IL-12": {
+      "stbg_formula": 17219151.606704444,
+      "type": "Rural",
+      "representative": "Mike Bost"
+    },
+    "IL-15": {
+      "stbg_formula": 17219151.606704444,
+      "type": "Rural",
+      "representative": "Mary Miller"
+    },
+    "IL-13": {
+      "stbg_formula": 10787636.631216073,
+      "type": "Mixed Urban/Rural",
+      "representative": "Nikki Budzinski"
+    },
+    "IL-16": {
+      "stbg_formula": 10787636.631216073,
+      "type": "Mixed Urban/Rural",
+      "representative": "Darin LaHood"
+    },
+    "IL-17": {
+      "stbg_formula": 10787636.631216073,
+      "type": "Mixed Urban/Rural",
+      "representative": "Eric Sorensen"
+    }
+  },
+  "insights": {
+    "title": "Illinois Transportation Funding Analysis & Insights",
+    "generated": "2026-02-05T17:38:59.373740",
+    "sections": [
+      {
+        "title": "\ud83d\udcb0 Overall Funding Trajectory",
+        "finding": "Illinois federal highway funding growing 25.4% from FY24 to FY26",
+        "details": [
+          "FY 2024: $4.58 billion",
+          "FY 2026: $5.75 billion",
+          "Increase: $1165 million over 2 years"
+        ],
+        "driver": "IIJA (Infrastructure Investment & Jobs Act) increased authorization levels",
+        "implication": "More resources available for major projects and system preservation"
+      },
+      {
+        "title": "\u2696\ufe0f Program Flexibility",
+        "finding": "NHPP vs STBG balance: 2.1:1 ratio",
+        "details": [
+          "NHPP (more restricted): $1.08B",
+          "STBG (more flexible): $0.53B",
+          "NHPP focus: Interstate & NHS system",
+          "STBG focus: Any road, plus transit, bike/ped"
+        ],
+        "recommendation": "STBG provides more local flexibility - maximize use for multimodal projects",
+        "strategy": "Consider shifting eligible projects to STBG to preserve NHPP for Interstate needs"
+      },
+      {
+        "title": "\ud83d\uddfa\ufe0f Geographic Distribution",
+        "finding": "8 urban vs 2 rural districts",
+        "details": [
+          "Urban/Suburban districts: 8 (majority)",
+          "Rural districts: 2",
+          "STBG formula ensures both urban and rural receive dedicated funding",
+          "Population-based formulas naturally favor urban areas"
+        ],
+        "equity_note": "Rural areas receive proportionally more per-capita due to higher maintenance costs per mile",
+        "political_note": "Bipartisan geographic balance built into formulas"
+      },
+      {
+        "title": "\ud83c\udf31 Climate & Innovation Opportunities",
+        "finding": "New IIJA programs create opportunities for transformative projects",
+        "programs": {
+          "Carbon Reduction": {
+            "amount": "$46.9M",
+            "use_cases": [
+              "EV charging",
+              "Transit improvements",
+              "Bike/ped infrastructure",
+              "Traffic flow optimization"
+            ],
+            "illinois_strength": "Chicago transit system ideal for carbon reduction investments"
+          },
+          "NEVI (EV Charging)": {
+            "amount": "$31.7M",
+            "requirement": "Build out EV charging corridors on Interstate system",
+            "illinois_advantage": "Major freight corridors + Chicago hub = strong EV charging demand"
+          }
+        },
+        "recommendation": "Prioritize these programs - less competition, high visibility, future-focused"
+      },
+      {
+        "title": "\ud83c\udf09 Bridge Investment Focus",
+        "finding": "$297M dedicated bridge funding",
+        "context": "Illinois has significant aging bridge infrastructure",
+        "priority_districts": [
+          "IL-01, IL-03: Chicago urban bridges",
+          "IL-11: I-80 corridor bridges",
+          "IL-17: Mississippi River crossings"
+        ],
+        "strategy": "Leverage dedicated bridge funds + competitive RAISE/INFRA for major projects"
+      }
+    ]
+  },
+  "recommendations": {
+    "immediate": [
+      "Maximize STBG flexibility for local priorities",
+      "Target new IIJA programs (Carbon, NEVI) for high-visibility projects",
+      "Coordinate district-level project lists with state MYP"
+    ],
+    "strategic": [
+      "Build coalition for competitive grants (RAISE, INFRA)",
+      "Align state/local projects with federal eligibility",
+      "Track obligation deadlines - use it or lose it"
+    ],
+    "political": [
+      "Bipartisan opportunities in bridge, safety programs",
+      "Rural/urban balance already in formulas",
+      "Committee members can influence competitive grants"
+    ]
+  },
+  "next_steps": [
+    "Map specific projects to available funding programs",
+    "Identify competitive grant opportunities",
+    "Coordinate with IDOT on district priorities",
+    "Track quarterly obligation reports"
+  ]
+}

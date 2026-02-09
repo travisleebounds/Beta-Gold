@@ -1,0 +1,2512 @@
+import re
+import streamlit as st
+st.set_page_config(page_title="Illinois Transportation Dashboard", page_icon="🔱", layout="wide")
+
+import pandas as pd
+import folium
+from streamlit_folium import st_folium
+from datetime import datetime
+import math
+import os
+import json
+import glob
+from PIL import Image
+from pathlib import Path
+import altair as alt
+
+# Validate essential files right at startup
+_essential_files = [
+    'members.json',
+    'illinois_general_assembly.json', 
+    'ncsl_av_complete.json',
+    'district_formula_allocations.json',
+    'discretionary_grants.json',
+]
+_missing = [f for f in _essential_files if not os.path.exists(f)]
+if _missing:
+    st.error(f"❌ Missing essential data files:\n\n" + "\n".join(f"  - {f}" for f in _missing))
+    st.info("Run the pipeline scripts to generate these files.")
+    st.stop()
+
+
+# ─── Check pipeline data status (no auto-run) ────────────────────────
+def _check_pipeline():
+    boundary_dir = "data/boundaries"
+    road_dir = "data/road"
+    return {
+        "boundaries": len(glob.glob(os.path.join(boundary_dir, "*.geojson"))) if os.path.isdir(boundary_dir) else 0,
+        "road_events": len(glob.glob(os.path.join(road_dir, "*.json"))) if os.path.isdir(road_dir) else 0,
+    }
+
+pipeline_status = _check_pipeline()
+
+# ─── Validate essential data files ────────────────────────────────────
+def _validate_essential_files():
+    """Check that all essential data files exist."""
+    essential_files = {
+        'members.json': 'Member roster',
+        'illinois_general_assembly.json': 'ILGA transportation bills',
+        'ncsl_av_complete.json': 'AV policy database',
+        'district_formula_allocations.json': 'Federal formula allocations',
+        'discretionary_grants.json': 'Discretionary grants data',
+    }
+    
+    missing = []
+    for filename, description in essential_files.items():
+        if not os.path.exists(filename):
+            missing.append(f"  - {filename} ({description})")
+    
+    if missing:
+        st.error(f"⚠️ Missing essential data files:\n\n" + "\n".join(missing))
+        st.stop()
+
+# ─── Load pipeline data helpers ───────────────────────────────────────
+def load_road_events(district_key):
+    """Load road event cache for a district."""
+    path = f"data/road/{district_key}.json"
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return None
+
+def load_all_road_events():
+    """Load all road event caches."""
+    events = {}
+    for path in sorted(glob.glob("data/road/*.json")):
+        key = os.path.basename(path).replace(".json", "")
+        with open(path) as f:
+            events[key] = json.load(f)
+    return events
+
+def load_members():
+    """Load the canonical member roster."""
+    if os.path.exists("members.json"):
+        with open("members.json") as f:
+            return json.load(f)
+    return None
+
+def load_boundary(district_key):
+    """Load GeoJSON boundary for a district."""
+    path = f"data/boundaries/{district_key}.geojson"
+    if os.path.exists(path):
+        with open(path) as f:
+            return json.load(f)
+    return None
+
+members_data = load_members()
+
+def display_federal_funding_for_district(cong_key: str):
+    """
+    Display federal funding data (formula allocations and discretionary grants) for a congressional district.
+    Called from District View and State Legislators profiles.
+    """
+    st.markdown(f"### 💰 Federal Funding Data (Congressional District {cong_key})")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    # Formula allocations
+    try:
+        with open('district_formula_allocations.json', 'r') as f:
+            formula = json.load(f)
+        
+        if cong_key in formula.get('district_allocations', {}):
+            alloc = formula['district_allocations'][cong_key]
+            col1.metric("Total Formula", f"${alloc['total_formula_est']/1e6:.1f}M")
+            col2.metric("STBG", f"${alloc['stbg_formula']/1e6:.1f}M")
+            col3.metric("NHPP", f"${alloc['nhpp_est']/1e6:.1f}M")
+            
+            # More details as expander
+            with st.expander("💼 Formula Allocation Details"):
+                detail_cols = st.columns(2)
+                with detail_cols[0]:
+                    st.markdown(f"**District:** {cong_key}")
+                    st.markdown(f"**Representative:** {alloc.get('representative', 'N/A')}")
+                with detail_cols[1]:
+                    st.markdown(f"**Per Capita (est.):** ${alloc['per_capita']:.0f}")
+                    st.markdown(f"**Population:** {alloc.get('population', 'N/A'):,}")
+        else:
+            st.info(f"No formula allocation data for {cong_key}")
+    except FileNotFoundError:
+        st.warning("district_formula_allocations.json not found")
+    except Exception as e:
+        st.error(f"Error loading formula data: {e}")
+    
+    st.markdown("---")
+    
+    # Discretionary grants
+    try:
+        with open('discretionary_grants.json', 'r') as f:
+            grants_data = json.load(f)
+        
+        related = [g for g in grants_data.get('grants', []) if g.get('district') == cong_key]
+        
+        if related:
+            # Summary metrics
+            total_grants = sum(g.get('amount', 0) for g in related)
+            recent_grants = [g for g in related if g.get('year', 0) >= 2023]
+            
+            grant_cols = st.columns(3)
+            grant_cols[0].metric("Total Discretionary Grants", f"${total_grants/1e6:.1f}M")
+            grant_cols[1].metric("Number of Awards", len(related))
+            grant_cols[2].metric("Recent (2023+)", len(recent_grants))
+            
+            # Breakdown by year and program
+            st.markdown("**Grant Awards Breakdown**")
+            
+            tab_grants, tab_programs = st.tabs(["📅 By Year", "📊 By Program"])
+            
+            with tab_grants:
+                by_year = {}
+                for g in related:
+                    year = g.get('year', 'Unknown')
+                    if year not in by_year:
+                        by_year[year] = 0
+                    by_year[year] += g.get('amount', 0)
+                
+                for year in sorted(by_year.keys(), reverse=True):
+                    st.markdown(f"**{year}:** ${by_year[year]/1e6:.2f}M")
+                
+                # Year-by-year chart
+                chart_df = pd.DataFrame([
+                    {'Year': str(year), 'Amount': amount} 
+                    for year, amount in sorted(by_year.items())
+                ])
+                if not chart_df.empty:
+                    chart = alt.Chart(chart_df).mark_bar().encode(
+                        x=alt.X('Year:N', title='Year'),
+                        y=alt.Y('Amount:Q', axis=alt.Axis(format='$,.0f'), title='Grant Amount'),
+                        tooltip=['Year', alt.Tooltip('Amount:Q', format='$,.0f')]
+                    ).properties(height=300)
+                    st.altair_chart(chart, use_container_width=True)
+            
+            with tab_programs:
+                by_program = {}
+                for g in related:
+                    prog = g.get('program', 'Unknown')
+                    if prog not in by_program:
+                        by_program[prog] = {'count': 0, 'amount': 0}
+                    by_program[prog]['count'] += 1
+                    by_program[prog]['amount'] += g.get('amount', 0)
+                
+                prog_list = []
+                for prog, data in sorted(by_program.items(), key=lambda x: x[1]['amount'], reverse=True):
+                    prog_list.append({
+                        'Program': prog,
+                        'Awards': data['count'],
+                        'Total': f"${data['amount']/1e6:.2f}M"
+                    })
+                
+                st.dataframe(pd.DataFrame(prog_list), width='stretch', hide_index=True)
+            
+            # Top awards table
+            st.markdown("**Top Discretionary Grants (by amount)**")
+            top_grants = sorted(related, key=lambda x: x.get('amount', 0), reverse=True)[:15]
+            
+            grant_table = []
+            for g in top_grants:
+                grant_table.append({
+                    'Year': g.get('year', 'N/A'),
+                    'Program': g.get('program', 'N/A'),
+                    'Amount': f"${g.get('amount', 0):,.0f}",
+                    'Project': (g.get('project', 'N/A') or 'N/A')[:80]
+                })
+            
+            st.dataframe(pd.DataFrame(grant_table), width='stretch', hide_index=True, height=300)
+        else:
+            st.info(f"No discretionary grants found for {cong_key}")
+    
+    except FileNotFoundError:
+        st.warning("discretionary_grants.json not found")
+    except Exception as e:
+        st.error(f"Error loading grants data: {e}")
+
+# ─── Sidebar Chatbot ──────────────────────────────────────────────────
+def build_dashboard_context():
+    """Build a context string summarizing all dashboard data for the chatbot."""
+    ctx = []
+    ctx.append("=== ILLINOIS TRANSPORTATION DASHBOARD DATA ===\n")
+
+    # Members roster
+    if members_data:
+        ctx.append("CONGRESSIONAL DELEGATION:")
+        if "senators" in members_data:
+            for s in members_data["senators"]:
+                ctx.append(f"  US Senator: {s['name']} ({s['party']}) - {s.get('title','')}")
+        if "congressional" in members_data:
+            for dk, m in members_data["congressional"].items():
+                ctx.append(f"  {dk}: Rep. {m['name']} ({m['party']}) - {m.get('area','')}, Committees: {', '.join(m.get('committees',[]))}")
+        ctx.append("")
+
+    # District data (hardcoded in app)
+    ctx.append("DISTRICT TRANSPORTATION DATA (17 Congressional Districts):")
+    try:
+        for dist_id, d in DISTRICTS.items():
+            ctx.append(f"  {dist_id} ({d.get('rep','')}, {d.get('party','')}) - {d.get('area','')}")
+            for c in d.get("closures", []):
+                ctx.append(f"    Closure: {c.get('route','')} at {c.get('location','')} - {c.get('type','')} [{c.get('status','')}]")
+            for c in d.get("construction", []):
+                ctx.append(f"    Construction: {c.get('route','')} at {c.get('location','')} - {c.get('type','')} [{c.get('status','')}] Budget: {c.get('budget','N/A')}")
+            for g in d.get("grants", []):
+                ctx.append(f"    Grant: {g.get('program','')} ${g.get('amount',0):,.0f} - {g.get('project','')}")
+    except:
+        pass
+    ctx.append("")
+
+    # Pipeline road events if available
+    road_dir = "data/road"
+    if os.path.isdir(road_dir):
+        road_files = glob.glob(os.path.join(road_dir, "*.json"))
+        if road_files:
+            ctx.append("LIVE ROAD EVENTS (from IDOT ArcGIS pipeline):")
+            for rf in sorted(road_files)[:20]:
+                key = os.path.basename(rf).replace(".json", "")
+                try:
+                    with open(rf) as f:
+                        rd = json.load(f)
+                    counts = rd.get("counts", {})
+                    ctx.append(f"  {key}: {rd.get('total',0)} events (closures={counts.get('closures',0)}, restrictions={counts.get('restrictions',0)}, construction={counts.get('construction',0)})")
+                    for t in rd.get("top", [])[:3]:
+                        ctx.append(f"    Top: {t.get('road','N/A')} - {t.get('type','')} - {t.get('description','')[:60]}")
+                except:
+                    pass
+            ctx.append("")
+
+    # Bills data
+    if real_bills_data:
+        ctx.append("TRANSPORTATION BILLS:")
+        for bill_id, bill in list(real_bills_data.items())[:10]:
+            if isinstance(bill, dict):
+                ctx.append(f"  {bill_id}: {bill.get('title', bill.get('short_title',''))[:80]}")
+        ctx.append("")
+
+    # Federal funding data
+    ctx.append("FEDERAL FUNDING: Illinois receives IIJA Highway Formula apportionments.")
+    ctx.append("Key programs: National Highway Performance, Surface Transportation Block Grant,")
+    ctx.append("Highway Safety Improvement, Railway-Highway Crossings, CMAQ, Metropolitan Planning.")
+    ctx.append("")
+
+    ctx.append("The dashboard also tracks: Discretionary Grants (RAISE, INFRA, SS4A, etc.),")
+    ctx.append("FY27 Budget Projections, IL General Assembly transportation legislation,")
+    ctx.append("AV/autonomous vehicle policy across 50 states, and meeting memos for all 17 districts.")
+
+    return "\n".join(ctx)
+
+# with st.sidebar:
+#     st.markdown("### 🤖 IDOT AI Assistant")
+
+with st.sidebar:
+    st.markdown("### 🤖 IDOT AI Assistant")
+
+    # OpenAI API key: Streamlit secrets -> env var -> manual input
+    api_key = None
+    if hasattr(st, "secrets") and "OPENAI_API_KEY" in st.secrets:
+        api_key = st.secrets["OPENAI_API_KEY"]
+    if not api_key:
+        import os
+        api_key = os.getenv("OPENAI_API_KEY", "").strip() or None
+    if not api_key:
+        api_key = (st.text_input("OpenAI API Key", type="password", key="api_key_input") or "").strip() or None
+        st.caption("Tip: set OPENAI_API_KEY in your shell or Streamlit secrets for persistence.")
+
+    # Chat UI
+    if "chat_messages" not in st.session_state:
+        st.session_state.chat_messages = []
+
+    if st.session_state.chat_messages and st.button("🗑️ Clear Chat", key="clear_chat_sidebar"):
+        st.session_state.chat_messages = []
+        st.rerun()
+
+    chat_container = st.container(height=420)
+    with chat_container:
+        for msg in st.session_state.chat_messages:
+            with st.chat_message(msg["role"]):
+                st.markdown(msg["content"])
+
+    prompt = st.chat_input("Ask about IL transportation…", key="sidebar_chat")
+
+    if prompt:
+        st.session_state.chat_messages.append({"role": "user", "content": prompt})
+        with chat_container:
+            with st.chat_message("user"):
+                st.markdown(prompt)
+
+        if not api_key:
+            with chat_container:
+                with st.chat_message("assistant"):
+                    st.error("❌ Missing OpenAI API key. Set OPENAI_API_KEY.")
+        else:
+            # Build system prompt with dashboard context
+            dashboard_context = build_dashboard_context()
+            system_prompt = f"""You are the IDOT AI Assistant, embedded in the Illinois Transportation Dashboard.
+You help users understand Illinois transportation data, policy, funding, and infrastructure.
+
+You have access to the following live dashboard data:
+
+{dashboard_context}
+
+Guidelines:
+- Be concise and specific. Reference actual data from the dashboard when relevant.
+- If asked about a specific district, reference the rep, closures, construction, and grants.
+- If asked about funding, reference IIJA allocations and discretionary grants.
+- If asked about legislation, reference tracked bills and IL General Assembly data.
+- If asked about something not in the data, say so honestly and provide general knowledge.
+- Keep answers focused and practical — this is a government/policy tool.
+- Format numbers with commas for readability.
+"""
+
+            try:
+                from openai import OpenAI
+                client = OpenAI(api_key=api_key)
+
+                # Keep last 10 turns
+                messages = [
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.chat_messages[-10:]
+                ]
+
+                resp = client.responses.create(
+                    model="gpt-5",
+                    input=[{"role": "system", "content": system_prompt}, *messages],
+                    max_output_tokens=700,
+                )
+                reply = resp.output_text
+
+                st.session_state.chat_messages.append({"role": "assistant", "content": reply})
+                with chat_container:
+                    with st.chat_message("assistant"):
+                        st.markdown(reply)
+
+            except Exception as e:
+                with chat_container:
+                    with st.chat_message("assistant"):
+                        st.error(f"❌ Error: {e}")
+"""
+            # Call OpenAI (ChatGPT) API
+            try:
+                from openai import OpenAI
+                client = OpenAI(api_key=api_key)
+
+                # Build messages (keep last 10 for context window)
+                messages = [
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.chat_messages[-10:]
+                ]
+
+                with chat_container:
+                    with st.chat_message("assistant"):
+                        with st.spinner("Thinking..."):
+                            resp = client.responses.create(
+                                model="gpt-5",
+                                input=[
+                                    {"role": "system", "content": system_prompt},
+                                    *messages,
+                                ],
+                                max_output_tokens=700,
+                            )
+                            reply = resp.output_text
+                            st.markdown(reply)
+
+                st.session_state.chat_messages.append({"role": "assistant", "content": reply})
+
+            except Exception as e:
+                error_msg = str(e)
+                if "authentication" in error_msg.lower() or "api key" in error_msg.lower():
+                    st.error("❌ Invalid API key. Check your OpenAI API key (OPENAI_API_KEY).")
+                else:
+                    st.error(f"❌ Error: {error_msg}")
+    # Clear chat button
+    if st.session_state.chat_messages:
+        if st.button("🗑️ Clear Chat", key="clear_chat"):
+            st.session_state.chat_messages = []
+            st.rerun()
+
+st.markdown('<style>\n    .preview-box {\n        background-color: #ffffff;\n        padding: 20px;\n        border-radius: 8px;\n        border-left: 5px solid #1f77b4;\n        margin: 15px 0;\n        box-shadow: 0 2px 8px rgba(0,0,0,0.1);\n        font-size: 15px;\n        line-height: 1.6;\n    }\n    .preview-box h4 {\n        margin-top: 0;\n        color: #1f77b4;\n        font-size: 18px;\n        font-weight: 600;\n    }\n    .preview-box p {\n        margin: 10px 0;\n        color: #333;\n    }\n    .preview-box strong {\n        color: #1f77b4;\n        font-weight: 600;\n    }\n    .preview-box a {\n        color: #1f77b4;\n        font-weight: 600;\n        text-decoration: none;\n        font-size: 16px;\n    }\n    .preview-box a:hover {\n        text-decoration: underline;\n    }\n</style>\n', unsafe_allow_html=True)
+
+st.markdown('<div style="font-size: 2.5rem; font-weight: 700; color: #1f77b4; text-align: center;">🚗 IDOT Ultimate Dashboard</div>', unsafe_allow_html=True)
+st.markdown("---")
+
+# Load real bill data if available
+def load_real_bills():
+    files = glob.glob("bills_*.json")
+    if files:
+        latest = sorted(files)[-1]
+        with open(latest, 'r') as f:
+            return json.load(f)
+    return {}
+
+real_bills_data = load_real_bills()
+
+# Load district boundaries (real GeoJSON from Census Bureau)
+DISTRICT_BOUNDARIES = {}
+if os.path.exists('il_congressional_boundaries.json'):
+    with open('il_congressional_boundaries.json', 'r') as f:
+        _raw_boundaries = json.load(f)
+    # Map IL-01 format keys to match DISTRICTS dict
+    for _bkey, _bval in _raw_boundaries.items():
+        # Convert IL-01 to IL-01 (already matches), but also handle IL-1 etc.
+        _dnum = int(_bkey.split('-')[1])
+        _mapped_key = f"IL-{_dnum:02d}"
+        DISTRICT_BOUNDARIES[_mapped_key] = _bval
+    print(f"✅ Loaded {len(DISTRICT_BOUNDARIES)} real congressional boundaries")
+elif os.path.isdir('data/boundaries'):
+    # Load individual GeoJSON files from the boundaries directory
+    for _i in range(1, 18):
+        _path = f"data/boundaries/IL-{_i:02d}.geojson"
+        if os.path.exists(_path):
+            with open(_path, 'r') as f:
+                DISTRICT_BOUNDARIES[f"IL-{_i:02d}"] = json.load(f)
+    if DISTRICT_BOUNDARIES:
+        print(f"✅ Loaded {len(DISTRICT_BOUNDARIES)} boundaries from data/boundaries/")
+else:
+    print("⚠️ No boundary files found. Run: python fetch_boundaries_v2.py")
+
+# Load dynamic IDOT data if available
+def load_idot_data():
+    """Load IDOT construction/closure data from JSON if available"""
+    try:
+        idot_files = glob.glob("idot_dynamic_*.json")
+        if idot_files:
+            latest = sorted(idot_files)[-1]
+            with open(latest, 'r') as f:
+                return json.load(f)
+    except:
+        pass
+    return {}
+
+idot_live_data = load_idot_data()
+
+
+def geojson_to_folium_coords(geometry):
+    """
+    Convert a GeoJSON geometry (Polygon or MultiPolygon) to a list of 
+    folium-compatible coordinate rings: [ [[lat, lon], ...], ... ]
+    Returns a list of rings (each ring is a list of [lat, lon] pairs).
+    """
+    if geometry is None:
+        return []
+    
+    geo_type = geometry.get('type', '')
+    coords = geometry.get('coordinates', [])
+    
+    rings = []
+    if geo_type == 'Polygon':
+        # coords = [ [ [lon, lat], ... ] ]  (outer ring + optional holes)
+        for ring in coords:
+            rings.append([[lat, lon] for lon, lat in ring])
+    elif geo_type == 'MultiPolygon':
+        # coords = [ [ [ [lon, lat], ... ] ], ... ]
+        for polygon in coords:
+            for ring in polygon:
+                rings.append([[lat, lon] for lon, lat in ring])
+    
+    return rings
+
+
+def add_district_boundary_to_map(m, district_id, info, boundary_data=None, fill_opacity=0.15, weight=2):
+    """Add a district boundary (real or rectangle fallback) to a folium map."""
+    color = '#4A90E2' if info['party'] == 'D' else '#E24A4A'
+    popup_text = f"<b>{district_id}: {info['rep']} ({info['party']})</b><br>{info['area']}"
+    
+    if boundary_data and 'geometry' in boundary_data:
+        rings = geojson_to_folium_coords(boundary_data['geometry'])
+        for ring in rings:
+            folium.Polygon(
+                locations=ring,
+                color=color,
+                fill=True,
+                fillColor=color,
+                fillOpacity=fill_opacity,
+                weight=weight,
+                popup=popup_text
+            ).add_to(m)
+    else:
+        # Fallback: use the rectangle boundaries from DISTRICTS dict
+        folium_coords = info.get('boundary', [])
+        if folium_coords:
+            folium.Polygon(
+                locations=folium_coords,
+                color=color,
+                fill=True,
+                fillColor=color,
+                fillOpacity=fill_opacity,
+                weight=weight,
+                popup=popup_text
+            ).add_to(m)
+
+# District data
+DISTRICTS = {
+    "IL-01": {
+        "rep": "Jonathan Jackson", "party": "D", "area": "Chicago South Side", 
+        "lat": 41.7276, "lon": -87.6243,
+        "committees": ["Agriculture", "Foreign Affairs"],
+        "boundary": [[41.6447, -87.7105], [41.6447, -87.5241], [41.8085, -87.5241], [41.8085, -87.7105], [41.6447, -87.7105]],
+        "closures": [{"route": "I-94", "location": "95th Street", "type": "Lane closure", "status": "Active", "lat": 41.7220, "lon": -87.6246, "description": "Temporary lane closures for bridge work", "url": "https://www.gettingaroundillinois.com/"}],
+        "construction": [{"route": "I-94", "location": "95th Street", "type": "Bridge replacement", "status": "Active", "lat": 41.7220, "lon": -87.6246, "description": "Bridge deck replacement and lane reconfiguration project - 18 month timeline", "url": "https://www.gettingaroundillinois.com/", "budget": "$8.5M", "timeline": "2024-2026"}],
+        "grants": [{"program": "RAISE", "amount": 15000000, "project": "Red Line Extension", "lat": 41.7220, "lon": -87.6246, "description": "CTA Red Line extension to 130th Street", "url": "https://www.transportation.gov/RAISEgrants"}]
+    },
+    "IL-02": {
+        "rep": "Robin Kelly", "party": "D", "area": "South suburbs", 
+        "lat": 41.5992, "lon": -87.6772,
+        "committees": ["Energy and Commerce", "Oversight"],
+        "boundary": [[41.4500, -87.8000], [41.4500, -87.5500], [41.6447, -87.5500], [41.6447, -87.8000], [41.4500, -87.8000]],
+        "closures": [{"route": "I-57", "location": "Matteson", "type": "Lane shifts", "status": "Planned", "lat": 41.5039, "lon": -87.7323, "description": "Temporary lane shifts during resurfacing", "url": "https://idot.illinois.gov/"}],
+        "construction": [{"route": "I-57", "location": "Matteson", "type": "Resurfacing", "status": "Planned Q2 2026", "lat": 41.5039, "lon": -87.7323, "description": "Interstate resurfacing and shoulder widening project", "url": "https://idot.illinois.gov/", "budget": "$12M", "timeline": "2026-2027"}],
+        "grants": [{"program": "INFRA", "amount": 12500000, "project": "Lincoln Highway Corridor", "lat": 41.5039, "lon": -87.7323, "description": "Safety and capacity improvements on US-30", "url": "https://www.transportation.gov/INFRAgrants"}]
+    },
+    "IL-03": {
+        "rep": "Delia Ramirez", "party": "D", "area": "Northwest Chicago", 
+        "lat": 41.9208, "lon": -87.8084,
+        "committees": ["Homeland Security", "Oversight"],
+        "boundary": [[41.8500, -87.9500], [41.8500, -87.6500], [41.9900, -87.6500], [41.9900, -87.9500], [41.8500, -87.9500]],
+        "closures": [{"route": "I-90", "location": "Kennedy Expressway", "type": "Weekend closures", "status": "Active", "lat": 41.9742, "lon": -87.9073, "description": "Weekend lane closures for bridge repairs", "url": "https://www.gettingaroundillinois.com/"}],
+        "construction": [{"route": "I-90", "location": "Kennedy Expressway", "type": "Bridge repair", "status": "Active", "lat": 41.9742, "lon": -87.9073, "description": "Structural repairs to Kennedy Expressway bridges - multi-year project", "url": "https://www.gettingaroundillinois.com/", "budget": "$45M", "timeline": "2024-2027"}],
+        "grants": [{"program": "CRISI", "amount": 35000000, "project": "Milwaukee District North Line", "lat": 41.9742, "lon": -87.9073, "description": "Metra line capacity and safety upgrades", "url": "https://railroads.dot.gov/grants-loans/crisi"}]
+    },
+    "IL-04": {
+        "rep": "Jesús García", "party": "D", "area": "Southwest Chicago", 
+        "lat": 41.8370, "lon": -87.7446,
+        "committees": ["Financial Services", "Transportation"],
+        "boundary": [[41.7000, -87.8500], [41.7000, -87.6000], [41.9000, -87.6000], [41.9000, -87.8500], [41.7000, -87.8500]],
+        "closures": [{"route": "Cicero Ave", "location": "26th Street", "type": "Complete streets", "status": "Design", "lat": 41.8370, "lon": -87.7446, "description": "Complete streets redesign with transit priority lanes", "url": "https://www.chicago.gov/"}],
+        "construction": [],
+        "grants": [{"program": "RAISE", "amount": 18000000, "project": "Cicero Multimodal Corridor", "lat": 41.8370, "lon": -87.7446, "description": "Multimodal improvements on Cicero Avenue", "url": "https://www.transportation.gov/RAISEgrants"}]
+    },
+    "IL-05": {
+        "rep": "Mike Quigley", "party": "D", "area": "North Chicago", 
+        "lat": 41.9534, "lon": -87.6981,
+        "committees": ["Appropriations", "Intelligence"],
+        "boundary": [[41.9000, -87.8000], [41.9000, -87.6000], [42.0500, -87.6000], [42.0500, -87.8000], [41.9000, -87.8000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-06": {
+        "rep": "Sean Casten", "party": "D", "area": "Western suburbs", 
+        "lat": 41.8256, "lon": -88.0814,
+        "committees": ["Financial Services", "Science"],
+        "boundary": [[41.7000, -88.3000], [41.7000, -87.9000], [41.9500, -87.9000], [41.9500, -88.3000], [41.7000, -88.3000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-07": {
+        "rep": "Danny Davis", "party": "D", "area": "West Chicago", 
+        "lat": 41.8781, "lon": -87.6298,
+        "committees": ["Ways and Means"],
+        "boundary": [[41.8000, -87.7500], [41.8000, -87.5500], [41.9500, -87.5500], [41.9500, -87.7500], [41.8000, -87.7500]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-08": {
+        "rep": "Raja Krishnamoorthi", "party": "D", "area": "Northwest suburbs", 
+        "lat": 42.0883, "lon": -88.1357,
+        "committees": ["Oversight", "Intelligence"],
+        "boundary": [[42.0000, -88.4000], [42.0000, -87.9000], [42.2500, -87.9000], [42.2500, -88.4000], [42.0000, -88.4000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-09": {
+        "rep": "Jan Schakowsky", "party": "D", "area": "North suburbs", 
+        "lat": 42.0450, "lon": -87.6877,
+        "committees": ["Energy and Commerce", "Budget"],
+        "boundary": [[42.0000, -87.8500], [42.0000, -87.5500], [42.2000, -87.5500], [42.2000, -87.8500], [42.0000, -87.8500]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-10": {
+        "rep": "Brad Schneider", "party": "D", "area": "Lake County", 
+        "lat": 42.3369, "lon": -87.8658,
+        "committees": ["Ways and Means", "Foreign Affairs"],
+        "boundary": [[42.1500, -88.2000], [42.1500, -87.6500], [42.5000, -87.6500], [42.5000, -88.2000], [42.1500, -88.2000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-11": {
+        "rep": "Bill Foster", "party": "D", "area": "Aurora/Joliet", 
+        "lat": 41.5253, "lon": -88.1473,
+        "committees": ["Financial Services", "Science"],
+        "boundary": [[41.3500, -88.5000], [41.3500, -87.8500], [41.7000, -87.8500], [41.7000, -88.5000], [41.3500, -88.5000]],
+        "closures": [{"route": "I-80", "location": "Joliet", "type": "Freight facility", "status": "Construction", "lat": 41.5250, "lon": -88.0817, "description": "Grade separations and access improvements for intermodal facility", "url": "https://www.transportation.gov/INFRAgrants"}],
+        "construction": [],
+        "grants": [{"program": "INFRA", "amount": 45000000, "project": "I-80 Intermodal Access", "lat": 41.5250, "lon": -88.0817, "description": "Freight corridor improvements and intermodal connections", "url": "https://www.transportation.gov/INFRAgrants"}]
+    },
+    "IL-12": {
+        "rep": "Mike Bost", "party": "R", "area": "Southern Illinois", 
+        "lat": 38.1406, "lon": -89.2645,
+        "committees": ["Transportation", "Veterans Affairs"],
+        "boundary": [[37.0000, -90.5000], [37.0000, -88.0000], [38.5000, -88.0000], [38.5000, -90.5000], [37.0000, -90.5000]],
+        "closures": [], "construction": [],
+        "grants": [{"program": "RAISE", "amount": 22000000, "project": "MetroLink Eastside Center", "lat": 38.6247, "lon": -90.1848, "description": "New transit center with parking and bus connections", "url": "https://www.transportation.gov/RAISEgrants"}]
+    },
+    "IL-13": {
+        "rep": "Nikki Budzinski", "party": "D", "area": "Central Illinois", 
+        "lat": 39.8403, "lon": -88.9548,
+        "committees": ["Agriculture", "Transportation"],
+        "boundary": [[39.5000, -89.5000], [39.5000, -88.0000], [40.3000, -88.0000], [40.3000, -89.5000], [39.5000, -89.5000]],
+        "closures": [
+            {"route": "US-36", "location": "Decatur-Springfield", "type": "Bridge replacement", "status": "Active", "lat": 39.8403, "lon": -89.6515, "description": "Full bridge replacement on US-36 corridor", "url": "https://idot.illinois.gov/"},
+            {"route": "IL-29", "location": "Macon County", "type": "Resurfacing", "status": "Active", "lat": 39.9064, "lon": -88.9548, "description": "Resurfacing and shoulder improvements", "url": "https://idot.illinois.gov/"}
+        ],
+        "grants": [
+            {"program": "RAISE", "amount": 15000000, "project": "Decatur Multi-Modal Center", "lat": 39.8403, "lon": -89.6515, "description": "Intermodal facility connecting Amtrak, bus, and bike infrastructure", "url": "https://www.transportation.gov/RAISEgrants"},
+            {"program": "INFRA", "amount": 25000000, "project": "I-72 Freight Corridor", "lat": 39.9064, "lon": -88.6548, "description": "Highway improvements for agricultural freight movement", "url": "https://www.transportation.gov/INFRAgrants"}
+        ]
+    },
+    "IL-14": {
+        "rep": "Lauren Underwood", "party": "D", "area": "Far west suburbs", 
+        "lat": 41.7606, "lon": -88.5855,
+        "committees": ["Appropriations", "Veterans Affairs"],
+        "boundary": [[41.5000, -88.9000], [41.5000, -88.3000], [41.9500, -88.3000], [41.9500, -88.9000], [41.5000, -88.9000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-15": {
+        "rep": "Mary Miller", "party": "R", "area": "Eastern Illinois", 
+        "lat": 40.1164, "lon": -88.2434,
+        "committees": ["Agriculture", "Education"],
+        "boundary": [[39.0000, -88.5000], [39.0000, -87.5000], [40.5000, -87.5000], [40.5000, -88.5000], [39.0000, -88.5000]],
+        "closures": [], "construction": [], "grants": []
+    },
+    "IL-16": {
+        "rep": "Darin LaHood", "party": "R", "area": "Peoria/Rockford", 
+        "lat": 40.6936, "lon": -89.5890,
+        "committees": ["Ways and Means"],
+        "boundary": [[40.3000, -90.5000], [40.3000, -89.0000], [42.0000, -89.0000], [42.0000, -90.5000], [40.3000, -90.5000]],
+        "closures": [], "construction": [],
+        "grants": [{"program": "RAISE", "amount": 20000000, "project": "Peoria Warehouse District", "lat": 40.6936, "lon": -89.5890, "description": "Roadway and river port access improvements", "url": "https://www.transportation.gov/RAISEgrants"}]
+    },
+    "IL-17": {
+        "rep": "Eric Sorensen", "party": "D", "area": "Quad Cities", 
+        "lat": 41.5067, "lon": -90.5151,
+        "committees": ["Agriculture", "Science"],
+        "boundary": [[40.5000, -91.5000], [40.5000, -89.5000], [42.5000, -89.5000], [42.5000, -91.5000], [40.5000, -91.5000]],
+        "closures": [], "construction": [],
+        "grants": [{"program": "Port Infrastructure", "amount": 28000000, "project": "Mississippi River Lock", "lat": 41.5067, "lon": -90.5780, "description": "Port infrastructure and rail access improvements", "url": "https://www.maritime.dot.gov/PIDPgrants"}]
+    },
+}
+
+# Session state
+if 'selected_district' not in st.session_state:
+    st.session_state.selected_district = None
+if 'selected_item' not in st.session_state:
+    st.session_state.selected_item = None
+
+# Navigation — removed Live IDOT Map (iframe doesn't work reliably)
+# Initialize pending navigation if not set
+if '_pending_nav' not in st.session_state:
+    st.session_state['_pending_nav'] = None
+if '_pending_chamber' not in st.session_state:
+    st.session_state['_pending_chamber'] = None
+if '_pending_num' not in st.session_state:
+    st.session_state['_pending_num'] = None
+if '_current_view' not in st.session_state:
+    st.session_state['_current_view'] = "🗺️ Statewide Map"  # Default view
+
+# Check for pending navigation requests (from IL General Assembly buttons)
+nav_options = ["🗺️ Statewide Map", "📍 District View", "🛣️ Live Road Events",
+     "📝 Meeting Memos",
+     "💰 Federal Funding", "📊 AI Analysis", "💎 Discretionary Grants",
+     "🔮 FY27 Projections", "🏛️ IL General Assembly", "🤖 AV Policy", "👥 State Legislators"]
+
+# Handle pending navigation
+if st.session_state['_pending_nav']:
+    st.session_state['_current_view'] = st.session_state['_pending_nav']
+    st.session_state['_pending_nav'] = None  # Clear pending nav
+    if st.session_state['_pending_chamber']:
+        st.session_state['_selected_chamber'] = st.session_state['_pending_chamber']
+        st.session_state['_pending_chamber'] = None
+    if st.session_state['_pending_num']:
+        st.session_state['_selected_num'] = st.session_state['_pending_num']
+        st.session_state['_pending_num'] = None
+
+# Determine index for radio button
+current_index = nav_options.index(st.session_state['_current_view']) if st.session_state['_current_view'] in nav_options else 0
+
+view = st.radio(
+    "Navigation",
+    nav_options,
+    horizontal=True,
+    index=current_index
+)
+
+# Update current view and persist it
+st.session_state['_current_view'] = view
+
+# ==================== STATEWIDE MAP ====================
+if view == "🗺️ Statewide Map":
+    st.header("Illinois - All 17 Congressional Districts")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("Districts", "17")
+    col2.metric("Democrats", "14")
+    col3.metric("Republicans", "3")
+    total_grants = sum(sum(g['amount'] for g in d.get('grants', [])) for d in DISTRICTS.values())
+    col4.metric("Total Grants", f"${total_grants/1e6:.0f}M")
+
+    st.markdown("---")
+    st.markdown("### 🏛️ Illinois U.S. Senators")
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("**Dick Durbin** (Democrat)")
+        st.caption("Senior Senator • Senate Majority Whip")
+        st.caption("📋 Transportation Bills Sponsored: 12")
+        st.caption("💰 Grants Secured: $150M+")
+        st.caption("📍 Committees: Appropriations (Chair), Judiciary")
+    
+    with col2:
+        st.markdown("**Tammy Duckworth** (Democrat)")  
+        st.caption("Junior Senator • Iraq War Veteran")
+        st.caption("📋 Transportation Bills Sponsored: 8")
+        st.caption("💰 Grants Secured: $85M+")
+        st.caption("📍 Committees: Armed Services, Commerce")
+
+    # Create map with ALL district boundaries
+    m = folium.Map(location=[40.0, -89.0], zoom_start=7)
+    
+    for district_id, info in DISTRICTS.items():
+        color = '#4A90E2' if info['party'] == 'D' else '#E24A4A'
+        
+        boundary_data = DISTRICT_BOUNDARIES.get(district_id)
+        add_district_boundary_to_map(m, district_id, info, boundary_data, fill_opacity=0.15, weight=2)
+        
+        n_closures = len(info.get('closures', []))
+        grant_total = sum(g['amount'] for g in info.get('grants', []))
+        
+        popup = f"<b>{district_id}: {info['rep']} ({info['party']})</b><br>{info['area']}<br><br>🚧 Closures: {n_closures}<br>💰 Grants: ${grant_total:,}"
+        
+        folium.Marker(
+            [info['lat'], info['lon']],
+            popup=folium.Popup(popup, max_width=300),
+            tooltip=f"{district_id}: {info['rep']}",
+            icon=folium.Icon(color='blue' if info['party'] == 'D' else 'red', icon='info-sign')
+        ).add_to(m)
+        
+        for closure in info.get('closures', []):
+            folium.CircleMarker([closure['lat'], closure['lon']], radius=6, color='orange', fill=True, popup=f"🚧 {closure['route']}").add_to(m)
+        
+        for grant in info.get('grants', []):
+            folium.CircleMarker([grant['lat'], grant['lon']], radius=8, color='green', fill=True, popup=f"💰 ${grant['amount']:,}").add_to(m)
+    
+    st_folium(m, width=1400, height=600, returned_objects=[])
+    
+    st.caption("ℹ️ Hover over markers for district info. Popups show details on click. Use the buttons below to jump to a district.")
+    
+    st.markdown("---")
+    st.subheader("Select a District")
+    
+    cols = st.columns(6)
+    for idx, district_id in enumerate(sorted(DISTRICTS.keys())):
+        info = DISTRICTS[district_id]
+        if cols[idx % 6].button(f"{district_id}\n{info['rep'][:15]}", key=f"btn_{district_id}"):
+            st.session_state.selected_district = district_id
+            st.rerun()
+
+    # District summary table
+    st.markdown("---")
+    st.subheader("📋 All Districts at a Glance")
+    summary_data = []
+    for d_id in sorted(DISTRICTS.keys()):
+        d = DISTRICTS[d_id]
+        grant_total = sum(g['amount'] for g in d.get('grants', []))
+        summary_data.append({
+            'District': d_id,
+            'Representative': d['rep'],
+            'Party': d['party'],
+            'Area': d['area'],
+            'Closures': len(d.get('closures', [])),
+            'Construction': len(d.get('construction', [])),
+            'Grants': f"${grant_total/1e6:.1f}M" if grant_total > 0 else "—",
+            'Committees': ', '.join(d['committees'])
+        })
+    st.dataframe(pd.DataFrame(summary_data), width='stretch', hide_index=True, height=630)
+
+# ==================== DISTRICT VIEW ====================
+elif view == "📍 District View":
+    st.sidebar.title("Select District")
+    for district_id in sorted(DISTRICTS.keys()):
+        info = DISTRICTS[district_id]
+        if st.sidebar.button(f"{district_id}: {info['rep']}", key=f"side_{district_id}", use_container_width=True):
+            st.session_state.selected_district = district_id
+            st.session_state.selected_item = None
+    
+    if st.session_state.selected_district:
+        district = st.session_state.selected_district
+        info = DISTRICTS[district].copy()
+        
+        # Merge in live IDOT data if available
+        if district in idot_live_data:
+            live_data = idot_live_data[district]
+            info['closures'] = info.get('closures', []) + live_data.get('closures', [])
+            info['construction'] = info.get('construction', []) + live_data.get('construction', [])
+        
+        col_info, col_map_ref = st.columns([2, 1])
+        
+        with col_info:
+            st.header(f"{district}: {info['rep']} ({info['party']})")
+            st.markdown(f"**Area:** {info['area']}")
+            st.markdown(f"**Committees:** {', '.join(info['committees'])}")
+        
+        with col_map_ref:
+            img_path = f'district_images/{district}.png'
+            if os.path.exists(img_path):
+                img = Image.open(img_path)
+                st.image(img, caption=f"{district} Location", use_container_width=True)
+            else:
+                st.info("📍 Reference map coming soon")
+        
+        # Get real bills if available
+        district_bills = real_bills_data.get(district, {}).get('bills', [])
+        
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Closures", len(info.get('closures', [])))
+        col2.metric("Construction", len(info.get('construction', [])))
+        col3.metric("Grants", f"${sum(g['amount'] for g in info.get('grants', []))/1e6:.1f}M")
+        col4.metric("Bills", len(district_bills))
+        
+        st.markdown("---")
+        
+        # District map
+        boundary_data = DISTRICT_BOUNDARIES.get(district)
+        if boundary_data and 'geometry' in boundary_data:
+            # Calculate center from real boundary
+            geo = boundary_data['geometry']
+            geo_type = geo.get('type', '')
+            all_lons, all_lats = [], []
+            if geo_type == 'Polygon':
+                for lon, lat in geo['coordinates'][0]:
+                    all_lons.append(lon)
+                    all_lats.append(lat)
+            elif geo_type == 'MultiPolygon':
+                for polygon in geo['coordinates']:
+                    for lon, lat in polygon[0]:
+                        all_lons.append(lon)
+                        all_lats.append(lat)
+            center_lat = sum(all_lats) / len(all_lats) if all_lats else info['lat']
+            center_lon = sum(all_lons) / len(all_lons) if all_lons else info['lon']
+        else:
+            center_lat = info['lat']
+            center_lon = info['lon']
+        
+        dm = folium.Map(location=[center_lat, center_lon], zoom_start=10)
+        
+        # Add boundary (real or rectangle)
+        color = '#4A90E2' if info['party'] == 'D' else '#E24A4A'
+        popup_text = f"<b>{district} Boundary</b>"
+        
+        if boundary_data and 'geometry' in boundary_data:
+            rings = geojson_to_folium_coords(boundary_data['geometry'])
+            for ring in rings:
+                folium.Polygon(
+                    locations=ring,
+                    color=color,
+                    fill=True,
+                    fillColor=color,
+                    fillOpacity=0.2,
+                    weight=3,
+                    popup=popup_text
+                ).add_to(dm)
+        else:
+            folium_coords = info.get('boundary', [])
+            if folium_coords:
+                folium.Polygon(
+                    locations=folium_coords,
+                    color=color,
+                    fill=True,
+                    fillColor=color,
+                    fillOpacity=0.2,
+                    weight=3,
+                    popup=popup_text
+                ).add_to(dm)
+        
+        for closure in info.get('closures', []):
+            folium.Marker([closure['lat'], closure['lon']], icon=folium.Icon(color='orange', icon='road', prefix='fa'), popup=f"🚧 {closure['route']}").add_to(dm)
+        
+        for grant in info.get('grants', []):
+            folium.Marker([grant['lat'], grant['lon']], icon=folium.Icon(color='green', icon='dollar', prefix='fa'), popup=f"💰 ${grant['amount']:,}").add_to(dm)
+        
+        st_folium(dm, width=1400, height=500, returned_objects=[])
+        
+        st.markdown("---")
+        
+        # Tabs with clickable items
+        tab1, tab2, tab3, tab4 = st.tabs(["🚧 Closures", "🏗️ Construction", "💰 Grants", "📜 Legislation"])
+        
+        with tab1:
+            if info.get('closures'):
+                st.markdown("**Click any item for details:**")
+                for idx, closure in enumerate(info['closures']):
+                    if st.button(f"🚧 {closure['route']} - {closure['location']} ({closure['status']})", key=f"closure_{idx}", use_container_width=True):
+                        st.session_state.selected_item = ('closure', idx)
+                
+                if st.session_state.selected_item and st.session_state.selected_item[0] == 'closure':
+                    idx = st.session_state.selected_item[1]
+                    if idx < len(info['closures']):
+                        c = info['closures'][idx]
+                        st.markdown(f"""
+st.markdown(f'''\
+#                         <div class="preview-box">
+#                             <h4>🚧 {c['route']} - {c['location']}</h4>
+#                             <p><strong>Type:</strong> {c['type']}</p>
+#                             <p><strong>Status:</strong> {c['status']}</p>
+#                             <p><strong>Description:</strong> {c['description']}</p>
+#                             <p><a href="{c['url']}" target="_blank">🔗 View Source</a></p>
+#                         </div>
+''', unsafe_allow_html=True)
+                        """, unsafe_allow_html=True)
+            else:
+                st.info("No active closures")
+        
+        with tab2:
+            if info.get('construction'):
+                st.markdown("**Click any item for details:**")
+                for idx, construction in enumerate(info['construction']):
+                    if st.button(f"🏗️ {construction['route']} - {construction['location']} ({construction['status']})", key=f"construction_{idx}", use_container_width=True):
+                        st.session_state.selected_item = ('construction', idx)
+                
+                if st.session_state.selected_item and st.session_state.selected_item[0] == 'construction':
+                    idx = st.session_state.selected_item[1]
+                    if idx < len(info['construction']):
+                        c = info['construction'][idx]
+                        st.markdown(f"""
+#                         <div class="preview-box">
+#                             <h4>🏗️ {c['route']} - {c['location']}</h4>
+#                             <p><strong>Type:</strong> {c['type']}</p>
+#                             <p><strong>Status:</strong> {c['status']}</p>
+#                             <p><strong>Budget:</strong> {c.get('budget', 'N/A')}</p>
+#                             <p><strong>Timeline:</strong> {c.get('timeline', 'N/A')}</p>
+#                             <p><strong>Description:</strong> {c['description']}</p>
+#                             <p><a href="{c['url']}" target="_blank">🔗 View Project Details</a></p>
+#                         </div>
+                        """, unsafe_allow_html=True)
+            else:
+                st.info("No active construction projects")
+        
+        with tab3:
+            if info.get('grants'):
+                st.markdown("**Click any item for details:**")
+                for idx, grant in enumerate(info['grants']):
+                    if st.button(f"💰 {grant['program']}: ${grant['amount']:,} - {grant['project']}", key=f"grant_{idx}", use_container_width=True):
+                        st.session_state.selected_item = ('grant', idx)
+                
+                if st.session_state.selected_item and st.session_state.selected_item[0] == 'grant':
+                    idx = st.session_state.selected_item[1]
+                    if idx < len(info['grants']):
+                        g = info['grants'][idx]
+                        st.markdown(f"""
+#                         <div class="preview-box">
+#                             <h4>💰 {g['program']}: ${g['amount']:,}</h4>
+#                             <p><strong>Project:</strong> {g['project']}</p>
+#                             <p><strong>Description:</strong> {g['description']}</p>
+#                             <p><a href="{g['url']}" target="_blank">🔗 View Program Details</a></p>
+#                         </div>
+                        """, unsafe_allow_html=True)
+            else:
+                st.info("No grants")
+        
+        with tab4:
+            if district_bills:
+                st.markdown("**Click any item for details:**")
+                for idx, bill in enumerate(district_bills[:20]):
+                    if st.button(f"📜 {bill.get('number', 'N/A')} - {bill.get('title', 'No title')[:80]}...", key=f"bill_{idx}", use_container_width=True):
+                        st.session_state.selected_item = ('bill', idx)
+                
+                if st.session_state.selected_item and st.session_state.selected_item[0] == 'bill':
+                    idx = st.session_state.selected_item[1]
+                    if idx < len(district_bills):
+                        b = district_bills[idx]
+                        bill_url = b.get('url', f"https://www.congress.gov/search?q={b.get('number', '')}")
+                        st.markdown(f"""
+#                         <div class="preview-box">
+#                             <h4>📜 {b.get('number', 'N/A')}</h4>
+#                             <p><strong>Title:</strong> {b.get('title', 'No title')}</p>
+#                             <p><strong>Relationship:</strong> {b.get('relationship', 'Unknown')}</p>
+#                             <p><a href="{bill_url}" target="_blank">🔗 View on Congress.gov</a></p>
+#                         </div>
+                        """, unsafe_allow_html=True)
+            else:
+                st.info("No bills tracked (run get_bills.py to fetch)")
+    else:
+        st.info("👈 Select a district from the sidebar")
+
+
+# ==================== STATE LEGISLATORS ====================
+elif view == "👥 State Legislators":
+    st.header("👥 Illinois State Legislators — Profiles")
+
+    # Keep state variables for navigation
+    if '_selected_chamber' not in st.session_state:
+        st.session_state['_selected_chamber'] = "IL House (118)"
+    if '_selected_num' not in st.session_state:
+        st.session_state['_selected_num'] = None
+
+    # If coming from IL General Assembly without a selection, show directory first
+    has_selection = st.session_state.get('_selected_num') is not None
+    
+    if not has_selection:
+        # Show chamber selector and directory
+        chamber = st.radio(
+            "Chamber:", 
+            ["IL House (118)", "IL Senate (59)"], 
+            horizontal=True,
+            index=0 if st.session_state['_selected_chamber'].startswith("IL House") else 1
+        )
+        st.session_state['_selected_chamber'] = chamber
+        
+        if chamber.startswith("IL House"):
+            prefix = "IL-H-"
+            max_num = 118
+            fmt = 3
+            chamber_label = "IL House District"
+        else:
+            prefix = "IL-S-"
+            max_num = 59
+            fmt = 3
+            chamber_label = "IL Senate District"
+
+        # Directory with clickable buttons + selectbox
+        district_nums = list(range(1, max_num + 1))
+
+        st.markdown("### Select a Member")
+        st.markdown("**Directory — click any district to open its profile**")
+        cols = st.columns(6)
+        for idx, n in enumerate(district_nums):
+            col = cols[idx % 6]
+            label = f"{prefix}{n:0{fmt}d}"
+            
+            def make_click_handler(n=n):
+                def handler():
+                    st.session_state['_selected_chamber'] = chamber
+                    st.session_state['_selected_num'] = n
+                    st.rerun()
+                return handler
+            
+            col.button(
+                label, 
+                key=f"dir_{prefix}_{n}",
+                on_click=make_click_handler()
+            )
+
+        st.markdown("---")
+        st.markdown("**Or search by name:**")
+        selected_num = st.selectbox(
+            f"Pick a {chamber_label}:", 
+            district_nums,
+            index=0,
+            format_func=lambda n: f"{prefix}{n:0{fmt}d}"
+        )
+        
+        if st.button("View Profile", key="view_profile_btn"):
+            st.session_state['_selected_num'] = selected_num
+            st.rerun()
+        st.stop()
+    
+    # If we get here, we have a selection - show the profile
+    chamber = st.session_state['_selected_chamber']
+    selected_num = st.session_state['_selected_num']
+    
+    if chamber.startswith("IL House"):
+        prefix = "IL-H-"
+        fmt = 3
+        chamber_label = "IL House District"
+    else:
+        prefix = "IL-S-"
+        fmt = 3
+        chamber_label = "IL Senate District"
+
+    district_key = f"{prefix}{int(selected_num):0{fmt}d}"
+    
+    # Add button to go back to directory
+    col_back, col_chamber = st.columns([1, 3])
+    with col_back:
+        if st.button("← Back to Directory"):
+            st.session_state['_selected_num'] = None
+            st.rerun()
+    with col_chamber:
+        st.markdown(f"**Viewing:** {district_key}")
+
+    # Try to get member details from members.json if available
+    member_info = {}
+    try:
+        if members_data:
+            if chamber.startswith("IL House") and 'il_house' in members_data:
+                member_info = members_data['il_house'].get(district_key, {})
+            if chamber.startswith("IL Senate") and 'il_senate' in members_data:
+                member_info = members_data['il_senate'].get(district_key, {})
+    except:
+        member_info = {}
+
+    member_name = member_info.get('name', f"{chamber_label} {selected_num:0{fmt}d}")
+    party = member_info.get('party', '?')
+    party_emoji = '🔵 Democrat' if party == 'D' else '🔴 Republican' if party == 'R' else '⚪ Unknown'
+    area = member_info.get('area', '')
+    
+    st.subheader(f"{district_key} — {member_name}")
+    col_info1, col_info2, col_info3 = st.columns(3)
+    col_info1.metric("Party", party_emoji)
+    col_info2.metric("Chamber", chamber.split("(")[0].strip())
+    if area:
+        col_info3.metric("Area", area)
+    st.markdown("---")
+
+    # Summary card
+    if member_info.get('name'):
+        summary_text = f"**{member_name}** represents {area or 'Illinois'}"
+        st.info(summary_text)
+
+    # Load road events (state-level pipeline supports IL-H- and IL-S- keys)
+    road_data = load_road_events(district_key)
+
+    if road_data:
+        counts = road_data.get('counts', {})
+        col1, col2, col3 = st.columns(3)
+        col1.metric("🚧 Closures", counts.get('closures', 0))
+        col2.metric("⚠️ Restrictions", counts.get('restrictions', 0))
+        col3.metric("🏗️ Construction", counts.get('construction', 0))
+
+        st.markdown(f"**Last updated:** {road_data.get('generated_at', 'unknown')[:19]}")
+
+        # Map events
+        events_with_coords = [e for e in road_data.get('items', []) if e.get('lat') and e.get('lon')]
+        if events_with_coords:
+            center_lat = sum(e['lat'] for e in events_with_coords) / len(events_with_coords)
+            center_lon = sum(e['lon'] for e in events_with_coords) / len(events_with_coords)
+            m = folium.Map(location=[center_lat, center_lon], zoom_start=10)
+            for e in events_with_coords[:200]:
+                color = 'red' if e.get('type') == 'closure' else 'orange' if e.get('type') == 'restriction' else 'blue'
+                popup_text = f"<b>{e.get('road','N/A')}</b><br>{e.get('type','').title()}<br>{(e.get('description') or '')[:120]}"
+                folium.CircleMarker([e['lat'], e['lon']], radius=6, color=color, fill=True, popup=folium.Popup(popup_text, max_width=300)).add_to(m)
+            st_folium(m, width=1200, height=420, returned_objects=[])
+
+        st.markdown("---")
+        st.markdown("### All Events")
+        items = road_data.get('items', [])
+        if items:
+            table_data = []
+            for e in items[:200]:
+                table_data.append({
+                    'Severity': e.get('severity', 0),
+                    'Type': e.get('type', '').title(),
+                    'Road': e.get('road', 'N/A'),
+                    'Location': e.get('location_text', 'N/A'),
+                    'County': e.get('county', 'N/A'),
+                    'Status': e.get('status', 'unknown').title(),
+                    'Start': (e.get('start') or '')[:10],
+                    'End': (e.get('end') or '')[:10],
+                })
+            st.dataframe(pd.DataFrame(table_data), width='stretch', hide_index=True, height=360)
+        else:
+            st.info("No events found in this district's road feed.")
+    else:
+        # Fallback: show construction data from mapped congressional district
+        try:
+            if prefix.startswith('IL-H'):
+                total_state = 118
+            else:
+                total_state = 59
+            congress_idx = math.ceil(selected_num / (total_state / 17.0))
+            congress_idx = max(1, min(17, int(congress_idx)))
+            cong_key = f"IL-{congress_idx:02d}"
+            
+            if cong_key in DISTRICTS:
+                cong_info = DISTRICTS[cong_key]
+                
+                closures = cong_info.get('closures', [])
+                construction = cong_info.get('construction', [])
+                
+                col1, col2 = st.columns(2)
+                col1.metric("🚧 Closures", len(closures))
+                col2.metric("🏗️ Construction", len(construction))
+                
+                st.markdown(f"*Data from mapped congressional district {cong_key}*")
+                st.markdown("---")
+                
+                # Construction details
+                if construction or closures:
+                    tab_closures, tab_construction = st.tabs(["🚧 Closures", "🏗️ Construction"])
+                    
+                    with tab_closures:
+                        if closures:
+                            for idx, c in enumerate(closures):
+                                with st.expander(f"🚧 {c.get('route', 'N/A')} - {c.get('location', 'N/A')}"):
+                                    col_a, col_b = st.columns(2)
+                                    with col_a:
+                                        st.markdown(f"**Route:** {c.get('route', 'N/A')}")
+                                        st.markdown(f"**Type:** {c.get('type', 'N/A')}")
+                                        st.markdown(f"**Status:** {c.get('status', 'N/A')}")
+                                    with col_b:
+                                        st.markdown(f"**Location:** {c.get('location', 'N/A')}")
+                                    st.markdown(f"**Details:** {c.get('description', 'No details available')}")
+                        else:
+                            st.info("No active closures")
+                    
+                    with tab_construction:
+                        if construction:
+                            for idx, c in enumerate(construction):
+                                with st.expander(f"🏗️ {c.get('route', 'N/A')} - {c.get('location', 'N/A')}"):
+                                    col_a, col_b = st.columns(2)
+                                    with col_a:
+                                        st.markdown(f"**Route:** {c.get('route', 'N/A')}")
+                                        st.markdown(f"**Type:** {c.get('type', 'N/A')}")
+                                        st.markdown(f"**Status:** {c.get('status', 'N/A')}")
+                                    with col_b:
+                                        st.markdown(f"**Location:** {c.get('location', 'N/A')}")
+                                        if c.get('budget'):
+                                            st.markdown(f"**Budget:** {c.get('budget', 'N/A')}")
+                                        if c.get('timeline'):
+                                            st.markdown(f"**Timeline:** {c.get('timeline', 'N/A')}")
+                                    st.markdown(f"**Details:** {c.get('description', 'No details available')}")
+                        else:
+                            st.info("No active construction")
+                else:
+                    st.info("No closures or construction projects in the mapped congressional district")
+        except Exception as e:
+            st.info(f"No road event data for this state legislative district. (Run pipeline to populate `data/road` files or try the main District View)")
+
+    # Heuristic: map state district to a congressional district to show federal formula & discretionary grants
+    # This is a coarse mapping (state districts -> 17 congressional districts by index scaling)
+    try:
+        if prefix.startswith('IL-H'):
+            total_state = 118
+        else:
+            total_state = 59
+        congress_idx = math.ceil(selected_num / (total_state / 17.0))
+        congress_idx = max(1, min(17, int(congress_idx)))
+        cong_key = f"IL-{congress_idx:02d}"
+
+        st.markdown('---')
+        display_federal_funding_for_district(cong_key)
+    except Exception as e:
+        st.error(f"Error computing related federal funding: {e}")
+
+
+# ==================== MEETING MEMOS ====================
+elif view == "📝 Meeting Memos":
+    st.header("📝 Congressional Meeting Memos")
+    
+    st.info("""
+    **Auto-Generated Briefing Memos** for all Illinois federal legislators.
+    Each memo includes: District funding allocations, discretionary grants won, 
+    bills sponsored, and suggested discussion topics.
+    """)
+    
+    st.markdown("### House Members")
+    
+    house_memos = [
+        ("IL-01", "Jonathan Jackson", "memo_IL-01_Jonathan_Jackson.docx"),
+        ("IL-02", "Robin Kelly", "memo_IL-02_Robin_Kelly.docx"),
+        ("IL-03", "Delia Ramirez", "memo_IL-03_Delia_Ramirez.docx"),
+        ("IL-04", "Jesús García", "memo_IL-04_Jesús_García.docx"),
+        ("IL-05", "Mike Quigley", "memo_IL-05_Mike_Quigley.docx"),
+        ("IL-06", "Sean Casten", "memo_IL-06_Sean_Casten.docx"),
+        ("IL-07", "Danny Davis", "memo_IL-07_Danny_Davis.docx"),
+        ("IL-08", "Raja Krishnamoorthi", "memo_IL-08_Raja_Krishnamoorthi.docx"),
+        ("IL-09", "Jan Schakowsky", "memo_IL-09_Jan_Schakowsky.docx"),
+        ("IL-10", "Brad Schneider", "memo_IL-10_Brad_Schneider.docx"),
+        ("IL-11", "Bill Foster", "memo_IL-11_Bill_Foster.docx"),
+        ("IL-12", "Mike Bost", "memo_IL-12_Mike_Bost.docx"),
+        ("IL-13", "Nikki Budzinski", "memo_IL-13_Nikki_Budzinski.docx"),
+        ("IL-14", "Lauren Underwood", "memo_IL-14_Lauren_Underwood.docx"),
+        ("IL-15", "Mary Miller", "memo_IL-15_Mary_Miller.docx"),
+        ("IL-16", "Darin LaHood", "memo_IL-16_Darin_LaHood.docx"),
+        ("IL-17", "Eric Sorensen", "memo_IL-17_Eric_Sorensen.docx"),
+    ]
+    
+    cols = st.columns(3)
+    for idx, (district, name, filename) in enumerate(house_memos):
+        col = cols[idx % 3]
+        with col:
+            st.markdown(f"**{district}**: {name}")
+            if os.path.exists(filename):
+                with open(filename, 'rb') as f:
+                    st.download_button(
+                        label=f"📄 Download Memo",
+                        data=f,
+                        file_name=filename,
+                        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        key=f"memo_{district}"
+                    )
+            else:
+                st.caption("⚠️ Memo file not found")
+    
+    st.markdown("---")
+    st.markdown("### U.S. Senators")
+    
+    col1, col2 = st.columns(2)
+    
+    senate_memos = [
+        ("Dick Durbin", "memo_Senator_Dick_Durbin.docx"),
+        ("Tammy Duckworth", "memo_Senator_Tammy_Duckworth.docx"),
+    ]
+    
+    for idx, (name, filename) in enumerate(senate_memos):
+        col = col1 if idx == 0 else col2
+        with col:
+            st.markdown(f"**Senator {name}**")
+            if os.path.exists(filename):
+                with open(filename, 'rb') as f:
+                    st.download_button(
+                        label=f"📄 Download Memo",
+                        data=f,
+                        file_name=filename,
+                        mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                        key=f"memo_sen_{idx}"
+                    )
+            else:
+                st.caption("⚠️ Memo file not found")
+
+
+# ==================== LIVE ROAD EVENTS ====================
+elif view == "🛣️ Live Road Events":
+    st.header("🛣️ Live Road Events — IDOT Construction, Closures & Restrictions")
+
+    # Pipeline status
+    if pipeline_status.get("road_events", 0) > 0:
+        st.success(f"✅ Pipeline loaded: {pipeline_status['boundaries']} boundaries, {pipeline_status['road_events']} district event files")
+    else:
+        st.warning("⚠️ Road event data not yet loaded. Pipeline scripts need to run — see PIPELINE_README.md")
+        st.info("To populate: run `python setup_pipeline.py` locally, then push the `data/` folder to the repo.")
+
+    # Geography selector
+    geo_tab = st.radio(
+        "Geography",
+        ["🏛️ Congressional (17)", "🏠 IL House (118)", "🏛️ IL Senate (59)", "⭐ US Senators (Statewide)"],
+        horizontal=True
+    )
+
+    if geo_tab == "⭐ US Senators (Statewide)":
+        st.subheader("⭐ Top 5 Statewide Road Issues — Senator Briefing")
+
+        sen_data = load_road_events("US-IL-SEN")
+        if sen_data:
+            col1, col2, col3 = st.columns(3)
+            counts = sen_data.get("counts", {})
+            col1.metric("🚧 Closures", counts.get("closures", 0))
+            col2.metric("⚠️ Restrictions", counts.get("restrictions", 0))
+            col3.metric("🏗️ Construction", counts.get("construction", 0))
+
+            st.markdown(f"**Last updated:** {sen_data.get('generated_at', 'unknown')[:19]}")
+            st.markdown("---")
+
+            st.markdown("### Top 5 Issues (by severity score)")
+            for i, event in enumerate(sen_data.get("top", [])[:5], 1):
+                severity = event.get("severity", 0)
+                badge = "🔴" if severity >= 70 else "🟠" if severity >= 40 else "🟡"
+
+                with st.expander(
+                    f"{badge} #{i} — {event.get('road', 'N/A')} | {event.get('type', '').title()} | Score: {severity}",
+                    expanded=(i <= 2)
+                ):
+                    c1, c2 = st.columns(2)
+                    c1.markdown(f"**Road:** {event.get('road', 'N/A')}")
+                    c1.markdown(f"**Location:** {event.get('location_text', 'N/A')}")
+                    c1.markdown(f"**County:** {event.get('county', 'N/A')}")
+                    c1.markdown(f"**Status:** {event.get('status', 'unknown').title()}")
+                    c2.markdown(f"**Type:** {event.get('type', 'N/A').title()}")
+                    c2.markdown(f"**Lanes:** {event.get('lanes', 'N/A')}")
+                    c2.markdown(f"**Start:** {(event.get('start') or 'N/A')[:10]}")
+                    c2.markdown(f"**End:** {(event.get('end') or 'N/A')[:10]}")
+                    st.markdown(f"**Description:** {event.get('description', 'N/A')}")
+                    if event.get("_source_district"):
+                        st.caption(f"Source district: {event['_source_district']}")
+                    if event.get("source_url"):
+                        st.markdown(f"[🔗 View Source]({event['source_url']})")
+        else:
+            st.info("No statewide data yet. Run the pipeline to populate.")
+
+    else:
+        # District-level view
+        if geo_tab.startswith("🏛️ Congressional"):
+            prefix = "US-IL-CD-"
+            max_num = 17
+            fmt_width = 2
+            label = "Congressional District"
+        elif geo_tab.startswith("🏠 IL House"):
+            prefix = "IL-H-"
+            max_num = 118
+            fmt_width = 3
+            label = "IL House District"
+        else:
+            prefix = "IL-S-"
+            max_num = 59
+            fmt_width = 3
+            label = "IL Senate District"
+
+        district_nums = list(range(1, max_num + 1))
+
+        selected_num = st.selectbox(
+            f"Select {label}:",
+            district_nums,
+            format_func=lambda n: f"{prefix}{n:0{fmt_width}d}" + (
+                f" — {members_data['congressional'].get(f'{prefix}{n:0{fmt_width}d}', {}).get('name', '')}"
+                if members_data and prefix == "US-IL-CD-"
+                else ""
+            )
+        )
+
+        district_key = f"{prefix}{selected_num:0{fmt_width}d}"
+        st.subheader(f"🛣️ {district_key}")
+
+        # Show member info if congressional
+        if members_data and prefix == "US-IL-CD-":
+            member = members_data.get("congressional", {}).get(district_key, {})
+            if member:
+                st.markdown(f"**Rep. {member.get('name', '')}** ({member.get('party', '')}) — {member.get('area', '')}")
+                st.caption(f"Committees: {', '.join(member.get('committees', []))}")
+
+        # Load road events
+        road_data = load_road_events(district_key)
+
+        if road_data:
+            col1, col2, col3, col4 = st.columns(4)
+            counts = road_data.get("counts", {})
+            col1.metric("🚧 Closures", counts.get("closures", 0))
+            col2.metric("⚠️ Restrictions", counts.get("restrictions", 0))
+            col3.metric("🏗️ Construction", counts.get("construction", 0))
+            col4.metric("📊 Total", road_data.get("total", 0))
+
+            st.markdown(f"**Last updated:** {road_data.get('generated_at', 'unknown')[:19]}")
+
+            # Map
+            boundary = load_boundary(district_key)
+            events_with_coords = [e for e in road_data.get("items", []) if e.get("lat") and e.get("lon")]
+
+            if boundary or events_with_coords:
+                st.markdown("---")
+                st.markdown("### District Map")
+
+                if events_with_coords:
+                    center_lat = sum(e["lat"] for e in events_with_coords) / len(events_with_coords)
+                    center_lon = sum(e["lon"] for e in events_with_coords) / len(events_with_coords)
+                else:
+                    center_lat, center_lon = 40.0, -89.0
+
+                m = folium.Map(location=[center_lat, center_lon], zoom_start=9)
+
+                if boundary:
+                    geom = boundary.get("geometry", {})
+                    if geom.get("type") == "Polygon":
+                        coords = [[c[1], c[0]] for c in geom["coordinates"][0]]
+                        folium.Polygon(coords, color="#4A90E2", fill=True, fillOpacity=0.1, weight=2).add_to(m)
+                    elif geom.get("type") == "MultiPolygon":
+                        for poly in geom["coordinates"]:
+                            coords = [[c[1], c[0]] for c in poly[0]]
+                            folium.Polygon(coords, color="#4A90E2", fill=True, fillOpacity=0.1, weight=2).add_to(m)
+
+                for event in events_with_coords[:50]:
+                    color = "red" if event.get("type") == "closure" else "orange" if event.get("type") == "restriction" else "blue"
+                    popup_text = f"<b>{event.get('road', 'N/A')}</b><br>{event.get('type', '').title()}<br>{event.get('description', '')[:100]}"
+                    folium.CircleMarker(
+                        [event["lat"], event["lon"]],
+                        radius=6, color=color, fill=True, fillOpacity=0.7,
+                        popup=folium.Popup(popup_text, max_width=250),
+                        tooltip=f"{event.get('road', '')} — {event.get('type', '')}"
+                    ).add_to(m)
+
+                st_folium(m, width=1400, height=500, returned_objects=[])
+
+            # Events table
+            st.markdown("---")
+            st.markdown("### All Events (sorted by severity)")
+
+            items = road_data.get("items", [])
+            if items:
+                table_data = []
+                for e in items[:100]:
+                    table_data.append({
+                        "Severity": e.get("severity", 0),
+                        "Type": e.get("type", "").title(),
+                        "Road": e.get("road", "N/A"),
+                        "Location": e.get("location_text", "N/A"),
+                        "County": e.get("county", "N/A"),
+                        "Status": e.get("status", "unknown").title(),
+                        "Description": (e.get("description") or "")[:80],
+                        "Start": (e.get("start") or "")[:10],
+                        "End": (e.get("end") or "")[:10],
+                    })
+                st.dataframe(pd.DataFrame(table_data), width='stretch', hide_index=True, height=500)
+            else:
+                st.info("No events in this district")
+        else:
+            st.info(f"No road event data for {district_key}. Run the pipeline to populate.")
+            st.code("python setup_pipeline.py", language="bash")
+
+    # Overview table
+    st.markdown("---")
+    st.markdown("### 📊 Overview: Events by District")
+
+    if not geo_tab.startswith("⭐"):
+        if geo_tab.startswith("🏛️ Congressional"):
+            ov_prefix, ov_max, ov_fmt = "US-IL-CD-", 17, 2
+        elif geo_tab.startswith("🏠"):
+            ov_prefix, ov_max, ov_fmt = "IL-H-", 118, 3
+        else:
+            ov_prefix, ov_max, ov_fmt = "IL-S-", 59, 3
+
+        overview_data = []
+        for n in range(1, ov_max + 1):
+            dk = f"{ov_prefix}{n:0{ov_fmt}d}"
+            rd = load_road_events(dk)
+            if rd and rd.get("total", 0) > 0:
+                overview_data.append({
+                    "District": dk,
+                    "Closures": rd.get("counts", {}).get("closures", 0),
+                    "Restrictions": rd.get("counts", {}).get("restrictions", 0),
+                    "Construction": rd.get("counts", {}).get("construction", 0),
+                    "Total": rd.get("total", 0),
+                })
+
+        if overview_data:
+            df_overview = pd.DataFrame(overview_data)
+            st.dataframe(df_overview, width='stretch', hide_index=True)
+
+            chart = alt.Chart(df_overview).mark_bar().encode(
+                x=alt.X('District:N', sort='-y'),
+                y='Total:Q',
+                tooltip=['District', 'Closures', 'Restrictions', 'Construction', 'Total']
+            ).properties(height=300)
+            st.altair_chart(chart, use_container_width=True)
+        else:
+            st.info("No event data available yet. Run the pipeline to populate.")
+
+
+# ==================== FEDERAL FUNDING ====================
+elif view == "💰 Federal Funding":
+    st.header("💰 Federal Funding Overview - Illinois IIJA Highway Apportionments")
+    
+    try:
+        with open('myp_funding_data.json', 'r') as f:
+            myp_data = json.load(f)
+    except:
+        st.error("⚠️ MYP funding data not found")
+        st.stop()
+    
+    st.markdown("### Multi-Year Funding Summary (FY 2024-2026)")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    fy24_total = myp_data['FY 24']['total_base_apportionment']
+    fy25_total = myp_data['FY 25']['total_base_apportionment']
+    fy26_total = myp_data['FY 26']['total_base_apportionment']
+    
+    col1.metric("FY 2024 (Actual)", f"${fy24_total/1e9:.2f}B")
+    col2.metric("FY 2025 (Est.)", f"${fy25_total/1e9:.2f}B", f"+{((fy25_total-fy24_total)/fy24_total)*100:.1f}%")
+    col3.metric("FY 2026 (Est.)", f"${fy26_total/1e9:.2f}B", f"+{((fy26_total-fy25_total)/fy25_total)*100:.1f}%")
+    
+    st.markdown("---")
+    
+    tab1, tab2, tab3 = st.tabs(["📊 Trends", "🥧 Programs", "🗺️ Districts"])
+    
+    with tab1:
+        st.subheader("Major Programs Over Time")
+        
+        major_programs = ['National Highway Performance Program', 'Surface Transportation Grant Block Program', 
+                         'Highway Safety Improvement Program', 'Bridge Formula']
+        
+        trend_data = []
+        for fy in ['FY 24', 'FY 25', 'FY 26']:
+            for prog in myp_data[fy]['programs']:
+                if prog['name'] in major_programs and prog['base_apportionment']:
+                    trend_data.append({
+                        'FY': fy,
+                        'Program': prog['name'],
+                        'Amount': prog['base_apportionment']
+                    })
+        
+        df = pd.DataFrame(trend_data)
+        chart = alt.Chart(df).mark_line(point=True).encode(
+            x='FY:N',
+            y=alt.Y('Amount:Q', axis=alt.Axis(format='$,.0f')),
+            color='Program:N',
+            tooltip=['FY', 'Program', alt.Tooltip('Amount:Q', format='$,.0f')]
+        ).properties(height=400)
+        st.altair_chart(chart, use_container_width=True)
+    
+    with tab2:
+        st.subheader("Program Breakdown")
+        
+        fy_sel = st.selectbox("Fiscal Year:", ['FY 24', 'FY 25', 'FY 26'])
+        
+        progs = [(p['name'], p['base_apportionment']) for p in myp_data[fy_sel]['programs'] 
+                 if p['base_apportionment']]
+        progs.sort(key=lambda x: x[1], reverse=True)
+        
+        df_pie = pd.DataFrame(progs[:10], columns=['Program', 'Amount'])
+        pie = alt.Chart(df_pie).mark_arc().encode(
+            theta='Amount:Q',
+            color='Program:N',
+            tooltip=['Program', alt.Tooltip('Amount:Q', format='$,.0f')]
+        ).properties(height=500)
+        st.altair_chart(pie, use_container_width=True)
+        
+        prog_df = pd.DataFrame([{'Program': p[0], 'Amount': f'${p[1]:,.0f}'} for p in progs])
+        st.dataframe(prog_df, width='stretch', hide_index=True)
+    
+    with tab3:
+        st.subheader("District Formula Allocations")
+        
+        try:
+            with open('district_formula_allocations.json', 'r') as f:
+                formula_data = json.load(f)
+            
+            district_details = []
+            for dist, alloc in sorted(formula_data['district_allocations'].items()):
+                district_details.append({
+                    'District': dist,
+                    'Representative': alloc['representative'],
+                    'STBG': f"${alloc['stbg_formula']/1e6:.1f}M",
+                    'NHPP': f"${alloc['nhpp_est']/1e6:.1f}M",
+                    'Total': f"${alloc['total_formula_est']/1e6:.1f}M",
+                    'Per Capita': f"${alloc['per_capita']:.0f}"
+                })
+            
+            st.dataframe(pd.DataFrame(district_details), width='stretch', hide_index=True, height=600)
+        except:
+            st.warning("⚠️ Run district allocation calculator for detailed breakdown")
+
+
+# ==================== AI ANALYSIS ====================
+elif view == "📊 AI Analysis":
+    st.header("📊 AI-Powered Funding Analysis & Insights")
+    
+    analysis_files = glob.glob('comprehensive_analysis_*.json')
+    if not analysis_files:
+        st.error("⚠️ No analysis found. Run: python3 ai_comprehensive_analysis.py")
+        st.stop()
+    
+    latest = sorted(analysis_files)[-1]
+    with open(latest, 'r') as f:
+        report = json.load(f)
+    
+    st.markdown(f"**Generated:** {report['metadata']['generated'][:19]}")
+    st.markdown("---")
+    
+    # Executive Summary
+    st.subheader("💼 Executive Summary")
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Total FY26 Funding", report['executive_summary']['total_funding_fy26'])
+    col2.metric("Districts Analyzed", report['executive_summary']['districts_analyzed'])
+    col3.metric("Programs Analyzed", report['executive_summary']['programs_analyzed'])
+    
+    st.markdown("### Key Findings")
+    for finding in report['executive_summary']['key_findings']:
+        st.markdown(f"- {finding}")
+    
+    st.markdown("---")
+    
+    tab1, tab2, tab3, tab4 = st.tabs(["💡 Insights", "⚖️ Formulas", "🗺️ Districts", "🎯 Recommendations"])
+    
+    with tab1:
+        st.subheader("Strategic Insights")
+        for section in report['insights']['sections']:
+            with st.expander(f"{section['title']}", expanded=False):
+                st.markdown(f"**Finding:** {section['finding']}")
+                if 'details' in section:
+                    st.markdown("**Details:**")
+                    for detail in section['details']:
+                        st.markdown(f"- {detail}")
+                if 'recommendation' in section:
+                    st.success(f"💡 **Recommendation:** {section['recommendation']}")
+                if 'strategy' in section:
+                    st.info(f"📋 **Strategy:** {section['strategy']}")
+    
+    with tab2:
+        st.subheader("FHWA Funding Formulas & US Code")
+        for prog_name, prog_data in report['formula_analysis']['formulas'].items():
+            with st.expander(f"{prog_name} - {prog_data['description']}", expanded=False):
+                st.markdown(f"**Statute:** [{prog_data['statute']}]({prog_data['url']})")
+                st.markdown(f"**Allocation Method:** {prog_data['allocation_method']}")
+                if 'key_factors' in prog_data:
+                    st.markdown("**Key Factors:**")
+                    for factor in prog_data['key_factors']:
+                        st.markdown(f"- {factor}")
+                if 'illinois_advantage' in prog_data:
+                    st.success(f"✅ **IL Advantage:** {prog_data['illinois_advantage']}")
+                if 'flexibility' in prog_data:
+                    st.info(f"🔧 **Flexibility:** {prog_data['flexibility']}")
+    
+    with tab3:
+        st.subheader("District Formula Allocations (FY 2026)")
+        
+        try:
+            with open('district_formula_allocations.json', 'r') as f:
+                formula_data = json.load(f)
+            
+            st.success("✅ Formula calculations loaded - showing all federal programs")
+            
+            col1, col2, col3, col4 = st.columns(4)
+            totals = formula_data['fy26_totals']
+            col1.metric("STBG Total", f"${totals['stbg_total']/1e6:.1f}M")
+            col2.metric("NHPP Total", f"${totals['nhpp_total']/1e6:.1f}M")
+            col3.metric("HSIP Total", f"${totals['hsip_total']/1e6:.1f}M")
+            col4.metric("Bridge Total", f"${totals['bridge_total']/1e6:.1f}M")
+            
+            st.markdown("---")
+            
+            district_details = []
+            for dist, alloc in sorted(formula_data['district_allocations'].items()):
+                district_details.append({
+                    'District': dist,
+                    'Representative': alloc['representative'],
+                    'Type': alloc['type'].replace('_', ' ').title(),
+                    'STBG': f"${alloc['stbg_formula']/1e6:.1f}M",
+                    'NHPP': f"${alloc['nhpp_est']/1e6:.1f}M",
+                    'HSIP': f"${alloc['hsip_est']/1e6:.1f}M",
+                    'Bridge': f"${alloc['bridge_est']/1e6:.1f}M",
+                    'Total': f"${alloc['total_formula_est']/1e6:.1f}M",
+                    'Per Capita': f"${alloc['per_capita']:.0f}"
+                })
+            
+            st.dataframe(pd.DataFrame(district_details), width='stretch', hide_index=True, height=600)
+            
+            st.markdown("### Total Allocation by District")
+            df_viz = pd.DataFrame(district_details)
+            df_viz['Total_Num'] = df_viz['Total'].str.replace('$','').str.replace('M','').astype(float)
+            
+            chart = alt.Chart(df_viz).mark_bar().encode(
+                x=alt.X('District:N', sort='-y'),
+                y=alt.Y('Total_Num:Q', title='Total Allocation ($M)'),
+                color='Type:N',
+                tooltip=['District', 'Representative', 'Type', 'Total']
+            ).properties(height=400)
+            st.altair_chart(chart, use_container_width=True)
+            
+            st.markdown("### Per Capita Funding")
+            df_viz['PerCapita_Num'] = df_viz['Per Capita'].str.replace('$','').astype(float)
+            
+            chart2 = alt.Chart(df_viz).mark_bar().encode(
+                x=alt.X('District:N', sort='-y'),
+                y=alt.Y('PerCapita_Num:Q', title='Per Capita ($)'),
+                color='Type:N',
+                tooltip=['District', 'Representative', 'Per Capita']
+            ).properties(height=400)
+            st.altair_chart(chart2, use_container_width=True)
+            
+        except FileNotFoundError:
+            st.warning("⚠️ Run: python3 calculate_district_formulas.py to generate detailed allocations")
+            district_data = []
+            for dist, alloc in sorted(report['district_allocations'].items()):
+                district_data.append({
+                    'District': dist,
+                    'Representative': alloc['representative'],
+                    'Type': alloc['type'],
+                    'Est. STBG': f"${alloc['stbg_formula']:,.0f}"
+                })
+            st.dataframe(pd.DataFrame(district_data), width='stretch', hide_index=True)
+    
+    with tab4:
+        st.subheader("Strategic Recommendations")
+        
+        st.markdown("### ⚡ Immediate Actions")
+        for rec in report['recommendations']['immediate']:
+            st.markdown(f"- {rec}")
+        
+        st.markdown("### 📈 Strategic Priorities")
+        for rec in report['recommendations']['strategic']:
+            st.markdown(f"- {rec}")
+        
+        st.markdown("### 🏛️ Political Considerations")
+        for rec in report['recommendations']['political']:
+            st.markdown(f"- {rec}")
+        
+        st.markdown("---")
+        st.markdown("### 📋 Next Steps")
+        for step in report['next_steps']:
+            st.markdown(f"- {step}")
+
+
+# ==================== IL GENERAL ASSEMBLY ====================
+elif view == "🏛️ IL General Assembly":
+    st.header("🏛️ Illinois General Assembly Transportation Tracker")
+    
+    try:
+        with open('illinois_general_assembly.json', 'r') as f:
+            ilga_data = json.load(f)
+        
+        st.markdown(f"### 104th General Assembly (2025-2026)")
+        
+        col1, col2, col3 = st.columns(3)
+        col1.metric("State Senators", ilga_data['stats']['total_senators'])
+        col2.metric("State Representatives", ilga_data['stats']['total_representatives'])
+        col3.metric("Transport Bills", ilga_data['stats']['transport_bills'])
+        
+        st.markdown("---")
+        
+        tab1, tab2, tab3 = st.tabs(["🗺️ District Map", "📋 Bills", "👥 Legislators"])
+        
+        with tab1:
+            st.subheader("Illinois Legislative District Map")
+
+            # Load member data for popups
+            try:
+                with open('members.json', 'r') as f:
+                    _map_members = json.load(f)
+                _il_house = _map_members.get('il_house', {})
+                _il_senate = _map_members.get('il_senate', {})
+            except:
+                _il_house = {}
+                _il_senate = {}
+
+            # Layer selector
+            map_layer = st.radio(
+                "Select map layer:",
+                ["🏛️ Congressional Districts (17)", "🏠 IL House Districts (118)", "🏛️ IL Senate Districts (59)", "📊 All Layers"],
+                horizontal=True,
+                key="ilga_map_layer"
+            )
+            
+            m = folium.Map(location=[40.0, -89.0], zoom_start=7, tiles="CartoDB positron")
+            
+            boundaries_loaded = 0
+            
+            # Congressional districts
+            if map_layer.startswith("🏛️ Congressional") or map_layer.startswith("📊"):
+                for i in range(1, 18):
+                    dist_key = f"IL-{i:02d}"
+                    boundary = DISTRICT_BOUNDARIES.get(dist_key)
+                    if boundary and 'geometry' in boundary:
+                        info = DISTRICTS.get(dist_key, {})
+                        rep_name = info.get('rep', 'Unknown')
+                        party = info.get('party', '?')
+                        area = info.get('area', '')
+                        color = '#2166ac' if party == 'D' else '#b2182b'
+                        
+                        popup_html = f"<b>{dist_key}: {rep_name} ({party})</b><br>{area}<br><i>Congressional District</i>"
+                        
+                        rings = geojson_to_folium_coords(boundary['geometry'])
+                        for ring in rings:
+                            folium.Polygon(
+                                locations=ring,
+                                color=color,
+                                fill=True,
+                                fillColor=color,
+                                fillOpacity=0.15 if map_layer.startswith("📊") else 0.25,
+                                weight=3,
+                                popup=folium.Popup(popup_html, max_width=250),
+                                tooltip=f"{dist_key}: {rep_name}"
+                            ).add_to(m)
+                        boundaries_loaded += 1
+
+            # IL House districts
+            if map_layer.startswith("🏠") or map_layer.startswith("📊"):
+                for i in range(1, 119):
+                    dist_key = f"IL-H-{i:03d}"
+                    boundary = load_boundary(dist_key)
+                    if boundary and 'geometry' in boundary:
+                        member = _il_house.get(dist_key, {})
+                        name = member.get('name', f'District {i}')
+                        party = member.get('party', '?')
+                        area = member.get('area', '')
+                        color = '#4393c3' if party == 'D' else '#d6604d' if party == 'R' else '#999999'
+                        
+                        popup_html = f"<b>{dist_key}: {name}</b><br>{'🔵 D' if party == 'D' else '🔴 R' if party == 'R' else '⚪ ?'}<br>{area}<br><i>IL House District</i>"
+                        
+                        rings = geojson_to_folium_coords(boundary['geometry'])
+                        for ring in rings:
+                            folium.Polygon(
+                                locations=ring,
+                                color=color,
+                                fill=True,
+                                fillColor=color,
+                                fillOpacity=0.12 if map_layer.startswith("📊") else 0.2,
+                                weight=1.5,
+                                popup=folium.Popup(popup_html, max_width=250),
+                                tooltip=f"{dist_key}: {name}"
+                            ).add_to(m)
+                        boundaries_loaded += 1
+
+            # IL Senate districts
+            if map_layer.startswith("🏛️ IL Senate") or map_layer.startswith("📊"):
+                for i in range(1, 60):
+                    dist_key = f"IL-S-{i:03d}"
+                    boundary = load_boundary(dist_key)
+                    if boundary and 'geometry' in boundary:
+                        member = _il_senate.get(dist_key, {})
+                        name = member.get('name', f'District {i}')
+                        party = member.get('party', '?')
+                        area = member.get('area', '')
+                        color = '#2166ac' if party == 'D' else '#b2182b' if party == 'R' else '#999999'
+                        
+                        popup_html = f"<b>{dist_key}: {name}</b><br>{'🔵 D' if party == 'D' else '🔴 R' if party == 'R' else '⚪ ?'}<br>{area}<br><i>IL Senate District</i>"
+                        
+                        rings = geojson_to_folium_coords(boundary['geometry'])
+                        for ring in rings:
+                            folium.Polygon(
+                                locations=ring,
+                                color=color,
+                                fill=True,
+                                fillColor=color,
+                                fillOpacity=0.12 if map_layer.startswith("📊") else 0.2,
+                                weight=2,
+                                popup=folium.Popup(popup_html, max_width=250),
+                                tooltip=f"{dist_key}: {name}"
+                            ).add_to(m)
+                        boundaries_loaded += 1
+
+            if boundaries_loaded > 0:
+                st.caption(f"Showing {boundaries_loaded} districts. Click a district for details.")
+                st_folium(m, width=1400, height=650, returned_objects=[])
+            else:
+                st.warning("⚠️ No boundary files found. Run: `python fetch_boundaries_v2.py`")
+            
+            # Legend
+            st.markdown("""
+            **Legend:** 🔵 Democrat · 🔴 Republican · Colors vary by layer.  
+            Congressional = bold outlines · House = thin outlines · Senate = medium outlines
+            """)
+
+        with tab2:
+            st.subheader("Transportation Bills (2025-2026 Session)")
+            
+            if ilga_data['transport_bills']:
+                for bill_id, bill in ilga_data['transport_bills'].items():
+                    with st.expander(f"{bill['number']}: {bill['title']}"):
+                        st.markdown(f"**Sponsor:** {bill['sponsor']}")
+                        st.markdown(f"**Status:** {bill['status']}")
+                        st.markdown(f"**Summary:** {bill['summary']}")
+            else:
+                st.info("No transportation bills tracked yet")
+        
+        with tab3:
+            st.subheader("🏛️ IL House & Senate Members")
+
+            # Load member data
+            try:
+                with open('members.json', 'r') as f:
+                    _tab_members = json.load(f)
+                il_house = _tab_members.get('il_house', {})
+                il_senate = _tab_members.get('il_senate', {})
+            except:
+                il_house = {}
+                il_senate = {}
+                st.warning("Could not load member roster")
+
+            # Search box
+            search_query = st.text_input("🔍 Search by name, district, or area:", key="ilga_search", placeholder="e.g. Colvin, District 3, Chicago...")
+            
+            chamber_filter = st.radio("Chamber:", ["Both", "House", "Senate"], horizontal=True, key="ilga_chamber_filter")
+
+            # Build combined member list for searching
+            all_members = []
+            if chamber_filter in ("Both", "House"):
+                for key, member in il_house.items():
+                    all_members.append({
+                        'key': key,
+                        'name': member.get('name', 'Unknown'),
+                        'party': member.get('party', '?'),
+                        'district': member.get('district', 0),
+                        'area': member.get('area', ''),
+                        'chamber': 'House',
+                        'nav_chamber': 'IL House (118)',
+                    })
+            if chamber_filter in ("Both", "Senate"):
+                for key, member in il_senate.items():
+                    all_members.append({
+                        'key': key,
+                        'name': member.get('name', 'Unknown'),
+                        'party': member.get('party', '?'),
+                        'district': member.get('district', 0),
+                        'area': member.get('area', ''),
+                        'chamber': 'Senate',
+                        'nav_chamber': 'IL Senate (59)',
+                    })
+
+            # Filter by search query
+            if search_query:
+                q = search_query.lower()
+                all_members = [m for m in all_members if (
+                    q in m['name'].lower() or
+                    q in m['area'].lower() or
+                    q in m['key'].lower() or
+                    q in str(m['district']) or
+                    q in m['chamber'].lower()
+                )]
+            
+            all_members.sort(key=lambda x: (x['chamber'], x['district']))
+
+            if all_members:
+                st.markdown(f"**Showing {len(all_members)} members** — click to open profile")
+                
+                # Display as a searchable table with buttons
+                for m in all_members:
+                    party_icon = '🔵' if m['party'] == 'D' else '🔴' if m['party'] == 'R' else '⚪'
+                    label = f"{party_icon} {m['key']} — {m['name']} ({m['chamber']}) — {m['area']}"
+                    
+                    def make_nav(nav_chamber=m['nav_chamber'], dist=m['district']):
+                        def handler():
+                            st.session_state['_pending_nav'] = '👥 State Legislators'
+                            st.session_state['_pending_chamber'] = nav_chamber
+                            st.session_state['_pending_num'] = dist
+                        return handler
+                    
+                    st.button(label, key=f"ilga_nav_{m['key']}", on_click=make_nav(), use_container_width=True)
+            else:
+                st.info("No members match your search.")
+    
+    except Exception as e:
+        import traceback
+        error_msg = traceback.format_exc()
+        st.error(f"⚠️ Illinois GA data not loaded. Error:\n\n```\n{error_msg}\n```")
+        st.info("💡 Try running: `python3 scrape_ilga.py` in the terminal")
+
+
+# ==================== AV POLICY ====================
+elif view == "🤖 AV Policy":
+    st.header("🚗 Autonomous Vehicle Policy - 50 State Tracker")
+    
+    av_states = {'passed': {}, 'active': {}}
+
+    try:
+        with open('ncsl_av_complete.json', 'r') as f:
+            ncsl_data = json.load(f)
+
+        for state_name, state_info in ncsl_data.get('states', {}).items():
+            # If there are active bills listed, treat as active/pending
+            if state_info.get('active_bills'):
+                av_states['active'][state_name] = state_info
+            # If the state has a year (not 'N/A'), consider it enacted/passed
+            elif state_info.get('year') and state_info.get('year') != 'N/A':
+                av_states['passed'][state_name] = state_info
+            # If type indicates Testing/Study/Executive Order but no year, consider passed-ish
+            elif state_info.get('type') in ('Testing', 'Executive Order', 'Comprehensive', 'Study'):
+                av_states['passed'][state_name] = state_info
+            # otherwise leave as no activity
+    except FileNotFoundError:
+        st.warning("⚠️ NCSL AV data file not found. Showing empty tracker.")
+    except Exception as e:
+        st.error(f"Error loading AV data: {e}")
+    
+    col1, col2, col3, col4 = st.columns(4)
+    col1.metric("🔵 Laws Passed", len(av_states['passed']))
+    col2.metric("🟠 Active Legislation", len(av_states['active']))
+    col3.metric("⚪ No Activity", 50 - len(av_states['passed']) - len(av_states['active']))
+    col4.metric("📍 Illinois Status", "Pending")
+    
+    st.markdown("---")
+    
+    st.subheader("Interactive 50-State Map")
+    st.markdown("**🔵 Blue** = Laws Passed | **🟠 Orange** = Active Legislation | **⚪ Gray** = No Activity")
+    
+    state_coords = {
+        'Alabama': [32.8067, -86.7911], 'Alaska': [61.3707, -152.4044], 'Arizona': [33.7298, -111.4312],
+        'Arkansas': [34.9697, -92.3731], 'California': [36.1162, -119.6816], 'Colorado': [39.0598, -105.3111],
+        'Connecticut': [41.5978, -72.7554], 'Delaware': [39.3185, -75.5071], 'Florida': [27.7663, -81.6868],
+        'Georgia': [33.0406, -83.6431], 'Hawaii': [21.0943, -157.4983], 'Idaho': [44.2405, -114.4788],
+        'Illinois': [40.3495, -88.9861], 'Indiana': [39.8494, -86.2583], 'Iowa': [42.0115, -93.2105],
+        'Kansas': [38.5266, -96.7265], 'Kentucky': [37.6681, -84.6701], 'Louisiana': [31.1695, -91.8678],
+        'Maine': [44.6939, -69.3819], 'Maryland': [39.0639, -76.8021], 'Massachusetts': [42.2302, -71.5301],
+        'Michigan': [43.3266, -84.5361], 'Minnesota': [45.6945, -93.9002], 'Mississippi': [32.7416, -89.6787],
+        'Missouri': [38.4561, -92.2884], 'Montana': [46.9219, -110.4544], 'Nebraska': [41.1254, -98.2681],
+        'Nevada': [38.3135, -117.0554], 'New Hampshire': [43.4525, -71.5639], 'New Jersey': [40.2989, -74.5210],
+        'New Mexico': [34.8405, -106.2485], 'New York': [42.1657, -74.9481], 'North Carolina': [35.6301, -79.8064],
+        'North Dakota': [47.5289, -99.7840], 'Ohio': [40.3888, -82.7649], 'Oklahoma': [35.5653, -96.9289],
+        'Oregon': [44.5720, -122.0709], 'Pennsylvania': [40.5908, -77.2098], 'Rhode Island': [41.6809, -71.5118],
+        'South Carolina': [33.8569, -80.9450], 'South Dakota': [44.2998, -99.4388], 'Tennessee': [35.7478, -86.6923],
+        'Texas': [31.0545, -97.5635], 'Utah': [40.1500, -111.8624], 'Vermont': [44.0459, -72.7107],
+        'Virginia': [37.7693, -78.1700], 'Washington': [47.4009, -121.4905], 'West Virginia': [38.4912, -80.9545],
+        'Wisconsin': [44.2685, -89.6165], 'Wyoming': [42.7559, -107.3025]
+    }
+    
+    m = folium.Map(location=[39.8283, -98.5795], zoom_start=4, tiles='CartoDB positron')
+    
+    for state, coords in state_coords.items():
+        if state in av_states['passed']:
+            color = 'blue'
+            status_info = av_states['passed'][state]
+            status_text = f"<b>✅ PASSED ({status_info['year']})</b><br>{status_info['type']}<br>{status_info['status']}"
+        elif state in av_states['active']:
+            color = 'orange'
+            status_info = av_states['active'][state]
+            status_text = f"<b>🟠 PENDING ({status_info['year']})</b><br>{status_info['type']}<br>{status_info['status']}"
+        else:
+            color = 'gray'
+            status_text = "<b>⚪ NO ACTIVITY</b><br>No AV legislation"
+        
+        folium.CircleMarker(
+            location=coords,
+            radius=8 if state in av_states['passed'] or state in av_states['active'] else 4,
+            popup=folium.Popup(f"<b>{state}</b><br>{status_text}", max_width=250),
+            tooltip=state,
+            color=color,
+            fill=True,
+            fillColor=color,
+            fillOpacity=0.7 if state in av_states['passed'] or state in av_states['active'] else 0.3,
+            weight=2
+        ).add_to(m)
+    
+    st_folium(m, width=1400, height=600, returned_objects=[])
+    
+    st.markdown("---")
+    
+    tab1, tab2, tab3 = st.tabs(["🔵 Laws Passed", "🟠 Active Legislation", "📊 Illinois Options"])
+    
+    with tab1:
+        st.markdown("### States with Passed AV Legislation")
+        if not av_states['passed']:
+            st.info("No states with passed legislation found in database")
+        for state, info in sorted(av_states['passed'].items()):
+            with st.expander(f"**{state}** - {info.get('type', 'Unknown')} ({info.get('year', 'N/A')})", expanded=False):
+                st.markdown(f"**Status:** {info.get('status', 'N/A')}")
+                st.markdown(f"**Type:** {info.get('type', 'N/A')}")
+                st.markdown(f"**Year Enacted:** {info.get('year', 'N/A')}")
+                
+                st.markdown("---")
+                
+                st.markdown("#### 📜 Primary Legislation")
+                st.markdown(f"**{info.get('law_name', 'N/A')}**")
+                
+                st.markdown("#### 🏛️ Implementing Agency")
+                agency = info.get('agency', 'N/A')
+                agency_url = info.get('agency_url', '')
+                if agency_url:
+                    st.markdown(f"**{agency}** - [Visit Agency Page]({agency_url})")
+                else:
+                    st.markdown(f"**{agency}**")
+                
+                if info.get('executive_orders'):
+                    st.markdown("#### 📋 Executive Orders")
+                    for eo in info['executive_orders']:
+                        st.markdown(f"- **{eo.get('title', 'N/A')}** ({eo.get('year', 'N/A')}) - [Read Order]({eo.get('url', '#')})")
+                
+                if info.get('press_releases'):
+                    st.markdown("#### 📰 Recent Press Releases")
+                    for pr in info['press_releases']:
+                        st.markdown(f"- **{pr.get('title', 'N/A')}** ({pr.get('date', 'N/A')}) - [Read More]({pr.get('url', '#')})")
+    
+    with tab2:
+        st.markdown("### States with Active/Pending Legislation")
+        if not av_states['active']:
+            st.info("📊 Currently tracking passed legislation only. Active bills tracked separately.")
+        for state, info in sorted(av_states['active'].items()):
+            with st.expander(f"**{state}** - {info.get('status', 'Unknown')}", expanded=False):
+                st.markdown(f"**Status:** {info.get('status', 'N/A')}")
+                st.markdown(f"**Type:** {info.get('type', 'N/A')}")
+                st.markdown(f"**Year:** {info.get('year', 'N/A')}")
+                
+                st.markdown("---")
+                
+                st.markdown("#### 📜 Pending Legislation")
+                st.markdown(f"**{info.get('law_name', 'N/A')}**")
+                
+                st.markdown("#### 🏛️ Lead Agency")
+                agency = info.get('agency', 'N/A')
+                agency_url = info.get('agency_url', '')
+                if agency_url:
+                    st.markdown(f"**{agency}** - [Visit Agency Page]({agency_url})")
+                else:
+                    st.markdown(f"**{agency}**")
+                
+                if info.get('bills_pending'):
+                    st.markdown("#### 📑 Bills Under Consideration")
+                    for bill in info['bills_pending']:
+                        st.markdown(f"- **{bill.get('bill', 'N/A')}** - {bill.get('status', 'N/A')} - [View Bill]({bill.get('url', '#')})")
+                
+                if info.get('executive_orders'):
+                    st.markdown("#### 📋 Executive Orders")
+                    for eo in info['executive_orders']:
+                        st.markdown(f"- **{eo.get('title', 'N/A')}** ({eo.get('year', 'N/A')}) - [Read Order]({eo.get('url', '#')})")
+                
+                if info.get('press_releases'):
+                    st.markdown("#### 📰 Recent Announcements")
+                    for pr in info['press_releases']:
+                        st.markdown(f"- **{pr.get('title', 'N/A')}** ({pr.get('date', 'N/A')}) - [Read More]({pr.get('url', '#')})")
+                
+                if state == 'Illinois':
+                    st.info("👉 See Illinois Options tab for detailed policy recommendations")
+    
+    with tab3:
+        st.markdown("### Illinois AV Policy Options")
+        
+        st.markdown("#### 🔗 Illinois Resources")
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("- [IDOT Homepage](https://idot.illinois.gov/)")
+            st.markdown("- [Illinois General Assembly](https://www.ilga.gov/)")
+        with col2:
+            st.markdown("- [Governor's Office](https://www.illinois.gov/government/governor.html)")
+            st.markdown("- [Secretary of State](https://www.cyberdriveillinois.com/)")
+        
+        st.markdown("---")
+        
+        with st.expander("⭐ Option B: Pilot Program (RECOMMENDED)", expanded=True):
+            st.write("**Chicago-based pilot with 2-3 year evaluation**")
+            st.write("✅ Test-and-learn approach")
+            st.write("✅ Build public trust gradually")
+            st.write("✅ Flexible framework")
+            st.write("✅ Data-driven decisions")
+            st.success("**Staff recommendation for Illinois**")
+            
+            st.markdown("**Similar approaches:**")
+            st.markdown("- [Massachusetts Pilot Program](https://www.mass.gov/)")
+            st.markdown("- [Georgia Testing Framework](http://www.legis.ga.gov/)")
+        
+        with st.expander("Option A: Comprehensive Framework"):
+            st.write("**Full regulatory system like California**")
+            st.write("✅ Strong safety standards")
+            st.write("✅ Clear liability framework")
+            st.write("⚠️ Resource intensive")
+            st.write("⚠️ May slow innovation")
+            
+            st.markdown("**Model legislation:**")
+            st.markdown("- [California SB 1298](https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=201120120SB1298)")
+            st.markdown("- [Michigan SB 169](http://www.legislature.mi.gov/)")
+        
+        with st.expander("⚠️ Option C: Status Quo (NOT RECOMMENDED)"):
+            st.write("**Minimal regulation (Arizona model)**")
+            st.write("⚠️ Limited safety oversight")
+            st.write("⚠️ Unclear liability")
+            st.write("⚠️ Public trust concerns")
+            st.error("**This is what Waymo is lobbying for**")
+            
+            st.markdown("**Example approaches:**")
+            st.markdown("- [Arizona EO 2015-09](https://azgovernor.gov/)")
+            st.markdown("- [Texas Permissive Framework](https://capitol.texas.gov/)")
+        
+        st.markdown("---")
+        st.markdown("**📍 Illinois Status:** Pending - Decision expected Q2 2026")
+        st.markdown("**📧 Contact:** [IDOT Policy Office](https://idot.illinois.gov/about-idot/contact-us.html)")
+
+
+# ==================== FY27 PROJECTIONS ====================
+elif view == "🔮 FY27 Projections":
+    st.header("🔮 FY 2027 Appropriations Projections")
+    
+    try:
+        with open('fy27_appropriations_projections.json', 'r') as f:
+            proj_data = json.load(f)
+    except:
+        st.error("⚠️ Run: python3 analyze_appropriations_fy27.py")
+        st.stop()
+    
+    st.warning("⚠️ **CRITICAL**: IIJA authorization expires after FY26. New surface transportation reauthorization needed for FY27+")
+    
+    baseline = proj_data['fy26_baseline']['total']
+    st.markdown(f"### FY 2026 Baseline (Enacted): **${baseline/1e9:.2f} Billion**")
+    
+    st.markdown("---")
+    
+    st.markdown("### FY 2027 Projection Scenarios")
+    
+    scenarios = proj_data['fy27_scenarios']
+    
+    for scenario in scenarios:
+        with st.expander(f"{scenario['name']} - Likelihood: {scenario['likelihood']}", expanded=(scenario['name'] == 'Inflation Adjusted')):
+            col1, col2, col3 = st.columns(3)
+            
+            col1.metric("FY27 Projected", f"${scenario['fy27_projected']/1e9:.2f}B")
+            col2.metric("Change from FY26", f"${scenario['change_from_fy26']/1e6:+.0f}M")
+            col3.metric("Change %", f"{scenario['change_percent']:+.1f}%")
+            
+            st.markdown(f"**Assessment:** {scenario['likelihood']}")
+    
+    st.markdown("### Scenario Comparison")
+    
+    chart_data = []
+    for scenario in scenarios:
+        chart_data.append({
+            'Scenario': scenario['name'],
+            'Amount': scenario['fy27_projected']/1e9
+        })
+    
+    df = pd.DataFrame(chart_data)
+    chart = alt.Chart(df).mark_bar().encode(
+        x=alt.X('Scenario:N', sort='-y'),
+        y=alt.Y('Amount:Q', title='Billions ($)'),
+        color=alt.condition(
+            alt.datum.Scenario == 'Inflation Adjusted',
+            alt.value('green'),
+            alt.value('steelblue')
+        ),
+        tooltip=['Scenario', alt.Tooltip('Amount:Q', format='.2f')]
+    ).properties(height=400)
+    
+    st.altair_chart(chart, use_container_width=True)
+    
+    st.markdown("---")
+    st.markdown("### Key Insights")
+    
+    st.info("""
+    **Most Likely Outcome: Inflation Adjusted (+2.5%)**
+    
+    Illinois would receive approximately **$5.89 billion** in FY27 formula funding.
+    
+    This assumes:
+    - New surface transportation reauthorization OR continuing resolution
+    - 2.5% inflation adjustment to maintain purchasing power
+    - Illinois maintains 3.8-3.9% share of national total
+    """)
+    
+    st.markdown("### What to Watch")
+    st.markdown("""
+    - 📅 **Reauthorization Timeline**: Senate/House committees working on successor to IIJA
+    - 💰 **Earmarks**: Congressionally directed spending opportunities
+    - 🏆 **Discretionary Grants**: RAISE, INFRA, MEGA program funding levels
+    - 📊 **Illinois Share**: Historical 3.8-3.9% typically stable
+    """)
+    
+    # Program-level breakdown
+    st.markdown("---")
+    st.markdown("### Program-by-Program FY27 Projections")
+    
+    if 'program_projections' in proj_data:
+        
+        scenario_choice = st.selectbox(
+            "Select Scenario:",
+            ["Flat Extension (CR)", "Inflation Adjusted (2.5%)", "House Markup (+3.5%)", 
+             "Senate Markup (+4%)", "Budget Constraints (-2%)"],
+            index=1
+        )
+        
+        prog_data_list = []
+        
+        valid_programs = [
+            'National Highway Performance Program',
+            'Surface Transportation Grant Block Program',
+            'Bridge Formula',
+            'Highway Safety Improvement Program',
+            'Congestion Mitigation & Air Quality Improvement Program',
+            'National Highway Freight Program',
+            'PROTECT Formula',
+            'Carbon Reduction Program',
+            'NEVI (Electric Vehicle) Formula',
+            'Metropolitan Planning',
+            'Appalachian Development Highway System'
+        ]
+        
+        for prog_name, prog_info in proj_data['program_projections'].items():
+            if not any(valid in prog_name for valid in valid_programs):
+                continue
+            
+            if prog_info['fy26_baseline'] > 0:
+                fy26_amt = prog_info['fy26_baseline']
+                fy27_amt = prog_info['scenarios'][scenario_choice]
+                change = fy27_amt - fy26_amt
+                
+                prog_data_list.append({
+                    'Program': prog_name,
+                    'FY26 Baseline': f'${fy26_amt/1e6:.1f}M',
+                    'FY27 Projected': f'${fy27_amt/1e6:.1f}M',
+                    'Change': f'${change/1e6:+.1f}M'
+                })
+        
+        prog_data_list.sort(key=lambda x: float(x['FY26 Baseline'].replace('$','').replace('M','')), reverse=True)
+        
+        st.dataframe(pd.DataFrame(prog_data_list[:15]), width='stretch', hide_index=True, height=500)
+        
+        st.markdown("#### Top 5 Programs Comparison")
+        
+        top5_data = []
+        for prog in prog_data_list[:5]:
+            top5_data.append({
+                'Program': prog['Program'][:30] + '...' if len(prog['Program']) > 30 else prog['Program'],
+                'FY26': float(prog['FY26 Baseline'].replace('$','').replace('M','')),
+                'FY27': float(prog['FY27 Projected'].replace('$','').replace('M',''))
+            })
+        
+        df_chart = pd.DataFrame(top5_data)
+        df_melted = df_chart.melt(id_vars=['Program'], var_name='Year', value_name='Amount')
+        
+        chart = alt.Chart(df_melted).mark_bar().encode(
+            x='Program:N',
+            y='Amount:Q',
+            color='Year:N',
+            xOffset='Year:N',
+            tooltip=['Program', 'Year', 'Amount']
+        ).properties(height=400)
+        
+        st.altair_chart(chart, use_container_width=True)
+    else:
+        st.warning("Program-level projections not available. Run analysis script.")
+
+
+# ==================== DISCRETIONARY GRANTS ====================
+elif view == "💎 Discretionary Grants":
+    st.header("💎 Discretionary Grants - Competitive Federal Awards")
+    
+    try:
+        with open('discretionary_grants.json', 'r') as f:
+            grants_data = json.load(f)
+    except:
+        st.error("⚠️ Run: python3 create_discretionary_grants.py")
+        st.stop()
+    
+    st.markdown("### Illinois Competitive Grants (2020-2025)")
+    col1, col2, col3, col4 = st.columns(4)
+    
+    totals = grants_data['analysis']['totals']
+    col1.metric("Total Awards", f"${totals['total_amount']/1e9:.2f}B")
+    col2.metric("Grant Count", totals['total_grants'])
+    col3.metric("Avg Grant", f"${totals['average_grant']/1e6:.1f}M")
+    
+    by_program = grants_data['analysis']['by_program']
+    top_program = max(by_program.items(), key=lambda x: x[1]['total_amount'])
+    col4.metric("Top Program", f"{top_program[0]}")
+    
+    st.markdown("---")
+    
+    tab1, tab2, tab3 = st.tabs(["📊 By District", "📋 By Program", "📅 Timeline"])
+    
+    with tab1:
+        st.subheader("Grants by Congressional District")
+        
+        district_data = []
+        for dist, info in sorted(grants_data['analysis']['by_district'].items()):
+            if dist != 'Multiple':
+                district_data.append({
+                    'District': dist,
+                    'Total': f"${info['total_amount']/1e6:.1f}M",
+                    'Count': info['grant_count'],
+                    'Projects': f"{info['grant_count']} grants"
+                })
+        
+        st.dataframe(pd.DataFrame(district_data), width='stretch', hide_index=True, height=600)
+        
+        df_viz = pd.DataFrame(district_data)
+        df_viz['Amount'] = df_viz['Total'].str.replace('$','').str.replace('M','').astype(float)
+        
+        chart = alt.Chart(df_viz).mark_bar().encode(
+            x=alt.X('District:N', sort='-y'),
+            y='Amount:Q',
+            tooltip=['District', 'Total', 'Count']
+        ).properties(height=400)
+        st.altair_chart(chart, use_container_width=True)
+    
+    with tab2:
+        st.subheader("Grants by Federal Program")
+        
+        program_data = []
+        for prog, info in sorted(by_program.items(), key=lambda x: x[1]['total_amount'], reverse=True):
+            program_data.append({
+                'Program': prog,
+                'Total': f"${info['total_amount']/1e6:.0f}M",
+                'Count': info['count'],
+                'Avg Grant': f"${info['total_amount']/info['count']/1e6:.1f}M"
+            })
+        
+        st.dataframe(pd.DataFrame(program_data), width='stretch', hide_index=True)
+        
+        df_prog = pd.DataFrame(program_data)
+        df_prog['Amount'] = df_prog['Total'].str.replace('$','').str.replace('M','').astype(float)
+        
+        pie = alt.Chart(df_prog).mark_arc().encode(
+            theta='Amount:Q',
+            color='Program:N',
+            tooltip=['Program', 'Total', 'Count']
+        ).properties(height=400)
+        st.altair_chart(pie, use_container_width=True)
+    
+    with tab3:
+        st.subheader("All Grants Detail")
+        
+        grants_list = []
+        all_grants = sorted(grants_data['grants'], key=lambda x: x['year'], reverse=True)
+        for grant in all_grants:
+            grants_list.append({
+                'Year': grant['year'],
+                'Program': grant['program'],
+                'Amount': f"${grant['amount']/1e6:.1f}M",
+                'Recipient': grant['recipient'],
+                'Project': grant['project'],
+                'District': grant['district'],
+                'Status': grant['status']
+            })
+        
+        df_grants = pd.DataFrame(grants_list)
+        st.dataframe(df_grants, width='stretch', hide_index=True, height=600)
+
+
+# ==================== FOOTER ====================
+st.markdown("---")
+st.markdown(f"<div style='text-align: center; color: #666;'>IDOT Dashboard | {datetime.now().strftime('%B %d, %Y')}</div>", unsafe_allow_html=True)

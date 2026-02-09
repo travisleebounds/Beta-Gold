@@ -1,0 +1,286 @@
+{
+  "metadata": {
+    "created": "2026-02-05T18:34:43.878862",
+    "source": "FY26 THUD Bill (Enacted) + Economic Projections",
+    "bill_url": "https://www.appropriations.senate.gov/imo/media/doc/fy26_thud_bill_text.pdf",
+    "note": "FY27 projections based on FY26 enacted levels with various scenarios"
+  },
+  "fy26_baseline": {
+    "total": 5747674490.0,
+    "source": "Illinois MYP Assumptions (FHWA formula allocations)"
+  },
+  "fy27_scenarios": [
+    {
+      "name": "Flat Extension (CR)",
+      "fy27_projected": 5747674490.0,
+      "change_from_fy26": 0.0,
+      "change_percent": 0.0,
+      "likelihood": "Medium",
+      "rationale": "Continuing resolution at FY26 levels if new authorization delayed"
+    },
+    {
+      "name": "Inflation Adjusted (2.5%)",
+      "fy27_projected": 5891366352.249999,
+      "change_from_fy26": 143691862.24999905,
+      "change_percent": 2.4999999999999836,
+      "likelihood": "HIGH - Most Likely",
+      "rationale": "CBO projects 2.5% inflation; maintains purchasing power"
+    },
+    {
+      "name": "House Markup (+3.5%)",
+      "fy27_projected": 5948843097.15,
+      "change_from_fy26": 201168607.14999962,
+      "change_percent": 3.4999999999999933,
+      "likelihood": "Medium-High",
+      "rationale": "House typically marks up 3-4% for infrastructure"
+    },
+    {
+      "name": "Senate Markup (+4%)",
+      "fy27_projected": 5977581469.6,
+      "change_from_fy26": 229906979.60000038,
+      "change_percent": 4.000000000000006,
+      "likelihood": "Medium",
+      "rationale": "Senate historically more generous on infrastructure"
+    },
+    {
+      "name": "Budget Constraints (-2%)",
+      "fy27_projected": 5632721000.2,
+      "change_from_fy26": -114953489.80000019,
+      "change_percent": -2.000000000000003,
+      "likelihood": "Low",
+      "rationale": "Fiscal pressures force cuts; unlikely for infrastructure"
+    }
+  ],
+  "program_projections": {
+    "National Highway Performance Program": {
+      "fy26_baseline": 1081906576.0,
+      "scenarios": {
+        "Flat Extension (CR)": 1081906576.0,
+        "Inflation Adjusted (2.5%)": 1108954240.3999999,
+        "House Markup (+3.5%)": 1119773306.1599998,
+        "Senate Markup (+4%)": 1125182839.04,
+        "Budget Constraints (-2%)": 1060268444.48
+      }
+    },
+    "Surface Transportation Grant Block Program": {
+      "fy26_baseline": 526332929.0,
+      "scenarios": {
+        "Flat Extension (CR)": 526332929.0,
+        "Inflation Adjusted (2.5%)": 539491252.2249999,
+        "House Markup (+3.5%)": 544754581.515,
+        "Senate Markup (+4%)": 547386246.16,
+        "Budget Constraints (-2%)": 515806270.42
+      }
+    },
+    "Highway Safety Improvement Program": {
+      "fy26_baseline": 111381154.0,
+      "scenarios": {
+        "Flat Extension (CR)": 111381154.0,
+        "Inflation Adjusted (2.5%)": 114165682.85,
+        "House Markup (+3.5%)": 115279494.38999999,
+        "Senate Markup (+4%)": 115836400.16000001,
+        "Budget Constraints (-2%)": 109153530.92
+      }
+    },
+    "Railway-Highway Crossings Program": {
+      "fy26_baseline": 11306853.0,
+      "scenarios": {
+        "Flat Extension (CR)": 11306853.0,
+        "Inflation Adjusted (2.5%)": 11589524.325,
+        "House Markup (+3.5%)": 11702592.854999999,
+        "Senate Markup (+4%)": 11759127.120000001,
+        "Budget Constraints (-2%)": 11080715.94
+      }
+    },
+    "Congestion Mitigation & Air Quality Improvement Program": {
+      "fy26_baseline": 129845950.0,
+      "scenarios": {
+        "Flat Extension (CR)": 129845950.0,
+        "Inflation Adjusted (2.5%)": 133092098.74999999,
+        "House Markup (+3.5%)": 134390558.25,
+        "Senate Markup (+4%)": 135039788.0,
+        "Budget Constraints (-2%)": 127249031.0
+      }
+    },
+    "Metropolitan Planning": {
+      "fy26_baseline": 24365244.0,
+      "scenarios": {
+        "Flat Extension (CR)": 24365244.0,
+        "Inflation Adjusted (2.5%)": 24974375.099999998,
+        "House Markup (+3.5%)": 25218027.54,
+        "Senate Markup (+4%)": 25339853.76,
+        "Budget Constraints (-2%)": 23877939.12
+      }
+    },
+    "National Highway Freight Program": {
+      "fy26_baseline": 53371185.0,
+      "scenarios": {
+        "Flat Extension (CR)": 53371185.0,
+        "Inflation Adjusted (2.5%)": 54705464.62499999,
+        "House Markup (+3.5%)": 55239176.474999994,
+        "Senate Markup (+4%)": 55506032.4,
+        "Budget Constraints (-2%)": 52303761.3
+      }
+    },
+    "Carbon Reduction Program": {
+      "fy26_baseline": 46931353.0,
+      "scenarios": {
+        "Flat Extension (CR)": 46931353.0,
+        "Inflation Adjusted (2.5%)": 48104636.824999996,
+        "House Markup (+3.5%)": 48573950.355,
+        "Senate Markup (+4%)": 48808607.120000005,
+        "Budget Constraints (-2%)": 45992725.94
+      }
+    },
+    "PROTECT Formula": {
+      "fy26_baseline": 53364311.0,
+      "scenarios": {
+        "Flat Extension (CR)": 53364311.0,
+        "Inflation Adjusted (2.5%)": 54698418.775,
+        "House Markup (+3.5%)": 55232061.885,
+        "Senate Markup (+4%)": 55498883.440000005,
+        "Budget Constraints (-2%)": 52297024.78
+      }
+    },
+    "Bridge Formula": {
+      "fy26_baseline": 297268565.0,
+      "scenarios": {
+        "Flat Extension (CR)": 297268565.0,
+        "Inflation Adjusted (2.5%)": 304700279.125,
+        "House Markup (+3.5%)": 307672964.775,
+        "Senate Markup (+4%)": 309159307.6,
+        "Budget Constraints (-2%)": 291323193.7
+      }
+    },
+    "NEVI (Electric Vehicle) Formula": {
+      "fy26_baseline": 31655938.0,
+      "scenarios": {
+        "Flat Extension (CR)": 31655938.0,
+        "Inflation Adjusted (2.5%)": 32447336.449999996,
+        "House Markup (+3.5%)": 32763895.83,
+        "Senate Markup (+4%)": 32922175.52,
+        "Budget Constraints (-2%)": 31022819.24
+      }
+    },
+    "Ferry Boats and Facilities (released in June)": {
+      "fy26_baseline": 2568573.666666664,
+      "scenarios": {
+        "Flat Extension (CR)": 2568573.666666664,
+        "Inflation Adjusted (2.5%)": 2632788.0083333305,
+        "House Markup (+3.5%)": 2658473.7449999973,
+        "Senate Markup (+4%)": 2671316.613333331,
+        "Budget Constraints (-2%)": 2517202.193333331
+      }
+    },
+    "Totals": {
+      "fy26_baseline": 2492986638.6666665,
+      "scenarios": {
+        "Flat Extension (CR)": 2492986638.6666665,
+        "Inflation Adjusted (2.5%)": 2555311304.6333327,
+        "House Markup (+3.5%)": 2580241171.0199995,
+        "Senate Markup (+4%)": 2592706104.213333,
+        "Budget Constraints (-2%)": 2443126905.893333
+      }
+    },
+    "HSIP": {
+      "fy26_baseline": 14121671.0,
+      "scenarios": {
+        "Flat Extension (CR)": 14121671.0,
+        "Inflation Adjusted (2.5%)": 14474712.774999999,
+        "House Markup (+3.5%)": 14615929.485,
+        "Senate Markup (+4%)": 14686537.84,
+        "Budget Constraints (-2%)": 13839237.58
+      }
+    },
+    "106722536": {
+      "fy26_baseline": 20764004.0,
+      "scenarios": {
+        "Flat Extension (CR)": 20764004.0,
+        "Inflation Adjusted (2.5%)": 21283104.099999998,
+        "House Markup (+3.5%)": 21490744.139999997,
+        "Senate Markup (+4%)": 21594564.16,
+        "Budget Constraints (-2%)": 20348723.919999998
+      }
+    },
+    "3110182769": {
+      "fy26_baseline": 23591471.0,
+      "scenarios": {
+        "Flat Extension (CR)": 23591471.0,
+        "Inflation Adjusted (2.5%)": 24181257.775,
+        "House Markup (+3.5%)": 24417172.485,
+        "Senate Markup (+4%)": 24535129.84,
+        "Budget Constraints (-2%)": 23119641.58
+      }
+    },
+    "0.034313911408593495": {
+      "fy26_baseline": 28962182.0,
+      "scenarios": {
+        "Flat Extension (CR)": 28962182.0,
+        "Inflation Adjusted (2.5%)": 29686236.549999997,
+        "House Markup (+3.5%)": 29975858.369999997,
+        "Senate Markup (+4%)": 30120669.28,
+        "Budget Constraints (-2%)": 28382938.36
+      }
+    },
+    "11196571": {
+      "fy26_baseline": 174404290.0,
+      "scenarios": {
+        "Flat Extension (CR)": 174404290.0,
+        "Inflation Adjusted (2.5%)": 178764397.24999997,
+        "House Markup (+3.5%)": 180508440.14999998,
+        "Senate Markup (+4%)": 181380461.6,
+        "Budget Constraints (-2%)": 170916204.2
+      }
+    },
+    "245000000": {
+      "fy26_baseline": 263790802.0,
+      "scenarios": {
+        "Flat Extension (CR)": 263790802.0,
+        "Inflation Adjusted (2.5%)": 270385572.04999995,
+        "House Markup (+3.5%)": 273023480.07,
+        "Senate Markup (+4%)": 274342434.08,
+        "Budget Constraints (-2%)": 258514985.96
+      }
+    },
+    "0.045700289795918364": {
+      "fy26_baseline": 350919939.0,
+      "scenarios": {
+        "Flat Extension (CR)": 350919939.0,
+        "Inflation Adjusted (2.5%)": 359692937.47499996,
+        "House Markup (+3.5%)": 363202136.86499995,
+        "Senate Markup (+4%)": 364956736.56,
+        "Budget Constraints (-2%)": 343901540.21999997
+      }
+    },
+    "0.4041226629525914": {
+      "fy26_baseline": 2637880.0,
+      "scenarios": {
+        "Flat Extension (CR)": 2637880.0,
+        "Inflation Adjusted (2.5%)": 2703826.9999999995,
+        "House Markup (+3.5%)": 2730205.8,
+        "Senate Markup (+4%)": 2743395.2,
+        "Budget Constraints (-2%)": 2585122.4
+      }
+    },
+    "0.032627803631838724": {
+      "fy26_baseline": 2607410.0,
+      "scenarios": {
+        "Flat Extension (CR)": 2607410.0,
+        "Inflation Adjusted (2.5%)": 2672595.25,
+        "House Markup (+3.5%)": 2698669.3499999996,
+        "Senate Markup (+4%)": 2711706.4,
+        "Budget Constraints (-2%)": 2555261.8
+      }
+    },
+    "0.03892130172090656": {
+      "fy26_baseline": 2589570.666666664,
+      "scenarios": {
+        "Flat Extension (CR)": 2589570.666666664,
+        "Inflation Adjusted (2.5%)": 2654309.933333331,
+        "House Markup (+3.5%)": 2680205.6399999973,
+        "Senate Markup (+4%)": 2693153.493333331,
+        "Budget Constraints (-2%)": 2537779.253333331
+      }
+    }
+  }
+}
