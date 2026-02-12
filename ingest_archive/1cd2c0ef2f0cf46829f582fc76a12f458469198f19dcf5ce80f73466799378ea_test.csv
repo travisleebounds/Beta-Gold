@@ -1,0 +1,3 @@
+date,state,metric,value,unit,notes
+2026-02-01,IL,letting_total,1234567,USD,IDOT letting total for test
+2026-02-05,CA,av_rulemaking_comment_window,2026-02-05,date,DMV comment window close

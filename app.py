@@ -177,7 +177,7 @@ def display_federal_funding_for_district(cong_key: str):
                         y=alt.Y('Amount:Q', axis=alt.Axis(format='$,.0f'), title='Grant Amount'),
                         tooltip=['Year', alt.Tooltip('Amount:Q', format='$,.0f')]
                     ).properties(height=300)
-                    st.altair_chart(chart, use_container_width=True)
+                    st.altair_chart(chart, width="stretch")
             
             with tab_programs:
                 by_program = {}
@@ -292,8 +292,18 @@ def build_dashboard_context():
     return "\n".join(ctx)
 
 with st.sidebar:
-    st.markdown("### 🤖 IDOT AI Assistant")
-    st.info("AI chat disabled (rollback). App restored to stable mode.")
+    st.markdown("### 🧌 Policy Goblin")
+    st.caption("Ask quick questions here, or visit the full Goblin page for deep analysis.")
+    
+    sidebar_q = st.text_input("Quick question:", key="sidebar_goblin_q", placeholder="e.g. IL-07 funding summary")
+    if sidebar_q:
+        try:
+            from tools.policy_goblin_v2.goblin import ask_goblin
+            with st.spinner("🧌 Thinking..."):
+                answer = ask_goblin(sidebar_q, dashboard_context=build_dashboard_context())
+            st.markdown(answer)
+        except Exception as e:
+            st.error(f"Goblin error: {e}")
 
 st.markdown("""
 <style>
@@ -610,10 +620,11 @@ if '_current_view' not in st.session_state:
     st.session_state['_current_view'] = "🗺️ Statewide Map"  # Default view
 
 # Check for pending navigation requests (from IL General Assembly buttons)
-nav_options = ["🗺️ Statewide Map", "📍 District View", "🛣️ Live Road Events",
+nav_options = ["🗺️ Statewide Map", "📍 District View",
+    "🧑 Member Profiles", "🛣️ Live Road Events",
      "📝 Meeting Memos",
      "💰 Federal Funding", "📊 AI Analysis", "💎 Discretionary Grants",
-     "🔮 FY27 Projections", "🏛️ IL General Assembly", "🤖 AV Policy", "👥 State Legislators"]
+     "🔮 FY27 Projections", "🏛️ IL General Assembly", "🤖 AV Policy", "📥 Ingested Docs"]
 
 # Handle pending navigation
 if st.session_state['_pending_nav']:
@@ -629,12 +640,25 @@ if st.session_state['_pending_nav']:
 # Determine index for radio button
 current_index = nav_options.index(st.session_state['_current_view']) if st.session_state['_current_view'] in nav_options else 0
 
-view = st.radio(
-    "Navigation",
-    nav_options,
-    horizontal=True,
-    index=current_index
-)
+# Sidebar navigation (stable selection; prevents double-click/reset on rerun)
+views = [
+    "🗺️ Statewide Map",
+    "📍 District View",
+    "🧑 Member Profiles",
+    "🛣️ Live Road Events",
+    "📝 Meeting Memos",
+    "💰 Federal Funding",
+    "📊 AI Analysis",
+    "💎 Discretionary Grants",
+    "🔮 FY27 Projections",
+    "🏛️ IL General Assembly",
+    "🧌 Policy Goblin",
+    "🤖 AV Policy",
+    "📥 Ingested Docs",
+]
+if "view_select" not in st.session_state:
+    st.session_state["view_select"] = views[0]
+view = st.selectbox("Navigation", views, key="view_select")
 
 # Update current view and persist it
 st.session_state['_current_view'] = view
@@ -734,7 +758,7 @@ elif view == "📍 District View":
     st.sidebar.title("Select District")
     for district_id in sorted(DISTRICTS.keys()):
         info = DISTRICTS[district_id]
-        if st.sidebar.button(f"{district_id}: {info['rep']}", key=f"side_{district_id}", use_container_width=True):
+        if st.sidebar.button(f"{district_id}: {info['rep']}", key=f"side_{district_id}", width="stretch"):
             st.session_state.selected_district = district_id
             st.session_state.selected_item = None
     
@@ -759,7 +783,7 @@ elif view == "📍 District View":
             img_path = f'district_images/{district}.png'
             if os.path.exists(img_path):
                 img = Image.open(img_path)
-                st.image(img, caption=f"{district} Location", use_container_width=True)
+                st.image(img, caption=f"{district} Location", width="stretch")
             else:
                 st.info("📍 Reference map coming soon")
         
@@ -844,7 +868,7 @@ elif view == "📍 District View":
             if info.get('closures'):
                 st.markdown("**Click any item for details:**")
                 for idx, closure in enumerate(info['closures']):
-                    if st.button(f"🚧 {closure['route']} - {closure['location']} ({closure['status']})", key=f"closure_{idx}", use_container_width=True):
+                    if st.button(f"🚧 {closure['route']} - {closure['location']} ({closure['status']})", key=f"closure_{idx}", width="stretch"):
                         st.session_state.selected_item = ('closure', idx)
                 
                 if st.session_state.selected_item and st.session_state.selected_item[0] == 'closure':
@@ -867,7 +891,7 @@ elif view == "📍 District View":
             if info.get('construction'):
                 st.markdown("**Click any item for details:**")
                 for idx, construction in enumerate(info['construction']):
-                    if st.button(f"🏗️ {construction['route']} - {construction['location']} ({construction['status']})", key=f"construction_{idx}", use_container_width=True):
+                    if st.button(f"🏗️ {construction['route']} - {construction['location']} ({construction['status']})", key=f"construction_{idx}", width="stretch"):
                         st.session_state.selected_item = ('construction', idx)
                 
                 if st.session_state.selected_item and st.session_state.selected_item[0] == 'construction':
@@ -892,7 +916,7 @@ elif view == "📍 District View":
             if info.get('grants'):
                 st.markdown("**Click any item for details:**")
                 for idx, grant in enumerate(info['grants']):
-                    if st.button(f"💰 {grant['program']}: ${grant['amount']:,} - {grant['project']}", key=f"grant_{idx}", use_container_width=True):
+                    if st.button(f"💰 {grant['program']}: ${grant['amount']:,} - {grant['project']}", key=f"grant_{idx}", width="stretch"):
                         st.session_state.selected_item = ('grant', idx)
                 
                 if st.session_state.selected_item and st.session_state.selected_item[0] == 'grant':
@@ -914,7 +938,7 @@ elif view == "📍 District View":
             if district_bills:
                 st.markdown("**Click any item for details:**")
                 for idx, bill in enumerate(district_bills[:20]):
-                    if st.button(f"📜 {bill.get('number', 'N/A')} - {bill.get('title', 'No title')[:80]}...", key=f"bill_{idx}", use_container_width=True):
+                    if st.button(f"📜 {bill.get('number', 'N/A')} - {bill.get('title', 'No title')[:80]}...", key=f"bill_{idx}", width="stretch"):
                         st.session_state.selected_item = ('bill', idx)
                 
                 if st.session_state.selected_item and st.session_state.selected_item[0] == 'bill':
@@ -932,11 +956,211 @@ elif view == "📍 District View":
                         """, unsafe_allow_html=True)
             else:
                 st.info("No bills tracked (run get_bills.py to fetch)")
+
+        # ─── Document Master Report Generator ──────────────────
+        st.markdown("---")
+        try:
+            from tools.document_master.ui_report import render_report_generator
+            render_report_generator(
+                member_data={
+                    "id": district,
+                    "name": info['rep'],
+                    "party": info['party'],
+                    "area": info.get('area', ''),
+                },
+                dashboard_context=build_dashboard_context(),
+            )
+        except ImportError:
+            st.caption("📋 Report generator available after running setup_document_master.sh")
+
     else:
         st.info("👈 Select a district from the sidebar")
 
 
 # ==================== STATE LEGISLATORS ====================
+
+
+# ==================== INGESTED DOCS ====================
+
+# ==================== POLICY GOBLIN ====================
+elif view == "🧌 Policy Goblin":
+    from tools.policy_goblin_v2.goblin import render_policy_goblin
+    dashboard_ctx = build_dashboard_context()
+    render_policy_goblin(dashboard_context=dashboard_ctx)
+
+
+
+# ==================== MEMBER PROFILES ====================
+elif view == "🧑 Member Profiles":
+    from tools.member_profiles import render_member_profiles
+
+    # Best-effort: pass through whatever is available in app.py
+    # (If any are missing, the page still works)
+    render_member_profiles(
+        members_data=globals().get("members_data"),
+        road_events=globals().get("road_events"),
+        grants=globals().get("grants_data") or globals().get("grants"),
+        legislation=globals().get("legislation_data") or globals().get("legislation"),
+    )
+
+
+elif view == "📥 Ingested Docs":
+    st.header("📥 Ingested Documents & Latest Facts")
+    st.caption("Upload files → run ingest → view latest extracted facts. Read-only; does not touch maps.")
+
+    import pandas as pd
+    import subprocess, shlex
+    from pathlib import Path
+
+    idx_path = Path("data/ingest/index.json")
+    facts_path = Path("data/ingest/facts.json")
+    memo_path = Path("memos/UPDATED_memo.docx")
+    inbox_dir = Path("ingest_inbox")
+    inbox_dir.mkdir(parents=True, exist_ok=True)
+
+    st.markdown("### 📤 Upload & Ingest")
+    up = st.file_uploader(
+        "Upload files to ingest_inbox/",
+        type=["csv","xlsx","pdf","docx","txt","md"],
+        accept_multiple_files=True
+    )
+
+    c1, c2, c3 = st.columns([1,1,2])
+    run_no_ai = c1.checkbox("Run in no-AI mode", value=True, help="Never calls OpenAI.")
+    if c3.button("🚀 Save uploads + Run ingest", width="stretch", type="primary"):
+        saved = 0
+        if up:
+            for f in up:
+                name = Path(f.name).name.replace("..","").replace("/","_").replace("\\","_")
+                (inbox_dir / name).write_bytes(f.getvalue())
+                saved += 1
+        st.info(f"Saved {saved} file(s) to ingest_inbox/")
+
+        cmd = ["python3", "-m", "tools.ingest.run_ingest"]
+        if run_no_ai:
+            cmd.append("--no-ai")
+        cmd.append("ingest_inbox/")
+
+        st.code(" ".join(shlex.quote(c) for c in cmd), language="bash")
+        res = subprocess.run(cmd, capture_output=True, text=True, cwd=".")
+        st.subheader("Ingest output")
+        st.text(res.stdout or "")
+        if res.stderr:
+            st.warning("stderr:")
+            st.text(res.stderr)
+
+        if res.returncode != 0:
+            st.error(f"Ingest failed (exit {res.returncode}).")
+        else:
+            st.success("Ingest completed.")
+            st.rerun()
+
+    st.markdown("---")
+
+    # Document Master vector indexing
+    st.markdown("### 🧠 Document Master — Vector Index")
+    st.caption("Index uploaded documents into the AI vector store for semantic search and report generation.")
+    
+    dm_col1, dm_col2 = st.columns([2, 1])
+    if dm_col1.button("🧠 Index documents into Document Master", key="dm_reindex", use_container_width=True, type="primary"):
+        try:
+            from tools.document_master.engine import DocumentMaster
+            dm = DocumentMaster()
+            results = dm.ingest_directory("ingest_inbox/", force=True)
+            if not results:
+                st.info("No supported files found in ingest_inbox/")
+            for r in results:
+                if r.get("status") == "ingested":
+                    st.success(f"✅ {r['file']}: {r['chunks']} chunks indexed")
+                elif r.get("status") == "skipped":
+                    st.info(f"⏭️ {r['file']}: already indexed")
+                else:
+                    st.warning(f"⚠️ {r['file']}: {r.get('reason', 'unknown error')}")
+            st.success(f"📚 Document Master: {dm.collection.count()} total chunks in vector store")
+        except ImportError:
+            st.error("Document Master not installed. Run: `bash setup_document_master.sh`")
+        except Exception as e:
+            st.error(f"Document Master indexing failed: {e}")
+    
+    # Show current DM status
+    try:
+        from tools.document_master.engine import DocumentMaster
+        dm = DocumentMaster()
+        dm_status = dm.status()
+        dm_col2.metric("Chunks Indexed", dm_status["total_chunks"])
+    except Exception:
+        dm_col2.metric("Chunks Indexed", "N/A")
+    
+    st.markdown("---")
+
+    # Memo download
+    if memo_path.exists():
+        with open(memo_path, "rb") as f:
+            st.download_button(
+                "⬇️ Download UPDATED memo (docx)",
+                data=f,
+                file_name="UPDATED_memo.docx",
+                mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            )
+    else:
+        st.info("No UPDATED memo found yet. Run ingest to generate it.")
+
+    st.markdown("### 📄 Indexed Documents")
+    if idx_path.exists():
+        try:
+            idx_obj = json.load(open(idx_path, "r"))
+            st.write(f"**Last ingest:** {idx_obj.get('generated_at','N/A')}")
+            docs = idx_obj.get("documents", [])
+            if docs:
+                df_docs = pd.DataFrame([{
+                    "file": d.get("meta", {}).get("file_name"),
+                    "kind": d.get("meta", {}).get("kind"),
+                    "modified_time": d.get("meta", {}).get("modified_time"),
+                    "sha256": (d.get("meta", {}).get("sha256") or "")[:12],
+                    "chunks_used": d.get("chunks_used"),
+                } for d in docs])
+                st.dataframe(df_docs, width="stretch", hide_index=True)
+            else:
+                st.info("No documents indexed yet.")
+        except Exception as e:
+            st.error(f"Error reading {idx_path}: {e}")
+    else:
+        st.warning("No ingest index found yet.")
+
+    st.markdown("### 🧾 Latest Facts (facts_latest)")
+    if facts_path.exists():
+        try:
+            facts_obj = json.load(open(facts_path, "r"))
+            facts_latest = facts_obj.get("facts_latest", [])
+        except Exception as e:
+            st.error(f"Error reading {facts_path}: {e}")
+            facts_latest = []
+    else:
+        facts_latest = []
+
+    if not facts_latest:
+        st.info("No facts yet. Upload files above and run ingest.")
+    else:
+        df = pd.DataFrame(facts_latest)
+
+        f1, f2, f3 = st.columns(3)
+        metric_filter = f1.text_input("Filter metric (contains)", "")
+        state_filter = f2.text_input("Filter state (e.g. IL)", "")
+        juris_filter = f3.selectbox("Jurisdiction", ["(all)", "state", "city", "federal", "unknown"])
+
+        if metric_filter and "metric" in df.columns:
+            df = df[df["metric"].astype(str).str.contains(metric_filter, case=False, na=False)]
+        if state_filter and "state" in df.columns:
+            df = df[df["state"].astype(str).str.upper() == state_filter.upper()]
+        if juris_filter != "(all)" and "jurisdiction" in df.columns:
+            df = df[df["jurisdiction"].astype(str) == juris_filter]
+
+        cols = [c for c in ["date","metric","value","unit","state","city","description"] if c in df.columns]
+        if "date" in df.columns:
+            df = df.sort_values(by="date", ascending=False)
+        st.dataframe(df[cols], width="stretch", hide_index=True)
+
+
 elif view == "👥 State Legislators":
     st.header("👥 Illinois State Legislators — Profiles")
 
@@ -1036,9 +1260,9 @@ elif view == "👥 State Legislators":
     try:
         if members_data:
             if chamber.startswith("IL House") and 'il_house' in members_data:
-                member_info = members_data['il_house'].get(district_key, {})
+                member_info = members_data.get('il_house', {}).get(district_key, {})
             if chamber.startswith("IL Senate") and 'il_senate' in members_data:
-                member_info = members_data['il_senate'].get(district_key, {})
+                member_info = members_data.get('il_senate', {}).get(district_key, {})
     except:
         member_info = {}
 
@@ -1059,6 +1283,21 @@ elif view == "👥 State Legislators":
     if member_info.get('name'):
         summary_text = f"**{member_name}** represents {area or 'Illinois'}"
         st.info(summary_text)
+
+    # ─── Document Master Report Generator ──────────────────
+    try:
+        from tools.document_master.ui_report import render_report_generator
+        render_report_generator(
+            member_data={
+                "id": district_key,
+                "name": member_name,
+                "party": party,
+                "area": area,
+            },
+            dashboard_context=build_dashboard_context(),
+        )
+    except ImportError:
+        st.caption("📋 Report generator available after running setup_document_master.sh")
 
     # Load road events (state-level pipeline supports IL-H- and IL-S- keys)
     road_data = load_road_events(district_key)
@@ -1344,7 +1583,7 @@ elif view == "🛣️ Live Road Events":
             f"Select {label}:",
             district_nums,
             format_func=lambda n: f"{prefix}{n:0{fmt_width}d}" + (
-                f" — {members_data['congressional'].get(f'{prefix}{n:0{fmt_width}d}', {}).get('name', '')}"
+                f" — {members_data.get('congressional', {}).get(f'{prefix}{n:0{fmt_width}d}', {}).get('name', '')}"
                 if members_data and prefix == "US-IL-CD-"
                 else ""
             )
@@ -1471,7 +1710,7 @@ elif view == "🛣️ Live Road Events":
                 y='Total:Q',
                 tooltip=['District', 'Closures', 'Restrictions', 'Construction', 'Total']
             ).properties(height=300)
-            st.altair_chart(chart, use_container_width=True)
+            st.altair_chart(chart, width="stretch")
         else:
             st.info("No event data available yet. Run the pipeline to populate.")
 
@@ -1526,7 +1765,7 @@ elif view == "💰 Federal Funding":
             color='Program:N',
             tooltip=['FY', 'Program', alt.Tooltip('Amount:Q', format='$,.0f')]
         ).properties(height=400)
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
     
     with tab2:
         st.subheader("Program Breakdown")
@@ -1543,7 +1782,7 @@ elif view == "💰 Federal Funding":
             color='Program:N',
             tooltip=['Program', alt.Tooltip('Amount:Q', format='$,.0f')]
         ).properties(height=500)
-        st.altair_chart(pie, use_container_width=True)
+        st.altair_chart(pie, width="stretch")
         
         prog_df = pd.DataFrame([{'Program': p[0], 'Amount': f'${p[1]:,.0f}'} for p in progs])
         st.dataframe(prog_df, width='stretch', hide_index=True)
@@ -1675,7 +1914,7 @@ elif view == "📊 AI Analysis":
                 color='Type:N',
                 tooltip=['District', 'Representative', 'Type', 'Total']
             ).properties(height=400)
-            st.altair_chart(chart, use_container_width=True)
+            st.altair_chart(chart, width="stretch")
             
             st.markdown("### Per Capita Funding")
             df_viz['PerCapita_Num'] = df_viz['Per Capita'].str.replace('$','').astype(float)
@@ -1686,7 +1925,7 @@ elif view == "📊 AI Analysis":
                 color='Type:N',
                 tooltip=['District', 'Representative', 'Per Capita']
             ).properties(height=400)
-            st.altair_chart(chart2, use_container_width=True)
+            st.altair_chart(chart2, width="stretch")
             
         except FileNotFoundError:
             st.warning("⚠️ Run: python3 calculate_district_formulas.py to generate detailed allocations")
@@ -1723,8 +1962,20 @@ elif view == "📊 AI Analysis":
 
 # ==================== IL GENERAL ASSEMBLY ====================
 elif view == "🏛️ IL General Assembly":
+
     st.header("🏛️ Illinois General Assembly Transportation Tracker")
     
+    # Section switcher: ILGA is the single nav item; Profiles live inside it
+    ilga_section = st.radio(
+        "Section:",
+        ["Tracker", "Legislator Profiles"],
+        horizontal=True,
+        key="ilga_section_radio",
+    )
+    if ilga_section == "Legislator Profiles":
+        st.session_state["_pending_nav"] = "👥 State Legislators"
+        st.rerun()
+
     try:
         with open('illinois_general_assembly.json', 'r') as f:
             ilga_data = json.load(f)
@@ -1945,7 +2196,7 @@ elif view == "🏛️ IL General Assembly":
                             st.session_state['_pending_num'] = dist
                         return handler
                     
-                    st.button(label, key=f"ilga_nav_{m['key']}", on_click=make_nav(), use_container_width=True)
+                    st.button(label, key=f"ilga_nav_{m['key']}", on_click=make_nav(), width="stretch")
             else:
                 st.info("No members match your search.")
     
@@ -2174,6 +2425,9 @@ elif view == "🤖 AV Policy":
 
 
 # ==================== FY27 PROJECTIONS ====================
+
+    from av_guidance import render_av_guidance_section
+    render_av_guidance_section()
 elif view == "🔮 FY27 Projections":
     st.header("🔮 FY 2027 Appropriations Projections")
     
@@ -2226,7 +2480,7 @@ elif view == "🔮 FY27 Projections":
         tooltip=['Scenario', alt.Tooltip('Amount:Q', format='.2f')]
     ).properties(height=400)
     
-    st.altair_chart(chart, use_container_width=True)
+    st.altair_chart(chart, width="stretch")
     
     st.markdown("---")
     st.markdown("### Key Insights")
@@ -2320,7 +2574,7 @@ elif view == "🔮 FY27 Projections":
             tooltip=['Program', 'Year', 'Amount']
         ).properties(height=400)
         
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
     else:
         st.warning("Program-level projections not available. Run analysis script.")
 
@@ -2375,7 +2629,7 @@ elif view == "💎 Discretionary Grants":
             y='Amount:Q',
             tooltip=['District', 'Total', 'Count']
         ).properties(height=400)
-        st.altair_chart(chart, use_container_width=True)
+        st.altair_chart(chart, width="stretch")
     
     with tab2:
         st.subheader("Grants by Federal Program")
@@ -2399,7 +2653,7 @@ elif view == "💎 Discretionary Grants":
             color='Program:N',
             tooltip=['Program', 'Total', 'Count']
         ).properties(height=400)
-        st.altair_chart(pie, use_container_width=True)
+        st.altair_chart(pie, width="stretch")
     
     with tab3:
         st.subheader("All Grants Detail")

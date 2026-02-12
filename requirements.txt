@@ -6,3 +6,7 @@ altair
 pillow
 requests
 beautifulsoup4
+openai
+openpyxl
+python-docx
+pypdf

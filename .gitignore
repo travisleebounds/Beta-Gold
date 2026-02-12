@@ -22,3 +22,5 @@ app.py.WIP*
 app.py.BROKEN*
 app.py.NUKED*
 app.py.save
+app.py.bak
+data/vectorstore/

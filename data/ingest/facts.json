@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-02-11T13:23:53Z",
+  "facts_all": [
+    {
+      "fact_id": "ingested|1cd2c0ef2f0cf468",
+      "metric": "document_ingested",
+      "value": 1,
+      "unit": "count",
+      "date": "2026-02-11",
+      "jurisdiction": "unknown",
+      "state": null,
+      "city": null,
+      "description": "Ingested test.csv",
+      "source": {
+        "file": "test.csv",
+        "locator": "meta",
+        "kind": "csv"
+      },
+      "confidence": 0.05,
+      "extracted_at": "2026-02-11T13:23:53Z"
+    },
+    {
+      "fact_id": "table_headers|1cd2c0ef2f|rows:1-200",
+      "metric": "table_headers",
+      "value": "date, state, metric, value, unit, notes",
+      "unit": "text",
+      "date": "2026-02-11",
+      "jurisdiction": "unknown",
+      "state": null,
+      "city": null,
+      "description": "Extracted table headers (no-ai mode).",
+      "source": {
+        "file": "test.csv",
+        "locator": "rows:1-200",
+        "kind": "table"
+      },
+      "confidence": 0.05,
+      "extracted_at": "2026-02-11T13:23:53Z"
+    }
+  ],
+  "facts_latest": [
+    {
+      "fact_id": "ingested|1cd2c0ef2f0cf468",
+      "metric": "document_ingested",
+      "value": 1,
+      "unit": "count",
+      "date": "2026-02-11",
+      "jurisdiction": "unknown",
+      "state": null,
+      "city": null,
+      "description": "Ingested test.csv",
+      "source": {
+        "file": "test.csv",
+        "locator": "meta",
+        "kind": "csv"
+      },
+      "confidence": 0.05,
+      "extracted_at": "2026-02-11T13:23:53Z"
+    },
+    {
+      "fact_id": "table_headers|1cd2c0ef2f|rows:1-200",
+      "metric": "table_headers",
+      "value": "date, state, metric, value, unit, notes",
+      "unit": "text",
+      "date": "2026-02-11",
+      "jurisdiction": "unknown",
+      "state": null,
+      "city": null,
+      "description": "Extracted table headers (no-ai mode).",
+      "source": {
+        "file": "test.csv",
+        "locator": "rows:1-200",
+        "kind": "table"
+      },
+      "confidence": 0.05,
+      "extracted_at": "2026-02-11T13:23:53Z"
+    }
+  ]
+}

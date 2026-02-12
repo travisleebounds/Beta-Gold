@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-02-11T13:23:53Z",
+  "documents": [
+    {
+      "meta": {
+        "file_name": "test.csv",
+        "file_path": "/home/tbounds/Desktop/idot-dashboard-BETA-GOLD/ingest_inbox/test.csv",
+        "sha256": "1cd2c0ef2f0cf46829f582fc76a12f458469198f19dcf5ce80f73466799378ea",
+        "modified_time": "2026-02-11T07:23:52.984711",
+        "extracted_at": "2026-02-11T13:23:53Z",
+        "kind": "csv"
+      },
+      "chunks_used": 1
+    }
+  ]
+}
