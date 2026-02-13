@@ -1073,3 +1073,174 @@ INFO:document_master:Progress: 200/26185 (193 new, 7 err) ~492m left
 INFO:document_master:Progress: 250/26185 (236 new, 14 err) ~418m left
 INFO:document_master:Progress: 300/26185 (274 new, 25 err) ~388m left
 INFO:document_master:Progress: 350/26185 (312 new, 35 err) ~429m left
+INFO:document_master:Progress: 400/26185 (361 new, 35 err) ~472m left
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(160, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(155, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(150, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(145, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(140, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(135, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(130, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(125, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(120, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(115, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(110, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(105, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(100, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(95, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(90, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(85, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(80, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(75, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(70, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(65, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(60, 0, 140659558408912)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(55, 0, 140659558408912)]
+INFO:document_master:Progress: 450/26185 (407 new, 39 err) ~478m left
+  [500/26185] FHWA - Streamline FFATA Reporting.docx
+INFO:document_master:Progress: 500/26185 (451 new, 39 err) ~439m left
+INFO:document_master:Progress: 550/26185 (493 new, 39 err) ~409m left
+INFO:document_master:Progress: 600/26185 (507 new, 40 err) ~378m left
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(215, 0, 140659559495056)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(283, 0, 140659559495056)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(237, 0, 140659559481424)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(308, 0, 140659559481424)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(215, 0, 140659559486800)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(283, 0, 140659559486800)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(230, 0, 140659559483344)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(301, 0, 140659559483344)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(191, 0, 140661702045200)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(259, 0, 140661702045200)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(164, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(167, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(170, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(173, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(176, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(179, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(182, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(216, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(219, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(222, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(232, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(237, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(240, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(243, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(246, 0, 140659559493904)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1845, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1840, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1835, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1830, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1825, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1820, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1815, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1597, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1592, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1587, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1805, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1800, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1795, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1790, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1785, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2251, 0, 140659559496208)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2246, 0, 140659559496208)]
+INFO:document_master:Progress: 700/26185 (568 new, 43 err) ~357m left
+INFO:document_master:Progress: 750/26185 (611 new, 44 err) ~339m left
+INFO:document_master:Progress: 800/26185 (656 new, 48 err) ~347m left
+INFO:document_master:Progress: 850/26185 (691 new, 59 err) ~364m left
+INFO:document_master:Progress: 900/26185 (722 new, 76 err) ~359m left
+INFO:document_master:Progress: 950/26185 (772 new, 76 err) ~347m left
+INFO:document_master:Progress: 1050/26185 (832 new, 92 err) ~321m left
+INFO:document_master:Progress: 1100/26185 (874 new, 98 err) ~312m left
+INFO:document_master:Progress: 1150/26185 (913 new, 109 err) ~305m left
+INFO:document_master:Progress: 1200/26185 (953 new, 117 err) ~306m left
+INFO:document_master:Progress: 1250/26185 (995 new, 124 err) ~311m left
+INFO:document_master:Progress: 1300/26185 (1038 new, 129 err) ~316m left
+INFO:document_master:Progress: 1350/26185 (1083 new, 132 err) ~311m left
+INFO:document_master:Progress: 1400/26185 (1124 new, 141 err) ~321m left
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(51, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(55, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(59, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(63, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(67, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(71, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(75, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(79, 0, 140659559483152)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(13, 0, 140659559483152)]
+INFO:document_master:Progress: 1450/26185 (1170 new, 145 err) ~321m left
+  [1500/26185] Lipinski - IDOT Letter to 143rd st Orland Park Waiver.pdf
+INFO:document_master:Progress: 1500/26185 (1196 new, 167 err) ~315m left
+INFO:document_master:Progress: 1550/26185 (1215 new, 196 err) ~305m left
+INFO:document_master:Progress: 1600/26185 (1236 new, 225 err) ~317m left

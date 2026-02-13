@@ -1,6 +1,6 @@
 import re
 import streamlit as st
-st.set_page_config(page_title="Illinois Transportation Dashboard", page_icon="🔱", layout="wide")
+st.set_page_config(page_title="IDOT Command Center", page_icon="◈", layout="wide")
 
 import pandas as pd
 import folium
@@ -272,12 +272,15 @@ def build_dashboard_context():
             ctx.append("")
 
     # Bills data
-    if real_bills_data:
-        ctx.append("TRANSPORTATION BILLS:")
-        for bill_id, bill in list(real_bills_data.items())[:10]:
-            if isinstance(bill, dict):
-                ctx.append(f"  {bill_id}: {bill.get('title', bill.get('short_title',''))[:80]}")
-        ctx.append("")
+    try:
+        if real_bills_data:
+            ctx.append("TRANSPORTATION BILLS:")
+            for bill_id, bill in list(real_bills_data.items())[:10]:
+                if isinstance(bill, dict):
+                    ctx.append(f"  {bill_id}: {bill.get('title', bill.get('short_title',''))[:80]}")
+            ctx.append("")
+    except NameError:
+        pass
 
     # Federal funding data
     ctx.append("FEDERAL FUNDING: Illinois receives IIJA Highway Formula apportionments.")
@@ -307,48 +310,367 @@ with st.sidebar:
 
 st.markdown("""
 <style>
-    .preview-box {
-        background-color: #ffffff;
-        padding: 20px;
+    /* ═══════════════════════════════════════════════════════
+       DR460NIZED SCI-FI THEME — IDOT DASHBOARD
+       Palette: Deep Abyss Navy + Neon Cyan + Magenta
+       ═══════════════════════════════════════════════════════ */
+
+    /* ─── Global Background ─────────────────────────────── */
+    .stApp {
+        background: linear-gradient(160deg, #0f111a 0%, #0a0c14 40%, #0d0f1a 100%);
+    }
+
+    /* ─── Sidebar — Glass Panel ─────────────────────────── */
+    section[data-testid="stSidebar"] {
+        background: rgba(15, 17, 26, 0.85) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+        border-right: 1px solid rgba(0, 242, 255, 0.15) !important;
+        box-shadow: 4px 0 24px rgba(0, 242, 255, 0.05) !important;
+    }
+
+    section[data-testid="stSidebar"] .stMarkdown h3 {
+        color: #00f2ff !important;
+        text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        letter-spacing: 1px;
+    }
+
+    /* ─── Main Content Area ─────────────────────────────── */
+    .main .block-container {
+        padding-top: 1.5rem;
+    }
+
+    /* ─── Headers — Neon Glow ───────────────────────────── */
+    h1, h2, .stMarkdown h1, .stMarkdown h2 {
+        color: #00f2ff !important;
+        text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+        letter-spacing: 0.5px;
+    }
+
+    h3, .stMarkdown h3 {
+        color: #bd93f9 !important;
+        text-shadow: 0 0 6px rgba(189, 147, 249, 0.2);
+    }
+
+    /* ─── Metric Cards — Glass Panels ───────────────────── */
+    [data-testid="stMetric"] {
+        background: rgba(21, 24, 35, 0.7) !important;
+        border: 1px solid rgba(0, 242, 255, 0.12) !important;
+        border-radius: 12px !important;
+        padding: 14px 18px !important;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3),
+                    inset 0 0 30px rgba(0, 242, 255, 0.02);
+        transition: all 0.3s ease;
+    }
+
+    [data-testid="stMetric"]:hover {
+        border-color: rgba(0, 242, 255, 0.35) !important;
+        box-shadow: 0 4px 24px rgba(0, 242, 255, 0.1),
+                    inset 0 0 30px rgba(0, 242, 255, 0.04);
+        transform: translateY(-1px);
+    }
+
+    [data-testid="stMetric"] label {
+        color: #8892b0 !important;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+    }
+
+    [data-testid="stMetric"] [data-testid="stMetricValue"] {
+        color: #00f2ff !important;
+        text-shadow: 0 0 6px rgba(0, 242, 255, 0.25);
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    [data-testid="stMetric"] [data-testid="stMetricDelta"] svg {
+        display: none;
+    }
+
+    /* ─── Buttons — Neon Bordered ───────────────────────── */
+    .stButton > button {
+        background: rgba(0, 242, 255, 0.06) !important;
+        color: #00f2ff !important;
+        border: 1px solid rgba(0, 242, 255, 0.3) !important;
+        border-radius: 8px !important;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        text-shadow: 0 0 4px rgba(0, 242, 255, 0.2);
+    }
+
+    .stButton > button:hover {
+        background: rgba(255, 0, 124, 0.1) !important;
+        color: #ff007c !important;
+        border-color: rgba(255, 0, 124, 0.5) !important;
+        box-shadow: 0 0 16px rgba(255, 0, 124, 0.2);
+        transform: scale(1.02);
+    }
+
+    .stButton > button:active {
+        background: rgba(255, 0, 124, 0.2) !important;
+        transform: scale(0.98);
+    }
+
+    /* ─── Selectbox / Inputs — Glass Style ──────────────── */
+    .stSelectbox > div > div,
+    .stTextInput > div > div > input,
+    .stTextArea textarea {
+        background: rgba(21, 24, 35, 0.8) !important;
+        border: 1px solid rgba(0, 242, 255, 0.15) !important;
+        color: #e8e8e8 !important;
+        border-radius: 8px !important;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .stSelectbox > div > div:focus-within,
+    .stTextInput > div > div > input:focus {
+        border-color: rgba(0, 242, 255, 0.5) !important;
+        box-shadow: 0 0 12px rgba(0, 242, 255, 0.1) !important;
+    }
+
+    /* ─── Tabs — Neon Underline ─────────────────────────── */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 4px;
+        background: rgba(15, 17, 26, 0.5);
+        border-radius: 10px;
+        padding: 4px;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        color: #8892b0 !important;
         border-radius: 8px;
-        border-left: 5px solid #1f77b4;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }
+
+    .stTabs [data-baseweb="tab"]:hover {
+        color: #00f2ff !important;
+        background: rgba(0, 242, 255, 0.05);
+    }
+
+    .stTabs [aria-selected="true"] {
+        color: #00f2ff !important;
+        background: rgba(0, 242, 255, 0.08) !important;
+        border-bottom: 2px solid #00f2ff !important;
+        text-shadow: 0 0 6px rgba(0, 242, 255, 0.3);
+    }
+
+    /* ─── DataFrames / Tables ───────────────────────────── */
+    .stDataFrame {
+        border: 1px solid rgba(0, 242, 255, 0.1) !important;
+        border-radius: 10px !important;
+        overflow: hidden;
+    }
+
+    [data-testid="stDataFrame"] th {
+        background: rgba(0, 242, 255, 0.08) !important;
+        color: #00f2ff !important;
+        font-family: 'JetBrains Mono', monospace;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    /* ─── Expander — Glass Panel ────────────────────────── */
+    .streamlit-expanderHeader {
+        background: rgba(21, 24, 35, 0.6) !important;
+        border: 1px solid rgba(0, 242, 255, 0.1) !important;
+        border-radius: 8px !important;
+        color: #bd93f9 !important;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .streamlit-expanderHeader:hover {
+        border-color: rgba(189, 147, 249, 0.3) !important;
+    }
+
+    /* ─── Info/Warning/Success/Error Boxes ───────────────── */
+    .stAlert {
+        background: rgba(21, 24, 35, 0.7) !important;
+        border-radius: 10px !important;
+        backdrop-filter: blur(8px);
+    }
+
+    [data-testid="stAlert"][kind="info"] {
+        border-left: 4px solid #00f2ff !important;
+    }
+
+    [data-testid="stAlert"][kind="warning"] {
+        border-left: 4px solid #ff007c !important;
+    }
+
+    [data-testid="stAlert"][kind="success"] {
+        border-left: 4px solid #50fa7b !important;
+    }
+
+    /* ─── Radio Buttons ─────────────────────────────────── */
+    .stRadio label {
+        color: #8892b0 !important;
+        transition: color 0.3s ease;
+    }
+
+    .stRadio label:hover {
+        color: #00f2ff !important;
+    }
+
+    /* ─── Dividers ──────────────────────────────────────── */
+    hr {
+        border: none !important;
+        height: 1px !important;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(0, 242, 255, 0.2) 20%,
+            rgba(0, 242, 255, 0.3) 50%,
+            rgba(0, 242, 255, 0.2) 80%,
+            transparent 100%
+        ) !important;
+        margin: 1.5rem 0 !important;
+    }
+
+    /* ─── Scrollbar ─────────────────────────────────────── */
+    ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #0f111a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(0, 242, 255, 0.2);
+        border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 242, 255, 0.4);
+    }
+
+    /* ─── Preview Box (existing class, restyled) ────────── */
+    .preview-box {
+        background: rgba(21, 24, 35, 0.7);
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 3px solid #00f2ff;
         margin: 15px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
         font-size: 15px;
         line-height: 1.6;
+        backdrop-filter: blur(10px);
     }
+
     .preview-box h4 {
         margin-top: 0;
-        color: #1f77b4;
+        color: #00f2ff;
         font-size: 18px;
         font-weight: 600;
     }
+
     .preview-box p {
         margin: 10px 0;
-        color: #333;
+        color: #c8ccd4;
     }
+
     .preview-box strong {
-        color: #1f77b4;
+        color: #00f2ff;
         font-weight: 600;
     }
+
     .preview-box a {
-        color: #1f77b4;
+        color: #bd93f9;
         font-weight: 600;
         text-decoration: none;
         font-size: 16px;
+        transition: color 0.3s ease;
     }
+
     .preview-box a:hover {
-        text-decoration: underline;
+        color: #ff007c;
+        text-decoration: none;
+        text-shadow: 0 0 6px rgba(255, 0, 124, 0.3);
     }
+
     .district-ref-image {
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 242, 255, 0.2);
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
+
+    /* ─── Multiselect Tags ──────────────────────────────── */
+    span[data-baseweb="tag"] {
+        background: rgba(0, 242, 255, 0.12) !important;
+        border: 1px solid rgba(0, 242, 255, 0.25) !important;
+        color: #00f2ff !important;
+        border-radius: 6px !important;
+    }
+
+    /* ─── Spinner ───────────────────────────────────────── */
+    .stSpinner > div {
+        border-color: #00f2ff transparent transparent transparent !important;
+    }
+
+    /* ─── Caption text ──────────────────────────────────── */
+    .stCaption, small {
+        color: #5a6380 !important;
+    }
+
+    /* ─── Markdown links ────────────────────────────────── */
+    .stMarkdown a {
+        color: #bd93f9 !important;
+        transition: color 0.3s ease;
+    }
+
+    .stMarkdown a:hover {
+        color: #ff007c !important;
+    }
+
+    /* ─── Animated scan line (subtle) ───────────────────── */
+    .stApp::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg,
+            transparent 0%,
+            #00f2ff 50%,
+            transparent 100%
+        );
+        opacity: 0.4;
+        animation: scanline 4s ease-in-out infinite;
+        pointer-events: none;
+        z-index: 9999;
+    }
+
+    @keyframes scanline {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<div style="font-size: 2.5rem; font-weight: 700; color: #1f77b4; text-align: center;">🚗 IDOT Ultimate Dashboard</div>', unsafe_allow_html=True)
+st.markdown("""
+<div style="text-align: center; padding: 10px 0 5px 0;">
+    <div style="font-size: 2.5rem; font-weight: 700; color: #00f2ff;
+         text-shadow: 0 0 20px rgba(0,242,255,0.3), 0 0 40px rgba(0,242,255,0.1);
+         font-family: 'JetBrains Mono', 'Fira Code', monospace;
+         letter-spacing: 3px;">
+        ◈ IDOT COMMAND CENTER ◈
+    </div>
+    <div style="font-size: 0.8rem; color: #5a6380; letter-spacing: 4px;
+         font-family: 'JetBrains Mono', monospace; margin-top: 4px;">
+        ILLINOIS DEPARTMENT OF TRANSPORTATION // FEDERAL AFFAIRS
+    </div>
+</div>
+""", unsafe_allow_html=True)
 st.markdown("---")
 
 # Load real bill data if available
@@ -2677,4 +2999,9 @@ elif view == "💎 Discretionary Grants":
 
 # ==================== FOOTER ====================
 st.markdown("---")
-st.markdown(f"<div style='text-align: center; color: #666;'>IDOT Dashboard | {datetime.now().strftime('%B %d, %Y')}</div>", unsafe_allow_html=True)
+st.markdown(f"""
+<div style='text-align: center; padding: 20px 0; color: #3a4060;
+     font-family: JetBrains Mono, monospace; font-size: 0.75rem; letter-spacing: 2px;'>
+    ◈ IDOT COMMAND CENTER // {datetime.now().strftime('%B %d, %Y').upper()} // FEDERAL AFFAIRS DIVISION ◈
+</div>
+""", unsafe_allow_html=True)
