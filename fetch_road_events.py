@@ -146,8 +146,28 @@ def arcgis_count(url):
 
 # ─── GeoJSON / Boundary Helpers ───────────────────────────────────────
 
+MAX_POLYGON_POINTS = 2000  # Above this, use bbox instead (ArcGIS GET limit)
+
+def _count_coords(coords):
+    """Count total coordinate points in a GeoJSON coordinates array."""
+    total = 0
+    def _walk(c):
+        nonlocal total
+        if isinstance(c[0], (int, float)):
+            total += 1
+        else:
+            for item in c:
+                _walk(item)
+    _walk(coords)
+    return total
+
 def load_boundary_esri(district_key):
-    """Load boundary as Esri-compatible geometry for spatial queries."""
+    """
+    Load boundary as Esri-compatible geometry for spatial queries.
+    Falls back to bounding box envelope if polygon has too many points
+    (congressional districts often have 5000-8000 points which exceeds
+    ArcGIS GET request URL limits).
+    """
     path = os.path.join(BOUNDARY_DIR, f"{district_key}.geojson")
     if not os.path.exists(path):
         return None, None
@@ -156,6 +176,30 @@ def load_boundary_esri(district_key):
         feat = json.load(f)
 
     geom = feat.get("geometry", {})
+    coords = geom.get("coordinates", [])
+
+    if not coords:
+        return None, None
+
+    # Count points — if too many, use bbox instead
+    num_points = _count_coords(coords)
+    if num_points > MAX_POLYGON_POINTS:
+        # Use bounding box envelope
+        all_coords = []
+        def flatten(c):
+            if isinstance(c[0], (int, float)):
+                all_coords.append(c)
+            else:
+                for item in c:
+                    flatten(item)
+        flatten(coords)
+        lons = [c[0] for c in all_coords]
+        lats = [c[1] for c in all_coords]
+        return {
+            "xmin": min(lons), "ymin": min(lats),
+            "xmax": max(lons), "ymax": max(lats),
+            "spatialReference": {"wkid": 4326},
+        }, "esriGeometryEnvelope"
 
     if geom.get("type") == "Polygon":
         return {
