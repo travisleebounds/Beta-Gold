@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-002",
+  "generated_at": "2026-02-13T12:55:29.321669+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 2,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 2,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "construction:55",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "S171 AT JOLIET ROAD: MCCOOK-SIL 171 AT JOLIET ROAD",
+      "county": "",
+      "description": "S171 AT JOLIET ROAD: MCCOOK-SIL 171 AT JOLIET ROAD",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.79832,
+      "lon": -87.83215,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    },
+    {
+      "id": "construction:94",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "0000: BERWYN-OGDEN AVE-HARLEM AVE TO LOMBARD AVE",
+      "county": "",
+      "description": "0000: BERWYN-OGDEN AVE-HARLEM AVE TO LOMBARD AVE",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.8272321640001,
+      "lon": -87.792614207,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:55",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "S171 AT JOLIET ROAD: MCCOOK-SIL 171 AT JOLIET ROAD",
+      "county": "",
+      "description": "S171 AT JOLIET ROAD: MCCOOK-SIL 171 AT JOLIET ROAD",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.79832,
+      "lon": -87.83215,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    },
+    {
+      "id": "construction:94",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "0000: BERWYN-OGDEN AVE-HARLEM AVE TO LOMBARD AVE",
+      "county": "",
+      "description": "0000: BERWYN-OGDEN AVE-HARLEM AVE TO LOMBARD AVE",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.8272321640001,
+      "lon": -87.792614207,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ]
+}

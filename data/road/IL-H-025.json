@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-025",
+  "generated_at": "2026-02-13T12:57:10.264877+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 2,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 2,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "construction:4511",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Calumet River 0.1 M E of S Chicago AVE",
+      "county": "",
+      "description": "AT Calumet River 0.1 M E of S Chicago AVE",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.722884927221,
+      "lon": -87.5436948308533,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:4529",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Calumet River 0.1 MI S of Lake Shore DR",
+      "county": "",
+      "description": "AT Calumet River 0.1 MI S of Lake Shore DR",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.7276729607743,
+      "lon": -87.5417965801503,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:4511",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Calumet River 0.1 M E of S Chicago AVE",
+      "county": "",
+      "description": "AT Calumet River 0.1 M E of S Chicago AVE",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.722884927221,
+      "lon": -87.5436948308533,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:4529",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Calumet River 0.1 MI S of Lake Shore DR",
+      "county": "",
+      "description": "AT Calumet River 0.1 MI S of Lake Shore DR",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.7276729607743,
+      "lon": -87.5417965801503,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ]
+}

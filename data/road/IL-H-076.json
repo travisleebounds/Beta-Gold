@@ -1,0 +1,21 @@
+{
+  "district_key": "IL-H-076",
+  "generated_at": "2026-02-13T13:00:41.277134+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 0,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 0,
+  "top": [],
+  "items": []
+}

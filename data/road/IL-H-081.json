@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-081",
+  "generated_at": "2026-02-13T13:01:03.758360+00:00",
+  "counts": {
+    "closures": 2,
+    "construction": 0,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 2,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "incident:129334933",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-13T06:20:35+00:00",
+      "end": "2026-02-14T12:20:35+00:00",
+      "last_updated": null,
+      "lat": 41.76576,
+      "lon": -88.00834,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129335135",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-12T14:12:35+00:00",
+      "end": "2026-02-14T08:12:35+00:00",
+      "last_updated": null,
+      "lat": 41.75718,
+      "lon": -88.06191,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ],
+  "items": [
+    {
+      "id": "incident:129334933",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-13T06:20:35+00:00",
+      "end": "2026-02-14T12:20:35+00:00",
+      "last_updated": null,
+      "lat": 41.76576,
+      "lon": -88.00834,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129335135",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-12T14:12:35+00:00",
+      "end": "2026-02-14T08:12:35+00:00",
+      "last_updated": null,
+      "lat": 41.75718,
+      "lon": -88.06191,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ]
+}

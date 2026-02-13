@@ -1,0 +1,61 @@
+{
+  "district_key": "IL-H-050",
+  "generated_at": "2026-02-13T12:58:56.278956+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 1,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 1,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 1,
+  "top": [
+    {
+      "id": "construction:4599",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Fox River E of US 31",
+      "county": "",
+      "description": "AT Fox River E of US 31",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.7594212463871,
+      "lon": -88.3147780076657,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:4599",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Fox River E of US 31",
+      "county": "",
+      "description": "AT Fox River E of US 31",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.7594212463871,
+      "lon": -88.3147780076657,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ]
+}

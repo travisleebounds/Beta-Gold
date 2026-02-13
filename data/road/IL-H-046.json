@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-046",
+  "generated_at": "2026-02-13T12:58:39.990424+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 2,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 1,
+    "waze_construction": 1,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "construction:4745",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "At CN RR 0.1 mi S of Fullerton Ave",
+      "county": "",
+      "description": "At CN RR 0.1 mi S of Fullerton Ave",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.9177412170566,
+      "lon": -88.0323266117698,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:68",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "S064: ST CHARLES-SMITH/KAUTZ RD TO YORK ST IN ELMHURST",
+      "county": "",
+      "description": "S064: ST CHARLES-SMITH/KAUTZ RD TO YORK ST IN ELMHURST",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.90311,
+      "lon": -88.0691899999999,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:4745",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "At CN RR 0.1 mi S of Fullerton Ave",
+      "county": "",
+      "description": "At CN RR 0.1 mi S of Fullerton Ave",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.9177412170566,
+      "lon": -88.0323266117698,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:68",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "S064: ST CHARLES-SMITH/KAUTZ RD TO YORK ST IN ELMHURST",
+      "county": "",
+      "description": "S064: ST CHARLES-SMITH/KAUTZ RD TO YORK ST IN ELMHURST",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 41.90311,
+      "lon": -88.0691899999999,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ]
+}

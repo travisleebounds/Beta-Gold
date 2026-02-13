@@ -8703,11 +8703,35 @@
       "chars": 475156,
       "tier": "gold",
       "ingested_at": "2026-02-12T20:06:17.577011"
+    },
+    "Copy of IDOT I290 MPDG 2024 BCA Model.xlsx": {
+      "sha256": "333b861c499dfab48869e3728643bf3d177166174884891021c3e178f0f5898f",
+      "path": "/home/travisb/Desktop/Federal Affairs/IDOT grant applications/IDOT final grant materials (internal IDOT)/Old files/I-290 MPDG/Copy of IDOT I290 MPDG 2024 BCA Model.xlsx",
+      "chunks": 294525,
+      "chars": 213448877,
+      "tier": "gold",
+      "ingested_at": "2026-02-13T06:59:11.121397"
+    },
+    "I-55 2018_0322_ Final Combined Design Report Full_Reduced.pdf": {
+      "sha256": "066937704244d32c5ee55763acdf4dbc4f9d8a15406f9600311827b2b651fce0",
+      "path": "/home/travisb/Desktop/Federal Affairs/IDOT grant applications/WSP Prioritization/I-55 2018_0322_ Final Combined Design Report Full_Reduced.pdf",
+      "chunks": 1358,
+      "chars": 995339,
+      "tier": "gold",
+      "ingested_at": "2026-02-13T07:00:43.415209"
+    },
+    "IL Route 9 Final Project Report - Combined Volumes.pdf": {
+      "sha256": "9b830864be0b84f165512daceb2bcf166ea038b3286180dfa76943bfe46472c5",
+      "path": "/home/travisb/Desktop/Federal Affairs/IDOT grant applications/WSP Prioritization/IL Route 9 Final Project Report - Combined Volumes.pdf",
+      "chunks": 3488,
+      "chars": 2510070,
+      "tier": "gold",
+      "ingested_at": "2026-02-13T07:13:50.037285"
     }
   },
-  "last_updated": "2026-02-12T20:06:17.577027",
+  "last_updated": "2026-02-13T07:13:50.037300",
   "stats": {
-    "gold": 1088,
+    "gold": 1091,
     "archive": 0,
     "standard": 0
   }

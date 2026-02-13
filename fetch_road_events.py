@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-fetch_road_events.py — Query IDOT ArcGIS layers, intersect with district
-boundaries, normalize into RoadEvent schema, score, and save per-district JSON.
+fetch_road_events.py — Query IDOT ArcGIS layers for live road events.
 
-IDOT ArcGIS Open Data layers:
-  - Road Construction (points)
-  - Road Closures (points)
-  - Road Restrictions (points — obstructions)
+IDOT ArcGIS Live Layers (verified Feb 2026):
+  - Illinois_Roadway_Incidents (421+ real-time incidents — main feed)
+  - ClosureIncidents (IDOT-posted closures)
+  - ClosureIncidentExtents (closure line extents)
+  - Annual_Highway_Improvement_Program (1100+ construction projects)
+  - RoadConstructionTest_Waze (Waze-reported construction)
+  - Flooding_Road_Closures (flood events)
+  - Travel_Midwest_Unplanned_Events (unplanned events)
 
-For each district boundary in data/boundaries/, we query each layer using
-esriSpatialRelIntersects, normalize results, and write:
-  data/road/{district_key}.json
-
-Also builds: data/road/US-IL-SEN.json (statewide top-5 aggregate)
+For each district boundary in data/boundaries/, performs spatial intersect,
+normalizes into RoadEvent schema, scores by severity, saves per-district JSON.
 
 Usage:
   python fetch_road_events.py                  # all districts
-  python fetch_road_events.py US-IL-CD-05      # single district
-  python fetch_road_events.py --statewide-only # just the senator aggregate
+  python fetch_road_events.py IL-01            # single district
+  python fetch_road_events.py --statewide-only # just senator aggregate
 """
 
 import json
@@ -41,74 +41,83 @@ BOUNDARY_DIR = "data/boundaries"
 ROAD_DIR = "data/road"
 os.makedirs(ROAD_DIR, exist_ok=True)
 
-# IDOT ArcGIS layer endpoints (public, no auth required)
-# These are the Hub/OpenData FeatureServer endpoints
-LAYERS = {
-    "construction": {
-        "url": "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/Road_Construction_Public/FeatureServer/0/query",
-        "type": "construction",
-        "fallback_url": "https://gis-idot.opendata.arcgis.com/datasets/road-construction-public.geojson"
-    },
-    "closures": {
-        "url": "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/Road_Closures/FeatureServer/0/query",
-        "type": "closure",
-        "fallback_url": "https://gis-idot.opendata.arcgis.com/datasets/d692355520e94d39a028f79248b75ef7_0.geojson"
-    },
-    "restrictions": {
-        "url": "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/Road_Restrictions/FeatureServer/0/query",
-        "type": "restriction",
-        "fallback_url": None
-    }
-}
+BASE = "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services"
 
-# If the FeatureServer endpoints don't work, try these alternate patterns
-ALT_LAYER_PATTERNS = [
-    "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/ArcGIS/rest/services/{name}/FeatureServer/0/query",
-    "https://services2.arcgis.com/aIrBD8yn1TDTEXoz/arcgis/rest/services/{name}_View/FeatureServer/0/query",
-]
+# Verified working IDOT ArcGIS layers (Feb 2026)
+LAYERS = {
+    "incidents": {
+        "url": f"{BASE}/Illinois_Roadway_Incidents/FeatureServer/0/query",
+        "type": "closure",  # Most are closures/incidents
+        "description": "Real-time roadway incidents (main feed)",
+    },
+    "closure_incidents": {
+        "url": f"{BASE}/ClosureIncidents/FeatureServer/0/query",
+        "type": "closure",
+        "description": "IDOT-posted closure incidents",
+    },
+    "closure_extents": {
+        "url": f"{BASE}/ClosureIncidentExtents/FeatureServer/0/query",
+        "type": "closure",
+        "description": "Closure line extents",
+    },
+    "construction": {
+        "url": f"{BASE}/Annual_Highway_Improvement_Program/FeatureServer/0/query",
+        "type": "construction",
+        "description": "Annual highway improvement program projects",
+    },
+    "waze_construction": {
+        "url": f"{BASE}/RoadConstructionTest_Waze/FeatureServer/0/query",
+        "type": "construction",
+        "description": "Waze-reported construction",
+    },
+    "flooding": {
+        "url": f"{BASE}/Flooding_Road_Closures/FeatureServer/0/query",
+        "type": "closure",
+        "description": "Flood-related road closures",
+    },
+    "unplanned": {
+        "url": f"{BASE}/Travel_Midwest_Unplanned_Events/FeatureServer/0/query",
+        "type": "closure",
+        "description": "Unplanned travel events",
+    },
+}
 
 PAGE_SIZE = 1000
 MAX_PAGES = 20
-
+REQUEST_TIMEOUT = 60
 
 # ─── ArcGIS Query Helpers ─────────────────────────────────────────────
 
-def arcgis_query_paged(url, geometry_json=None, where="1=1", out_fields="*",
-                       spatial_rel="esriSpatialRelIntersects"):
-    """
-    Paged ArcGIS FeatureServer query. Returns list of features (GeoJSON).
-    Uses resultOffset/resultRecordCount for paging.
-    """
+def arcgis_spatial_query(url, geometry_json, geom_type="esriGeometryPolygon"):
+    """Query an ArcGIS layer with spatial intersect. Returns list of GeoJSON features."""
     all_features = []
     offset = 0
 
     for page in range(MAX_PAGES):
         params = {
-            "where": where,
-            "outFields": out_fields,
+            "where": "1=1",
+            "outFields": "*",
             "outSR": "4326",
             "f": "geojson",
+            "geometry": json.dumps(geometry_json),
+            "geometryType": geom_type,
+            "spatialRel": "esriSpatialRelIntersects",
+            "inSR": "4326",
             "resultOffset": offset,
             "resultRecordCount": PAGE_SIZE,
             "returnGeometry": "true",
         }
 
-        if geometry_json:
-            params["geometry"] = json.dumps(geometry_json)
-            params["geometryType"] = "esriGeometryPolygon"
-            params["spatialRel"] = spatial_rel
-            params["inSR"] = "4326"
-
         try:
-            resp = requests.get(url, params=params, timeout=60)
+            resp = requests.get(url, params=params, timeout=REQUEST_TIMEOUT)
             resp.raise_for_status()
             data = resp.json()
         except Exception as e:
-            print(f"    ⚠️  Query error at offset {offset}: {e}")
+            print(f"    ⚠  Query error: {e}")
             break
 
         if "error" in data:
-            print(f"    ⚠️  ArcGIS error: {data['error'].get('message', 'unknown')}")
+            # Don't spam — just skip this layer for this district
             break
 
         features = data.get("features", [])
@@ -118,67 +127,56 @@ def arcgis_query_paged(url, geometry_json=None, where="1=1", out_fields="*",
         all_features.extend(features)
         offset += PAGE_SIZE
 
-        # Check if we got fewer than page size (last page)
         if len(features) < PAGE_SIZE:
             break
 
-        time.sleep(0.3)  # Rate limit courtesy
+        time.sleep(0.3)
 
     return all_features
 
 
-def arcgis_count(url, geometry_json=None, where="1=1"):
-    """Get feature count for a layer (fast sanity check)."""
-    params = {
-        "where": where,
-        "returnCountOnly": "true",
-        "f": "json",
-    }
-    if geometry_json:
-        params["geometry"] = json.dumps(geometry_json)
-        params["geometryType"] = "esriGeometryPolygon"
-        params["spatialRel"] = "esriSpatialRelIntersects"
-        params["inSR"] = "4326"
-
+def arcgis_count(url):
+    """Quick count check for a layer."""
     try:
-        resp = requests.get(url, params=params, timeout=30)
-        data = resp.json()
-        return data.get("count", -1)
+        r = requests.get(url, params={"where": "1=1", "returnCountOnly": "true", "f": "json"}, timeout=15)
+        return r.json().get("count", 0)
     except:
-        return -1
+        return 0
 
 
-# ─── GeoJSON helpers ──────────────────────────────────────────────────
+# ─── GeoJSON / Boundary Helpers ───────────────────────────────────────
 
-def load_boundary(district_key):
-    """Load a district boundary GeoJSON file, return Esri-compatible geometry."""
+def load_boundary_esri(district_key):
+    """Load boundary as Esri-compatible geometry for spatial queries."""
     path = os.path.join(BOUNDARY_DIR, f"{district_key}.geojson")
     if not os.path.exists(path):
-        return None
+        return None, None
 
     with open(path) as f:
         feat = json.load(f)
 
     geom = feat.get("geometry", {})
+
     if geom.get("type") == "Polygon":
         return {
             "rings": geom["coordinates"],
-            "spatialReference": {"wkid": 4326}
-        }
+            "spatialReference": {"wkid": 4326},
+        }, "esriGeometryPolygon"
+
     elif geom.get("type") == "MultiPolygon":
-        # Flatten MultiPolygon to rings
         rings = []
         for polygon in geom["coordinates"]:
             rings.extend(polygon)
         return {
             "rings": rings,
-            "spatialReference": {"wkid": 4326}
-        }
-    return None
+            "spatialReference": {"wkid": 4326},
+        }, "esriGeometryPolygon"
+
+    return None, None
 
 
-def bbox_from_geojson(district_key):
-    """Get bounding box from a district boundary (fallback for spatial query)."""
+def bbox_from_boundary(district_key):
+    """Get bounding box envelope as fallback for spatial query."""
     path = os.path.join(BOUNDARY_DIR, f"{district_key}.geojson")
     if not os.path.exists(path):
         return None
@@ -186,147 +184,260 @@ def bbox_from_geojson(district_key):
     with open(path) as f:
         feat = json.load(f)
 
-    geom = feat.get("geometry", {})
-    coords = geom.get("coordinates", [])
-
-    # Flatten all coordinates
     all_coords = []
-    def _flatten(c):
+
+    def flatten(c):
         if isinstance(c[0], (int, float)):
             all_coords.append(c)
         else:
             for item in c:
-                _flatten(item)
-    _flatten(coords)
+                flatten(item)
+
+    flatten(feat.get("geometry", {}).get("coordinates", []))
 
     if not all_coords:
         return None
 
     lons = [c[0] for c in all_coords]
     lats = [c[1] for c in all_coords]
+
     return {
         "xmin": min(lons), "ymin": min(lats),
         "xmax": max(lons), "ymax": max(lats),
-        "spatialReference": {"wkid": 4326}
+        "spatialReference": {"wkid": 4326},
     }
 
 
-# ─── Normalization ────────────────────────────────────────────────────
+# ─── Event Normalization ──────────────────────────────────────────────
 
-def normalize_event(raw_props, layer_type, geometry=None):
-    """
-    Normalize raw ArcGIS feature properties into a standard RoadEvent.
+def normalize_incident(props, geometry=None):
+    """Normalize Illinois_Roadway_Incidents fields."""
+    p = props or {}
 
-    Fields vary across layers; this handles known IDOT field names.
-    """
-    p = raw_props or {}
-
-    # Extract coordinates
     lat, lon = None, None
     if geometry and geometry.get("type") == "Point":
         coords = geometry.get("coordinates", [])
         if len(coords) >= 2:
             lon, lat = coords[0], coords[1]
 
-    # Common field extraction (IDOT uses many different field names)
-    road = (
-        p.get("Route") or p.get("Route1") or p.get("ROUTE") or
-        p.get("RoadName") or p.get("ROAD_NAME") or
-        p.get("road") or ""
-    )
-    direction = p.get("Direction") or p.get("DIRECTION") or ""
-    location_text = (
-        p.get("NearTown") or p.get("NEAR_TOWN") or
-        p.get("Location") or p.get("LOCATION") or
-        p.get("LocationDescription") or ""
-    )
-    county = p.get("County") or p.get("COUNTY") or ""
-    description = (
-        p.get("Description") or p.get("DESCRIPTION") or
-        p.get("ConstructionType") or p.get("CONSTRUCTION_TYPE") or
-        p.get("ImpactOnTravel") or p.get("IMPACT_ON_TRAVEL") or ""
-    )
+    # Parse ORIGIN field as fallback coords (format: "-87.79434 41.88346")
+    if (lat is None or lon is None) and p.get("ORIGIN"):
+        try:
+            parts = p["ORIGIN"].split()
+            if len(parts) == 2:
+                lon, lat = float(parts[0]), float(parts[1])
+        except:
+            pass
 
-    # Status normalization
-    raw_status = (p.get("Status") or p.get("STATUS") or "").lower()
-    if any(w in raw_status for w in ["active", "in progress", "current", "open"]):
+    # Type mapping
+    type_desc = (p.get("TRAFFIC_ITEM_TYPE_DESC") or "").upper()
+    if "CLOSURE" in type_desc or p.get("ROAD_CLOSED"):
+        event_type = "closure"
+    elif "CONSTRUCTION" in type_desc:
+        event_type = "construction"
+    elif "RESTRICTION" in type_desc:
+        event_type = "restriction"
+    else:
+        event_type = "closure"  # Default for incidents
+
+    # Status
+    criticality = (p.get("CRITICALITY_DESC") or "").lower()
+    if criticality in ("critical", "major"):
         status = "active"
-    elif any(w in raw_status for w in ["planned", "upcoming", "scheduled"]):
-        status = "planned"
-    elif any(w in raw_status for w in ["ended", "completed", "closed"]):
-        status = "ended"
+    elif p.get("VERIFIED"):
+        status = "active"
     else:
         status = "unknown"
 
-    # Date parsing (IDOT uses epoch milliseconds or date strings)
-    def parse_date(val):
-        if val is None:
-            return None
-        if isinstance(val, (int, float)) and val > 1e12:
+    # Dates (epoch ms)
+    def parse_epoch(val):
+        if val and isinstance(val, (int, float)) and val > 1e12:
             return datetime.fromtimestamp(val / 1000, tz=timezone.utc).isoformat()
-        if isinstance(val, str):
-            return val.strip()
         return None
 
-    start = parse_date(p.get("StartDate") or p.get("START_DATE") or p.get("start"))
-    end = parse_date(p.get("EndDate") or p.get("END_DATE") or p.get("end"))
-    updated = parse_date(p.get("LastUpdated") or p.get("LAST_UPDATED") or p.get("EditDate"))
-
-    # Lanes info
-    lanes = (
-        p.get("LanesAffected") or p.get("LANES_AFFECTED") or
-        p.get("ImpactOnTravel") or p.get("TrafficAlert") or ""
-    )
-
-    # Source URL
-    source_url = (
-        p.get("WebAddress") or p.get("WEB_ADDRESS") or
-        p.get("url") or p.get("URL") or
-        "https://www.gettingaroundillinois.com/"
-    )
-
-    # Unique ID for dedup
-    obj_id = p.get("OBJECTID") or p.get("ObjectId") or p.get("FID") or ""
-    unique_id = f"{layer_type}:{obj_id}" if obj_id else hashlib.md5(
-        json.dumps(p, sort_keys=True, default=str).encode()
-    ).hexdigest()[:12]
+    road = p.get("LOCATION_DEFINED_ORIGIN_RDWY") or ""
+    description = p.get("TRAFFIC_ITEM_DESCRIPTION") or p.get("TRAFFIC_ITEM_DESCRIPTION_NO_EX") or ""
 
     return {
-        "id": unique_id,
-        "type": layer_type,
+        "id": f"incident:{p.get('OBJECTID', '')}",
+        "type": event_type,
         "status": status,
         "road": road,
-        "direction": direction,
-        "location_text": location_text,
-        "county": county,
+        "direction": "",
+        "location_text": description,
+        "county": "",
         "description": description,
-        "lanes": lanes,
-        "start": start,
-        "end": end,
-        "last_updated": updated,
+        "lanes": "",
+        "start": parse_epoch(p.get("START_TIME")),
+        "end": parse_epoch(p.get("END_TIME")),
+        "last_updated": None,
         "lat": lat,
         "lon": lon,
-        "source_url": source_url,
-        "severity": 0,  # calculated next
-        "raw_status": raw_status,
-        "source_layer": layer_type,
+        "source_url": "https://www.gettingaroundillinois.com/",
+        "severity": 0,
+        "source_layer": "Illinois_Roadway_Incidents",
     }
+
+
+def normalize_closure(props, geometry=None):
+    """Normalize ClosureIncidents fields."""
+    p = props or {}
+
+    lat, lon = None, None
+    if geometry and geometry.get("type") == "Point":
+        coords = geometry.get("coordinates", [])
+        if len(coords) >= 2:
+            lon, lat = coords[0], coords[1]
+
+    ctype = (p.get("ConstructionType") or "").upper()
+    if "CLOSED" in ctype:
+        event_type = "closure"
+    else:
+        event_type = "construction"
+
+    def parse_epoch(val):
+        if val and isinstance(val, (int, float)) and val > 1e12:
+            return datetime.fromtimestamp(val / 1000, tz=timezone.utc).isoformat()
+        return None
+
+    route = p.get("Route1") or p.get("Route2") or ""
+    location = p.get("Location") or p.get("NearTown") or ""
+    county = p.get("County") or ""
+
+    return {
+        "id": f"closure:{p.get('OBJECTID', '')}",
+        "type": event_type,
+        "status": "active",
+        "road": route,
+        "direction": p.get("Route1Direction") or "",
+        "location_text": location,
+        "county": county,
+        "description": location,
+        "lanes": p.get("TrafficAlert") or "",
+        "start": parse_epoch(p.get("StartDate")),
+        "end": parse_epoch(p.get("EndDate")),
+        "last_updated": None,
+        "lat": lat,
+        "lon": lon,
+        "source_url": p.get("WebAddress") or "https://www.gettingaroundillinois.com/",
+        "severity": 0,
+        "source_layer": "ClosureIncidents",
+    }
+
+
+def normalize_construction(props, geometry=None):
+    """Normalize Annual_Highway_Improvement_Program fields."""
+    p = props or {}
+
+    lat, lon = None, None
+    if geometry and geometry.get("type") == "Point":
+        coords = geometry.get("coordinates", [])
+        if len(coords) >= 2:
+            lon, lat = coords[0], coords[1]
+
+    # Try common field names for road/route
+    road = (
+        p.get("ROUTE") or p.get("Route") or p.get("ROAD_NAME") or
+        p.get("RoadName") or p.get("INVENTORY") or ""
+    )
+    location = (
+        p.get("LOCATION") or p.get("Location") or p.get("DESCRIPTION") or
+        p.get("Description") or p.get("WORK_DESCRIPTION") or ""
+    )
+    county = p.get("COUNTY") or p.get("County") or ""
+
+    return {
+        "id": f"construction:{p.get('OBJECTID', p.get('FID', ''))}",
+        "type": "construction",
+        "status": "active",
+        "road": str(road),
+        "direction": "",
+        "location_text": str(location)[:200],
+        "county": str(county),
+        "description": str(location)[:200],
+        "lanes": "",
+        "start": None,
+        "end": None,
+        "last_updated": None,
+        "lat": lat,
+        "lon": lon,
+        "source_url": "https://www.gettingaroundillinois.com/",
+        "severity": 0,
+        "source_layer": "Annual_Highway_Improvement_Program",
+    }
+
+
+def normalize_generic(props, layer_type, layer_name, geometry=None):
+    """Generic normalizer for other layers."""
+    p = props or {}
+
+    lat, lon = None, None
+    if geometry:
+        if geometry.get("type") == "Point":
+            coords = geometry.get("coordinates", [])
+            if len(coords) >= 2:
+                lon, lat = coords[0], coords[1]
+        elif geometry.get("type") == "LineString":
+            coords = geometry.get("coordinates", [])
+            if coords:
+                mid = coords[len(coords) // 2]
+                lon, lat = mid[0], mid[1]
+
+    # Pull whatever fields exist
+    road = ""
+    desc = ""
+    for key in ["Route", "ROUTE", "Route1", "RoadName", "ROAD_NAME",
+                 "LOCATION_DEFINED_ORIGIN_RDWY", "road"]:
+        if p.get(key):
+            road = str(p[key])
+            break
+
+    for key in ["Description", "DESCRIPTION", "Location", "LOCATION",
+                 "TRAFFIC_ITEM_DESCRIPTION", "ConstructionType", "WORK_DESCRIPTION"]:
+        if p.get(key):
+            desc = str(p[key])[:200]
+            break
+
+    return {
+        "id": f"{layer_type}:{p.get('OBJECTID', p.get('FID', hashlib.md5(json.dumps(p, default=str).encode()).hexdigest()[:8]))}",
+        "type": layer_type,
+        "status": "active",
+        "road": road,
+        "direction": "",
+        "location_text": desc,
+        "county": str(p.get("County", p.get("COUNTY", ""))),
+        "description": desc,
+        "lanes": "",
+        "start": None,
+        "end": None,
+        "last_updated": None,
+        "lat": lat,
+        "lon": lon,
+        "source_url": "https://www.gettingaroundillinois.com/",
+        "severity": 0,
+        "source_layer": layer_name,
+    }
+
+
+# Layer-specific normalizer dispatch
+NORMALIZERS = {
+    "incidents": normalize_incident,
+    "closure_incidents": normalize_closure,
+    "closure_extents": lambda p, g=None: normalize_generic(p, "closure", "ClosureIncidentExtents", g),
+    "construction": normalize_construction,
+    "waze_construction": lambda p, g=None: normalize_generic(p, "construction", "RoadConstructionTest_Waze", g),
+    "flooding": lambda p, g=None: normalize_generic(p, "closure", "Flooding_Road_Closures", g),
+    "unplanned": lambda p, g=None: normalize_generic(p, "closure", "Travel_Midwest_Unplanned_Events", g),
+}
 
 
 # ─── Scoring ──────────────────────────────────────────────────────────
 
 def score_event(event):
-    """
-    Deterministic severity score for ranking. Higher = more important.
-
-    Base by type: closure +60, restriction +40, construction +25
-    If status=active: +20
-    Interstate: +15 (major US routes +10, state routes +5)
-    If "all lanes closed" / "road closed": +20
-    If "one lane" / "shoulder": +5
-    """
+    """Severity score. Higher = more important."""
     score = 0
     t = event.get("type", "")
+
     if t == "closure":
         score += 60
     elif t == "restriction":
@@ -345,27 +456,19 @@ def score_event(event):
     elif road.startswith("IL-") or road.startswith("IL "):
         score += 5
 
-    lanes = (event.get("lanes") or "").lower()
-    desc = (event.get("description") or "").lower()
-    combined = lanes + " " + desc
-
-    if "road closed" in combined or "all lanes" in combined:
+    desc = ((event.get("description") or "") + " " + (event.get("lanes") or "")).lower()
+    if "road closed" in desc or "all lanes" in desc:
         score += 20
-    elif "closed" in combined:
+    elif "closed" in desc:
         score += 10
-    elif "one lane" in combined or "shoulder" in combined:
-        score += 5
 
-    # Imminent end date bonus
+    # Imminent end date
     if event.get("end"):
         try:
-            end_str = event["end"]
-            if "T" in str(end_str):
-                end_dt = datetime.fromisoformat(end_str.replace("Z", "+00:00"))
-                now = datetime.now(timezone.utc)
-                hours_left = (end_dt - now).total_seconds() / 3600
-                if 0 < hours_left < 48:
-                    score += 10
+            end_dt = datetime.fromisoformat(event["end"].replace("Z", "+00:00"))
+            hours_left = (end_dt - datetime.now(timezone.utc)).total_seconds() / 3600
+            if 0 < hours_left < 48:
+                score += 10
         except:
             pass
 
@@ -376,103 +479,68 @@ def score_event(event):
 # ─── District Builder ─────────────────────────────────────────────────
 
 def build_district(district_key, verbose=True):
-    """
-    Build road event cache for a single district.
-    Returns the district data dict.
-    """
+    """Build road event cache for a single district."""
     if verbose:
-        print(f"\n🔍 Building: {district_key}")
+        print(f"\n🔍 {district_key}")
 
     # Load boundary
-    boundary = load_boundary(district_key)
-    if not boundary:
-        bbox = bbox_from_geojson(district_key)
+    geometry, geom_type = load_boundary_esri(district_key)
+    if not geometry:
+        bbox = bbox_from_boundary(district_key)
         if not bbox:
             if verbose:
-                print(f"  ⚠️  No boundary file for {district_key}")
+                print(f"  ⚠  No boundary for {district_key}")
             return None
-        geometry_param = bbox
+        geometry = bbox
         geom_type = "esriGeometryEnvelope"
-    else:
-        geometry_param = boundary
-        geom_type = "esriGeometryPolygon"
 
     all_events = []
-    counts = {"closures": 0, "restrictions": 0, "construction": 0}
+    seen_ids = set()
+    layer_counts = {}
 
     for layer_name, layer_info in LAYERS.items():
         url = layer_info["url"]
-        layer_type = layer_info["type"]
+        normalizer = NORMALIZERS.get(layer_name, lambda p, g=None: normalize_generic(p, layer_info["type"], layer_name, g))
 
         if verbose:
-            print(f"  📡 Querying {layer_name}...", end=" ")
+            print(f"  📡 {layer_name}...", end=" ", flush=True)
 
-        # First try spatial intersect
-        params = {
-            "where": "1=1",
-            "outFields": "*",
-            "outSR": "4326",
-            "f": "geojson",
-            "geometry": json.dumps(geometry_param),
-            "geometryType": geom_type,
-            "spatialRel": "esriSpatialRelIntersects",
-            "inSR": "4326",
-            "resultRecordCount": PAGE_SIZE,
-            "returnGeometry": "true",
-        }
-
-        features = []
-        try:
-            resp = requests.get(url, params=params, timeout=60)
-            if resp.status_code == 200:
-                data = resp.json()
-                if "error" not in data:
-                    features = data.get("features", [])
-        except Exception as e:
-            if verbose:
-                print(f"error: {e}")
-
-        # Try alternate URLs if primary failed
-        if not features:
-            for alt_pattern in ALT_LAYER_PATTERNS:
-                alt_url = alt_pattern.format(name=layer_name.title().replace("s", ""))
-                try:
-                    resp = requests.get(alt_url, params=params, timeout=30)
-                    if resp.status_code == 200:
-                        data = resp.json()
-                        if "error" not in data:
-                            features = data.get("features", [])
-                            if features:
-                                break
-                except:
-                    pass
+        features = arcgis_spatial_query(url, geometry, geom_type)
+        layer_counts[layer_name] = len(features)
 
         if verbose:
-            print(f"{len(features)} features")
-
-        counts[layer_name] = len(features)
+            print(f"{len(features)} events")
 
         for feat in features:
-            event = normalize_event(
-                feat.get("properties", {}),
-                layer_type,
-                feat.get("geometry")
-            )
+            event = normalizer(feat.get("properties", {}), feat.get("geometry"))
             event = score_event(event)
-            all_events.append(event)
 
-        time.sleep(0.5)  # Rate limit courtesy
+            # Dedup by ID
+            eid = event.get("id", "")
+            if eid not in seen_ids:
+                seen_ids.add(eid)
+                all_events.append(event)
 
-    # Sort by severity (descending)
+        time.sleep(0.3)
+
+    # Sort by severity
     all_events.sort(key=lambda e: e["severity"], reverse=True)
+
+    # Count by type
+    type_counts = Counter(e.get("type", "unknown") for e in all_events)
 
     result = {
         "district_key": district_key,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "counts": counts,
-        "total": sum(counts.values()),
-        "top": all_events[:10],  # Top 10 by severity
-        "items": all_events,      # Full list
+        "counts": {
+            "closures": type_counts.get("closure", 0),
+            "construction": type_counts.get("construction", 0),
+            "restrictions": type_counts.get("restriction", 0),
+        },
+        "layer_counts": layer_counts,
+        "total": len(all_events),
+        "top": all_events[:10],
+        "items": all_events,
     }
 
     out_path = os.path.join(ROAD_DIR, f"{district_key}.json")
@@ -480,22 +548,18 @@ def build_district(district_key, verbose=True):
         json.dump(result, f, indent=2, default=str)
 
     if verbose:
-        print(f"  ✅ Saved {len(all_events)} events → {out_path}")
+        print(f"  ✅ {len(all_events)} events → {out_path}")
 
     return result
 
 
 def build_statewide_senators():
-    """
-    Build statewide aggregate for US Senators.
-    Unions all district items, deduplicates, ranks top 5.
-    """
-    print("\n🏛️  Building statewide senator aggregate (US-IL-SEN)...")
+    """Build statewide aggregate for US Senators."""
+    print("\n🏛  Building statewide senator aggregate (US-IL-SEN)...")
 
     all_events = []
     seen_ids = set()
 
-    # Load all existing district caches
     for path in sorted(glob.glob(os.path.join(ROAD_DIR, "*.json"))):
         key = os.path.basename(path).replace(".json", "")
         if key == "US-IL-SEN":
@@ -512,10 +576,7 @@ def build_statewide_senators():
         except:
             pass
 
-    # Sort by severity
     all_events.sort(key=lambda e: e.get("severity", 0), reverse=True)
-
-    # Count by type
     type_counts = Counter(e.get("type", "unknown") for e in all_events)
 
     result = {
@@ -523,19 +584,19 @@ def build_statewide_senators():
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "counts": {
             "closures": type_counts.get("closure", 0),
-            "restrictions": type_counts.get("restriction", 0),
             "construction": type_counts.get("construction", 0),
+            "restrictions": type_counts.get("restriction", 0),
         },
         "total": len(all_events),
-        "top": all_events[:5],  # Top 5 statewide
-        "items": all_events[:50],  # Keep top 50 for browsing
+        "top": all_events[:10],
+        "items": all_events[:100],
     }
 
     out_path = os.path.join(ROAD_DIR, "US-IL-SEN.json")
     with open(out_path, "w") as f:
         json.dump(result, f, indent=2, default=str)
 
-    print(f"  ✅ {len(all_events)} total events, top 5 saved → {out_path}")
+    print(f"  ✅ {len(all_events)} total statewide events → {out_path}")
     return result
 
 
@@ -543,18 +604,25 @@ def build_statewide_senators():
 
 def main():
     print("=" * 60)
-    print("IDOT Dashboard — Road Events Fetcher")
+    print("IDOT Dashboard — Road Events Fetcher v2")
     print(f"Time: {datetime.now().isoformat()}")
     print("=" * 60)
 
-    # Check for boundary files
-    boundary_files = glob.glob(os.path.join(BOUNDARY_DIR, "*.geojson"))
+    # Quick layer health check
+    print("\n📡 Layer status:")
+    for name, info in LAYERS.items():
+        count = arcgis_count(info["url"])
+        status = f"✅ {count} features" if count > 0 else "⚠️  0 features" if count == 0 else "❌ unreachable"
+        print(f"  {name}: {status}")
+
+    # Check boundaries
+    boundary_files = sorted(glob.glob(os.path.join(BOUNDARY_DIR, "*.geojson")))
     if not boundary_files:
-        print("\n❌ No boundary files found in data/boundaries/")
-        print("   Run: python fetch_boundaries.py first")
+        print("\n❌ No boundary files in data/boundaries/")
+        print("   Run: python fetch_boundaries.py")
         sys.exit(1)
 
-    print(f"\n📂 Found {len(boundary_files)} boundary files")
+    print(f"\n📂 {len(boundary_files)} boundary files")
 
     # Parse args
     target = sys.argv[1] if len(sys.argv) > 1 else None
@@ -564,20 +632,28 @@ def main():
         return
 
     if target:
-        # Build single district
         build_district(target)
     else:
-        # Build all districts
         for bf in sorted(boundary_files):
             key = os.path.basename(bf).replace(".geojson", "")
             build_district(key)
-            time.sleep(1)  # Rate limit between districts
+            time.sleep(0.5)
 
-    # Always rebuild senator aggregate after district builds
     build_statewide_senators()
 
+    # Summary
+    total_events = 0
+    district_files = glob.glob(os.path.join(ROAD_DIR, "*.json"))
+    for df in district_files:
+        try:
+            with open(df) as f:
+                total_events += json.load(f).get("total", 0)
+        except:
+            pass
+
     print("\n" + "=" * 60)
-    print("DONE — Road event caches written to data/road/")
+    print(f"DONE — {len(district_files)} district files, {total_events} total events")
+    print(f"Data written to {ROAD_DIR}/")
     print("=" * 60)
 
 

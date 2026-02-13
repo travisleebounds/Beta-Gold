@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-033",
+  "generated_at": "2026-02-13T12:57:42.236476+00:00",
+  "counts": {
+    "closures": 2,
+    "construction": 0,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 2,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "incident:129334947",
+      "type": "closure",
+      "status": "active",
+      "road": "I-90",
+      "direction": "",
+      "location_text": "At Chicago Skyway Toll Plaza - Queuing traffic. Approach with care.",
+      "county": "",
+      "description": "At Chicago Skyway Toll Plaza - Queuing traffic. Approach with care.",
+      "lanes": "",
+      "start": "2026-02-13T12:50:45+00:00",
+      "end": "2026-02-13T13:01:01+00:00",
+      "last_updated": null,
+      "lat": 41.73521,
+      "lon": -87.5662,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 105,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129334988",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-10T22:34:33+00:00",
+      "end": "2026-02-14T10:34:33+00:00",
+      "last_updated": null,
+      "lat": 41.65369,
+      "lon": -87.5453,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ],
+  "items": [
+    {
+      "id": "incident:129334947",
+      "type": "closure",
+      "status": "active",
+      "road": "I-90",
+      "direction": "",
+      "location_text": "At Chicago Skyway Toll Plaza - Queuing traffic. Approach with care.",
+      "county": "",
+      "description": "At Chicago Skyway Toll Plaza - Queuing traffic. Approach with care.",
+      "lanes": "",
+      "start": "2026-02-13T12:50:45+00:00",
+      "end": "2026-02-13T13:01:01+00:00",
+      "last_updated": null,
+      "lat": 41.73521,
+      "lon": -87.5662,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 105,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129334988",
+      "type": "closure",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "Closed.",
+      "county": "",
+      "description": "Closed.",
+      "lanes": "",
+      "start": "2026-02-10T22:34:33+00:00",
+      "end": "2026-02-14T10:34:33+00:00",
+      "last_updated": null,
+      "lat": 41.65369,
+      "lon": -87.5453,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ]
+}

@@ -16,3 +16,67 @@ Processing: 2022 RAISE IDOT Quad Cities application.pdf (87.9MB)...
 Processing: SubmissionPDF-GRANT13421307.pdf (38.1MB)...
   skipped: 0 chunks
 Processing: Copy of IDOT I290 MPDG 2024 BCA Model.xlsx (44.1MB)...
+  ingested: 294525 chunks
+Processing: I-55 2018_0322_ Final Combined Design Report Full_Reduced.pdf (114.9MB)...
+  ingested: 1358 chunks
+Processing: IL 53 at IL 56 combined design report.pdf (256.9MB)...
+  error: 0 chunks
+Processing: IL Route 9 Final Project Report - Combined Volumes.pdf (204.4MB)...
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35584, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35587, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35589, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35591, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35593, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35595, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35597, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35599, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35601, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35603, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35605, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35607, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35682, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35684, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35686, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35688, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35690, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35692, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35694, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35696, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35698, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35700, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35702, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35584, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35705, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35707, 0, 140607097108944)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(35709, 0, 140607097108944)]
+  ingested: 3488 chunks
+
+Done: 11 ingested, 0 errors
+Total chunks: 350217

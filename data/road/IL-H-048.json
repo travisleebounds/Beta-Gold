@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-048",
+  "generated_at": "2026-02-13T12:58:47.977191+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 2,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 2,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "construction:4581",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Lake Cosman",
+      "county": "",
+      "description": "AT Lake Cosman",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0088685980775,
+      "lon": -88.0136868116436,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:4722",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Lake Cosman",
+      "county": "",
+      "description": "AT Lake Cosman",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0080253990856,
+      "lon": -88.012625157656,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:4581",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Lake Cosman",
+      "county": "",
+      "description": "AT Lake Cosman",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0088685980775,
+      "lon": -88.0136868116436,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    },
+    {
+      "id": "construction:4722",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "AT Lake Cosman",
+      "county": "",
+      "description": "AT Lake Cosman",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0080253990856,
+      "lon": -88.012625157656,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ]
+}

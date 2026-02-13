@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-001",
+  "generated_at": "2026-02-13T12:55:24.947432+00:00",
+  "counts": {
+    "closures": 2,
+    "construction": 0,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 2,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "incident:129335167",
+      "type": "closure",
+      "status": "active",
+      "road": "Kedzie Ave",
+      "direction": "",
+      "location_text": "At W 51st St - Restrictions. Restriction, maximum height 13ft",
+      "county": "",
+      "description": "At W 51st St - Restrictions. Restriction, maximum height 13ft",
+      "lanes": "",
+      "start": "2025-03-05T15:43:31+00:00",
+      "end": "2026-02-13T14:03:26+00:00",
+      "last_updated": null,
+      "lat": 41.80515,
+      "lon": -87.70388,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 90,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129335266",
+      "type": "closure",
+      "status": "active",
+      "road": "S Kedzie Ave",
+      "direction": "",
+      "location_text": "At W 47th St - Restrictions. Restriction, maximum height 13ft",
+      "county": "",
+      "description": "At W 47th St - Restrictions. Restriction, maximum height 13ft",
+      "lanes": "",
+      "start": "2025-03-05T15:41:16+00:00",
+      "end": "2026-02-13T14:03:42+00:00",
+      "last_updated": null,
+      "lat": 41.80341,
+      "lon": -87.70382,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 90,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ],
+  "items": [
+    {
+      "id": "incident:129335167",
+      "type": "closure",
+      "status": "active",
+      "road": "Kedzie Ave",
+      "direction": "",
+      "location_text": "At W 51st St - Restrictions. Restriction, maximum height 13ft",
+      "county": "",
+      "description": "At W 51st St - Restrictions. Restriction, maximum height 13ft",
+      "lanes": "",
+      "start": "2025-03-05T15:43:31+00:00",
+      "end": "2026-02-13T14:03:26+00:00",
+      "last_updated": null,
+      "lat": 41.80515,
+      "lon": -87.70388,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 90,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "incident:129335266",
+      "type": "closure",
+      "status": "active",
+      "road": "S Kedzie Ave",
+      "direction": "",
+      "location_text": "At W 47th St - Restrictions. Restriction, maximum height 13ft",
+      "county": "",
+      "description": "At W 47th St - Restrictions. Restriction, maximum height 13ft",
+      "lanes": "",
+      "start": "2025-03-05T15:41:16+00:00",
+      "end": "2026-02-13T14:03:42+00:00",
+      "last_updated": null,
+      "lat": 41.80341,
+      "lon": -87.70382,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 90,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ]
+}

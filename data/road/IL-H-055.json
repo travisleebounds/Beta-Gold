@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-055",
+  "generated_at": "2026-02-13T12:59:18.389172+00:00",
+  "counts": {
+    "closures": 1,
+    "construction": 1,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 1,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 1,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "incident:129335035",
+      "type": "closure",
+      "status": "active",
+      "road": "IL-58/E Golf Rd Eastbound",
+      "direction": "",
+      "location_text": "Ramp  closed to I-294/Tri-State Tollway Northbound - Closed.",
+      "county": "",
+      "description": "Ramp  closed to I-294/Tri-State Tollway Northbound - Closed.",
+      "lanes": "",
+      "start": "2025-11-10T13:58:46+00:00",
+      "end": "2026-02-14T12:00:00+00:00",
+      "last_updated": null,
+      "lat": 42.05361,
+      "lon": -87.86754,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 105,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "construction:4470",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "At Des Plaines River",
+      "county": "",
+      "description": "At Des Plaines River",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0249544006754,
+      "lon": -87.8752708691759,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ],
+  "items": [
+    {
+      "id": "incident:129335035",
+      "type": "closure",
+      "status": "active",
+      "road": "IL-58/E Golf Rd Eastbound",
+      "direction": "",
+      "location_text": "Ramp  closed to I-294/Tri-State Tollway Northbound - Closed.",
+      "county": "",
+      "description": "Ramp  closed to I-294/Tri-State Tollway Northbound - Closed.",
+      "lanes": "",
+      "start": "2025-11-10T13:58:46+00:00",
+      "end": "2026-02-14T12:00:00+00:00",
+      "last_updated": null,
+      "lat": 42.05361,
+      "lon": -87.86754,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 105,
+      "source_layer": "Illinois_Roadway_Incidents"
+    },
+    {
+      "id": "construction:4470",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "At Des Plaines River",
+      "county": "",
+      "description": "At Des Plaines River",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.0249544006754,
+      "lon": -87.8752708691759,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "Annual_Highway_Improvement_Program"
+    }
+  ]
+}

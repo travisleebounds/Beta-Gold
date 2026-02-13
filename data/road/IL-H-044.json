@@ -1,0 +1,99 @@
+{
+  "district_key": "IL-H-044",
+  "generated_at": "2026-02-13T12:58:31.352287+00:00",
+  "counts": {
+    "closures": 0,
+    "construction": 2,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 0,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 2,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 2,
+  "top": [
+    {
+      "id": "construction:59",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "HOFFMAN ESTATES-AT BARRINGTON RD",
+      "county": "",
+      "description": "HOFFMAN ESTATES-AT BARRINGTON RD",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.04654,
+      "lon": -88.14467,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    },
+    {
+      "id": "construction:60",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "HOFFMAN ESTATES-BARRINGTON RD-AT IL 58",
+      "county": "",
+      "description": "HOFFMAN ESTATES-BARRINGTON RD-AT IL 58",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.04625,
+      "lon": -88.14458,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ],
+  "items": [
+    {
+      "id": "construction:59",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "HOFFMAN ESTATES-AT BARRINGTON RD",
+      "county": "",
+      "description": "HOFFMAN ESTATES-AT BARRINGTON RD",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.04654,
+      "lon": -88.14467,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    },
+    {
+      "id": "construction:60",
+      "type": "construction",
+      "status": "active",
+      "road": "",
+      "direction": "",
+      "location_text": "HOFFMAN ESTATES-BARRINGTON RD-AT IL 58",
+      "county": "",
+      "description": "HOFFMAN ESTATES-BARRINGTON RD-AT IL 58",
+      "lanes": "",
+      "start": null,
+      "end": null,
+      "last_updated": null,
+      "lat": 42.04625,
+      "lon": -88.14458,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 45,
+      "source_layer": "RoadConstructionTest_Waze"
+    }
+  ]
+}

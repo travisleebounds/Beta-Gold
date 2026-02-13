@@ -1,0 +1,61 @@
+{
+  "district_key": "IL-H-072",
+  "generated_at": "2026-02-13T13:00:26.075860+00:00",
+  "counts": {
+    "closures": 1,
+    "construction": 0,
+    "restrictions": 0
+  },
+  "layer_counts": {
+    "incidents": 1,
+    "closure_incidents": 0,
+    "closure_extents": 0,
+    "construction": 0,
+    "waze_construction": 0,
+    "flooding": 0,
+    "unplanned": 0
+  },
+  "total": 1,
+  "top": [
+    {
+      "id": "incident:129335329",
+      "type": "closure",
+      "status": "active",
+      "road": "6th Ave/7th Ave",
+      "direction": "",
+      "location_text": "Closed at 38th St - Closed.",
+      "county": "",
+      "description": "Closed at 38th St - Closed.",
+      "lanes": "",
+      "start": "2026-02-11T14:36:33+00:00",
+      "end": "2026-02-14T08:36:33+00:00",
+      "last_updated": null,
+      "lat": 41.50778,
+      "lon": -90.55696,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ],
+  "items": [
+    {
+      "id": "incident:129335329",
+      "type": "closure",
+      "status": "active",
+      "road": "6th Ave/7th Ave",
+      "direction": "",
+      "location_text": "Closed at 38th St - Closed.",
+      "county": "",
+      "description": "Closed at 38th St - Closed.",
+      "lanes": "",
+      "start": "2026-02-11T14:36:33+00:00",
+      "end": "2026-02-14T08:36:33+00:00",
+      "last_updated": null,
+      "lat": 41.50778,
+      "lon": -90.55696,
+      "source_url": "https://www.gettingaroundillinois.com/",
+      "severity": 100,
+      "source_layer": "Illinois_Roadway_Incidents"
+    }
+  ]
+}
