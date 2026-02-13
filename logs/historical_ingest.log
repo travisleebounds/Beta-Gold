@@ -1,0 +1,1075 @@
+nohup: ignoring input
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:document_master:DocumentMaster initialized: model=qwen2.5-coder:7b, docs=350217
+INFO:document_master:Scanning /home/travisb/Desktop/Historical/...
+INFO:document_master:Found 26185 supported files
+INFO:document_master:Resuming: 933/26185 already done
+INFO:document_master:Progress: 50/26185 (49 new, 1 err) ~87m left
+INFO:document_master:Progress: 100/26185 (99 new, 1 err) ~87m left
+INFO:document_master:Progress: 150/26185 (149 new, 1 err) ~84m left
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(46, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(50, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(54, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(58, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(62, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(66, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(70, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(74, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(78, 0, 140660782119440)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(176, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(180, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(184, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(188, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(192, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(196, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(200, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(204, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(208, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2490, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2485, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2480, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2475, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2470, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2465, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2460, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2453, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2448, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2443, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2438, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2433, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2428, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2423, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2418, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2413, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2408, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2403, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2397, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2392, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2387, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2382, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2377, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2372, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2367, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2362, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2357, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2352, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2347, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2340, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2335, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2330, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2325, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2320, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2315, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2310, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2304, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2299, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2294, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2289, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2284, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2279, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2274, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2268, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2263, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2258, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2253, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2248, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2243, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2238, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2233, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2226, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2221, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2216, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2210, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2205, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2200, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2195, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2190, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2185, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2180, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2173, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2168, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2163, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2158, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2153, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2148, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2142, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2137, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2132, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2127, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2122, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2117, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2112, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2107, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2102, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2095, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2090, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2085, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2080, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2075, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2069, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2064, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2059, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2054, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2049, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2044, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2039, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2034, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2029, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2024, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2017, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2012, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2007, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(2001, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1996, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1991, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1986, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1981, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1976, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1971, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1964, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1959, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1954, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1949, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1944, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1939, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1934, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1928, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1923, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1918, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1913, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1908, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1901, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1896, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1891, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1886, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1880, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1875, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1870, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1865, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1860, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1855, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1850, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1845, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1838, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1833, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1828, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1823, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1818, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1813, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1807, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1802, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1797, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1792, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1787, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1782, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1777, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1770, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1765, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1760, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1755, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1750, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1745, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1740, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1735, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1728, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1723, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1718, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1713, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1708, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1703, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1698, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1693, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1688, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1683, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1676, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1671, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1666, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1661, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1656, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1651, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1645, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1640, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1635, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1630, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1625, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1620, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1613, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1608, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1603, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1598, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1593, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1588, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1583, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1482, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1477, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1472, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1466, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1461, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1456, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1451, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1446, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1441, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1436, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1431, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1426, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1418, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1413, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1408, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1403, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1398, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1393, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1388, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1383, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1378, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1373, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1367, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1362, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1357, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1352, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1347, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1342, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1337, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1332, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1325, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1320, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1315, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1310, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1305, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1300, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1295, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1290, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1284, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1279, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1274, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1269, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1264, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1259, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1254, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1249, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1242, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1237, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1232, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1227, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1222, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1216, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1211, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1206, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1201, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1196, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1191, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1186, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1181, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1176, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1171, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1166, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1161, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1154, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1149, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1144, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1139, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1134, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1128, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1123, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1118, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1113, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1108, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1103, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1098, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1093, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1086, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1081, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1076, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1071, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1066, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1060, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1055, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1050, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1045, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1040, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1035, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1030, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1025, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1020, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1013, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1008, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1003, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(998, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(993, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(988, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(983, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(978, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(973, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(967, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(962, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(957, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(952, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(947, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(942, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(937, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(930, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(925, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(920, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(915, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(910, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(905, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(900, 0, 140660782120784)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(288, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(285, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(282, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(279, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(276, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(273, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(270, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(267, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(264, 0, 140661702967120)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1546, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1550, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1554, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1558, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1562, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1566, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1570, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1574, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1578, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(624, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(627, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(630, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(633, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(636, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(639, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(642, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(645, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(648, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(651, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(654, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(657, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(660, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(663, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(666, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(669, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(672, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(675, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(678, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(681, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(684, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(693, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(700, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(703, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(706, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(709, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(712, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(715, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(718, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(721, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(724, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(728, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(731, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(734, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(737, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(741, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(744, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(749, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(752, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(755, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(760, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(763, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(766, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(769, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(772, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(775, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(778, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(781, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(784, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(787, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(790, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(793, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(796, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(799, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(802, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(811, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(814, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(817, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(820, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(823, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(826, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(829, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(832, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(835, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(838, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(841, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(844, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(847, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(850, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(853, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(856, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(859, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(862, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(865, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(868, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(871, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(874, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(877, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(880, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(883, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(886, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(889, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(892, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(895, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(898, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(901, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(904, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(907, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(910, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(913, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(916, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(919, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(922, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(925, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(928, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(931, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(934, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(937, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(940, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(943, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(946, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(949, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(952, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(955, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(958, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(961, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(964, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(967, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(970, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(973, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(976, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(979, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(982, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(985, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(988, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(991, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(994, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1400, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(997, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1000, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1003, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1006, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1009, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1012, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1015, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1389, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1386, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1389, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1386, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1400, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1018, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1021, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1024, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1027, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1030, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1033, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1036, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1039, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1043, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1046, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1049, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1052, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1055, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1058, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1061, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1064, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1067, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1070, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1073, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1076, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1080, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1083, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1086, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1089, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1092, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1095, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1098, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1101, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1104, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1107, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1110, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1113, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1116, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1119, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1122, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1125, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1128, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1131, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1134, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1137, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1140, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1143, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1146, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1149, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1450, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1456, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1152, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1450, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1456, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1155, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1158, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1161, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1164, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1167, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1170, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1173, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1176, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1179, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1182, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1185, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1188, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1191, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1194, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1197, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1200, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1203, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1206, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1209, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1212, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1215, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1218, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1221, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1224, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1227, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1230, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1233, 0, 140661703128080)]
+WARNING:PyPDF2._cmap:unknown widths : 
+[0, IndirectObject(1236, 0, 140661703128080)]
+INFO:document_master:Progress: 200/26185 (193 new, 7 err) ~492m left
+INFO:document_master:Progress: 250/26185 (236 new, 14 err) ~418m left
+INFO:document_master:Progress: 300/26185 (274 new, 25 err) ~388m left
+INFO:document_master:Progress: 350/26185 (312 new, 35 err) ~429m left

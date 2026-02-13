@@ -1,26 +1,10 @@
-# Python
 __pycache__/
-*.py[cod]
-*.pyo
-
-# Virtualenv
-venv/
-.venv/
-
-# Streamlit secrets (DO NOT COMMIT)
+*.pyc
+.env
 .streamlit/secrets.toml
-
-# Local/editor/OS
-.DS_Store
-*.swp
-.idea/
-.vscode/
-
-# Your scratch/backup files
-app.py.BAK*
-app.py.WIP*
-app.py.BROKEN*
-app.py.NUKED*
-app.py.save
 app.py.bak
 data/vectorstore/
+*.egg-info/
+dist/
+build/
+.DS_Store

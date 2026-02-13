@@ -8727,12 +8727,2620 @@
       "chars": 2510070,
       "tier": "gold",
       "ingested_at": "2026-02-13T07:13:50.037285"
+    },
+    "Daytona Beach News Journal 2011-8-31 Mica Supports Tolls.pdf": {
+      "sha256": "93b72ef85c7f0bacc3d75e7c4137b8e3a3644c3aafe27e8148961802ba10e347",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/CCWIN/Daytona Beach News Journal 2011-8-31 Mica Supports Tolls.pdf",
+      "chunks": 9,
+      "chars": 6915,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:35.325466"
+    },
+    "House District - 001.pdf": {
+      "sha256": "0fe2159c950eaedc80ce521a35cad90dfe12c81a9cfaa1b050482249ab37db7b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 001.pdf",
+      "chunks": 1,
+      "chars": 345,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:35.519944"
+    },
+    "House District - 002.pdf": {
+      "sha256": "0aaa2709398b9cd9255a4f3d4377f4de5b95ab02a6ff6cbf4d4f7679ac89e3dc",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 002.pdf",
+      "chunks": 1,
+      "chars": 549,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:35.747385"
+    },
+    "House District - 003.pdf": {
+      "sha256": "4f9eb89ee3f4f2e220249d7bd06d78721f39105e6378fcc78ed08aa11013fe8a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 003.pdf",
+      "chunks": 1,
+      "chars": 431,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:35.949821"
+    },
+    "House District - 004.pdf": {
+      "sha256": "33b5bec189808f74f0efaf980aca566f9db423f2f56cd7242f60e683552578ae",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 004.pdf",
+      "chunks": 1,
+      "chars": 430,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:36.157983"
+    },
+    "House District - 005.pdf": {
+      "sha256": "20833e3c5252f8b59f26aaad041735e49bb8b4ad6ed1e5064068a118259de9f3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 005.pdf",
+      "chunks": 1,
+      "chars": 425,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:36.370272"
+    },
+    "House District - 006.pdf": {
+      "sha256": "eee306627cc6ec51a0eb35d9cbab86367d357565ca920bb1bdc8d13f47c8705e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 006.pdf",
+      "chunks": 1,
+      "chars": 459,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:36.579893"
+    },
+    "House District - 007.pdf": {
+      "sha256": "ec47ba2494650d2f5fca5bb1b3577ff36940971999d30b736d5f791d42400a8b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 007.pdf",
+      "chunks": 1,
+      "chars": 771,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:36.788784"
+    },
+    "House District - 008.pdf": {
+      "sha256": "8607858302e866ac18fa3f773cd598d543231e0fc9fb7e7b679a168259aa47fb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 008.pdf",
+      "chunks": 1,
+      "chars": 506,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:36.989204"
+    },
+    "House District - 009.pdf": {
+      "sha256": "4dc9ace719e3af3324542ec9852caac36b89ebfaa18f7b33d4fcdcfff46cf074",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 009.pdf",
+      "chunks": 1,
+      "chars": 621,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:37.200833"
+    },
+    "House District - 010.pdf": {
+      "sha256": "1205b0fc5a6e8228527b32e3d8fdde0f2a239c4e53e29ac62110d20334dca3e0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 010.pdf",
+      "chunks": 1,
+      "chars": 653,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:37.420472"
+    },
+    "House District - 011.pdf": {
+      "sha256": "1b500ffbefa4300e6787ee65daf74722e59c2b1b76e2c39b87c1db1a110accf0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 011.pdf",
+      "chunks": 1,
+      "chars": 433,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:37.667758"
+    },
+    "House District - 012.pdf": {
+      "sha256": "4d68b1c49cfb40575a52d5e07895aa5d34294ed7f045d19a33640ed2194be02b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 012.pdf",
+      "chunks": 1,
+      "chars": 151,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:37.882441"
+    },
+    "House District - 013.pdf": {
+      "sha256": "f583a7947f03519a2e74c225684a0bfe492029f4892d620ef280a8713822e28c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 013.pdf",
+      "chunks": 1,
+      "chars": 466,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:38.103336"
+    },
+    "House District - 014.pdf": {
+      "sha256": "19edf8bed6df66978afca011fb7ecca5ccb10baf3fe9be600df1c96066ba88c1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 014.pdf",
+      "chunks": 1,
+      "chars": 346,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:38.304467"
+    },
+    "House District - 015.pdf": {
+      "sha256": "364dc5c78f19c76db3df8b95981d38c9c7a3e73b867b31f3545bbbd3e3248885",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 015.pdf",
+      "chunks": 1,
+      "chars": 580,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:38.531467"
+    },
+    "House District - 016.pdf": {
+      "sha256": "06cb6c7bb3509939681825b1c68e53460f84d87c867464dea6b2d76b60124bfd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 016.pdf",
+      "chunks": 1,
+      "chars": 596,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:38.764149"
+    },
+    "House District - 017.pdf": {
+      "sha256": "33f24168b797c48406244b94ac5c965bc2de309987f6e33982c514c1de8ec28b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 017.pdf",
+      "chunks": 1,
+      "chars": 720,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:38.986266"
+    },
+    "House District - 018.pdf": {
+      "sha256": "4c6cfe2ec4a0fa830fe9ea560910b0a15184bad0bdf7cd43902a13ec6a45c5eb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 018.pdf",
+      "chunks": 1,
+      "chars": 553,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:39.195673"
+    },
+    "House District - 019.pdf": {
+      "sha256": "a2d84bc97f29d2705cc98b9aef119783351bdaf3977a3c9641d0e8b5722c5384",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 019.pdf",
+      "chunks": 1,
+      "chars": 534,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:39.409610"
+    },
+    "House District - 020.pdf": {
+      "sha256": "0728628001f18932ab640ccda3bcad80793ac963ae0834c461db79fbbcb41569",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 020.pdf",
+      "chunks": 1,
+      "chars": 603,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:39.613822"
+    },
+    "House District - 021.pdf": {
+      "sha256": "a8216b9a6ff02138f6728e2844e21bff9953a0525bba54f866aba44eec010703",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 021.pdf",
+      "chunks": 1,
+      "chars": 579,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:39.818424"
+    },
+    "House District - 022.pdf": {
+      "sha256": "140842ba03d19cc1e80b5a1af2be90896bf5ac7ac5c8bc540a2d57da27a347b4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 022.pdf",
+      "chunks": 1,
+      "chars": 321,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:40.022683"
+    },
+    "House District - 023.pdf": {
+      "sha256": "6b32a747ce2b331c87c1d3a06e5ff701332421e842ec0105d53269d215a3e75f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 023.pdf",
+      "chunks": 1,
+      "chars": 543,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:40.232991"
+    },
+    "House District - 024.pdf": {
+      "sha256": "367eb48aa0af873de6fbdf6580d2432234bda939ab6cf57f06789ac0c3822a4d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 024.pdf",
+      "chunks": 1,
+      "chars": 453,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:40.434026"
+    },
+    "House District - 025.pdf": {
+      "sha256": "5e7558303629badf1f1e7b1f8929897cf13f296a21a2334f8b06b7682aa10357",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 025.pdf",
+      "chunks": 1,
+      "chars": 404,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:40.627725"
+    },
+    "House District - 026.pdf": {
+      "sha256": "402b525ba972007c4732255e6a5c85edd82c9bd159d53c83547039d167dc7614",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 026.pdf",
+      "chunks": 1,
+      "chars": 348,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:40.831081"
+    },
+    "House District - 027.pdf": {
+      "sha256": "eaf6be946d2d97e4cd1857b65db68095d804e70686313dac4c6bbf963b605b49",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 027.pdf",
+      "chunks": 1,
+      "chars": 542,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:41.026596"
+    },
+    "House District - 028.pdf": {
+      "sha256": "c7f0c4ec261af58466748f99bb92831f2bdaf7afc755ec4586686ce30ddfea34",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 028.pdf",
+      "chunks": 1,
+      "chars": 584,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:41.226071"
+    },
+    "House District - 029.pdf": {
+      "sha256": "457f55c4e51efd5f58a2a93f572c5f8ce2ff11e59d1d396497fe93c7f04f4893",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 029.pdf",
+      "chunks": 1,
+      "chars": 574,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:41.428899"
+    },
+    "House District - 030.pdf": {
+      "sha256": "abd65e422aafb4d7659e137bbbcc9857f35f234f3e94078140c03d2ea6600cc7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 030.pdf",
+      "chunks": 1,
+      "chars": 768,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:41.649941"
+    },
+    "House District - 031.pdf": {
+      "sha256": "ad18a35bedd9a8f7393ca82de8b5916000a0dd653255d8bae759d530a0f97d08",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 031.pdf",
+      "chunks": 1,
+      "chars": 532,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:41.872493"
+    },
+    "House District - 032.pdf": {
+      "sha256": "b4afa08a3fb9082960f2d5650a6a073de778998300020d914123695d3367fab5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 032.pdf",
+      "chunks": 1,
+      "chars": 418,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:42.112658"
+    },
+    "House District - 033.pdf": {
+      "sha256": "0dd5c06c9949904996f513d96410eb1d948831308ddc1819dfb199e9fccc8ee3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 033.pdf",
+      "chunks": 1,
+      "chars": 443,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:42.339346"
+    },
+    "House District - 034.pdf": {
+      "sha256": "63189b961f4cc120af79504585725e7e9c47263a2cd83c5d4cb18a14af83231a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 034.pdf",
+      "chunks": 1,
+      "chars": 512,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:42.554168"
+    },
+    "House District - 035.pdf": {
+      "sha256": "69831b97ffc5705ba093b39ba2d4516917cab68e3391dbe23db0a891a3fe6d38",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 035.pdf",
+      "chunks": 1,
+      "chars": 538,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:42.766263"
+    },
+    "House District - 036.pdf": {
+      "sha256": "46a29bb4a5c66f83964b77deb814d55ed74d5e11c0e55b996b5263faa2600816",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 036.pdf",
+      "chunks": 1,
+      "chars": 546,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:42.984391"
+    },
+    "House District - 037.pdf": {
+      "sha256": "6d92f3cdcf2d56580c08b90e86a6814ec6ad4805c56c2d6ed479b8f898383ae4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 037.pdf",
+      "chunks": 1,
+      "chars": 710,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:43.209538"
+    },
+    "House District - 038.pdf": {
+      "sha256": "524d6f65f6cafc7e517b71a07aeb1599e3886be1ae4ef79a84a2e0e5d6ea38f0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 038.pdf",
+      "chunks": 1,
+      "chars": 654,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:43.412480"
+    },
+    "House District - 039.pdf": {
+      "sha256": "0f74ab0acdd8b645561a55a973a5cdb1c062e47fc2a23648324c380f3881969e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 039.pdf",
+      "chunks": 1,
+      "chars": 510,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:43.600841"
+    },
+    "House District - 040.pdf": {
+      "sha256": "0094b63f7889bccc10fddda8826032cc860a7e4ca655b1da39eed146bd838b6f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 040.pdf",
+      "chunks": 1,
+      "chars": 433,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:43.815407"
+    },
+    "House District - 041.pdf": {
+      "sha256": "1f814d373ba07004e61331ced805883dabdd6e57878cdcdd0d57921669fb794d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 041.pdf",
+      "chunks": 1,
+      "chars": 590,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.018376"
+    },
+    "House District - 042.pdf": {
+      "sha256": "afc2cd43b1368e606d969110ce18796c8d048a0f84bbe0117c5d2bb6e1a32dc9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 042.pdf",
+      "chunks": 1,
+      "chars": 677,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.213346"
+    },
+    "House District - 043.pdf": {
+      "sha256": "06e488aa2ef86ad553cd9d2527edc9ccb28fc7c685411a9fb79e96e7fedefab2",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 043.pdf",
+      "chunks": 1,
+      "chars": 559,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.405584"
+    },
+    "House District - 044.pdf": {
+      "sha256": "aed118bc312f58376ec40f97665d80ccf2f5f601dacff5a2bcc8306bf3728a3b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 044.pdf",
+      "chunks": 1,
+      "chars": 467,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.596694"
+    },
+    "House District - 045.pdf": {
+      "sha256": "8d0ba2a1cfd539925a5a765001c60f6db0f3a1391fddaf53afe82022029bc653",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 045.pdf",
+      "chunks": 1,
+      "chars": 768,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.796672"
+    },
+    "House District - 046.pdf": {
+      "sha256": "64ab55eba2415fcac3acbb30e77d3a3874f4cd8cf1c5c9d0152b0f0ccfd62964",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 046.pdf",
+      "chunks": 1,
+      "chars": 706,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:44.984465"
+    },
+    "House District - 047.pdf": {
+      "sha256": "27f01d347773f0a81ec6e3714a1f6aa22c52f0062c8bc01003f908156b62d649",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 047.pdf",
+      "chunks": 1,
+      "chars": 752,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:45.173016"
+    },
+    "House District - 048.pdf": {
+      "sha256": "de67b073eeb818bbddbed9e31d656e388f417892c5528bf2b23ed9c131f255ea",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 048.pdf",
+      "chunks": 1,
+      "chars": 705,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:45.360734"
+    },
+    "House District - 049.pdf": {
+      "sha256": "c3744f418cc5ba1f057a488066bf6e39dd3e37cbb8537ea97ba806f09a9cb65d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 049.pdf",
+      "chunks": 1,
+      "chars": 647,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:45.594066"
+    },
+    "House District - 050.pdf": {
+      "sha256": "d5f6ad48acb0ed6d450a5424ccc2c16ae51b8e2a7a28729f0619e94950fc01cd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 050.pdf",
+      "chunks": 1,
+      "chars": 179,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:45.781567"
+    },
+    "House District - 051.pdf": {
+      "sha256": "e67e4dd473a2766be42e91397cc9a1a915f69ff10b1b9ca46c996b09fa1cae2f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 051.pdf",
+      "chunks": 1,
+      "chars": 840,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:45.966649"
+    },
+    "House District - 052.pdf": {
+      "sha256": "0e6aadba5aa600e66dbc51d18302630086cd9c5fd592501a69cd0ad75581187f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 052.pdf",
+      "chunks": 1,
+      "chars": 795,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:46.151582"
+    },
+    "House District - 053.pdf": {
+      "sha256": "3344f98b2485c095cab31796d2c3e63fe10e679f04fe24722009e56154fb38c6",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 053.pdf",
+      "chunks": 1,
+      "chars": 586,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:46.335444"
+    },
+    "House District - 054.pdf": {
+      "sha256": "bda9afcf1a20ed0211aa6670c90dd52c3483b0f9fb04897acdf362e3d92226bf",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 054.pdf",
+      "chunks": 1,
+      "chars": 525,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:46.518728"
+    },
+    "House District - 055.pdf": {
+      "sha256": "0a030c1e4b1e56491e5eb24188d80eb12966c21dbd95638d890d9ba6deb4bcf1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 055.pdf",
+      "chunks": 1,
+      "chars": 811,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:46.710953"
+    },
+    "House District - 056.pdf": {
+      "sha256": "874ccbf8c2497976fd0b83383418f1d7b9becf225bbe8eec9092a92004ff9860",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 056.pdf",
+      "chunks": 1,
+      "chars": 682,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:46.899493"
+    },
+    "House District - 057.pdf": {
+      "sha256": "42ff545a3a70a0265012ddf602857f447ca30f6d7c0ea650fade9294f3aa5fd4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 057.pdf",
+      "chunks": 1,
+      "chars": 602,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:47.090456"
+    },
+    "House District - 058.pdf": {
+      "sha256": "04dac8920f8d268cbf65ba7b116041d86cfc04fb955a5f42b4aafc5e9b254a79",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 058.pdf",
+      "chunks": 1,
+      "chars": 724,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:47.286812"
+    },
+    "House District - 059.pdf": {
+      "sha256": "0dc4427b9d612dac55f95098aad361daa2a53a1ad111491fe175c81089fea93f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 059.pdf",
+      "chunks": 1,
+      "chars": 655,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:47.482436"
+    },
+    "House District - 060.pdf": {
+      "sha256": "7aee94dc780911a594268c2ca1d9a046a97ca55eb3c3dde3ef0ed4c5fb0c676e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 060.pdf",
+      "chunks": 1,
+      "chars": 715,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:47.673495"
+    },
+    "House District - 061.pdf": {
+      "sha256": "fde50c0b2ba2418c965d4f43265ff302a0c5c7d4c08874fd136e418ed783d769",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 061.pdf",
+      "chunks": 1,
+      "chars": 820,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:47.875562"
+    },
+    "House District - 062.pdf": {
+      "sha256": "6f879391998dc27c48c6ce738669fecd399a5119870322ca88293492e4876360",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 062.pdf",
+      "chunks": 1,
+      "chars": 666,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:48.068187"
+    },
+    "House District - 063.pdf": {
+      "sha256": "7f08154c167362034052065781f26cce725af0368167fd85d36a4c2dc041eea3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 063.pdf",
+      "chunks": 1,
+      "chars": 191,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:48.263111"
+    },
+    "House District - 064.pdf": {
+      "sha256": "3395280e5bdbf7f0c00a933a3498f317cf34a2cf3565c92166b5cfeb85400668",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 064.pdf",
+      "chunks": 1,
+      "chars": 205,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:48.461825"
+    },
+    "House District - 065.pdf": {
+      "sha256": "cbdc3f419c4856c9095b238a97d260dd38946915866e2723dfcef6083516b578",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 065.pdf",
+      "chunks": 1,
+      "chars": 619,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:48.661541"
+    },
+    "House District - 066.pdf": {
+      "sha256": "3ccfe5be65b4a70d6cd98b259caaddabe4422269d6f12eddd341c26ebea7f182",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 066.pdf",
+      "chunks": 1,
+      "chars": 691,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:48.869857"
+    },
+    "House District - 067.pdf": {
+      "sha256": "81cac8129dfbd8f5bcc87dd2796c2d6c1fea1ef6b73fbd4fbf50d68e07c0e074",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 067.pdf",
+      "chunks": 1,
+      "chars": 875,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:49.081650"
+    },
+    "House District - 068.pdf": {
+      "sha256": "19899ef86a511790603111d2691baf9f226b199c05bb4a50743befb8f1724502",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 068.pdf",
+      "chunks": 1,
+      "chars": 845,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:49.296090"
+    },
+    "House District - 069.pdf": {
+      "sha256": "d6d3798d2571b0dd286288bcd17ed2d6136a3df69ced0220c10b8e486bea67e5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 069.pdf",
+      "chunks": 1,
+      "chars": 178,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:49.484371"
+    },
+    "House District - 070.pdf": {
+      "sha256": "a63988c812b4e3682aab90288f7e251beaee7baa79285057cd81bfe6616fd7ad",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 070.pdf",
+      "chunks": 1,
+      "chars": 234,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:49.683025"
+    },
+    "House District - 071.pdf": {
+      "sha256": "cfed7a37425a808edb66627853f38354691cb3eb1ec2fdb4b869650fce1dc1fe",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 071.pdf",
+      "chunks": 1,
+      "chars": 245,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:49.878574"
+    },
+    "House District - 072.pdf": {
+      "sha256": "2050128401282965360faf60bfd40a6a94c04a4ec5aa1c0b722f0a69f73fe98d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 072.pdf",
+      "chunks": 1,
+      "chars": 185,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:50.081581"
+    },
+    "House District - 073.pdf": {
+      "sha256": "079969ca5f9416dc49414fe7f1ba8a81ae1a36396609535cd414173af075554b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 073.pdf",
+      "chunks": 1,
+      "chars": 325,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:50.290250"
+    },
+    "House District - 074.pdf": {
+      "sha256": "f17d21cc6d04deafad18e29384012628141706e1fb2287f960db92b4335a4a11",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 074.pdf",
+      "chunks": 1,
+      "chars": 353,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:50.503470"
+    },
+    "House District - 075.pdf": {
+      "sha256": "13066dd3b5a4ac06b395c36404ef3eb5caa8238c91b7d84a31d7e6fa6c6042ce",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 075.pdf",
+      "chunks": 1,
+      "chars": 807,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:50.705184"
+    },
+    "House District - 076.pdf": {
+      "sha256": "e35c1861d6f53724f14d0f18376d8ebda99293164d15b032337c4cc2771e8e41",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 076.pdf",
+      "chunks": 1,
+      "chars": 235,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:50.900789"
+    },
+    "House District - 077.pdf": {
+      "sha256": "9e60e6b90e54a07dc304e3a77b2974f54383408edf15c8c2e0af8b97d594405c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 077.pdf",
+      "chunks": 1,
+      "chars": 674,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:51.094464"
+    },
+    "House District - 078.pdf": {
+      "sha256": "52fa99838db59f9903af48505f1e35f3b1356c748f3738b204001b979393a5a1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 078.pdf",
+      "chunks": 1,
+      "chars": 620,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:51.288370"
+    },
+    "House District - 079.pdf": {
+      "sha256": "b8eb7f54bfdde312b2bb0978d4488f4d677c45dc022d3df8c2920433b47c6eb8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 079.pdf",
+      "chunks": 1,
+      "chars": 614,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:51.478256"
+    },
+    "House District - 080.pdf": {
+      "sha256": "478a78824bb909d6b98f2f3c2147761907699cb912df350305663aa0a72881bb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 080.pdf",
+      "chunks": 1,
+      "chars": 632,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:51.668985"
+    },
+    "House District - 081.pdf": {
+      "sha256": "d63c84317c5eb102044bbe5b2349c8b0f92d2096feee9248a4e70673ee50fb90",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 081.pdf",
+      "chunks": 1,
+      "chars": 760,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:51.855665"
+    },
+    "House District - 082.pdf": {
+      "sha256": "f23aeeda7fca726905ef57dcdfa405a0e4134767a6804e0a6a485910843b8478",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 082.pdf",
+      "chunks": 1,
+      "chars": 682,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:52.058938"
+    },
+    "House District - 083.pdf": {
+      "sha256": "4d0921ec5b6ee0972765b4a65b23a1b179da7ac9d972e7c5180f1ca03e1280e2",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 083.pdf",
+      "chunks": 1,
+      "chars": 506,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:52.244410"
+    },
+    "House District - 084.pdf": {
+      "sha256": "13462051db3b87f5c9cee023f66a7481dffb9c405ace8c86358c02a055cee1da",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 084.pdf",
+      "chunks": 1,
+      "chars": 543,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:52.436440"
+    },
+    "House District - 085.pdf": {
+      "sha256": "ba7d756b3893e5247d4d969380b0f6a46859ef2db4979b96e8b9ee6ceaf3e668",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 085.pdf",
+      "chunks": 1,
+      "chars": 614,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:52.626344"
+    },
+    "House District - 086.pdf": {
+      "sha256": "b8f03bb24ad30730be0cfa90bedda7343f05afc52bdbc5e15bb0312e69e05138",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 086.pdf",
+      "chunks": 1,
+      "chars": 807,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:52.807689"
+    },
+    "House District - 087.pdf": {
+      "sha256": "2ac07335293f32f8839cc6e2b2a5c0ae42b5697fbd200834a1b7047d95396f3d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 087.pdf",
+      "chunks": 1,
+      "chars": 250,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.039744"
+    },
+    "House District - 088.pdf": {
+      "sha256": "eb6db579a3cb3f874a3e424b53cc543d807a01cfa0264805c10ea71eb99b21f3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 088.pdf",
+      "chunks": 1,
+      "chars": 265,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.229927"
+    },
+    "House District - 089.pdf": {
+      "sha256": "6537712fde95513d1ba0a1fd2d412c96e2c0e3cd5e2a50c8ba28dc42b88d3496",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 089.pdf",
+      "chunks": 1,
+      "chars": 220,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.412526"
+    },
+    "House District - 090.pdf": {
+      "sha256": "284c81701f20b31d61cad4e36e2fedec4c251e1a99b5698c7791143d4d17af27",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 090.pdf",
+      "chunks": 1,
+      "chars": 278,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.588720"
+    },
+    "House District - 091.pdf": {
+      "sha256": "f4630bb571bc7c38acf7bc0f18b8118f47a75e8aa3232f4b7a0d9a339768d551",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 091.pdf",
+      "chunks": 1,
+      "chars": 217,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.771877"
+    },
+    "House District - 092.pdf": {
+      "sha256": "031691af53fd673bca309ab21de88bb8d1e81d16f86aba865afe088251a41d75",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 092.pdf",
+      "chunks": 1,
+      "chars": 892,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:53.956122"
+    },
+    "House District - 093.pdf": {
+      "sha256": "6139fa0a485acd603f489e8ce6ef52e1d384a958de4d684209f0696d61e9e69e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 093.pdf",
+      "chunks": 1,
+      "chars": 368,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:54.148831"
+    },
+    "House District - 094.pdf": {
+      "sha256": "1c3b1cf47b4a269307d925e071d4793407cb40011ab4d65a6ee9430ee6891402",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 094.pdf",
+      "chunks": 1,
+      "chars": 276,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:54.325230"
+    },
+    "House District - 095.pdf": {
+      "sha256": "101403b022bedb6b040b753127ce536c393191b423f0d85fa9a8f219401ff172",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 095.pdf",
+      "chunks": 1,
+      "chars": 311,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:54.501641"
+    },
+    "House District - 096.pdf": {
+      "sha256": "805971841b69ade65f11f601eb7c4b830660219571d75bdf6ec35db238e6e6e9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 096.pdf",
+      "chunks": 1,
+      "chars": 199,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:54.681364"
+    },
+    "House District - 097.pdf": {
+      "sha256": "7cc4c429f1887272f602f1be5e3cb8f9f115acc99181478ebf64bea7778c1083",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 097.pdf",
+      "chunks": 1,
+      "chars": 524,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:54.863318"
+    },
+    "House District - 098.pdf": {
+      "sha256": "a56688acdfc97a27414a5a6476f18f27b935c6ead22ba211412d5bae9ab454ce",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 098.pdf",
+      "chunks": 1,
+      "chars": 555,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.044784"
+    },
+    "House District - 099.pdf": {
+      "sha256": "bb8a12dafb70244fd3460495e550c10704d81e3290e9ed486c80e40fbd1f2f53",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 099.pdf",
+      "chunks": 1,
+      "chars": 741,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.227810"
+    },
+    "House District - 100.pdf": {
+      "sha256": "c6a05b881fb42bb53181c6eedbf5e8ece718cc992fbefbf05a4cf1ca6ed70842",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 100.pdf",
+      "chunks": 1,
+      "chars": 391,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.405894"
+    },
+    "House District - 101.pdf": {
+      "sha256": "4a5e401e7837aa39518794fb005d61736eb7692d9866357356f6cd8d2ab66212",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 101.pdf",
+      "chunks": 1,
+      "chars": 299,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.588583"
+    },
+    "House District - 102.pdf": {
+      "sha256": "b1adde11688f8d95587a2b52e7b5133a44edfe57bf9464343ddf93600f32dc9f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 102.pdf",
+      "chunks": 1,
+      "chars": 252,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.770788"
+    },
+    "House District - 103.pdf": {
+      "sha256": "9bf4fda1167638431c2be3d93bf3d7580692004aa3c048586ade6d8585903067",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 103.pdf",
+      "chunks": 1,
+      "chars": 564,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:55.947971"
+    },
+    "House District - 104.pdf": {
+      "sha256": "f16f8ee5ec31540f74add98e65dd7f59caf736d4d0d12c432ae66f93bcc50f1c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 104.pdf",
+      "chunks": 1,
+      "chars": 190,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.130689"
+    },
+    "House District - 105.pdf": {
+      "sha256": "0dca847769fc25da1056239d7a2b9b25eb7cf667565d2ddaadbd3cd1b3ee5468",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 105.pdf",
+      "chunks": 1,
+      "chars": 192,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.306995"
+    },
+    "House District - 106.pdf": {
+      "sha256": "14aebdf37fb75183c50ed715ac85aeb9eada335e1beb4ec2cc8b3e4d48341677",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 106.pdf",
+      "chunks": 1,
+      "chars": 380,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.470368"
+    },
+    "House District - 107.pdf": {
+      "sha256": "4ca35faf8304b2583e4f25118787cc7970b43b81be4703247abe6917ebd5c66e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 107.pdf",
+      "chunks": 1,
+      "chars": 279,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.641233"
+    },
+    "House District - 108.pdf": {
+      "sha256": "a6a980cb59df85088e35bef25b08b9a8fe5530963846e510bbfa780f5bce0db9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 108.pdf",
+      "chunks": 1,
+      "chars": 260,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.812772"
+    },
+    "House District - 109.pdf": {
+      "sha256": "b0042ccbd7702041714ff1f3e57a71ed302edced0208e08c703909caffa2d503",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 109.pdf",
+      "chunks": 1,
+      "chars": 239,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:56.985122"
+    },
+    "House District - 110.pdf": {
+      "sha256": "520be2777681568feaad0b31577073232c72f8bbc0b9181502710f3508980432",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 110.pdf",
+      "chunks": 1,
+      "chars": 213,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:57.154696"
+    },
+    "House District - 111.pdf": {
+      "sha256": "7294d4d63d3b4568709aa4c2b9263275ec65dfdfbad76f5ee54aec060a3d43e7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 111.pdf",
+      "chunks": 1,
+      "chars": 510,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:57.336910"
+    },
+    "House District - 112.pdf": {
+      "sha256": "0841c7bec3595226667d6249bb0f7128f57096726f11bd5bc3e4be8c45305e01",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 112.pdf",
+      "chunks": 1,
+      "chars": 601,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:57.521596"
+    },
+    "House District - 113.pdf": {
+      "sha256": "c5a1af2065ebbf8018dc069811595594bcb0911df34f103592c8ee2d955d9aff",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 113.pdf",
+      "chunks": 1,
+      "chars": 604,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:57.694129"
+    },
+    "House District - 114.pdf": {
+      "sha256": "e61a156c295d558ce5c794977c9b757b3154ee262daff61b6f3f13424f51be0f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 114.pdf",
+      "chunks": 1,
+      "chars": 231,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:57.874517"
+    },
+    "House District - 115.pdf": {
+      "sha256": "e37c0e1de11aa365f25e7d7268393e4f3d6b17ada71322f0fe5d20cdf1ddc25e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 115.pdf",
+      "chunks": 1,
+      "chars": 282,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:58.055481"
+    },
+    "House District - 116.pdf": {
+      "sha256": "05df352c458e4999b7d3e74abfb03e386f41e469971fdce1f45c35e0c918b0cb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 116.pdf",
+      "chunks": 1,
+      "chars": 298,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:58.239418"
+    },
+    "House District - 117.pdf": {
+      "sha256": "0e9a00d8664cf2e263ac050bba9c9ebc8b0ea9140a4eb5cd166418e0f821be7f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 117.pdf",
+      "chunks": 1,
+      "chars": 204,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:58.426168"
+    },
+    "House District - 118.pdf": {
+      "sha256": "2b1483f319937340284fbf90f35d2658423847ae6f76964ff308efcda8a66409",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/House District - 118.pdf",
+      "chunks": 1,
+      "chars": 293,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:58.632447"
+    },
+    "Senate District - 01.pdf": {
+      "sha256": "2a321c595203ceb873e5634a52ac174f8c8f55d2709e271b88c0115dd0f54edb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 01.pdf",
+      "chunks": 1,
+      "chars": 527,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:58.828046"
+    },
+    "Senate District - 02.pdf": {
+      "sha256": "b4d3c29be58e314c8d7b03780ac4a1f48d3afce626a099169ee15fd3d6c42f5f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 02.pdf",
+      "chunks": 1,
+      "chars": 550,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.035455"
+    },
+    "Senate District - 03.pdf": {
+      "sha256": "e2b87a93e5d55d328979a4cfdd1111b21bb4cd5ec85d0592d3c7d12e4087a905",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 03.pdf",
+      "chunks": 1,
+      "chars": 527,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.216224"
+    },
+    "Senate District - 04.pdf": {
+      "sha256": "56826d898fe2a3e380bbce6248766dab10cfdfa27bcc3a294f666660e6206ec8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 04.pdf",
+      "chunks": 1,
+      "chars": 924,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.395214"
+    },
+    "Senate District - 05.pdf": {
+      "sha256": "7f287308545580fb1c93a2ad0ca3ce2a037d46e5c1e52dcb223f16266358350b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 05.pdf",
+      "chunks": 1,
+      "chars": 801,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.571170"
+    },
+    "Senate District - 06.pdf": {
+      "sha256": "377250b0c21bd86d176199f896a98fb5c50152d8f2f3c179171335622ea1234b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 06.pdf",
+      "chunks": 1,
+      "chars": 587,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.746455"
+    },
+    "Senate District - 07.pdf": {
+      "sha256": "9fe151564f0eeff8c073856b777c079f69e62be4a58c0b3ff78bce7432d52451",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 07.pdf",
+      "chunks": 1,
+      "chars": 584,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:28:59.928492"
+    },
+    "Senate District - 08.pdf": {
+      "sha256": "7cc1a6d44a3f1c8872b519922debeefcc693d5061e8d629b6e7291bb7c4aae7a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 08.pdf",
+      "chunks": 1,
+      "chars": 710,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:00.103271"
+    },
+    "Senate District - 09.pdf": {
+      "sha256": "6d4a200bda515566f28cd77891ffbe8879dcb76010c177ed8160ad2c14262e03",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 09.pdf",
+      "chunks": 1,
+      "chars": 189,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:00.283812"
+    },
+    "Senate District - 10.pdf": {
+      "sha256": "75bac31fa56f347253f9531e6cebaf25d82ab61c7f2257dc5362f777bdbbe29f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 10.pdf",
+      "chunks": 1,
+      "chars": 764,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:00.500246"
+    },
+    "Senate District - 11.pdf": {
+      "sha256": "31db4c29be6f49ca5f7ffe778616cb3a5369532283a2bf407a19e17541c1d6b9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 11.pdf",
+      "chunks": 1,
+      "chars": 689,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:00.681217"
+    },
+    "Senate District - 12.pdf": {
+      "sha256": "2fb66df5c7fef920c0e200cee7f7040a32b1069ccfb734e102ba091bb4141dec",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 12.pdf",
+      "chunks": 1,
+      "chars": 650,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:00.857318"
+    },
+    "Senate District - 13.pdf": {
+      "sha256": "3e9a8802f5d945e7ae43289728bc5a337ebda0cab62a1c6c6a5ae809934d3ec8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 13.pdf",
+      "chunks": 1,
+      "chars": 405,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.030656"
+    },
+    "Senate District - 14.pdf": {
+      "sha256": "1576d9b812ec700133a91fe3939dc7faee82419c2abfe811c1cc616e1a1596b8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 14.pdf",
+      "chunks": 1,
+      "chars": 748,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.203926"
+    },
+    "Senate District - 15.pdf": {
+      "sha256": "eb2b699b83b2e6b8aae95f543b4ef9d28d84928d22100c287a3537b8f2a0809d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 15.pdf",
+      "chunks": 1,
+      "chars": 704,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.375581"
+    },
+    "Senate District - 16.pdf": {
+      "sha256": "6e7987c88f8606cd49a5bd929c472d771494c20c6b44b3b003e80b55f4e9b172",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 16.pdf",
+      "chunks": 1,
+      "chars": 692,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.573902"
+    },
+    "Senate District - 17.pdf": {
+      "sha256": "e1b655993ea092ee91759cae1c9b294455dbf93acb609d2fbee98b1e28bee8d3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 17.pdf",
+      "chunks": 1,
+      "chars": 529,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.819277"
+    },
+    "Senate District - 18.pdf": {
+      "sha256": "689f4d49a8c2a94974096bd758ba6a53728e9fdca9bd642302623bb6ef69e9a4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 18.pdf",
+      "chunks": 1,
+      "chars": 674,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:01.994398"
+    },
+    "Senate District - 19.pdf": {
+      "sha256": "3bddcd0991793b004f76855b7d8d8efdfd19e3a3797b08a9096a394d950faeef",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 19.pdf",
+      "chunks": 1,
+      "chars": 914,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:02.183903"
+    },
+    "Senate District - 20.pdf": {
+      "sha256": "38cbfaa2999c3592ec821a5f523b963542d47856e2ad5c35bb2bc141a0892da1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 20.pdf",
+      "chunks": 1,
+      "chars": 532,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:02.413406"
+    },
+    "Senate District - 21.pdf": {
+      "sha256": "e8eb171121cfed3f39ce4f1fa511b87db39eb4a57aded308ebf1d3405fe6fdfa",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 21.pdf",
+      "chunks": 1,
+      "chars": 682,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:02.637441"
+    },
+    "Senate District - 22.pdf": {
+      "sha256": "6f8514272bda08f980143bb5798f302684551cae10215702991c65014af8e2c4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 22.pdf",
+      "chunks": 1,
+      "chars": 641,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:02.851989"
+    },
+    "Senate District - 23.pdf": {
+      "sha256": "dcc4b4e3206019d4024ed22a9ffe78a20aa068fee707cc5a93d88b478ecd54c6",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 23.pdf",
+      "chunks": 1,
+      "chars": 735,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:03.066307"
+    },
+    "Senate District - 24.pdf": {
+      "sha256": "c15da9602e05b1d6ab5de9637ff34a2e27e440fa0d8ad977ed952d4c497da41a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 24.pdf",
+      "chunks": 1,
+      "chars": 901,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:03.281757"
+    },
+    "Senate District - 25.pdf": {
+      "sha256": "151380e501e04846ccf0eacedc369c4511834d95a4d5c69e3e0f4b80fded958c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 25.pdf",
+      "chunks": 1,
+      "chars": 721,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:03.471039"
+    },
+    "Senate District - 26.pdf": {
+      "sha256": "85229120880bdb7fb94ab67598b0df9f7e71582e2f55ce4b4816a40652ff957e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 26.pdf",
+      "chunks": 1,
+      "chars": 946,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:03.661816"
+    },
+    "Senate District - 27.pdf": {
+      "sha256": "1be51aba28116f8cb4a98266e87b4fc63c16d9bbdcc6e9531988a4ecc1de9971",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 27.pdf",
+      "chunks": 1,
+      "chars": 700,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:03.849185"
+    },
+    "Senate District - 28.pdf": {
+      "sha256": "c773a9c187a38dc71d8967fd53f6be80ed08eacbdb1b6205cfbab63419bd04f4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 28.pdf",
+      "chunks": 1,
+      "chars": 740,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.038614"
+    },
+    "Senate District - 29.pdf": {
+      "sha256": "8238a667e43fd960352a0f5eb256178bcb73fc65406ea6fb45d895ced68bdbe0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 29.pdf",
+      "chunks": 1,
+      "chars": 759,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.229214"
+    },
+    "Senate District - 30.pdf": {
+      "sha256": "79be73023f11166488b9501464836fb230b1ff96f9f10f8705c26c7561473d17",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 30.pdf",
+      "chunks": 1,
+      "chars": 720,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.419506"
+    },
+    "Senate District - 31.pdf": {
+      "sha256": "22050b51392e9487aa04e87223e332872fd3f9bdf41a8f7c8b2686e292d4a0a8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 31.pdf",
+      "chunks": 1,
+      "chars": 908,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.613689"
+    },
+    "Senate District - 32.pdf": {
+      "sha256": "e8c395fce578011d740c4ffd7380f5be97dda32f85d8c89460be3c706d8dc6dc",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 32.pdf",
+      "chunks": 1,
+      "chars": 970,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.807649"
+    },
+    "Senate District - 33.pdf": {
+      "sha256": "3bccf43e9f34ceb4053d26bba5c44479284370cfb60385d8c8bc67ae041decbd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 33.pdf",
+      "chunks": 1,
+      "chars": 739,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:04.996231"
+    },
+    "Senate District - 34.pdf": {
+      "sha256": "6ab24f4dda3d7c72a4499c7f7cc3371a58892d2493a1f5ce346e13decef46f83",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 34.pdf",
+      "chunks": 2,
+      "chars": 1027,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:05.193243"
+    },
+    "Senate District - 35.pdf": {
+      "sha256": "4e7f14ce3fe5a86a08342f9a685442fe428c82853378254faa28a33b0143486c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 35.pdf",
+      "chunks": 1,
+      "chars": 741,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:05.382898"
+    },
+    "Senate District - 36.pdf": {
+      "sha256": "05fcffecb16e6b4fb48b43146c6f4a8bc3aa5dfee8a436c84c3990738042ab7e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 36.pdf",
+      "chunks": 1,
+      "chars": 622,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:05.675515"
+    },
+    "Senate District - 37.pdf": {
+      "sha256": "04427453bcf859a6c3eb4d493b6e27c3ca2208f429d2414b32bfe14d26509ae4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 37.pdf",
+      "chunks": 1,
+      "chars": 424,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:05.886817"
+    },
+    "Senate District - 38.pdf": {
+      "sha256": "0d9549e22cea5e9023fea889004bea9c0ddf88c0b9595239ee44eeee51da7609",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 38.pdf",
+      "chunks": 1,
+      "chars": 335,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.071409"
+    },
+    "Senate District - 39.pdf": {
+      "sha256": "2f417df00480314fc0dd9fa7191a5d01505b2a59e1fff7143e8a096a6c28347e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 39.pdf",
+      "chunks": 1,
+      "chars": 749,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.242422"
+    },
+    "Senate District - 40.pdf": {
+      "sha256": "f83339b59a4e691000a8f0ed72b98d16d228045425d7e3809a5f58b9beeeb6ae",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 40.pdf",
+      "chunks": 1,
+      "chars": 722,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.421352"
+    },
+    "Senate District - 41.pdf": {
+      "sha256": "df9a824a0a6b744309fe4398ad1a5b56f7b2bfe422e422c0cfc5c5edbb1597cd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 41.pdf",
+      "chunks": 1,
+      "chars": 883,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.601211"
+    },
+    "Senate District - 42.pdf": {
+      "sha256": "c18d5ca252919407708805194adf06241f59e3c8886c02cff6ca0b1357bbc754",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 42.pdf",
+      "chunks": 1,
+      "chars": 651,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.777387"
+    },
+    "Senate District - 43.pdf": {
+      "sha256": "6a7204176bc642704a6f8153d9eb4e63e5dbd6461da4cd1b5827ead09a1d17dc",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 43.pdf",
+      "chunks": 1,
+      "chars": 669,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:06.956888"
+    },
+    "Senate District - 44.pdf": {
+      "sha256": "451ce543251b4abf13a5fc3ffc964abe767c92e036b181cffed6588911d3f6e3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 44.pdf",
+      "chunks": 1,
+      "chars": 327,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:07.130740"
+    },
+    "Senate District - 45.pdf": {
+      "sha256": "b7f03fe4f8dafdec4215c09257d72d0461b0c965e36e5d25627e0630dafcc3a1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 45.pdf",
+      "chunks": 1,
+      "chars": 355,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:07.310064"
+    },
+    "Senate District - 46.pdf": {
+      "sha256": "12e4e28e46cd5dac8b43cc3d5112dd6e28a1085838630ed7d66c8ae4f17eae8b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 46.pdf",
+      "chunks": 1,
+      "chars": 544,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:07.487245"
+    },
+    "Senate District - 47.pdf": {
+      "sha256": "0f4b1746c0803e438cb132a91f13ca9b483c0d2a828d68512983cde858e7c61b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 47.pdf",
+      "chunks": 1,
+      "chars": 424,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:07.662137"
+    },
+    "Senate District - 48.pdf": {
+      "sha256": "97f1b8c1f8c9ce17d10193a8bfc4c491dbf40195e6a478d8f14fde3576ef12e7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 48.pdf",
+      "chunks": 1,
+      "chars": 293,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:07.838493"
+    },
+    "Senate District - 49.pdf": {
+      "sha256": "1b6638bf2e857c33895a50a52d48699dc1a29e2a4c3197c0a75397a389941c2e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 49.pdf",
+      "chunks": 1,
+      "chars": 746,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.013535"
+    },
+    "Senate District - 50.pdf": {
+      "sha256": "aab421b11ff3edad1c2759b2dc592dbce0d1810ffa80c674608702af8eff3b2f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 50.pdf",
+      "chunks": 1,
+      "chars": 440,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.189672"
+    },
+    "Senate District - 51.pdf": {
+      "sha256": "9da99b8df89b802e5b234d8a6cd53d8497e2a721b664f78956696ae857bfdab5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 51.pdf",
+      "chunks": 1,
+      "chars": 335,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.364700"
+    },
+    "Senate District - 52.pdf": {
+      "sha256": "f639e1ce2badd11410dca4aef39d4c9306d62164a5492eac18fcbc2a4d4fc538",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 52.pdf",
+      "chunks": 1,
+      "chars": 545,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.555358"
+    },
+    "Senate District - 53.pdf": {
+      "sha256": "db03a9aadcc82ade13ab5378c1d0a4681777f193a95b4ef659a698e9cf78b498",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 53.pdf",
+      "chunks": 1,
+      "chars": 381,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.746796"
+    },
+    "Senate District - 54.pdf": {
+      "sha256": "7ca4542576f7ae1966336bc10b8670c4b8024a0d45d78696ea1915193f458897",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 54.pdf",
+      "chunks": 1,
+      "chars": 386,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:08.936261"
+    },
+    "Senate District - 55.pdf": {
+      "sha256": "2c379fe21160df7b8d102a359899cd3edf29bcc5c29a9207346fa6db26c28d79",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 55.pdf",
+      "chunks": 1,
+      "chars": 293,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:09.130168"
+    },
+    "Senate District - 56.pdf": {
+      "sha256": "f576ee1047c216840f83538fceef694fc5438764cc88a744c45c8d4e41e4fded",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 56.pdf",
+      "chunks": 1,
+      "chars": 244,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:09.310061"
+    },
+    "Senate District - 57.pdf": {
+      "sha256": "778c3314f6c45f5449e700ec79b3a1999aa1b264293c625a9a54f68d0fabf173",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 57.pdf",
+      "chunks": 1,
+      "chars": 853,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:09.501182"
+    },
+    "Senate District - 58.pdf": {
+      "sha256": "6db4fd112f243e0bc0761abfde53d0997dcaebaa8c2ccb69573d7726496f7254",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 58.pdf",
+      "chunks": 1,
+      "chars": 401,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:09.696903"
+    },
+    "Senate District - 59.pdf": {
+      "sha256": "1cd5800036b6187aa476d7d5dbdcff7b23e09c93ea9df41d7f02f1ea3fd2d3a3",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/HDDATA/GIS/Senate District - 59.pdf",
+      "chunks": 1,
+      "chars": 291,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:29:09.899044"
+    },
+    "095_statutes_at_large.pdf": {
+      "sha256": "cb0f027c75023cd37378c861faef12635acaa628886e75156331376f9aab5238",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/095_statutes_at_large.pdf",
+      "chunks": 6803,
+      "chars": 5114161,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:53.265457"
+    },
+    "Book1.xlsx": {
+      "sha256": "4aa1d88c7b0d17ae5e6c0d86c3f128c2ee69460282e4a11b52f7d67a33d978f0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Book1.xlsx",
+      "chunks": 3,
+      "chars": 2175,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:53.484935"
+    },
+    "Budget Tracking.pdf": {
+      "sha256": "10147dcc223831a5cd1d4be95db29be75a66960a11bd466520940082061369ce",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Budget Tracking.pdf",
+      "chunks": 9,
+      "chars": 7155,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:53.777977"
+    },
+    "Budget Tracking.xlsx": {
+      "sha256": "25291445c8cd116649123a69603930ae83aa35fe9b237d236dd60cbc66a3dffb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Budget Tracking.xlsx",
+      "chunks": 11,
+      "chars": 8529,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:54.090201"
+    },
+    "Chuck I Memo on Professional Excellence Award Kevin Schoeben 2012.docx": {
+      "sha256": "f39db758168da1fa38313218b40a3b3c407741a37096d1bec79570350ca51002",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Chuck I Memo on Professional Excellence Award Kevin Schoeben 2012.docx",
+      "chunks": 8,
+      "chars": 5929,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:54.351162"
+    },
+    "Cover.pdf": {
+      "sha256": "99908be6062e0c70c0822ea18fd7faeb0ae53d1638d33fa3f921756e93a30886",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Cover.pdf",
+      "chunks": 1,
+      "chars": 488,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:54.540363"
+    },
+    "FINAL 1 Yellow Book.pdf": {
+      "sha256": "f0b1835b81d85f2473f4b82c1968876ccbdac9fbd1dd2f988726610c38698492",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/FINAL 1 Yellow Book.pdf",
+      "chunks": 174,
+      "chars": 131123,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:57.569074"
+    },
+    "FINAL Yellow Book.pdf": {
+      "sha256": "3f857f13e0d63281b7d4c1e8c4380fd20c750f0b97ca664f0657514304f4639d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/FINAL Yellow Book.pdf",
+      "chunks": 1,
+      "chars": 488,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:57.802449"
+    },
+    "Hannig Ltr Lipinski Buy America.docx": {
+      "sha256": "38b11d137344702eb11f2ce8a8b7db06d33cbaebbf87c6a30bffc822fbb9b796",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Hannig Ltr Lipinski Buy America.docx",
+      "chunks": 6,
+      "chars": 4510,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:30:58.034996"
+    },
+    "ITS Study.pdf": {
+      "sha256": "7e3531cb37aa05bb0943cbdb068cb83e0b437be2cac3baf6377290dc54c15a28",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/ITS Study.pdf",
+      "chunks": 270,
+      "chars": 193911,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:31:02.662236"
+    },
+    "Phonebook.pdf": {
+      "sha256": "5605f4802c2477654a2acf38c873c43dee213e92bdc3aef275a12e26a1b4407c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Phonebook.pdf",
+      "chunks": 168,
+      "chars": 129076,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:31:05.640031"
+    },
+    "Rising%20Construction%20Costs%20-%20The%20Florida%20Story[1].pdf": {
+      "sha256": "6c6509947e4352a02a4ac2ff72769dc72383a2cdbb58050f017783cdd5cb72f5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/Rising%20Construction%20Costs%20-%20The%20Florida%20Story[1].pdf",
+      "chunks": 11,
+      "chars": 8812,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:31:06.076957"
+    },
+    "STATUTE-092-3-2[1].pdf": {
+      "sha256": "f7429dbdf96e75b901748e0f5966e7178c3c63e689a6d54a823eabcf64a6b21d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/STATUTE-092-3-2[1].pdf",
+      "chunks": 4609,
+      "chars": 3515753,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:21.496135"
+    },
+    "Ann Schneider Oral Remarks Rail 6 11 13.docx": {
+      "sha256": "c3709a3a03c19a7b22823afdb945a21a7f67dd3f691ba3bdc15d0036c5ab5e13",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Ann Schneider Oral Remarks Rail 6 11 13.docx",
+      "chunks": 8,
+      "chars": 6128,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:21.763903"
+    },
+    "Brown Photograph and Bio.docx": {
+      "sha256": "0e2a72d7f5e616b39c5e0e108f2b0c611fd7f26a32608a8735114e7243e35871",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Brown Photograph and Bio.docx",
+      "chunks": 2,
+      "chars": 1127,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:21.962849"
+    },
+    "Denham Photograph and Bio.docx": {
+      "sha256": "9c49e8114a9a9fe94b5229501665836d51ad2d46f2aebcdfdc9c31f0fbf7d674",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Denham Photograph and Bio.docx",
+      "chunks": 2,
+      "chars": 1737,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:22.156580"
+    },
+    "FINAL Schneider HSR field hearing Oral Remarks June 11 2013.docx": {
+      "sha256": "014ecbe8c2f0b017ac8b101c4f77f08c457a0d6fc22bd6cd5214ee6fab51c2cb",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/FINAL Schneider HSR field hearing Oral Remarks June 11 2013.docx",
+      "chunks": 12,
+      "chars": 8474,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:22.470499"
+    },
+    "FINAL Schneider Testimony 2013 Spfld hearing.docx": {
+      "sha256": "c7f56b5aeaa3f6750b15e2f06923b4ed6fc2418c2b8c1f78b1c3728e5606d290",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/FINAL Schneider Testimony 2013 Spfld hearing.docx",
+      "chunks": 43,
+      "chars": 29920,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:23.186023"
+    },
+    "HSR FINAL Schneider Testimony 2013 Spfld 06062013.docx": {
+      "sha256": "a79667116d48fad2eed9ea03260e4f32d26c0c8837f6771bc18cead6d5d284a0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/HSR FINAL Schneider Testimony 2013 Spfld 06062013.docx",
+      "chunks": 44,
+      "chars": 30188,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:23.998615"
+    },
+    "HSR FINAL Schneider Testimony 2013 Spfld 06062013MC.docx": {
+      "sha256": "cb304565f35917072a74cbdc2666ed9b675840c1b643ba36a45ed1a5b5602539",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/HSR FINAL Schneider Testimony 2013 Spfld 06062013MC.docx",
+      "chunks": 40,
+      "chars": 27801,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:24.646894"
+    },
+    "HSR Schneider Testimony 120412.docx": {
+      "sha256": "cc773d2244ad08e9775bdb2cbba20360023dee0409e50246c78b78f85dcbcc9b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/HSR Schneider Testimony 120412.docx",
+      "chunks": 40,
+      "chars": 28735,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:25.412619"
+    },
+    "IL Ridership 2006-2012.pdf": {
+      "sha256": "3837b3ff5f51aea309c373f5beb62677bd052c647a16a03f89b72c1d504aeaab",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/IL Ridership 2006-2012.pdf",
+      "chunks": 1,
+      "chars": 356,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:25.566379"
+    },
+    "Official Committee Web posting.pdf": {
+      "sha256": "ca8282732002ef960f594211e92f684cb3935cdc3fa442c6ae9790329da55666",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Official Committee Web posting.pdf",
+      "chunks": 4,
+      "chars": 2578,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:25.768254"
+    },
+    "Pages from Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.pdf": {
+      "sha256": "e1fbb1c555df64bfe2cafdcc284c3124efa5ed448e7dd0c96c4d2bff3abc6f49",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Pages from Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.pdf",
+      "chunks": 22,
+      "chars": 16633,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:26.529690"
+    },
+    "Rodney Davis Media Advisory.docx": {
+      "sha256": "387eef54976d58e3af3b5fd18caffcd7d69c6e4071f4f3ba8746526ed16f209c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Rodney Davis Media Advisory.docx",
+      "chunks": 2,
+      "chars": 1460,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:26.691719"
+    },
+    "Sec Schneider Inside IDOT Rail Hearing 6 11 13.docx": {
+      "sha256": "c379db8c97d387218fb5f9e6b7f1000b027611fdccadd3f30eb447566546e2d7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Sec Schneider Inside IDOT Rail Hearing 6 11 13.docx",
+      "chunks": 4,
+      "chars": 2019,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:26.874483"
+    },
+    "Spfld HSR Round Table June 11 2013.docx": {
+      "sha256": "67092aa9d297943db5764cf5b57d8fd3b4f4d91cd8e6a58785e7bd5fed50669c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Spfld HSR Round Table June 11 2013.docx",
+      "chunks": 2,
+      "chars": 1271,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:27.042233"
+    },
+    "T & I Rail Subcommittee Members.pdf": {
+      "sha256": "a01c9120229e67d2cb6ab5a603c4cd80c120a6231695a33d6d1f55206750e006",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/T & I Rail Subcommittee Members.pdf",
+      "chunks": 1,
+      "chars": 997,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:27.197247"
+    },
+    "T & I Rail Subcommittee Members.xlsx": {
+      "sha256": "5ca1503aa56786ffd703d9cc306380c041cd3bf7d9c73deb07dae87c80f4a8d9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/T & I Rail Subcommittee Members.xlsx",
+      "chunks": 4,
+      "chars": 2869,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:27.387897"
+    },
+    "Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.docx": {
+      "sha256": "0cf662c1c74fae2be1f63078c45294b399228b42118d1f9df40924cf84246280",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.docx",
+      "chunks": 21,
+      "chars": 14767,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:27.795592"
+    },
+    "Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.pdf": {
+      "sha256": "ca080f6b7a708828bfc76515d30241bf4215478f07ce1af5983874b5ae1d03da",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Transcript of Ann Schneider Testimony at T & I Hearing 2012-12-6_Editable Text.pdf",
+      "chunks": 24,
+      "chars": 18519,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:28.568924"
+    },
+    "Untitled.docx": {
+      "sha256": "e2cad7b867141f400cd75354d6781478b7329b36b0dc2d29fcba7353ce2e2804",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Untitled.docx",
+      "chunks": 2,
+      "chars": 1491,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:28.739830"
+    },
+    "amtrak MAP-0613.pdf": {
+      "sha256": "aa62efc01543f8b9c34b7c0b57f3fedc2360e25226c6f5512f3e7a2f5e5eecac",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/amtrak MAP-0613.pdf",
+      "chunks": 2,
+      "chars": 1060,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:28.917812"
+    },
+    "Schneider Thank You Letter to Corrine Brown.docx": {
+      "sha256": "c5df2d413245640cada2f2e0018e45fab60cf52651e1ffabdafd400a92f9b2d5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Thank You Letters/Schneider Thank You Letter to Corrine Brown.docx",
+      "chunks": 2,
+      "chars": 1385,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:29.084503"
+    },
+    "Schneider Thank You Letter to Jeff Denham.docx": {
+      "sha256": "ad63785ea05f914e2d0d5e4d12de0f6c0b67c2672114f6856b616b892b1a34fd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Thank You Letters/Schneider Thank You Letter to Jeff Denham.docx",
+      "chunks": 2,
+      "chars": 1147,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:29.245199"
+    },
+    "Schneider Thank You Letter to Rodney Davis.docx": {
+      "sha256": "ddb48707c7c063afcd75eec87dfc64dcc1e8e1e233872306a5357de0ec6335a5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Thank You Letters/Schneider Thank You Letter to Rodney Davis.docx",
+      "chunks": 2,
+      "chars": 1157,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:29.407197"
+    },
+    "http.docx": {
+      "sha256": "a2fd60cbbf52ecdead94eb3be71c47ce2015fe0709da807866937739e73e78c5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Springfield T&I Rail Field Hearing/Thank You Letters/http.docx",
+      "chunks": 1,
+      "chars": 177,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:29.557858"
+    },
+    "426288.pdf": {
+      "sha256": "3f216435a25d8ed7c2231745db0ec3d6ad91916c8c8fec2ca64c6c6257c3074a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/426288.pdf",
+      "chunks": 4,
+      "chars": 2544,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:29.752805"
+    },
+    "AECOM.pdf": {
+      "sha256": "35390a649117904029e4efcc8dbfdbfccbe194cd1e8db436684477330fed8ad0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/AECOM.pdf",
+      "chunks": 137,
+      "chars": 98978,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:32.213127"
+    },
+    "Docket Service List.pdf": {
+      "sha256": "3e5308cde221fc677ddf62ee1e56252ca222bec2f74077c34dff4aedc076e7bc",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/Docket Service List.pdf",
+      "chunks": 10,
+      "chars": 6287,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:32.475364"
+    },
+    "ICC Exhibit A.pdf": {
+      "sha256": "3f8de5789c0bd1adb1ff45a1ca47157eae540023b7ba1ff64f3fe81407a53d01",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/ICC Exhibit A.pdf",
+      "chunks": 1,
+      "chars": 813,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:32.628384"
+    },
+    "ICC Exhibit B.pdf": {
+      "sha256": "fa81215667579bda9e48143edf1c4611941476b640320485cfaffc4618165e92",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/ICC Exhibit B.pdf",
+      "chunks": 4,
+      "chars": 2310,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:32.823601"
+    },
+    "ICC Exhibit C.pdf": {
+      "sha256": "8db8c7d5df135da3751d6e4adf2d65532cc59b564c9863e0e06e76126b7afd41",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/ICC Exhibit C.pdf",
+      "chunks": 12,
+      "chars": 6489,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:33.261466"
+    },
+    "ICC Staff Response.pdf": {
+      "sha256": "e4e13aca50ec1378e0e45ec7da3f1d409331852f14073c5245074d0f1c208bcc",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/ICC Staff Response.pdf",
+      "chunks": 25,
+      "chars": 18087,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:33.756515"
+    },
+    "RB Ltr Burnham Greenway Trail.docx": {
+      "sha256": "c7bfb52d6fd21490c63945ab303be97786760b42655be529cdf46ce5c294b296",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Burnham Greenway Trail RB LTR/RB Ltr Burnham Greenway Trail.docx",
+      "chunks": 3,
+      "chars": 1993,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:33.944291"
+    },
+    "ELDS Team F - Flow Chart.pdf": {
+      "sha256": "0a6858e8c5865ad059e2d11795a52d0430d90bb485d51adba209dd2635e904a5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/ELDS Team F - Flow Chart.pdf",
+      "chunks": 1,
+      "chars": 411,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:34.127232"
+    },
+    "First Robotics.docx": {
+      "sha256": "eef6e2576ace0513103b330f122c57db3cfad711fe9fc66133cdd35fa6066ccd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/First Robotics.docx",
+      "chunks": 2,
+      "chars": 1136,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:34.294477"
+    },
+    "SJR FIRST 8 31 17.pdf": {
+      "sha256": "f655c753bec6956f9070f155e9765dc6834e5c31c33cce68bb3b5bc1e9452b56",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/SJR FIRST 8 31 17.pdf",
+      "chunks": 16,
+      "chars": 12985,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:34.640038"
+    },
+    "SJR STEM 7 Sept 2017.pdf": {
+      "sha256": "ad20bba5908f0f7586169ca754e2cc971373b43b6d7daa5e3d4f12a61d8eaa96",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/SJR STEM 7 Sept 2017.pdf",
+      "chunks": 12,
+      "chars": 9355,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:35.266394"
+    },
+    "Student Enrollment Graph.xlsx": {
+      "sha256": "f578f85cb47daa04e194fd3215d62e6c45ef4ebe527fbb164c534ade8e27b469",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/Student Enrollment Graph.xlsx",
+      "chunks": 1,
+      "chars": 203,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:35.426489"
+    },
+    "Student Enrollment IDOT.xlsx": {
+      "sha256": "fae499edbbe14a3e6791f1815008ce52bf3029a7c59766d52ffe77dc739c4ad5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/Student Enrollment IDOT.xlsx",
+      "chunks": 1,
+      "chars": 478,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:35.585874"
+    },
+    "Student Enrollment Total Linear Line.xlsx": {
+      "sha256": "0bfd585420f329d7493cc166ba15831ca58402b7c629912633eec70e25141bf9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/Student Enrollment Total Linear Line.xlsx",
+      "chunks": 1,
+      "chars": 478,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:35.743001"
+    },
+    "Student Enrollment Total.xlsx": {
+      "sha256": "83b2b83005fcabab6059890feadc32bd2a6ed0e1a513b56787be187b2919fc7d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doug DeLong ELDS/Student Enrollment Total.xlsx",
+      "chunks": 1,
+      "chars": 419,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:35.902442"
+    },
+    "2018 Washington Briefing - Meeting Summary _ Online Registration by Cvent.pdf": {
+      "sha256": "7ccc7f90716394ccef70c712484878dd1c3cc7f4ede7e6971f83ac2441e86701",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/2018 Washington Briefing - Meeting Summary _ Online Registration by Cvent.pdf",
+      "chunks": 3,
+      "chars": 1549,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:36.081518"
+    },
+    "AASHTO Transportation Policy Forum Meeting Minutes DRAFT 2017-05-24.pdf": {
+      "sha256": "790543868675871a00a2a00012ebdbdad5daab76d570ef8fb7950c620c59e9a7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/AASHTO Transportation Policy Forum Meeting Minutes DRAFT 2017-05-24.pdf",
+      "chunks": 17,
+      "chars": 13349,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:36.459312"
+    },
+    "Meeting Agenda.pdf": {
+      "sha256": "b662cf291419a909e407b84f97d009ea5a8c30ba75c13ea26111464de89e175b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/Meeting Agenda.pdf",
+      "chunks": 6,
+      "chars": 4480,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:36.681560"
+    },
+    "TPF Charter FINAL 2017-09-26.pdf": {
+      "sha256": "bd73a0826c7255e25baaff290427e1b583608e57c77552010fee175a0cdda498",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/TPF Charter FINAL 2017-09-26.pdf",
+      "chunks": 12,
+      "chars": 7996,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:36.979904"
+    },
+    "Wash Brief URL.docx": {
+      "sha256": "fc4c640d81d6439484ccebe510e4b4c097bb9c712f684746934b44bf20c2d1ef",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/Wash Brief URL.docx",
+      "chunks": 1,
+      "chars": 112,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:37.140166"
+    },
+    "ac8f437514354796a376b7c35509e8ba.pdf": {
+      "sha256": "948d2c1b7d9936e3fbd03ff79a7437f35e04cc74f3995eea04e54c074cf6ba9b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn Sydello AASHTO Wash Brief 2 27 thru 3 2 2018/ac8f437514354796a376b7c35509e8ba.pdf",
+      "chunks": 14,
+      "chars": 9501,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:37.503900"
+    },
+    "FINAL IDOT Annual Report Released 2 1 2013.pdf": {
+      "sha256": "96ff327cfc5c7edec5b43df8304fc9b23aa0c1894937abcf010129021a764e53",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2012 Annual Report/FINAL IDOT Annual Report Released 2 1 2013.pdf",
+      "chunks": 158,
+      "chars": 118434,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:40.820202"
+    },
+    "Master OP&P 2012 Template Draft.docx": {
+      "sha256": "9d69bb8ccd0732e3f1bda2147d8642e0d5dd31053fb0a453e59f1baad496cfc0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2012 Annual Report/Master OP&P 2012 Template Draft.docx",
+      "chunks": 16,
+      "chars": 9967,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:41.190967"
+    },
+    "Master OPP 2012 Template Penultimate Draft.docx": {
+      "sha256": "cae5260924a6cf8f65db18cd3aa62a9a792e1a23719a240058fb4563fffa9cac",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2012 Annual Report/Master OPP 2012 Template Penultimate Draft.docx",
+      "chunks": 43,
+      "chars": 30138,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:41.879871"
+    },
+    "OPP Annual Report 2011.docx": {
+      "sha256": "6f6d231df67d06fec906f4228e47bd3b2b6782cca4d721cb90f80b26e88a3f00",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2012 Annual Report/OPP Annual Report 2011.docx",
+      "chunks": 12,
+      "chars": 8818,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:42.182491"
+    },
+    "RB Fed Affairs Budget Briefing GA 2016.docx": {
+      "sha256": "0352edc7b8d475e3767f7cc2a38879ea837d75be025867ca428defd39959beca",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Budget Briefing 2016 Sec Blankenhorn/RB Fed Affairs Budget Briefing GA 2016.docx",
+      "chunks": 17,
+      "chars": 12268,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:42.539106"
+    },
+    "final.pdf": {
+      "sha256": "848ed97e5a508b06ee5c9c37df7b806ef81486cfd70e39fc4a43206388566bc8",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Budget Briefing 2016 Sec Blankenhorn/final.pdf",
+      "chunks": 353,
+      "chars": 257010,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:48.015466"
+    },
+    "2 FINAL Individual Cong Delegation Pts.docx": {
+      "sha256": "c803b725c1e9cbb3c4f0c1d96279ca1c3fe1f3a620c3e49af751ed1034f24679",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/2 FINAL Individual Cong Delegation Pts.docx",
+      "chunks": 3,
+      "chars": 1873,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:48.202960"
+    },
+    "3 FINAL Member Staff Phone Numbers.xlsx": {
+      "sha256": "2c1528b816cca627c686596f597f4821461892d9695a5b250eb2a4f416561191",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/3 FINAL Member Staff Phone Numbers.xlsx",
+      "chunks": 4,
+      "chars": 3453,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:48.405325"
+    },
+    "Bios.docx": {
+      "sha256": "16d4d1b05c5cda80aa84f41870108700540fe5100371981faecde3d5b9e367f2",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Bios.docx",
+      "chunks": 11,
+      "chars": 8022,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:48.701339"
+    },
+    "Blankenhorn Sydello DC Mtg 2 2017.xlsx": {
+      "sha256": "32614f59961bab7437be1bc433bd0f59377150edf71420e8ec60ac9bb794a5de",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Blankenhorn Sydello DC Mtg 2 2017.xlsx",
+      "chunks": 4,
+      "chars": 3237,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:49.004760"
+    },
+    "Chao letter final signed sent.pdf": {
+      "sha256": "5d0ad6ecec73c167e2f75722183230700de0e5609bcfc9fd7e8daa27eccd6981",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Chao letter final signed sent.pdf",
+      "chunks": 4,
+      "chars": 3045,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:49.206459"
+    },
+    "FINAL Blankenhorn Leave Behind Doc.docx": {
+      "sha256": "0ffe1e696e45aa2e75ecc450dfdd833034736dbb31ad477d4e1c51da236f72cd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/FINAL Blankenhorn Leave Behind Doc.docx",
+      "chunks": 10,
+      "chars": 5980,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:49.451315"
+    },
+    "FINAL Blankenhorn Leave Behind Doc.pdf": {
+      "sha256": "fb740eefa336676c5af72e9f17ca1bc12a28dc4fe551cb2826edd231a4a18d7d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/FINAL Blankenhorn Leave Behind Doc.pdf",
+      "chunks": 8,
+      "chars": 6170,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:49.685021"
+    },
+    "FINAL Blankenhorn Speaking Pts.docx": {
+      "sha256": "0abc2171bcc0f8a6c02399df116994a3d4ed3df9b966bd5723ea2483d21da196",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/FINAL Blankenhorn Speaking Pts.docx",
+      "chunks": 3,
+      "chars": 2346,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:49.859325"
+    },
+    "FINAL Blankenhorn Speaking Pts.pdf": {
+      "sha256": "b9f9566e95c54e32d03b800fc5cd8e7242b75231d7779e2cdf2eb4bb26b43143",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/FINAL Blankenhorn Speaking Pts.pdf",
+      "chunks": 3,
+      "chars": 2427,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:50.034406"
+    },
+    "Huerta.FAA 3.24.17.pdf": {
+      "sha256": "f34c926b565154a5ebcfd2960813a419f5d438125688f670e98d2cab05bf355f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Huerta.FAA 3.24.17.pdf",
+      "chunks": 11,
+      "chars": 7967,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:50.322900"
+    },
+    "IL Cong Bios and WH Advisor.pdf": {
+      "sha256": "94e30983739f68c783994c38148f6250ebaea6aaf9f0631508ef5ea2be29956e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/IL Cong Bios and WH Advisor.pdf",
+      "chunks": 11,
+      "chars": 8405,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:50.612412"
+    },
+    "Member Staff Phone Numbers & Address.xlsx": {
+      "sha256": "107b4e955bbd660cab67ece1c9682bdd0e5be4af9970f2dd3582f8066cf78379",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Member Staff Phone Numbers & Address.xlsx",
+      "chunks": 3,
+      "chars": 1992,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:50.786047"
+    },
+    "Not Current Blankenhorn Leave Behind Doc.pdf": {
+      "sha256": "d301e83ff04bc34c77217a1c5255d82109a0e74e9ae974f0af0f41a44019c0bf",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Not Current Blankenhorn Leave Behind Doc.pdf",
+      "chunks": 8,
+      "chars": 5751,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:51.019697"
+    },
+    "REVISED Feb 28 - Mar 2Schedule 2 22 12-20 pm.docx": {
+      "sha256": "a4591d0f0b4adadc578d9a1ac10209ca2353176244f79c7d31421cadfe4213c4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/REVISED Feb 28 - Mar 2Schedule 2 22 12-20 pm.docx",
+      "chunks": 2,
+      "chars": 1360,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:51.180921"
+    },
+    "Rest Area CFR.pdf": {
+      "sha256": "d4a775a50dae926e6a447c1f0e5d7deaebdb12b35bc92fab68ff4ab5bc31e0c0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Blankenhorn DC Trip Feb 28 2017/Rest Area CFR.pdf",
+      "chunks": 11,
+      "chars": 8366,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:51.467179"
+    },
+    "2015_9_21_Bus Tour final.pdf": {
+      "sha256": "8f4570131011fa7fbadf894c9cefe70010978f0009cfd1135b192913eaa14b8b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Lipinski and Denham Chicago Hearing 9 23 2015/2015_9_21_Bus Tour final.pdf",
+      "chunks": 12,
+      "chars": 8797,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:51.981965"
+    },
+    "FFIS sa17-01.pdf": {
+      "sha256": "40fef64ef56bed0bd0c02dac8f44dbf7bc87a0768295c5703e26fd284db5a4be",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/WTS Cen Reg Conf 2017/FFIS sa17-01.pdf",
+      "chunks": 27,
+      "chars": 19020,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:52.618760"
+    },
+    "Full Year CR.xlsx": {
+      "sha256": "352a8b686976223cb5e326fb74ae0f12a2a94e6e666063566044ecebec30ebf9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/WTS Cen Reg Conf 2017/Full Year CR.xlsx",
+      "chunks": 2,
+      "chars": 1450,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:52.780416"
+    },
+    "Fed Funds.xlsx": {
+      "sha256": "f4d326076f814bd0c8dab5daea59f7d77e1a5913e21c66513ff1160d2b05cd1f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Justine Sydello UIC/Fed Funds.xlsx",
+      "chunks": 2,
+      "chars": 1062,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:52.941089"
+    },
+    "Cong Lipinski Speaking Pts Sec Foxx.docx": {
+      "sha256": "f609fec4c4f4aa19a56966186c95de0a6b8204bc398ffce5359933a311e8d208",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Lipinski Speaking Pts Foxx/Cong Lipinski Speaking Pts Sec Foxx.docx",
+      "chunks": 14,
+      "chars": 10237,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:53.245963"
+    },
+    "Governor Quinn Spk Pts Anthony Foxx.docx": {
+      "sha256": "374715dca15921fddef12cbdbce7b184d2ee7537730681b1b6f7fb63a4eb4fc1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Lipinski Speaking Pts Foxx/Governor Quinn Spk Pts Anthony Foxx.docx",
+      "chunks": 13,
+      "chars": 9989,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:53.538352"
+    },
+    "Democratic HSR Memo.pdf": {
+      "sha256": "674b1f84708847101bbd18a4f885dcae388052732cf0d7428d114f0afb39aa56",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Democratic HSR Memo.pdf",
+      "chunks": 27,
+      "chars": 19550,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:54.024325"
+    },
+    "FinalFRA_HSR_Strat_Plan.pdf": {
+      "sha256": "c6252f82c62cd8bc1aa07807f51db4563ea4c293d976c1ebcdc44f12246b02d6",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/FinalFRA_HSR_Strat_Plan.pdf",
+      "chunks": 78,
+      "chars": 57803,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:55.744114"
+    },
+    "HSR Q-A Schneider FINAL for Mica Hearing Dec 2012 at 120312.docx": {
+      "sha256": "3d2593138108543feaed369c7650e5cb7a1e3e1e483ca438296323a12bd3757f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/HSR Q-A Schneider FINAL for Mica Hearing Dec 2012 at 120312.docx",
+      "chunks": 39,
+      "chars": 26621,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:32:56.363254"
+    },
+    "HSR-Defense.pdf": {
+      "sha256": "6e2924731a9dfbf3718e6bad97adf336c393947bf3774757dcf3288d13f08d57",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/HSR-Defense.pdf",
+      "chunks": 345,
+      "chars": 255123,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:01.629735"
+    },
+    "Sec. Schneider.docx": {
+      "sha256": "3dc7843d55405ded5b258ec510546861e6083c4f04fd71f1a0798fbe27494403",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Sec. Schneider.docx",
+      "chunks": 1,
+      "chars": 792,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:01.811188"
+    },
+    "Witness Testimony Behm.pdf": {
+      "sha256": "4b81eb871c5e85a56d07588d8977cec1f2fa01f1dfc224eeac2e454572c8a86f",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Witness Testimony Behm.pdf",
+      "chunks": 26,
+      "chars": 19343,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:02.356326"
+    },
+    "Witness Testimony Fleming.pdf": {
+      "sha256": "3ce6948aad6f99f4ded04c99e23de9a1170dc383457f4a0bbf1b5e5d1152f8ba",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Witness Testimony Fleming.pdf",
+      "chunks": 65,
+      "chars": 47729,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:03.455035"
+    },
+    "Witness Testimony Hamberger.pdf": {
+      "sha256": "30c0b8c73de6fd1c91d649a8bb14094649524c135081f43ac70304c19123717d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Witness Testimony Hamberger.pdf",
+      "chunks": 18,
+      "chars": 12821,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:03.844237"
+    },
+    "Witness Testimony Hammond.pdf": {
+      "sha256": "c3cca1ae3fe31fbe694beda418ce7265394c779994ca360514f93e5f348c5dc9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Witness Testimony Hammond.pdf",
+      "chunks": 40,
+      "chars": 29404,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:04.572362"
+    },
+    "Witness Testimony LaHood.pdf": {
+      "sha256": "35c68116c8cf328b00e5aede609a18a9d3a830dab82d8331bbbc30d2e4f92d7a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Witness Testimony LaHood.pdf",
+      "chunks": 44,
+      "chars": 33316,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:05.354971"
+    },
+    "FINAL IDOT Answers to Member HSR Questions.docx": {
+      "sha256": "d32771700ee2f636c4ea41ec9b77b0d3783df5ebd70ae99f3406f5aeb31128cf",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Planting Questions/FINAL IDOT Answers to Member HSR Questions.docx",
+      "chunks": 6,
+      "chars": 4625,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:05.585118"
+    },
+    "Schneider Testimony Q&A with OC responses .docx": {
+      "sha256": "6ae108d5ff843119fd169cbbe1e483fbfeb6df17e1d32ac12a436ff11a51b1fd",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/Planting Questions/Schneider Testimony Q&A with OC responses .docx",
+      "chunks": 9,
+      "chars": 6989,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:05.829673"
+    },
+    "Hearing Transcript 2011-12-6.pdf": {
+      "sha256": "cfa8f4fb533017beb75d70551f0cb409c37f376be1a5be7930bcd87987e519c7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/T & I Hearing 2011-12-6/Hearing Transcript 2011-12-6.pdf",
+      "chunks": 288,
+      "chars": 206102,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:09.983835"
+    },
+    "Republicans Press Release 2011-12-6.pdf": {
+      "sha256": "5b5758f5808e914c0ac574c6ba742293f7f073e59269f3fb903373616cdcbe58",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/T & I Hearing 2011-12-6/Republicans Press Release 2011-12-6.pdf",
+      "chunks": 10,
+      "chars": 6907,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:10.236106"
+    },
+    "Strategic-Plan-2011-2015.pdf": {
+      "sha256": "fc410fc82254cbd97cfce858424a155b2e4b4b3ad321e525f178ad1c281a8b58",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Sec Schneider HSR Testimony/T & I Hearing 2012-11-29/Strategic-Plan-2011-2015.pdf",
+      "chunks": 143,
+      "chars": 96830,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:13.185477"
+    },
+    "06-06-13 ACEC-IL Env Comm Meeting Agenda.pdf": {
+      "sha256": "f3b001aae544556105a4ef4b2c60e291efc5a34f824fa9353795f0f41db5cfa7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/ACEC Presentation/06-06-13 ACEC-IL Env Comm Meeting Agenda.pdf",
+      "chunks": 1,
+      "chars": 689,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:13.346432"
+    },
+    "Local Program Matrix - MAP-21 Update.pdf": {
+      "sha256": "7ff9aab9cc205ccde8e7678010b7d6bf41d27c044c7211f185612ffb9b6b2975",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Kelly Grants Outreach/Local Program Matrix - MAP-21 Update.pdf",
+      "chunks": 12,
+      "chars": 8292,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:13.643217"
+    },
+    "MFT to State and Locals.xlsx": {
+      "sha256": "c5ade5e626cd9c12cc0dd47234f469180d07f49e8d61bc63e53696dc338e3140",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Kelly Grants Outreach/MFT to State and Locals.xlsx",
+      "chunks": 3,
+      "chars": 2142,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:13.823292"
+    },
+    "2020CensusLUCA_Flyer.pdf": {
+      "sha256": "993f4eeb69a961aa888e7b9e4d2fc83e909a705dcef98a8cf0e9c1b4080a0517",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/2020CensusLUCA_Flyer.pdf",
+      "chunks": 7,
+      "chars": 5131,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:14.114302"
+    },
+    "2020LUCA_FAQ.pdf": {
+      "sha256": "a53a4c09076f5633f82aebb030e85d06a4499f1a8c999e39b295e66a1bbff78b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/2020LUCA_FAQ.pdf",
+      "chunks": 126,
+      "chars": 96009,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:16.344440"
+    },
+    "2020LUCA_InfoGuide.pdf": {
+      "sha256": "5e2cf978a7eecc56c9df375cd669032723b37bc08349ab62729f7c54f6bd63e5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/2020LUCA_InfoGuide.pdf",
+      "chunks": 41,
+      "chars": 30705,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:26.477561"
+    },
+    "2020LUCA_PromoPresentation.pdf": {
+      "sha256": "2e81e581b665ff89ba735b5ef39d829cfe44b7b0336fa1eeda7841219546088a",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/2020LUCA_PromoPresentation.pdf",
+      "chunks": 17,
+      "chars": 11345,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:26.947689"
+    },
+    "D-2004_Confid_Security_Guidelines.pdf": {
+      "sha256": "9e78280c53917016e79c33973f80a0c2e3908396fe1606f4f66234be800d5a6e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/D-2004_Confid_Security_Guidelines.pdf",
+      "chunks": 17,
+      "chars": 12988,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:27.411767"
+    },
+    "D-2013_Instructions_for_Registration.pdf": {
+      "sha256": "03e2766c4c533706f4e47dc6ffd43246e9fc8e30f3097e2181e79719d0275ac1",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/D-2013_Instructions_for_Registration.pdf",
+      "chunks": 8,
+      "chars": 6567,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:27.671888"
+    },
+    "D-2101_LUCA_Information Guide.pdf": {
+      "sha256": "c11a6ed54b1c9c4ba8d142a30872386927ed2a591d96b324f55a9e4665b7a19b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/D-2101_LUCA_Information Guide.pdf",
+      "chunks": 41,
+      "chars": 30705,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:37.757038"
+    },
+    "Declined_LUCA_Participation_11302017_IL.xlsx": {
+      "sha256": "d261675d084891ce96ca9f5b8049c8ebf1b4ed53363ddba582260a462a3a3b1d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/Declined_LUCA_Participation_11302017_IL.xlsx",
+      "chunks": 103,
+      "chars": 81165,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:39.418941"
+    },
+    "LUCA_Forms_Illinois_State.pdf": {
+      "sha256": "33f376864af97ac939b39e88725204b1ab366e8cddab60ace73c26c5e82b828b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/LUCA_Forms_Illinois_State.pdf",
+      "chunks": 17,
+      "chars": 12977,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:39.843689"
+    },
+    "LUCA_Participants_11302017_IL.xlsx": {
+      "sha256": "120e3ae8090fe5760e814193a65be1ec2cb9fa3100ff7bc37c11d27d37b1488c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/LUCA_Participants_11302017_IL.xlsx",
+      "chunks": 116,
+      "chars": 87325,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:41.829247"
+    },
+    "Registration Status_Chicago_MSA_LUCA_Entities_113017.pdf": {
+      "sha256": "7f2571bf008b7caf481158561fcbaa4c28af1b97166a0e626f96f8c68ae6c28b",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/Registration Status_Chicago_MSA_LUCA_Entities_113017.pdf",
+      "chunks": 1,
+      "chars": 333,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:43.264462"
+    },
+    "Registration Status_IL_LUCA_Entities_113017.pdf": {
+      "sha256": "af64a196da152f5781416769ffe3398d95de6efa243360740e89934f0f4e7a46",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/2020 Census LUCA/Registration Status_IL_LUCA_Entities_113017.pdf",
+      "chunks": 1,
+      "chars": 963,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:46.000489"
+    },
+    "AASHTO Potential Regulatory and Legislative Changes.pdf": {
+      "sha256": "1ab57d88656672a84ceeebc619d15716c692182b27982dd5d16142aae5f29765",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/AASHTO Potential Regulatory and Legislative Changes.pdf",
+      "chunks": 55,
+      "chars": 42741,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:47.121611"
+    },
+    "Fed Reg - April 13, 2010.pdf": {
+      "sha256": "e317ea2b1a896a7bad66164f72cc46b29eb1ab78c92a467c4b600874251fabad",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Fed Reg - April 13, 2010.pdf",
+      "chunks": 117,
+      "chars": 87165,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:48.965964"
+    },
+    "Fed Reg - Use of Project Labor Agreements.pdf": {
+      "sha256": "f13dce21ad699fecf8676b53ff4159b41f239e9dbaac749316172748c552819e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Fed Reg - Use of Project Labor Agreements.pdf",
+      "chunks": 11,
+      "chars": 8554,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:49.244085"
+    },
+    "HST-59906 Illinois DMV_CLIENT letter PHOTO TEMPLATE (FOR IDOT 5-3) (2) letter on IDOT letterhead.docx": {
+      "sha256": "6d66a836307f45437e3d5eec149d9cd25ead298b2f8827436ebe08bb2de3b12e",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/HST-59906 Illinois DMV_CLIENT letter PHOTO TEMPLATE (FOR IDOT 5-3) (2) letter on IDOT letterhead.docx",
+      "chunks": 3,
+      "chars": 2461,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:49.433672"
+    },
+    "Identify Problem IDOT Fed Govt Business Worksheet.pdf": {
+      "sha256": "ee44565b2a8358a6d3c057628e60ec1a34f6645e97ab10748c2b7b20d503fc03",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Identify Problem IDOT Fed Govt Business Worksheet.pdf",
+      "chunks": 9,
+      "chars": 6185,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:33:49.766846"
+    },
+    "JB Not Current Ver Summary Potential Streamlining Measures (Compilation).xlsx": {
+      "sha256": "dd02ff0a345e7cfee8cef915b532dbd33b491df8396ce7002f0e0144e289bdf7",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/JB Not Current Ver Summary Potential Streamlining Measures (Compilation).xlsx",
+      "chunks": 771,
+      "chars": 607687,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:01.028845"
+    },
+    "Master Accelerating Proj Delivery Worksheet.pdf": {
+      "sha256": "7ee4d5fd9834c2d0f07e02d3f3c0cd61e2532dd614a5653e1a865e7ecdb880da",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Master Accelerating Proj Delivery Worksheet.pdf",
+      "chunks": 29,
+      "chars": 21652,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:01.681006"
+    },
+    "Master Accelerating Proj Delivery Worksheet.xlsx": {
+      "sha256": "c219fb1e84838e6edb7d6457437874822c1012fd3b62cfc793f6218b172157e9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Master Accelerating Proj Delivery Worksheet.xlsx",
+      "chunks": 42,
+      "chars": 31108,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:02.385887"
+    },
+    "Master Rank Final.xlsx": {
+      "sha256": "919f1e8d226075e4173df2d9253b66b88eb35a72c1637a9de5c935e3e5da20f9",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Master Rank Final.xlsx",
+      "chunks": 12,
+      "chars": 9297,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:02.684234"
+    },
+    "Master Rank Form.xlsx": {
+      "sha256": "a5ba537e5a3eca119d97a49f1b1948a3387f7f396ec0319b7275097937ab5373",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Master Rank Form.xlsx",
+      "chunks": 6,
+      "chars": 4531,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:02.898208"
+    },
+    "Not Current Mtg Summary Potential Streamlining Measures.pdf": {
+      "sha256": "0b2da6642f497049c622c0539d46447fa4d0c9911592e6ad5167034753c5465c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Not Current Mtg Summary Potential Streamlining Measures.pdf",
+      "chunks": 24,
+      "chars": 15211,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:03.361816"
+    },
+    "Old Accelerating Proj Delivery Worksheet.pdf": {
+      "sha256": "e3a930edc62279ba583fdc6882c85760c57afd3df4bfc5bb54a50c05c6af6783",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Old Accelerating Proj Delivery Worksheet.pdf",
+      "chunks": 5,
+      "chars": 3774,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:03.636352"
+    },
+    "Press Release - April 13, 2010.pdf": {
+      "sha256": "b96abf8d902b6ca11f4ae255235d73550cfc88e041813a11250ec8a19308ca52",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Press Release - April 13, 2010.pdf",
+      "chunks": 8,
+      "chars": 5637,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:03.877490"
+    },
+    "Ranking Form.pdf": {
+      "sha256": "97a3c8c9186ee70beee17d544a281b4444a55bccbae8947c9d72f6f5df8509c4",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Ranking Form.pdf",
+      "chunks": 2,
+      "chars": 1749,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:04.052486"
+    },
+    "Ranking Sorted Largest to Smallest.pdf": {
+      "sha256": "93b652b6582823deab06774fe73f16e39943c8b00baed9be0e496cd0073c0f75",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Ranking Sorted Largest to Smallest.pdf",
+      "chunks": 3,
+      "chars": 1907,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:04.239532"
+    },
+    "Revised Summary Potential Streamlining Measures  4-3-2017.xlsx": {
+      "sha256": "08c3c56ba14df3148c57163e71576cd96c2176021076a1698dbba48befad3244",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Revised Summary Potential Streamlining Measures  4-3-2017.xlsx",
+      "chunks": 711,
+      "chars": 559129,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:14.333287"
+    },
+    "Revised Summary Potential Streamlining Measures  4-5-2017.xlsx": {
+      "sha256": "dafc063a45fcc47b35eb5c0122876a55bd8b8fcd8be2d849ea1bd54390187d2c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Revised Summary Potential Streamlining Measures  4-5-2017.xlsx",
+      "chunks": 710,
+      "chars": 559150,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:24.418041"
+    },
+    "Revised Summary Potential Streamlining Measures  Per Mtg of 3-16-2017.pdf": {
+      "sha256": "6c41568b51f8c3e25f1078925f94b91376933243f23cd738875531e110c80e4d",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Revised Summary Potential Streamlining Measures  Per Mtg of 3-16-2017.pdf",
+      "chunks": 17,
+      "chars": 13617,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:24.845114"
+    },
+    "Status of White Sheet Response js.xlsx": {
+      "sha256": "a5acf22c8be5f1e975f55c957092477b9df769b5e24152cf4a4e68b259178862",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Status of White Sheet Response js.xlsx",
+      "chunks": 3,
+      "chars": 2286,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:25.024850"
+    },
+    "Summary Potential Streamlining Measures (Compilation).xlsx": {
+      "sha256": "53e5b6dba2e4e8579265a8d37c4e1a2080edfe2a8c9d5776098e158e91b77e80",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Summary Potential Streamlining Measures (Compilation).xlsx",
+      "chunks": 19,
+      "chars": 13387,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:25.401928"
+    },
+    "Summary Potential Streamlining Measures.pdf": {
+      "sha256": "b3419ded0fa5a6621e069a9225151c73f17666d41347e46b0c2782c10de04792",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Summary Potential Streamlining Measures.pdf",
+      "chunks": 22,
+      "chars": 14765,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:25.836775"
+    },
+    "Summary Potential Streamlining Measures.xlsx": {
+      "sha256": "601ef12bb430c5eccfedcbcc7dae945b666a204dc07d71febdcef1db5b2cb488",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Summary Potential Streamlining Measures.xlsx",
+      "chunks": 20,
+      "chars": 14131,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:26.229362"
+    },
+    "Template Accelerating Proj Delivery Worksheet.xlsx": {
+      "sha256": "48be07ad3471f165dc8b5b916cde5b3f0cdfd6b8fec9dbc160ee4dd758fdd5ca",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Template Accelerating Proj Delivery Worksheet.xlsx",
+      "chunks": 15,
+      "chars": 11047,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:26.555938"
+    },
+    "jjRevised Summary Potential Streamlining Measures  4-3-2017.pdf": {
+      "sha256": "ea07009e688e7cd5a035984afece9aabb25e0661683f5bb6a0e5a84b7e322b85",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/jjRevised Summary Potential Streamlining Measures  4-3-2017.pdf",
+      "chunks": 23,
+      "chars": 17445,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:27.019958"
+    },
+    "2015-28753.pdf": {
+      "sha256": "dbe903aaf92a49ac64397ba4030d4fb181048077f836711ffe5ea2e07ee9bc45",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/2015-28753.pdf",
+      "chunks": 21,
+      "chars": 14445,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:27.421183"
+    },
+    "ABCN PLAs.pdf": {
+      "sha256": "f993162e230969fe4bd9d5162539535c9eace497027c8ebb2f4e197777b580ce",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/ABCN PLAs.pdf",
+      "chunks": 6,
+      "chars": 4632,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:27.627311"
+    },
+    "BBS - Bridges of Opportunity JB Edits.docx": {
+      "sha256": "21c464e876f260b1cf1e2a3618ca20c1b254b2630858d5b6a9fde83bd9f0e165",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/BBS - Bridges of Opportunity JB Edits.docx",
+      "chunks": 3,
+      "chars": 2547,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:27.820853"
+    },
+    "BBS - Bridges of Opportunity JB Edits.pdf": {
+      "sha256": "c86816d98e6e5867970d592dffbfb3bb32a688abd32e4d66f18890be476bc5f0",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/BBS - Bridges of Opportunity JB Edits.pdf",
+      "chunks": 4,
+      "chars": 3206,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:28.081168"
+    },
+    "BBS - Emergency Vehicle Load Rating JB Edits.docx": {
+      "sha256": "94d0e40e39604e03cfaac87ee7fc547878c4384597de01dab46749fdb9297311",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/BBS - Emergency Vehicle Load Rating JB Edits.docx",
+      "chunks": 1,
+      "chars": 170,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:28.240473"
+    },
+    "BBS - Emergency Vehicle Load Rating JB Edits.pdf": {
+      "sha256": "0dde482f79524f0131d3b13c14fd50a2997f0f7a4899ca3be47584f9a4c9fbc5",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/BBS - Emergency Vehicle Load Rating JB Edits.pdf",
+      "chunks": 5,
+      "chars": 3402,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:28.442253"
+    },
+    "Better Quantify Audit Compliance Norms.docx": {
+      "sha256": "3750b9ef333ee7bd42fd518ea12622d171979495be4da70af529ad1ce0149b86",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/Better Quantify Audit Compliance Norms.docx",
+      "chunks": 1,
+      "chars": 27,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:28.594935"
+    },
+    "Bonus Act WP jb edits.docx": {
+      "sha256": "38d0d067a925943ff6e8e7624617ed09ae754ca8658d38f4a5a8a82e1fa0e48c",
+      "path": "/home/travisb/Desktop/Historical/FA/GEN/WPDOCS/Old/SPECIAL PROJECTS/Doing Business w DC/Draft White Papers/Bonus Act WP jb edits.docx",
+      "chunks": 1,
+      "chars": 247,
+      "tier": "archive",
+      "ingested_at": "2026-02-13T13:34:28.747833"
     }
   },
-  "last_updated": "2026-02-13T07:13:50.037300",
+  "last_updated": "2026-02-13T13:34:28.747844",
   "stats": {
     "gold": 1091,
-    "archive": 0,
+    "archive": 326,
     "standard": 0
   }
 }
