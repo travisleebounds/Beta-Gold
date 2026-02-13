@@ -8,3 +8,4 @@ data/vectorstore/
 dist/
 build/
 .DS_Store
+app.py.BAK.*
